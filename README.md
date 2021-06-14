@@ -13,3 +13,4 @@ Game for preloader. Game uses camera to get gestures to control media.
 2. [Game Developer Studio](https://www.gamedeveloperstudio.com/index.php)
 3. [Open Game Art](https://opengameart.org/)
 4. [What is a Fractal](https://iternal.us/what-is-a-fractal/)
+5. [Animated CSS loaders](https://dev.to/j3nnning/animated-css-loaders-2km4)
