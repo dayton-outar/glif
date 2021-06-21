@@ -14,8 +14,8 @@ const float K2 = 5;
 // is 3/4th of the way from the center to the side of the screen.
 // screen_width*3/8 = K1*(R1+R2)/(K2+0)
 // screen_width*K2*3/(8*(R1+R2)) = K1
-const int screen_width = 30;
-const int screen_height = 25;
+const int screen_width = 20;
+const int screen_height = 20;
 const float pi = 3.14;
 const float K1 = screen_width * K2 * 3/(8*(R1+R2));
 
@@ -92,7 +92,7 @@ void render_frame(float A, float B) {
 
 int main() {
 
-  render_frame(0.3, 0.7);
+  render_frame(0.8, 1.7);
   
   return 0;
 }
