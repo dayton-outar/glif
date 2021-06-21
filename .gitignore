@@ -1,1 +1,11 @@
+# Ignoring binaries
+*
+!*.*
+!*/
+!LICENSE
+
+*.gz
+*.class
+*.out
+
 *.pdf

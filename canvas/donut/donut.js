@@ -14,7 +14,7 @@
     var K2 = 5;
     var canvasframe = function () {
       var ctx = canvastag.getContext('2d');
-      ctx.fillStyle = '#000';
+      ctx.fillStyle = '#fff'; // #000
       ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
       if (tmr1 === undefined) { // only update A and B if the first animation isn't doing it already
@@ -43,7 +43,7 @@
           // luminance, scaled back to 0 to 1
           var L = 0.7 * (cp * ct * sB - cA * ct * sp - sA * st + cB * (cA * st - ct * sA * sp));
           if (L > 0) {
-            ctx.fillStyle = 'rgba(255,255,255,' + L + ')';
+            ctx.fillStyle = 'rgba(0,0,0,' + L + ')'; // 'rgba(255, 255, 255, ' + L + ')
             ctx.fillRect(xp, yp, 1.5, 1.5);
           }
         }
