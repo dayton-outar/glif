@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
 const float theta_spacing = 0.07;
 const float phi_spacing   = 0.02;
 
@@ -10,18 +14,20 @@ const float K2 = 5;
 // is 3/4th of the way from the center to the side of the screen.
 // screen_width*3/8 = K1*(R1+R2)/(K2+0)
 // screen_width*K2*3/(8*(R1+R2)) = K1
-const float screen_width = 300;
-const float screen_height = 250;
+const int screen_width = 30;
+const int screen_height = 25;
 const float pi = 3.14;
 const float K1 = screen_width * K2 * 3/(8*(R1+R2));
 
-render_frame(float A, float B) {
+void render_frame(float A, float B) {
   // precompute sines and cosines of A and B
   float cosA = cos(A), sinA = sin(A);
   float cosB = cos(B), sinB = sin(B);
 
-  char output[0..screen_width, 0..screen_height] = ' ';
-  float zbuffer[0..screen_width, 0..screen_height] = 0;
+  char output[screen_width][screen_height];
+  memset(output, ' ', sizeof output);
+  float zbuffer[screen_width][screen_height];
+  memset(zbuffer, 0, sizeof zbuffer);
 
   // theta goes around the cross-sectional circle of a torus
   for (float theta=0; theta < 2* pi; theta += theta_spacing) {
@@ -60,13 +66,13 @@ render_frame(float A, float B) {
       if (L > 0) {
         // test against the z-buffer.  larger 1/z means the pixel is
         // closer to the viewer than what's already plotted.
-        if(ooz > zbuffer[xp,yp]) {
-          zbuffer[xp, yp] = ooz;
+        if(ooz > zbuffer[xp][yp]) {
+          zbuffer[xp][yp] = ooz;
           int luminance_index = L*8;
           // luminance_index is now in the range 0..11 (8*sqrt(2) = 11.3)
           // now we lookup the character corresponding to the
           // luminance and plot it in our output:
-          output[xp, yp] = ".,-~:;=!*#$@"[luminance_index];
+          output[xp][yp] = ".,-~:;=!*#$@"[luminance_index];
         }
       }
     }
@@ -78,10 +84,15 @@ render_frame(float A, float B) {
   printf("\x1b[H");
   for (int j = 0; j < screen_height; j++) {
     for (int i = 0; i < screen_width; i++) {
-      putchar(output[i,j]);
+      putchar(output[i][j]);
     }
     putchar('\n');
   }
-  
 }
 
+int main() {
+
+  render_frame(0.3, 0.7);
+  
+  return 0;
+}
