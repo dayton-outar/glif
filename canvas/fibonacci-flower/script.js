@@ -22,15 +22,15 @@ function drawFlower() {
     ctx.fill();
     ctx.stroke();
 
-    number++;
+    number+=10;
 }
 
 function animate() {
     //ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    if (number < 50) {
+    //if (number < 500) {
         drawFlower();
-    }
+    //}
     
 
     requestAnimationFrame(animate);
