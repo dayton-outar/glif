@@ -31,3 +31,9 @@ Game for preloader. Game uses camera to get gestures to control media.
 3. [Open Game Art](https://opengameart.org/)
 4. [What is a Fractal](https://iternal.us/what-is-a-fractal/)
 5. [Animated CSS loaders](https://dev.to/j3nnning/animated-css-loaders-2km4)
+6. [Remake of Flappy Bird](https://github.com/D4rk1n/JS-Flappy-Bird)
+7. [Animate.css](https://animate.style/)
+
+## Tutorial Videos
+
+1. [Franks Laboratory: Creative Coding with Vanilla JavaScript and HTML Canvas](https://www.youtube.com/playlist?list=PLYElE_rzEw_siuo-kkHh5h7Sk--6IPYNh)

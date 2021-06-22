@@ -33,9 +33,10 @@ function drawBranches(canvas, start, len, angle, branchWidth) {
     ctx.stroke();
 
     if (len > 10) {
-        drawBranches(canvas, [0, -len], len * 0.8, 35, branchWidth * 0.6);
-        drawBranches(canvas, [0, -len], len * 0.8, -35, branchWidth * 0.6);
-        drawBranches(canvas, [0, -len], len * 0.5, -35, branchWidth * 0.6);
+        //drawBranches(canvas, [0, -len], len * 0.8, -16, branchWidth * 0.6);
+        drawBranches(canvas, [0, -len], len * 0.8, 24, branchWidth * 0.6);
+        drawBranches(canvas, [0, -len], len * 0.8, -23, branchWidth * 0.6);
+        drawBranches(canvas, [0, -len], len * 0.5, 15, branchWidth * 0.6);
     }
     
     ctx.restore();

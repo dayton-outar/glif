@@ -1,0 +1,51 @@
+body {
+    background-color: #000000;
+    color: #333333;
+}
+
+h4 {
+    font-family: sans-serif;
+    color: #333333;
+    font-size: 16px;
+}
+
+h3 {
+    font-family: sans-serif;
+    color: #333333;
+}
+
+p {
+    font-family: sans-serif;
+    color: #333333;
+    font-size: 14px;
+}
+
+#caption {
+    position: absolute;
+    width: 1024px;
+    text-align: center;
+    top: 520px;
+    z-index: 1
+}
+
+a {
+    font-family: sans-serif;
+    color: #d15423;
+    text-decoration: none;
+}
+
+canvas {}
+
+#displayCanvas {
+    position: absolute;
+    top: 10px;
+    z-index: 0;
+}
+
+div {}
+
+#container {
+    width: 1024px;
+    height: 576px;
+    margin: auto;
+}
