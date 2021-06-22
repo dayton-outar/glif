@@ -1,0 +1,11 @@
+canvas {
+    position: absolute;
+    border: 1px solid #000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cv-bg {
+    background:  rgb(80, 180, 255);
+}
