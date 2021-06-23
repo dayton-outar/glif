@@ -46,7 +46,7 @@ function drawLeaves(branchCanvas) {
             ctx.beginPath();
             let green = 255 * (CANVAS_HEIGHT - loc[1]) / CANVAS_HEIGHT;
             ctx.fillStyle = `rgba(0, ${ green }, 0, 0.4)`;
-            ctx.translate(...loc);            
+            ctx.translate(...loc); // Why this instead of moveTo?
             ctx.rotate(Math.random() * Math.PI * 2);
             ctx.arc(0, 0, 5, 0, Math.PI);
             ctx.fill();
