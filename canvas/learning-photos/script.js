@@ -1,6 +1,7 @@
 var SIZE = 300;
 var CANVAS = null;
 var INTERVAL = 42;
+var THRESHOLD = 105;
 
 function main() {
     CANVAS = document.getElementById('camera');
@@ -40,7 +41,7 @@ function getPixelMatrix(dataArray) {
     for (var i = 1; i <= SIZE; i++) {
         matrix[i] = [];
         for (var j = 1; j <= SIZE; j++) {
-            var groupIndex = (i - 1) * SIZE * 4 + (j - 1) * 4;
+            var groupIndex = (i - 1) * SIZE * 4 + (j - 1) * 4; // The data array stores four values for each pixel
             var red      = dataArray[groupIndex + 0];
             var green    = dataArray[groupIndex + 1];
             var blue     = dataArray[groupIndex + 2];
@@ -52,6 +53,7 @@ function getPixelMatrix(dataArray) {
 }
 
 function processMatrix(matrix) {
+    isolateObject(matrix);
     updateCanvas(matrix);
 }
 
@@ -67,4 +69,16 @@ function updateCanvas(matrix) {
         }
     }
     context.putImageData(image, 0, 0);
+}
+
+function isolateObject(matrix) {
+    for (var i = 1; i <= SIZE; i++) {
+        for (var j = 1; j <= SIZE; j++) {
+            if (matrix[i][j] < THRESHOLD) {
+                matrix[i][j] = 0;
+            } else {
+                matrix[i][j] = 255;
+            }
+        }
+    }
 }
