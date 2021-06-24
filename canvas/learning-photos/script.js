@@ -2,6 +2,7 @@ var SIZE = 300;
 var CANVAS = null;
 var INTERVAL = 42;
 var THRESHOLD = 105;
+var OBJECT_PROP = null;
 
 function main() {
     CANVAS = document.getElementById('camera');
@@ -54,7 +55,40 @@ function getPixelMatrix(dataArray) {
 
 function processMatrix(matrix) {
     isolateObject(matrix);
+    var box = getBoundingBox(matrix);
+    var boxProp = getBoxProperties(box);
+
+    OBJECT_PROP = boxProp.aspectRatio;
+    document.getElementById('output').innerHTML =
+        `Aspect Ratio: ${ OBJECT_PROP.toFixed(2) }`
+
     updateCanvas(matrix);
+    drawBox(box);
+}
+
+function recognize(currentObject) {
+    var name;
+    if (OBS_COUNT == 0) {
+        name = '?';
+    } else {
+        var neighbour = getNearestNeighbour(currentObject);
+        name = neighbour.name;
+    }
+    document.getElementById('output').innerHTML = name;
+}
+
+function getNearestNeighbour(currentObject) {
+    var neighbour = null;
+    var minDist = null;
+
+    for (var i = 1; i <= OBS_COUNT; i++) {
+        var dist = Math.abs(currentObject - OBSERVATIONS[i].prop);
+        if (minDist == null || minDist > dist) {
+            minDist = dist;
+            neighbour = OBSERVATIONS[i];
+        }
+    }
+    return neighbour;
 }
 
 function updateCanvas(matrix) {
@@ -80,5 +114,78 @@ function isolateObject(matrix) {
                 matrix[i][j] = 255;
             }
         }
+    }
+}
+
+function getBoxProperties(box) {
+    var prop = {
+        length: 0,
+        width: 0,
+        aspectRatio: 0
+    }
+
+    var deltaX = box.xMax - box.xMin + 1;
+    var deltaY = box.yMax - box.yMin + 1;
+
+    prop.length = Math.max(deltaX, deltaY);
+    prop.width = Math.min(deltaX, deltaY);
+    prop.aspectRatio = prop.width / prop.length;
+
+    return prop;
+}
+
+function getBoundingBox(matrix) {
+    var bbox = {
+        xMin: SIZE + 1,
+        xMax: 0,
+        yMin: SIZE + 1,
+        yMax: 0
+    }
+
+    for (var y = 1; y <= SIZE; y++) {
+        for (var x = 1; x <= SIZE; x++) {
+            if (matrix[y][x] == 0) {
+                bbox.yMin = Math.min(y, bbox.yMin);
+                bbox.yMax = Math.max(y, bbox.yMax);
+                bbox.xMin = Math.min(x, bbox.xMin);
+                bbox.xMax = Math.max(x, bbox.xMax);
+            }
+        }
+    }
+    return bbox;
+}
+
+function drawBox(box) {
+    var context = CANVAS.getContext('2d');
+    context.strokeStyle = 'red';
+    context.beginPath();
+    var deltaX = box.xMax - box.xMin;
+    var deltaY = box.yMax - box.yMin;
+    context.rect(box.xMin, box.yMin, deltaX, deltaY);
+    context.stroke();
+}
+
+var OBSERVATIONS = [];
+var OBS_COUNT = 0;
+
+function learn() {
+    var name = document.getElementById('objectName').value;
+    if (name == '') {
+        alert('Enter name for this object');
+        return;
+    }
+
+    OBS_COUNT++;
+    OBSERVATIONS[OBS_COUNT] = {
+        name: name,
+        prop: OBJECT_PROP
+    }
+
+    document.getElementById('objectName').value = '';
+}
+
+function checkKeyPress(event) {
+    if (event.key == 'Enter') {
+        learn();
     }
 }

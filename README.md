@@ -38,3 +38,6 @@ Game for preloader. Game uses camera to get gestures to control media.
 ## Tutorial Videos
 
 1. [Franks Laboratory: Creative Coding with Vanilla JavaScript and HTML Canvas](https://www.youtube.com/playlist?list=PLYElE_rzEw_siuo-kkHh5h7Sk--6IPYNh)
+2. [Franks Laboratory: CSS3 Experiments](https://www.youtube.com/playlist?list=PLYElE_rzEw_t2O2DvfopIoq-diTgefVzV)
+3. [Visual Web Development (2021)](https://www.youtube.com/playlist?list=PLB0Tybl0UNfb3hTHPfEIg1SPw_-Ca9iIw)
+4. [25 VS Code Productivity Tips and Speed Hacks](https://youtu.be/ifTF3ags0XI)

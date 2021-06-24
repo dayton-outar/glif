@@ -10,10 +10,10 @@
 </head>
 <body onload="main()">    
     <canvas id="camera"></canvas>
-    <div id="ouput"> ? </div>
+    <div id="output"> ? </div>
     <br />
-    <input type="text" id="objectName" placeholder="What is this?" />
-    <button class="button">Learn</button>
+    <input type="text" id="objectName" placeholder="What is this?" onkeyup="checkKeyPress(event);" />
+    <button class="button" onclick="learn();">Learn</button>
 
     <script src="script.js"></script>
 </body>
