@@ -1,3 +1,4 @@
+// Radu Mareiscu-Istodor: https://youtu.be/QXB1ytG95gs
 var SIZE = 300;
 var CANVAS = null;
 var INTERVAL = 42;
