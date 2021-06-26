@@ -59,12 +59,30 @@ function processMatrix(matrix) {
     var box = getBoundingBox(matrix);
     var boxProp = getBoxProperties(box);
 
-    OBJECT_PROP = boxProp.aspectRatio;
-    document.getElementById('output').innerHTML =
-        `Aspect Ratio: ${ OBJECT_PROP.toFixed(2) }`
+    var blackPixels = countBlackPixels(matrix);
+    var boxArea = boxProp.width * boxProp.length;
+    var fullness = blackPixels / boxArea;
+
+    OBJECT_PROP = [];
+    OBJECT_PROP[1] = boxProp.aspectRatio;
+    OBJECT_PROP[2] = fullness;
+    recognize(OBJECT_PROP);
 
     updateCanvas(matrix);
     drawBox(box);
+}
+
+function countBlackPixels(matrix) {
+    var count = 0;
+    for (var i; i <= SIZE; i++) {
+        for (var j = 1; j <= SIZE; j++) {
+            if (matrix[i][j] == 0) {
+                count++;
+            }
+        }
+    }
+
+    return count;
 }
 
 function recognize(currentObject) {
@@ -90,6 +108,18 @@ function getNearestNeighbour(currentObject) {
         }
     }
     return neighbour;
+}
+
+var DIMENSIONS = 2;
+
+function distance(p1, p2) {
+    var dist = 0
+    // Use Pythagoras Theorem .... Not totally ready for Frobenius Norm
+    for (var i = 1; i <= DIMENSIONS; i++) {
+        dist += (p1[i] - p2[i]) * (p1[i] - p2[i]);
+    }
+
+    return Math.sqrt(dist);
 }
 
 function updateCanvas(matrix) {
