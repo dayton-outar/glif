@@ -1,0 +1,115 @@
+// DEMO RESET///////////////////////////
+
+html, body{ height:100%; }
+body{ 
+  --fps: 24;
+  background:#EEE; 
+  overflow:hidden; 
+}
+
+.sprite{
+  position: absolute;
+  top:0; bottom:0; left:0; right:0;
+  margin: auto;
+  overflow: hidden;
+  display: none;
+  
+  width: var(--width);
+  height: var(--height);
+  
+  > img{ 
+    position: absolute; 
+    transform: translateZ(0);
+    top: 0; 
+    left: 0;
+    animation: calc(var(--frames) / var(--fps) * 1s) var(--keyframes) infinite step-end;
+  }
+}
+
+input{ 
+  @for $i from 1 through 4{
+    &#s#{$i}:checked{ 
+      ~ label:nth-of-type(#{$i}){ box-shadow:2px 4px rgba(0,0,0,.1) inset, 0 0 0 200px rgba(0,0,0,.2) inset; }
+      ~ .sprites .sprite:nth-child(#{$i}){ display:block; }
+    }
+  }
+}
+
+label{ display:inline-block; background:#15B0ED; color:#FFF; padding:.6em 1em; margin:.5em; border-radius:5px; box-shadow:0 -4px rgba(0,0,0,.2) inset; cursor:pointer;
+  &:hover{ background:#34BDEF; }
+}
+
+// (sprites can be found on Google images)
+
+/// Sprite matrix spec /////////////////////////////////////
+$carSprite    : (W:708, H:361, rows:4 , cols:10, frames:40);
+$mickeySprite : (W:256, H:308, rows:5 , cols:8, frames:40);
+$catSprite    : (W:408, H:199, rows:13, cols:1, frames:13);
+
+
+// Creates keyframes for a givven sprite
+@mixin spriteKeyframes($s, $mode){
+  // calc the "jump" relative to number of frames
+  $jump: 100 / (map-get($s, frames)); 
+  // frame index
+  $frame: 0;
+  
+  $rows: if($mode == "vertical", map-get($s, cols) + 1, map-get($s, rows) + 1);
+  $cols: if($mode == "vertical", map-get($s, rows) + 1, map-get($s, cols) + 1);
+  
+  //@if map-get($s, startFrame) > 0 {
+  //}
+  
+  @for $row from 1 to $rows {
+    @for $col from 1 to $cols {
+      $frame : $frame + 1;
+      #{$frame * $jump}%{ 
+        top :#{($row - 1) * map-get($s, H) * -1 + 'px'};
+        left:#{($col - 1) * map-get($s, W) * -1 + 'px'};
+      }
+    }
+  }
+}
+
+// using all the SASS mixings to create the illusion 
+
+.carSprite{ 
+  --width: 708px;
+  --height: 361px;
+  --frames: 40;
+  --keyframes: carSpriteAnim;
+}
+
+.mickeySprite{ 
+  --width: 256px;
+  --height: 308px;
+  --frames: 40;
+  --keyframes: mickeySpriteAnim;
+}
+
+.catSprite{ 
+  --width: 408px;
+  --height: 199px;
+  --frames: 13;
+  --keyframes: catSpriteAnim;
+  margin:0; right:0; left:auto; top:auto; bottom: -2%;
+  animation:1.5s catSprint infinite linear;
+}
+
+@keyframes carSpriteAnim{
+  @include spriteKeyframes($carSprite, null);
+}
+
+@keyframes mickeySpriteAnim{
+  @include spriteKeyframes($mickeySprite, null);
+}
+
+@keyframes catSpriteAnim{
+  @include spriteKeyframes($catSprite, null);
+}
+//---------------//
+@keyframes catSprint{
+  0%{ right:0; transform:translateX(100%); }
+  70%, 100%{ right:100%; transform:none; }
+}
+

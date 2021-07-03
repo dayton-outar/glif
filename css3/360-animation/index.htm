@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Animation</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <input type='radio' name='sprites' id='s1' hidden checked>
+    <input type='radio' name='sprites' id='s2' hidden>
+    <input type='radio' name='sprites' id='s3' hidden>
+    <label for='s1'>360 Car</label>
+    <label for='s2'>360 Mickey</label>
+    <label for='s3'>Running Cat</label>
+
+    <div class='sprites'>
+        <div class='sprite carSprite'><img src='https://vsync.s3.amazonaws.com/resources/360_page1_40_sprite_grey.jpg'>
+        </div>
+        <div class='sprite mickeySprite'><img src='https://vsync.s3.amazonaws.com/resources/mickey-sprite.png'></div>
+        <div class='sprite catSprite'><img src='https://vsync.s3.amazonaws.com/resources/tuna_sprite.png'></div>
+    </div>
+
+    <!--
+    <script type="text/javascript" src="knobs.min.js"></script>
+    <script type="text/javascript">
+
+        //
+        // https://github.com/yairEO/knobs
+        // 
+
+        var settings = {
+            visible: 1, 
+            CSSVarTarget: document.body, 
+            knobs: [
+                {
+                cssVar: ['fps'],
+                label: 'Frame Per Second',
+                type: 'range',
+                value: 26,
+                min: 1,
+                max: 60,
+                step: 1,
+                }
+            ]
+        };
+
+        new Knobs(settings);
+
+    </script>
+    -->
+    
+</body>
+
+</html>

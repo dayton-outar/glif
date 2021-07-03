@@ -1,0 +1,378 @@
+html, body {
+  height: 100%; }
+
+body {
+  --fps: 24;
+  background: #EEE;
+  overflow: hidden; }
+
+.sprite {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: hidden;
+  display: none;
+  width: var(--width);
+  height: var(--height); }
+  .sprite > img {
+    position: absolute;
+    transform: translateZ(0);
+    top: 0;
+    left: 0;
+    animation: calc(var(--frames) / var(--fps) * 1s) var(--keyframes) infinite step-end; }
+
+input#s1:checked ~ label:nth-of-type(1) {
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.1) inset, 0 0 0 200px rgba(0, 0, 0, 0.2) inset; }
+
+input#s1:checked ~ .sprites .sprite:nth-child(1) {
+  display: block; }
+
+input#s2:checked ~ label:nth-of-type(2) {
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.1) inset, 0 0 0 200px rgba(0, 0, 0, 0.2) inset; }
+
+input#s2:checked ~ .sprites .sprite:nth-child(2) {
+  display: block; }
+
+input#s3:checked ~ label:nth-of-type(3) {
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.1) inset, 0 0 0 200px rgba(0, 0, 0, 0.2) inset; }
+
+input#s3:checked ~ .sprites .sprite:nth-child(3) {
+  display: block; }
+
+input#s4:checked ~ label:nth-of-type(4) {
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.1) inset, 0 0 0 200px rgba(0, 0, 0, 0.2) inset; }
+
+input#s4:checked ~ .sprites .sprite:nth-child(4) {
+  display: block; }
+
+label {
+  display: inline-block;
+  background: #15B0ED;
+  color: #FFF;
+  padding: .6em 1em;
+  margin: .5em;
+  border-radius: 5px;
+  box-shadow: 0 -4px rgba(0, 0, 0, 0.2) inset;
+  cursor: pointer; }
+  label:hover {
+    background: #34BDEF; }
+
+.carSprite {
+  --width: 708px;
+  --height: 361px;
+  --frames: 40;
+  --keyframes: carSpriteAnim; }
+
+.mickeySprite {
+  --width: 256px;
+  --height: 308px;
+  --frames: 40;
+  --keyframes: mickeySpriteAnim; }
+
+.catSprite {
+  --width: 408px;
+  --height: 199px;
+  --frames: 13;
+  --keyframes: catSpriteAnim;
+  margin: 0;
+  right: 0;
+  left: auto;
+  top: auto;
+  bottom: -2%;
+  animation: 1.5s catSprint infinite linear; }
+
+@keyframes carSpriteAnim {
+  2.5% {
+    top: 0px;
+    left: 0px; }
+  5% {
+    top: 0px;
+    left: -708px; }
+  7.5% {
+    top: 0px;
+    left: -1416px; }
+  10% {
+    top: 0px;
+    left: -2124px; }
+  12.5% {
+    top: 0px;
+    left: -2832px; }
+  15% {
+    top: 0px;
+    left: -3540px; }
+  17.5% {
+    top: 0px;
+    left: -4248px; }
+  20% {
+    top: 0px;
+    left: -4956px; }
+  22.5% {
+    top: 0px;
+    left: -5664px; }
+  25% {
+    top: 0px;
+    left: -6372px; }
+  27.5% {
+    top: -361px;
+    left: 0px; }
+  30% {
+    top: -361px;
+    left: -708px; }
+  32.5% {
+    top: -361px;
+    left: -1416px; }
+  35% {
+    top: -361px;
+    left: -2124px; }
+  37.5% {
+    top: -361px;
+    left: -2832px; }
+  40% {
+    top: -361px;
+    left: -3540px; }
+  42.5% {
+    top: -361px;
+    left: -4248px; }
+  45% {
+    top: -361px;
+    left: -4956px; }
+  47.5% {
+    top: -361px;
+    left: -5664px; }
+  50% {
+    top: -361px;
+    left: -6372px; }
+  52.5% {
+    top: -722px;
+    left: 0px; }
+  55% {
+    top: -722px;
+    left: -708px; }
+  57.5% {
+    top: -722px;
+    left: -1416px; }
+  60% {
+    top: -722px;
+    left: -2124px; }
+  62.5% {
+    top: -722px;
+    left: -2832px; }
+  65% {
+    top: -722px;
+    left: -3540px; }
+  67.5% {
+    top: -722px;
+    left: -4248px; }
+  70% {
+    top: -722px;
+    left: -4956px; }
+  72.5% {
+    top: -722px;
+    left: -5664px; }
+  75% {
+    top: -722px;
+    left: -6372px; }
+  77.5% {
+    top: -1083px;
+    left: 0px; }
+  80% {
+    top: -1083px;
+    left: -708px; }
+  82.5% {
+    top: -1083px;
+    left: -1416px; }
+  85% {
+    top: -1083px;
+    left: -2124px; }
+  87.5% {
+    top: -1083px;
+    left: -2832px; }
+  90% {
+    top: -1083px;
+    left: -3540px; }
+  92.5% {
+    top: -1083px;
+    left: -4248px; }
+  95% {
+    top: -1083px;
+    left: -4956px; }
+  97.5% {
+    top: -1083px;
+    left: -5664px; }
+  100% {
+    top: -1083px;
+    left: -6372px; } }
+
+@keyframes mickeySpriteAnim {
+  2.5% {
+    top: 0px;
+    left: 0px; }
+  5% {
+    top: 0px;
+    left: -256px; }
+  7.5% {
+    top: 0px;
+    left: -512px; }
+  10% {
+    top: 0px;
+    left: -768px; }
+  12.5% {
+    top: 0px;
+    left: -1024px; }
+  15% {
+    top: 0px;
+    left: -1280px; }
+  17.5% {
+    top: 0px;
+    left: -1536px; }
+  20% {
+    top: 0px;
+    left: -1792px; }
+  22.5% {
+    top: -308px;
+    left: 0px; }
+  25% {
+    top: -308px;
+    left: -256px; }
+  27.5% {
+    top: -308px;
+    left: -512px; }
+  30% {
+    top: -308px;
+    left: -768px; }
+  32.5% {
+    top: -308px;
+    left: -1024px; }
+  35% {
+    top: -308px;
+    left: -1280px; }
+  37.5% {
+    top: -308px;
+    left: -1536px; }
+  40% {
+    top: -308px;
+    left: -1792px; }
+  42.5% {
+    top: -616px;
+    left: 0px; }
+  45% {
+    top: -616px;
+    left: -256px; }
+  47.5% {
+    top: -616px;
+    left: -512px; }
+  50% {
+    top: -616px;
+    left: -768px; }
+  52.5% {
+    top: -616px;
+    left: -1024px; }
+  55% {
+    top: -616px;
+    left: -1280px; }
+  57.5% {
+    top: -616px;
+    left: -1536px; }
+  60% {
+    top: -616px;
+    left: -1792px; }
+  62.5% {
+    top: -924px;
+    left: 0px; }
+  65% {
+    top: -924px;
+    left: -256px; }
+  67.5% {
+    top: -924px;
+    left: -512px; }
+  70% {
+    top: -924px;
+    left: -768px; }
+  72.5% {
+    top: -924px;
+    left: -1024px; }
+  75% {
+    top: -924px;
+    left: -1280px; }
+  77.5% {
+    top: -924px;
+    left: -1536px; }
+  80% {
+    top: -924px;
+    left: -1792px; }
+  82.5% {
+    top: -1232px;
+    left: 0px; }
+  85% {
+    top: -1232px;
+    left: -256px; }
+  87.5% {
+    top: -1232px;
+    left: -512px; }
+  90% {
+    top: -1232px;
+    left: -768px; }
+  92.5% {
+    top: -1232px;
+    left: -1024px; }
+  95% {
+    top: -1232px;
+    left: -1280px; }
+  97.5% {
+    top: -1232px;
+    left: -1536px; }
+  100% {
+    top: -1232px;
+    left: -1792px; } }
+
+@keyframes catSpriteAnim {
+  7.69231% {
+    top: 0px;
+    left: 0px; }
+  15.38462% {
+    top: -199px;
+    left: 0px; }
+  23.07692% {
+    top: -398px;
+    left: 0px; }
+  30.76923% {
+    top: -597px;
+    left: 0px; }
+  38.46154% {
+    top: -796px;
+    left: 0px; }
+  46.15385% {
+    top: -995px;
+    left: 0px; }
+  53.84615% {
+    top: -1194px;
+    left: 0px; }
+  61.53846% {
+    top: -1393px;
+    left: 0px; }
+  69.23077% {
+    top: -1592px;
+    left: 0px; }
+  76.92308% {
+    top: -1791px;
+    left: 0px; }
+  84.61538% {
+    top: -1990px;
+    left: 0px; }
+  92.30769% {
+    top: -2189px;
+    left: 0px; }
+  100% {
+    top: -2388px;
+    left: 0px; } }
+
+@keyframes catSprint {
+  0% {
+    right: 0;
+    transform: translateX(100%); }
+  70%, 100% {
+    right: 100%;
+    transform: none; } }
