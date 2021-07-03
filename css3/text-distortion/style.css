@@ -91,11 +91,11 @@ button {
     opacity: 0;
     background: linear-gradient(to right, red, #ff8000, #ffff00, #009740, #4040ff, #a000c0);
     -webkit-background-clip: text;
-    filter: blur(2px);
+    filter: blur(1px) url('#smudged');
 }
 
 .distort button:hover::before {
-    opacity: 0.8;
+    opacity: 1;
     transform: translateY(140px) scale(1,3);
     transition: 1s ease-out;
     
