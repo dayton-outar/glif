@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 500px;
+}
+
+.frame {
+    position: absolute;
+    border: 5px solid #000;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url('images/town.png');
+    background-size: 50%;
+    background-position: 10% 90%;
+    background-repeat: repeat-x;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.7);
+    transition: 1s;
+}
+
+.clown {
+    position: absolute;
+    height: 380px;
+    top: 10px;
+    right: 150px;
+}
+
+.balloon {
+    position: absolute;
+    pointer-events: none; /** sets under what circumstances (if any) a particular graphic element can become the target of pointer events: fill, stroke, all, none, auto, visible, visibleFill, visibleStroke */
+    transition: 1s;
+}
+
+.balloon-1 {
+    height: 300px;
+    left: 80px;
+    bottom: 0;
+}
+
+.balloon-2 {
+    height: 200px;
+    right: 285px;
+    top: 10px;
+}
+
+.balloon-3 {
+    height: 250px;
+    top: 40px;
+    right: 5px;
+}
+
+.wrapper:hover .frame {
+    background-position: -10% 90%;
+    transform: rotateY(25deg) rotateZ(-15deg) translateZ(20px);
+    box-shadow: -35px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper:hover .balloon-1 {
+    transform: translateX(15px) translateY(-25px) rotate(-10deg) scale(0.9);
+}
+
+.wrapper:hover .balloon-2 {
+    transform: translateX(-45px) translateY(-25px) rotate(-10deg) scale(1.1);
+}
+
+.wrapper:hover .balloon-3 {
+    transform: translateX(-30px) translateY(-25px) rotate(-10deg) scale(1.1);
+}
