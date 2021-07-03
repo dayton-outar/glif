@@ -42,3 +42,8 @@ Game for preloader. Game uses camera to get gestures to control media.
 3. [Visual Web Development (2021)](https://www.youtube.com/playlist?list=PLB0Tybl0UNfb3hTHPfEIg1SPw_-Ca9iIw)
 4. [25 VS Code Productivity Tips and Speed Hacks](https://youtu.be/ifTF3ags0XI)
 5. [CSS Animation Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iGYgmEd2dm3zAKzyCGDtM5) - The Net Ninja
+6. [CSS Flexbox Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i3FXJSUfmsNOx8E7u6UuhG) - The Net Ninja
+7. [CSS Positioning Tutorials](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hudKGi5o5UiWuTAGbxiLTh) - The Net Ninja
+8. [CSS Grid Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9itC4TxYMzFCfveyutyPOCY) - The Net Ninja
+9. [Mobile-First Responsive Build (with CSS Grid)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4) - The Net Ninja
+10. [SASS Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iEwigam3gTjU_7IA3W2WZA) - The Net Ninja
