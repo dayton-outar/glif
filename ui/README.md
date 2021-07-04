@@ -1,0 +1,35 @@
+
+
+## Further Reading
+
+1. [Donut math: how donut.c works](https://www.a1k0n.net/2011/07/20/donut-math.html)
+2. [Game Developer Studio](https://www.gamedeveloperstudio.com/index.php)
+3. [Open Game Art](https://opengameart.org/)
+4. [What is a Fractal](https://iternal.us/what-is-a-fractal/)
+5. [Animated CSS loaders](https://dev.to/j3nnning/animated-css-loaders-2km4)
+6. [Remake of Flappy Bird](https://github.com/D4rk1n/JS-Flappy-Bird)
+7. [Animate.css](https://animate.style/)
+8. [Manipulating video using canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
+
+## Tutorial Videos
+
+1. [Franks Laboratory: Creative Coding with Vanilla JavaScript and HTML Canvas](https://www.youtube.com/playlist?list=PLYElE_rzEw_siuo-kkHh5h7Sk--6IPYNh)
+2. [Franks Laboratory: CSS3 Experiments](https://www.youtube.com/playlist?list=PLYElE_rzEw_t2O2DvfopIoq-diTgefVzV)
+3. [Visual Web Development (2021)](https://www.youtube.com/playlist?list=PLB0Tybl0UNfb3hTHPfEIg1SPw_-Ca9iIw)
+4. [25 VS Code Productivity Tips and Speed Hacks](https://youtu.be/ifTF3ags0XI)
+5. [CSS Animation Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iGYgmEd2dm3zAKzyCGDtM5) - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
+6. [CSS Flexbox Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i3FXJSUfmsNOx8E7u6UuhG) - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
+7. [CSS Positioning Tutorials](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hudKGi5o5UiWuTAGbxiLTh) - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
+8. [CSS Grid Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9itC4TxYMzFCfveyutyPOCY) - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
+9. [Mobile-First Responsive Build (with CSS Grid)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4) - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
+10. [SASS Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iEwigam3gTjU_7IA3W2WZA) - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
+11. [Full Modern React Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d) - [The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d)
+12. [Redux Tutorial (with Redux Toolkit)](https://youtu.be/iBUJVy8phqw)
+13. [Build a Photo Gallery With React & Firebase](https://youtu.be/vUe91uOx7R0)
+14. [React Query Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jpi7Ptjl5b50p9gLjOFani) - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
+15. [React JS Crash Course (2019)](https://youtu.be/sBws8MSXN7A) - [Traversy Media](https://www.youtube.com/c/TraversyMedia)
+16. [React Context & Hooks Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hNokByJilPg5g9m2APUePI) - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
+17. [Complete React Tutorial (with Redux)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG) - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
+18. [Cordova](https://www.youtube.com/playlist?list=PLyuRouwmQCjkLnfGRHMosenaxPq9PqH0n) - [Steve Griffith](https://www.youtube.com/c/SteveGriffith-Prof3ssorSt3v3)
+19. [GraphQL Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f) - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
+20. [React JS Roadmap for Developers](https://youtu.be/Ip_jOSpThSg)
