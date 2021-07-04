@@ -1,0 +1,86 @@
+.cards {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #6bc4cd;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card {
+    height: 50vh;
+    border-radius: 3px;
+    box-shadow: 20px 40px 33px rgba(0,0,0,0.3);
+    padding: 2rem;
+    width: 35vh;
+}
+
+.image {
+    width: 35vh;
+    height: 20vh;
+    background-image: url('images/beach.jpg');
+    background-size: cover;
+    background-position: center center;
+    box-shadow:  10px 15px 5px 6px #3891b4;
+    border-radius: 34% 66% 68% 32% / 41% 58% 42% 59%; /** Got from https://9elements.github.io/fancy-border-radius/ */
+}
+
+.one {
+    border-radius: 34% 66% 76% 24% / 41% 27% 73% 59% ;
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/** Got from https://animista.net/play/attention/jello */
+@keyframes jello {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+              transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+              transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+              transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+              transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+              transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+  }
+  
