@@ -17,7 +17,11 @@ function drawTree(startX, startY, len, angle, branchWidth, color1, color2) {
     ctx.rotate(angle * Math.PI / 180);
     ctx.moveTo(0,0);
     //ctx.lineTo(0, -len);
-    ctx.bezierCurveTo(10, -len/2, 10, -len/2, 0, -len);
+    if (angle > 0) {
+        ctx.bezierCurveTo(10, -len/2, 10, -len/2, 0, -len);
+    } else {
+        ctx.bezierCurveTo(10, -len/2, -10, -len/2, 0, -len);
+    }    
     ctx.stroke();
 
     if (len < 15) {
@@ -29,9 +33,10 @@ function drawTree(startX, startY, len, angle, branchWidth, color1, color2) {
         ctx.restore(); // Interesting to see what happens when this line is commented
         return;
     }
+    curve = (Math.random() * 10) + 10;
 
-    drawTree(0, -len, len * 0.75, angle + 7, branchWidth * 0.6);
-    drawTree(0, -len, len * 0.75, angle - 7, branchWidth * 0.6);
+    drawTree(0, -len, len * 0.75, angle + curve, branchWidth * 0.6);
+    drawTree(0, -len, len * 0.75, angle - curve, branchWidth * 0.6);
 
     ctx.restore();
 }
