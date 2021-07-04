@@ -28,9 +28,9 @@ function drawTree(startX, startY, len, angle, branchWidth, color1, color2) {
     curve2 = (Math.random() * 20) + 2;
 
     if (angle > 0) {
-        ctx.bezierCurveTo(curve * 3, -len/2, curve2, -len/2, 0, -len);
+        ctx.bezierCurveTo(curve * 3, -len/2, curve, -len/2, 0, -len);
     } else {
-        ctx.bezierCurveTo(curve, -len/2, -curve2, -len/2, 0, -len);
+        ctx.bezierCurveTo(curve, -len/2, -curve, -len/2, 0, -len);
     }    
     ctx.stroke();
 
