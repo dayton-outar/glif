@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 var ctx = canvas.getContext('2d');
 var curve = 10;
 var curve = 0;
-var threshold = 10;
+var threshold = 5;
 
 function drawTree(startX, startY, len, angle, branchWidth, color1, color2) {
     ctx.beginPath();
@@ -24,8 +24,8 @@ function drawTree(startX, startY, len, angle, branchWidth, color1, color2) {
     ctx.moveTo(0,0);
     //ctx.lineTo(0, -len);
     
-    curve = (Math.random() * 30) + 2;
-    curve2 = (Math.random() * 20) + 2;
+    curve = (Math.random() * 20) + 2;
+    curve2 = (Math.random() * 10) + 2;
 
     if (angle > 0) {
         ctx.bezierCurveTo(curve * 3, -len/2, curve, -len/2, 0, -len);
