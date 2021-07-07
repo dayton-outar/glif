@@ -10,6 +10,7 @@
 6. [Remake of Flappy Bird](https://github.com/D4rk1n/JS-Flappy-Bird)
 7. [Animate.css](https://animate.style/)
 8. [Manipulating video using canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
+9. [particles.js](https://vincentgarreau.com/particles.js/)
 
 ## Tutorial Videos
 
