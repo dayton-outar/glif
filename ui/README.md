@@ -40,3 +40,6 @@
 24. [Responsive Ecommerce Product Card Design using Vanilla tilt.js](https://youtu.be/W3pQXyjTKps) - [Online Tutorials](https://www.youtube.com/c/OnlineTutorials4Designers/)
 25. [CSS Neumorphism Working Analog Clock UI Design](https://youtu.be/weZFfrjF-k4) - [Online Tutorials](https://www.youtube.com/c/OnlineTutorials4Designers/)
 26. [CSS Responsive Card Hover Effects](https://youtu.be/VKcbZGW1woc) - [Online Tutorials](https://www.youtube.com/c/OnlineTutorials4Designers/)
+27. [10 modern layouts in 1 line of CSS](https://youtu.be/qm0IfG1GyZU) - [Google Chrome Developers](https://www.youtube.com/channel/UCnUYZLuoy1rq1aVMwx4aTzw)
+28. [React Material-UI Themes: Customize Material Components for your Project](https://youtu.be/bDkB3LoQKxs)
+29. [Top 10 VS Code Updates You Don't Know About!! (2020)](https://youtu.be/WHBQ1szkhtI)
