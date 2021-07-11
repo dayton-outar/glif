@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 300px;
+    position: relative;
+    margin: 80px auto;
+}
+
+form {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 14px;
+    padding: 60px 0;
+}
+
+h1 {
+    -webkit-text-stroke: 2px black;
+    color: white;
+    font-size: 80px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: -69px;
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    top: 71px;
+    left: 15px;
+    height: 50px;
+    width: 90%;
+    background-color: white;
+}
+
+h1::after {
+    content: 'g';
+    position: absolute;
+    /* top: 3px; */
+    left: 138px;
+    width: 50px;
+    height: 100px;
+    color: black;
+    clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0% 100%);
+}

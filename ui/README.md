@@ -37,3 +37,6 @@
 21. [GraphQL Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f) - [The Net Ninja](https://www.youtube.com/c/TheNetNinja)
 22. [React JS Roadmap for Developers](https://youtu.be/Ip_jOSpThSg)
 23. [Three.js Tutorial for Beginners](https://www.youtube.com/playlist?list=PLbu98QxRH81KkLTN00OXhD8Y-pRVgTCnM) - [Red Stapler](https://www.youtube.com/c/RedStapler_channel)
+24. [Responsive Ecommerce Product Card Design using Vanilla tilt.js](https://youtu.be/W3pQXyjTKps) - [Online Tutorials](https://www.youtube.com/c/OnlineTutorials4Designers/)
+25. [CSS Neumorphism Working Analog Clock UI Design](https://youtu.be/weZFfrjF-k4) - [Online Tutorials](https://www.youtube.com/c/OnlineTutorials4Designers/)
+26. [CSS Responsive Card Hover Effects](https://youtu.be/VKcbZGW1woc) - [Online Tutorials](https://www.youtube.com/c/OnlineTutorials4Designers/)
