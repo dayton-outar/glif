@@ -22,8 +22,8 @@ function drawCursor() {
 }
 
 window.addEventListener('mousemove', function(e) {
-    mouse.x = event.x;
-    mouse.y = event.y;
+    mouse.x = e.x;
+    mouse.y = e.y;
 });
 
 window.addEventListener('resize', function() {
