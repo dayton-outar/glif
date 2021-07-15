@@ -17,3 +17,5 @@
 10. [GraphQL Tutorial - Full Guide To Making Queries (2018)](https://youtu.be/omSpI1Nu_pg) - [The Dumbfounds](https://www.youtube.com/channel/UC33uwXXDrI5TxG4IXnjS28g)
 11. [GraphQL Python Tutorial With Graphene (+ Django Integration)](https://youtu.be/-0uxxht4mko) - [The Dumbfounds](https://www.youtube.com/channel/UC33uwXXDrI5TxG4IXnjS28g)
 12. [Python Face Recognition Tutorial](https://youtu.be/QSTnwsZj2yc)
+13. [Deep Learning With Tensorflow 2.0, Keras and Python](https://www.youtube.com/playlist?list=PLeo1K3hjS3uu7CxAacxVndI4bE_o3BDtO)
+14. [C++](https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
