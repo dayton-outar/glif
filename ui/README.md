@@ -11,6 +11,7 @@
 7. [Animate.css](https://animate.style/)
 8. [Manipulating video using canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
 9. [particles.js](https://vincentgarreau.com/particles.js/)
+10. [fullPage.js](https://alvarotrigo.com/fullPage/)
 
 ## Tutorial Videos
 
