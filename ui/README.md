@@ -44,3 +44,4 @@
 27. [10 modern layouts in 1 line of CSS](https://youtu.be/qm0IfG1GyZU) - [Google Chrome Developers](https://www.youtube.com/channel/UCnUYZLuoy1rq1aVMwx4aTzw)
 28. [React Material-UI Themes: Customize Material Components for your Project](https://youtu.be/bDkB3LoQKxs)
 29. [Top 10 VS Code Updates You Don't Know About!! (2020)](https://youtu.be/WHBQ1szkhtI)
+30. [Full Page Scrolling Effects | Pure CSS Scroll Effects](https://youtu.be/vHr3Li0-SP0)
