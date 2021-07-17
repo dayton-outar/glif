@@ -15,6 +15,18 @@ window.addEventListener('mousemove', function(event) {
     mouse.y = event.y;
 });
 
+window.addEventListener('mouseout', function(event) {
+    mouse.x = undefined;
+    mouse.y = undefined;
+});
+
+window.addEventListener('resize', function(event) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    mouse.radius = ((canvas.height / 80) * (canvas.height / 80));
+    init();
+});
+
 class Particle {
     constructor(x, y, directionX, directionY, size, color) {
         this.x = x;
@@ -88,6 +100,26 @@ function init() {
     }
 }
 
+function connect() {
+    let opacityValue = 1;
+    for (let a = 0; a < particles.length; a++) {
+        for (let b = a; b < particles.length; b++) {
+            let cdx = (particles[a].x - particles[b].x);
+            let cdy = (particles[a].y - particles[b].y);
+            let distance = ((cdx * cdx) + (cdy * cdy));
+            if (distance < (canvas.width / 7 )* (canvas.height / 7)) {
+                opacityValue = 1 - (distance / 20000);
+                ctx.strokeStyle = `rgba(140, 85, 31, ${opacityValue})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(particles[a].x, particles[a].y);
+                ctx.lineTo(particles[b].x, particles[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
 // Animate
 function animate() {
     requestAnimationFrame(animate);
@@ -96,6 +128,7 @@ function animate() {
     for (let i = 0; i < particles.length; i++) {
         particles[i].update();
     }
+    connect();
 }
 
 init();
