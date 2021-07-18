@@ -7,11 +7,12 @@ canvas.height = window.innerHeight;
 let adjustX = 20;
 let adjustY = 20;
 let particles = [];
+ctx.lineWidth = 3;
 
 let mouse = {
     x: undefined,
     y: undefined,
-    radius: 250
+    radius: 150
 }
 
 window.addEventListener('mousemove', function(event) {
@@ -31,13 +32,43 @@ class Particle {
         this.size = 3;
         this.baseX = this.x;
         this.baseY = this.y;
-        this.density = (Math.random() * 30) + 1;
+        this.density = (Math.random() * 8) + 1;
+        this.distance;
     }
 
     draw() {
-        ctx.fillStyle = '#fff';
+        ctx.fillStyle = `rgba(255, 255, 255, 0.8)`;
+        ctx.strokeStyle = `rgba(34, 147, 214, 1)`;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+
+        if (this.distance < mouse.radius - 5) {
+            this.size = 5;
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.closePath();
+            ctx.beginPath();
+            ctx.arc(this.x - 3, this.y - 3, (this.size / 2.5), 0, Math.PI * 2);
+            ctx.arc(this.x + 7, this.y + 7, (this.size / 3.5), 0, Math.PI * 2);
+        }
+        else if (this.distance <= mouse.radius)
+        {
+            this.size = 10;
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.closePath();
+            ctx.beginPath();
+            ctx.arc(this.x - 2, this.y - 2, (this.size / 3), 0, Math.PI * 2);
+        } 
+        else 
+        {
+            this.size = 15;
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.closePath();
+            ctx.beginPath();
+            ctx.arc(this.x - 1, this.y - 1, (this.size / 3), 0, Math.PI * 2);
+        }
+        
         ctx.closePath();
         ctx.fill();
     }
@@ -47,6 +78,7 @@ class Particle {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx*dx + dy*dy);
+        this.distance = distance;
         let forceDirectionX = dx / distance;
         let forceDirectionY = dy / distance;
 
@@ -97,7 +129,7 @@ function animate() {
     for (let i = 0; i < particles.length; i++) {
         particles[i].update();
     }
-    connect();
+    //connect();
 
     requestAnimationFrame(animate);    
 }
@@ -111,7 +143,7 @@ function connect() {
             let cdy = (particles[a].y - particles[b].y);
             let distance = ((cdx * cdx) + (cdy * cdy));
             if (distance < 300) {
-                opacityValue = 0.5;
+                opacityValue = 0.8;
                 ctx.strokeStyle = `rgba(255, 255, 255, ${opacityValue})`;
                 ctx.lineWidth = 1;
                 ctx.beginPath();
