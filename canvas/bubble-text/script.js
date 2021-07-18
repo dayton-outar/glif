@@ -97,6 +97,28 @@ function animate() {
     for (let i = 0; i < particles.length; i++) {
         particles[i].update();
     }
-    requestAnimationFrame(animate);
+    connect();
+
+    requestAnimationFrame(animate);    
 }
 animate();
+
+function connect() {
+    let opacityValue = 1;
+    for (let a = 0; a < particles.length; a++) {
+        for (let b = a; b < particles.length; b++) {
+            let cdx = (particles[a].x - particles[b].x);
+            let cdy = (particles[a].y - particles[b].y);
+            let distance = ((cdx * cdx) + (cdy * cdy));
+            if (distance < 300) {
+                opacityValue = 0.5;
+                ctx.strokeStyle = `rgba(255, 255, 255, ${opacityValue})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(particles[a].x, particles[a].y);
+                ctx.lineTo(particles[b].x, particles[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
