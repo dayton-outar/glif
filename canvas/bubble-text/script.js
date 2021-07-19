@@ -20,6 +20,13 @@ window.addEventListener('mousemove', function(event) {
     mouse.y = event.y;
 });
 
+window.addEventListener('resize', function(event) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    mouse.radius = ((canvas.height / 80) * (canvas.height / 80));
+    init();
+});
+
 ctx.fillStyle = '#fff';
 ctx.font = '30px Verdana';
 ctx.fillText('Boombang!', 0, 30);
@@ -65,8 +72,8 @@ class Particle {
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.stroke();
             ctx.closePath();
-            ctx.beginPath();
-            ctx.arc(this.x - 1, this.y - 1, (this.size / 3), 0, Math.PI * 2);
+            //ctx.beginPath();
+            //ctx.arc(this.x - 1, this.y - 1, (this.size / 3), 0, Math.PI * 2);
         }
         
         ctx.closePath();
