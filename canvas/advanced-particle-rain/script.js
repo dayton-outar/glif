@@ -7,6 +7,12 @@ cvImage.addEventListener('load', function() {
 
     canvas.width = 675;
     canvas.height = 1000;
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0.2, 'red');
+    gradient.addColorStop(0.4, 'yellow');
+    gradient.addColorStop(0.6, 'green');
+    gradient.addColorStop(0.8, 'blue');
+    gradient.addColorStop(0.9, 'violet');
 
     ctx.drawImage(cvImage, 0, 0, canvas.width, canvas.height);
     const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height); // Returns array where R G B A is index of groups of 4. So i[0] - red, i[1] - green, i[2] - blue, i[3] - alpha
@@ -14,6 +20,7 @@ cvImage.addEventListener('load', function() {
 
     let particles = [];
     const numberOfParticles = 5000;
+    const letters = ['M', 'A', 'N', 'D', 'A', 'L', 'O', 'R', 'I', 'A', 'N'];
 
     let mappedImage = [];
     for (let y = 0; y < canvas.height; y++) {
@@ -48,16 +55,24 @@ cvImage.addEventListener('load', function() {
             this.size = Math.random() * 1.5 + 1;
             this.position1 = Math.floor(this.y);
             this.position2 = Math.floor(this.x);
+            this.angle = 0;
+            this.letter = letters[Math.floor(Math.random() * letters.length)];
+            this.random = Math.random();
         }
 
         update() {
             this.position1 = Math.floor(this.y);
             this.position2 = Math.floor(this.x);
-            this.speed = mappedImage[this.position1][this.position2][0];
+            if (mappedImage[this.position1] && mappedImage[this.position1][this.position2]) {
+                this.speed = mappedImage[this.position1][this.position2][0];    
+            }            
             let movement = (2.5 - this.speed) + this.velocity;
+            this.angle += this.speed / 20;
+            this.size = this.speed / 1.5;
+            //ctx.globalCompositeOperation = 'luminosity';
 
-            this.y += movement;
-            this.x += movement;
+            this.y += movement + Math.sin(this.angle) * 3;
+            this.x += movement + Math.cos(this.angle) * 3;
             if (this.y >= canvas.height) {
                 this.y = 0;
                 this.x = Math.random() * canvas.width;
@@ -70,8 +85,16 @@ cvImage.addEventListener('load', function() {
 
         draw() {
             ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = mappedImage[this.position1][this.position2][1];
+            //ctx.fillStyle = gradient;
+            if (mappedImage[this.position1] && mappedImage[this.position1][this.position2]) {
+                ctx.fillStyle = mappedImage[this.position1][this.position2][1];
+                ctx.strokeStyle = mappedImage[this.position1][this.position2][1];
+            }
+            if (this.random < 0.1) {
+                ctx.fillText(this.letter, this.x, this.y);
+            } else {
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            }            
             ctx.fill();
             ctx.closePath();
         }
@@ -91,7 +114,8 @@ cvImage.addEventListener('load', function() {
 
         for (let i = 0; i < particles.length; i++) {
             particles[i].update();
-            ctx.globalAlpha = particles[i].speed * 0.5;
+            //ctx.globalAlpha = particles[i].speed * 0.5;
+            ctx.globalAlpha = 1;
             particles[i].draw();
         }
         requestAnimationFrame(animate);
