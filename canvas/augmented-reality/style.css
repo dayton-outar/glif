@@ -1,0 +1,37 @@
+body{
+	padding:0px;
+	margin:0px;
+	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,151,255,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+canvas{
+	background:white;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:80vmin;
+	height:80vmin;
+}
+#overlay{ 
+	background:rgba(0,0,0,0.7);
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:70vmin;
+	height:70vmin;
+	
+	padding:1vmin;
+	margin:0px;
+	color: white;
+	border-radius:2vmin;
+	
+	font-size:3.3vmin;
+}
+
+a{
+	color:white;
+}

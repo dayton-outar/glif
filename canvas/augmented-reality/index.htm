@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augmented Reality</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onload="main()">
+    <canvas id="canvasA" style="margin-left:-21vmin"></canvas>
+    <canvas id="canvasPiano" style="margin-left:-21vmin;background:none;"></canvas>
+    <canvas id="canvasB" style="margin-left:-21vmin;background:none;"></canvas>
+
+    <canvas id="canvasHitTest" style="margin-left:41vmin;width:38vmin;height:38vmin;margin-top:21vmin"></canvas>
+
+    <canvas id="canvasBg" onclick="captureBackground()"
+        style="margin-left:41vmin;width:38vmin;height:38vmin;margin-top:-21vmin;cursor:pointer;"></canvas>
+
+
+    <pre id="overlay" onclick="removeOverlay()" style="margin-left:-21vmin">
+<b>Augmented Reality Piano (Part 1)</b>
+
+We learned to layer the canvases
+so that we have an AR Piano between
+the user's hands and the background.
+
+We learned to detect the difference
+between two images and hide similar
+pixels by changing their alpha.
+
+We learned how to enhance the button
+handler developed in lecture 4 to 
+support pixel based hit testing.
+
+We learned to make a first variant of 
+the AR Piano :-)
+
+<span style="color:orange">Full course <a target="_blank" href="https://www.youtube.com/playlist?list=PLB0Tybl0UNfb3hTHPfEIg1SPw_-Ca9iIw">here</a> on YouTube (ongoing).</span>
+
+    </pre>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
