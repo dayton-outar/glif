@@ -13,6 +13,7 @@
 9. [particles.js](https://vincentgarreau.com/particles.js/)
 10. [fullPage.js](https://alvarotrigo.com/fullPage/)
 11. [Code Pen: Flowing Image](https://codepen.io/Mamboleoo/pen/GRJKoBw)
+12. [Using the Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 
 ## Tutorial Videos
 
