@@ -25,3 +25,9 @@ canvas {
     color: white;
     z-index: 100;
 }
+
+#audioFile {
+    width: 50%;
+    margin-top: 50px auto;
+    display: block;
+}
