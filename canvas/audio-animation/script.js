@@ -26,15 +26,12 @@ container.addEventListener('click', function(){
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
 
-    const barWidth = 15;
-    let barHeight;
     let x;
-
     function animate(){
         x = 0;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         analyser.getByteFrequencyData(dataArray);
-        drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray);
+        drawVisualiser(bufferLength, dataArray);
         requestAnimationFrame(animate);
     }
     animate();
@@ -58,23 +55,20 @@ file.addEventListener('change', function(){
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
 
-    const barWidth = 15;
-    let barHeight;
     let x;
-
     function animate(){
         x = 0;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         analyser.getByteFrequencyData(dataArray);
-        drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray);
+        drawVisualiser(bufferLength, dataArray);
         requestAnimationFrame(animate);
     }
     animate();
 });
 
-function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray){
+function drawVisualiser(bufferLength, dataArray){
     for (let i = 0; i < bufferLength; i++){
-        barHeight = dataArray[i] * 1.2;
+        const barHeight = dataArray[i] * 1.2;
         ctx.save();
         ctx.translate(canvas.width/2, canvas.height/2);
         ctx.rotate(i * Math.PI * 4/ bufferLength);
