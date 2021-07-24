@@ -80,8 +80,8 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray){
         ctx.rotate(i * Math.PI * 4/ bufferLength);
         const hue = 240 + i * 1.5;
         ctx.lineWidth = barHeight/10;
-        ctx.strokeStyle = 'hsl(' + hue + ',100%, 50%)';
-        ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';;
+        ctx.strokeStyle = `hsl(${hue},100%, 50%)`;
+        ctx.fillStyle = `hsl(${hue},100%, 50%)`;
         ctx.beginPath();
         ctx.moveTo(0,0);
         ctx.lineTo(0, barHeight);
