@@ -19,3 +19,8 @@
 12. [Python Face Recognition Tutorial](https://youtu.be/QSTnwsZj2yc)
 13. [Deep Learning With Tensorflow 2.0, Keras and Python](https://www.youtube.com/playlist?list=PLeo1K3hjS3uu7CxAacxVndI4bE_o3BDtO)
 14. [C++](https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
+15. [Modern C++](https://www.youtube.com/playlist?list=PL5jc9xFGsL8FWtnZBeTqZBbniyw0uHyaH)
+16. [Advanced C++](https://www.youtube.com/playlist?list=PLE28375D4AC946CC3)
+17. [C++14 Features](https://www.youtube.com/playlist?list=PLk6CEY9XxSIAloDTEauOy_ss9fEqSP4JR)
+18. [C++ Weekly C++17](https://www.youtube.com/playlist?list=PLs3KjaCtOwSbcWD1LlHS7w5AVM0tCAD86)
+19. [C++ Weekly C++20](https://www.youtube.com/playlist?list=PLs3KjaCtOwSYdpfm74DYyd1kOXEhCd1Rv)
