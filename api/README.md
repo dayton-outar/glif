@@ -24,3 +24,4 @@
 17. [C++14 Features](https://www.youtube.com/playlist?list=PLk6CEY9XxSIAloDTEauOy_ss9fEqSP4JR)
 18. [C++ Weekly C++17](https://www.youtube.com/playlist?list=PLs3KjaCtOwSbcWD1LlHS7w5AVM0tCAD86)
 19. [C++ Weekly C++20](https://www.youtube.com/playlist?list=PLs3KjaCtOwSYdpfm74DYyd1kOXEhCd1Rv)
+20. [Concurrent Programming with C++ 11](https://www.youtube.com/playlist?list=PL5jc9xFGsL8E12so1wlMS0r0hTQoJL74M)
