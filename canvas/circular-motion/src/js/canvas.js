@@ -48,6 +48,15 @@ class Particle {
     this.radians = Math.random() * Math.PI * 2
     this.velocity = 0.05
     this.distance = randomIntegers(80, 120)
+    // // For Cardiod
+    // this.distanceFromCenter = {
+    //   x: distance,
+    //   y: distance
+    // };
+    // this.prevDistanceFromCenter = {
+    //   x: distance,
+    //   y: distance
+    // };
     this.lastMouse = {
       x,
       y
@@ -79,6 +88,14 @@ class Particle {
     // Circular Motion
     this.x = this.lastMouse.x + Math.cos(this.radians) * this.distance
     this.y = this.lastMouse.y + Math.sin(this.radians) * this.distance
+
+    // // Cardiod
+    // this.distanceFromCenter.x = this.prevDistanceFromCenter.x + Math.sin(this.radians) * 100;
+    // this.distanceFromCenter.y = this.prevDistanceFromCenter.x + Math.sin(this.radians) * 100;
+
+    // this.x = this.lastMouse.x + Math.cos(this.radians) * this.distanceFromCenter.x;
+    // this.y = this.lastMouse.y + Math.sin(this.radians) * this.distanceFromCenter.y;
+
     this.draw(lastPoint)
   }
 }
