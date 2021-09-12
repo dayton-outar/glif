@@ -25,3 +25,8 @@
 18. [C++ Weekly C++17](https://www.youtube.com/playlist?list=PLs3KjaCtOwSbcWD1LlHS7w5AVM0tCAD86)
 19. [C++ Weekly C++20](https://www.youtube.com/playlist?list=PLs3KjaCtOwSYdpfm74DYyd1kOXEhCd1Rv)
 20. [Concurrent Programming with C++ 11](https://www.youtube.com/playlist?list=PL5jc9xFGsL8E12so1wlMS0r0hTQoJL74M)
+21. [Makefile-Related Videos](https://www.youtube.com/playlist?list=PL9IEJIKnBJjEPxenuhKU7J5smY4XjFnyg)
+22. [Libraries in C](https://www.youtube.com/playlist?list=PL9IEJIKnBJjFn6zQQkJ2e8vxCVxhl2yuD)
+23. [Programming with Processes](https://www.youtube.com/playlist?list=PL9IEJIKnBJjFNNfpY6fHjVzAwtgRYjhPw)
+24. [Debugging C Programs](https://www.youtube.com/playlist?list=PL9IEJIKnBJjHGWPN_S9NS_Ky1-tC8ZrUI)
+25. [Memory Issues](https://www.youtube.com/playlist?list=PL9IEJIKnBJjGAINguks7wyq7TAnHOZGRl)
