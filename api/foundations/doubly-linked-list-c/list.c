@@ -49,6 +49,24 @@ node_t *insert_after_node(node_t *node_to_insert_after, node_t *newnode) {
     node_to_insert_after->next = newnode;
 }
 
+void remove_node(node_t **head, node_t *node_to_remove) {
+    if (*head == node_to_remove) {
+        *head = node_to_remove->next;
+        return;
+    } else {
+        // find the previous node in the list
+        node_t* tmp = *head;
+        while (tmp != NULL && tmp->next != node_to_remove) {
+            tmp = tmp->next;
+        }
+        if (tmp == NULL) return;
+
+        tmp->next = node_to_remove->next;
+        node_to_remove->next = NULL;
+    }
+    return;
+}
+
 int main() {
     node_t *head = NULL;
     node_t *tmp;

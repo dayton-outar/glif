@@ -10,9 +10,9 @@ iList::~iList() {
 }
 
 void iList::addToHead(int el) {
-    head = new iNode(el,head);
+    head = new iNode(el,head);  // 1. An empty node is created 2. The node's info memeber is initialized to an integer el
     if (tail == 0)
-       tail = head;
+       tail = head;             // 5. The new node follows all the nodes of the list, but this fact to be reflected in the value of tail, which now becomes the pointer to the new node
 }
 
 void iList::addToTail(int el) {
