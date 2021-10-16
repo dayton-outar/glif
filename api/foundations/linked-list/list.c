@@ -34,13 +34,18 @@ int main() {
     n1.next = &n2; // we stop here
     // Outputs: 45 --> 8 --> 32
 
+    printlist(head);
+
     node_t n4;
     n4.value = 13;
     n4.next = &n3;
     n2.next = &n4;
-
     // Outputs: 45 --> 8 --> 13 --> 32
-    //head = head->next;
+
+    printlist(head);
+
+    head = head->next;
+    // Outputs: 8 --> 13 --> 32
 
     printlist(head);
 
