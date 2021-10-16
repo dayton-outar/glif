@@ -19,35 +19,31 @@ void printlist(node_t *head) {
     printf("\n");
 }
 
+node_t *create_new_node(int value) {
+    node_t *result = malloc(sizeof(node_t)); // Allocate on heap
+    result->value = value;
+    result->next = NULL;
+
+    return result;
+}
+
+node_t *insert_at_head(node_t *head, node_t *node_to_insert) {
+    node_to_insert->next = head;
+
+    return node_to_insert;
+}
+
 int main() {
-    node_t n1, n2, n3; // These are declared on the stack
-    node_t *head;
+    node_t *head = NULL;
+    node_t *tmp;
 
-    n1.value = 45;
-    n2.value = 8;
-    n3.value = 32;
-
-    // link them up
-    head = &n1;
-    n3.next = NULL;
-    n2.next = &n3;
-    n1.next = &n2; // we stop here
-    // Outputs: 45 --> 8 --> 32
+    for (int i = 1; i < 7; i++) {
+        tmp = create_new_node((8 * i));
+        head = insert_at_head(head, tmp);
+    }    
 
     printlist(head);
-
-    node_t n4;
-    n4.value = 13;
-    n4.next = &n3;
-    n2.next = &n4;
-    // Outputs: 45 --> 8 --> 13 --> 32
-
-    printlist(head);
-
-    head = head->next;
-    // Outputs: 8 --> 13 --> 32
-
-    printlist(head);
+    // Outputs: 48 --> 40 --> 32 --> 24 ...
 
     return 0;
 }
