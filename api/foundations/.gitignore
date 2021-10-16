@@ -1,0 +1,9 @@
+*.tar.gz
+
+*.exe
+*.pdb
+*.o
+*.o-*
+*.a
+
+!Makefile
