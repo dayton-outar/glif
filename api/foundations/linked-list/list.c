@@ -27,9 +27,10 @@ node_t *create_new_node(int value) {
     return result;
 }
 
-node_t *insert_at_head(node_t *head, node_t *node_to_insert) {
+node_t *insert_at_head(node_t **head, node_t *node_to_insert) {
     node_to_insert->next = head;
-
+    *head = node_to_insert;
+    
     return node_to_insert;
 }
 
@@ -39,7 +40,7 @@ int main() {
 
     for (int i = 1; i < 7; i++) {
         tmp = create_new_node((8 * i));
-        head = insert_at_head(head, tmp);
+        insert_at_head(head, tmp);
     }    
 
     printlist(head);
