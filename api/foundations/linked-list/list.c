@@ -20,7 +20,7 @@ void printlist(node_t *head) {
 }
 
 int main() {
-    node_t n1, n2, n3;
+    node_t n1, n2, n3; // These are declared on the stack
     node_t *head;
 
     n1.value = 45;
