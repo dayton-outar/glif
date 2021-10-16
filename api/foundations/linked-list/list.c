@@ -28,10 +28,19 @@ int main() {
     n3.value = 32;
 
     // link them up
-    head = &n3;
-    n3.next = &n2;
-    n2.next = &n1;
-    n1.next = NULL; // we stop here
+    head = &n1;
+    n3.next = NULL;
+    n2.next = &n3;
+    n1.next = &n2; // we stop here
+    // Outputs: 45 --> 8 --> 32
+
+    node_t n4;
+    n4.value = 13;
+    n4.next = &n3;
+    n2.next = &n4;
+
+    // Outputs: 45 --> 8 --> 13 --> 32
+    //head = head->next;
 
     printlist(head);
 
