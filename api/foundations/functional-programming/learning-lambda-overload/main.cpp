@@ -9,7 +9,7 @@ template<typename ... B>
 struct visitor : B ... { using B::operator()...; };
 
 template<typename ... T>
-visitor(T...) -> visitor<std::decay_t<T>...>;
+visitor(T...) -> visitor<T...>;
 
 int main()
 {
