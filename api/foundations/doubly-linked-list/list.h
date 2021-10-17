@@ -1,6 +1,8 @@
 #ifndef DOUBLY_LINKED_LIST
 #define DOUBLY_LINKED_LIST
 
+#include <ostream>
+
 template<class T>
 class dNode {
 public:
@@ -38,7 +40,7 @@ public:
     T* find(const T&) const;
 protected:
     dNode<T> *head, *tail;
-    friend ostream& operator<<(ostream& out, const dList<T>& dll) {
+    friend std::ostream& operator<<(std::ostream& out, const dList<T>& dll) {
         for (dNode<T> *tmp = dll.head; tmp != 0; tmp = tmp->next)
             out << tmp->info << ' ';
         return out;

@@ -3,7 +3,7 @@ CXX       = g++
 CXXFLAGS  = -g -std=c++2a -Wall
 
 $(PROGRAM): main.o
-	$(CXX) -o $(PROGRAM) main.o list.h
+	$(CXX) -o $(PROGRAM) main.o
 
 .PHONY: clean dist
 
