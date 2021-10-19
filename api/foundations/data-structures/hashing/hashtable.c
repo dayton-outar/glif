@@ -9,6 +9,7 @@
 
 #define MAX_NAME 256
 #define TABLE_SIZE 10
+#define DELETED_NODE (person*)(0xFFFFFFFFFFFFFFFFUL)
 
 typedef struct {
     char name[MAX_NAME];
@@ -43,6 +44,8 @@ void print_table() {
     for (int i = 0; i < TABLE_SIZE; i++) {
         if (hash_table[i] == NULL) {
             printf("\t%i\t---\n", i);
+        } else if (hash_table[i] == DELETED_NODE) {
+            printf("\t%i\t---<deleted>\n", i);
         } else {
             printf("\t%i\t---%s\n", i, hash_table[i]->name);
         }
@@ -58,7 +61,8 @@ bool hash_table_insert(person *p) {
 
     for (int i = 0; i < TABLE_SIZE; i++) { // This contruct causes this insert to perform at O(n) rather than O(1) (as it was before)
         int try = (i + index) % TABLE_SIZE;
-        if (hash_table[try] == NULL) {
+        if (hash_table[try] == NULL ||
+            hash_table[try] == DELETED_NODE) {
             hash_table[try] = p;
             return false;
         }
@@ -71,10 +75,12 @@ person *hash_table_delete(char *name) { // O(n) time
     int index = hash(name);
     for (int i = 0; i < TABLE_SIZE; i++) {
         int try = (index + i) % TABLE_SIZE;
-        if (hash_table[try] != NULL &&
-            strncmp(hash_table[try]->name, name, TABLE_SIZE) == 0) {
+        if (hash_table[try] == NULL) return false;
+        if (hash_table[try] == DELETED_NODE) continue;
+
+        if (strncmp(hash_table[try]->name, name, TABLE_SIZE) == 0) {
             person *tmp = hash_table[try];
-            hash_table[try] = NULL;
+            hash_table[try] = DELETED_NODE;
             return tmp;
         }
     }
@@ -86,8 +92,10 @@ person *hash_table_lookup(char *name) { // O(n) time
     int index = hash(name);
     for (int i = 0; i < TABLE_SIZE; i++) {
         int try = (index + i) % TABLE_SIZE;
-        if (hash_table[try] != NULL &&
-            strncmp(hash_table[try]->name, name, TABLE_SIZE) == 0) {
+        if (hash_table[try] == NULL) return false;
+        if (hash_table[try] == DELETED_NODE) continue;
+
+        if (strncmp(hash_table[try]->name, name, TABLE_SIZE) == 0) {
             return hash_table[try];
         }
     }
