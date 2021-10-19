@@ -36,6 +36,12 @@ int main() {
     printf("Zane ==> %u\n", hash("Zane"));
     printf("Ian ==> %u\n", hash("Ian"));
     printf("Hodor ==> %u\n", hash("Hodor"));
+    printf("--------------\n");
+    printf("Jane ==> %u\n", hash("Jane"));
+    printf("Maren ==> %u\n", hash("Maren"));
+    printf("Bill ==> %u\n", hash("Bill"));
+
+    // Outputs keys where keys for Ian, Hodor and Maren collide. Also, Zane and Jane collide
 
     return 0;
 }
