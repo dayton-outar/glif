@@ -132,7 +132,6 @@ int main() {
         printf("Found %s.\n", tmp->name);
     }
 
-    /*
     printf("Now, let's remove %s\n", tmp->name);
 
     hash_table_delete("Zane");
@@ -145,7 +144,6 @@ int main() {
     }
 
     print_table();
-    */
 
     return 0;
 }
