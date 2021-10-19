@@ -56,11 +56,15 @@ bool hash_table_insert(person *p) {
 
     int index = hash(p->name);
 
-    if (hash_table[index] != NULL) return false;
+    for (int i = 0; i < TABLE_SIZE; i++) { // This contruct causes this insert to perform at O(n) rather than O(1) (as it was before)
+        int try = (i + index) % TABLE_SIZE;
+        if (hash_table[try] == NULL) {
+            hash_table[try] = p;
+            return false;
+        }
+    }
 
-    hash_table[index] = p;
-
-    return true;
+    return false;
 }
 
 person *hash_table_delete(char *name) { // O(1) time
@@ -136,6 +140,6 @@ int main() {
 
     print_table();
     */
-   
+
     return 0;
 }
