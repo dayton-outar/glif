@@ -94,11 +94,21 @@ int main() {
     person sarah = { .name = "Sarah", .age = 25 };
     person zane = { .name = "Zane", .age = 28 };
     person ian = { .name = "Ian", .age = 32 };
+    //--
+    person hodor = { .name = "Hodor", .age = 44 };
+    person jane = { .name = "Jane", .age = 15 };
+    person maren = { .name = "Maren", .age = 38 };
+    person bill = { .name = "Bill", .age = 55 };
 
     hash_table_insert(&jacob);
     hash_table_insert(&sarah);
     hash_table_insert(&zane);
     hash_table_insert(&ian);
+    //--
+    hash_table_insert(&hodor);
+    hash_table_insert(&jane);
+    hash_table_insert(&maren);
+    hash_table_insert(&bill);
 
     print_table();
 
@@ -112,6 +122,7 @@ int main() {
         printf("Found %s.\n", tmp->name);
     }
 
+    /*
     printf("Now, let's remove %s\n", tmp->name);
 
     hash_table_delete("Zane");
@@ -124,6 +135,7 @@ int main() {
     }
 
     print_table();
-
+    */
+   
     return 0;
 }
