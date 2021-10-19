@@ -16,6 +16,8 @@ typedef struct {
     // ...
 } person;
 
+person *hash_table[TABLE_SIZE];
+
 unsigned int hash(char *name) {
     int length = strnlen(name, MAX_NAME);
     unsigned int hash_value = 0;
@@ -29,19 +31,82 @@ unsigned int hash(char *name) {
     return hash_value;
 }
 
+bool init_hash_table() {
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        hash_table[i] = NULL;
+    }
+}
+
+void print_table() {
+    printf("\t##################\n");
+
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        if (hash_table[i] == NULL) {
+            printf("\t%i\t---\n", i);
+        } else {
+            printf("\t%i\t---%s\n", i, hash_table[i]->name);
+        }
+    }
+
+    printf("\t##################\n");
+}
+
+bool hash_table_insert(person *p) {
+    if (p == NULL) return false;
+
+    int index = hash(p->name);
+
+    if (hash_table[index] != NULL) return false;
+
+    hash_table[index] = p;
+
+    return true;
+}
+
+person *hash_table_lookup(char *name) {
+    int index = hash(name);
+    if (hash_table[index] != NULL &&
+        strncmp(hash_table[index]->name, name, TABLE_SIZE) == 0) {
+            return hash_table[index];
+    } else {
+        return NULL;
+    }
+}
+
 int main() {
 
-    printf("Jacob ==> %u\n", hash("Jacob"));
-    printf("Sarah ==> %u\n", hash("Sarah"));
-    printf("Zane ==> %u\n", hash("Zane"));
-    printf("Ian ==> %u\n", hash("Ian"));
-    printf("Hodor ==> %u\n", hash("Hodor"));
-    printf("--------------\n");
-    printf("Jane ==> %u\n", hash("Jane"));
-    printf("Maren ==> %u\n", hash("Maren"));
-    printf("Bill ==> %u\n", hash("Bill"));
+    init_hash_table();
+    print_table();
 
-    // Outputs keys where keys for Ian, Hodor and Maren collide. Also, Zane and Jane collide
+    person jacob = { .name = "Jacob", .age = 30 };
+    person sarah = { .name = "Sarah", .age = 25 };
+    person zane = { .name = "Zane", .age = 28 };
+    person ian = { .name = "Ian", .age = 32 };
+
+    hash_table_insert(&jacob);
+    hash_table_insert(&sarah);
+    hash_table_insert(&zane);
+    hash_table_insert(&ian);
+
+    print_table();
+
+    // Let's look up now
+
+    person *tmp = hash_table_lookup("Zane");
+
+    if (tmp == NULL) {
+        printf("Not found!\n");
+    } else {
+        printf("Found %s.\n", tmp->name);
+    }
+
+    tmp = hash_table_lookup("Joe");
+
+    if (tmp == NULL) {
+        printf("Not found!\n");
+    } else {
+        printf("Found %s.\n", tmp->name);
+    }
 
     return 0;
 }
