@@ -63,7 +63,19 @@ bool hash_table_insert(person *p) {
     return true;
 }
 
-person *hash_table_lookup(char *name) {
+person *hash_table_delete(char *name) { // O(1) time
+    int index = hash(name);
+    if (hash_table[index] != NULL &&
+        strncmp(hash_table[index]->name, name, TABLE_SIZE) == 0) {
+            person *tmp = hash_table[index];
+            hash_table[index] = NULL;
+            return tmp;
+    } else {
+        return NULL;
+    }
+}
+
+person *hash_table_lookup(char *name) { // O(1) time
     int index = hash(name);
     if (hash_table[index] != NULL &&
         strncmp(hash_table[index]->name, name, TABLE_SIZE) == 0) {
@@ -100,13 +112,18 @@ int main() {
         printf("Found %s.\n", tmp->name);
     }
 
-    tmp = hash_table_lookup("Joe");
+    printf("Now, let's remove %s\n", tmp->name);
+
+    hash_table_delete("Zane");
+    tmp = hash_table_lookup("Zane");
 
     if (tmp == NULL) {
         printf("Not found!\n");
     } else {
         printf("Found %s.\n", tmp->name);
     }
+
+    print_table();
 
     return 0;
 }
