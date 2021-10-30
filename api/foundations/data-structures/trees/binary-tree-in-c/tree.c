@@ -3,6 +3,7 @@
 // Credit: Jacob Sorber
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct treenode {
     int value;
@@ -36,10 +37,16 @@ void printtree(treenode* root, int level) {
     
     level++;
 
-    if (root->left != NULL) printtabs(level);
+    if (root->left != NULL) {
+        printtabs(level);
+        printf("l ");
+    }
     printtree(root->left, level);
 
-    if (root->right != NULL)printtabs(level);
+    if (root->right != NULL) {
+        printtabs(level);
+        printf("r ");
+    }
     printtree(root->right, level);
 }
 
@@ -47,32 +54,58 @@ void printEntiretree(treenode* root) {
     printtree(root, 0);
 }
 
+bool insertnumber(treenode** rootptr, int value) {
+    bool result = false;
+    treenode* root = *rootptr;
+
+    if (root == NULL) {
+        (*rootptr) = createnode(value);
+        return true;
+    }
+
+    if (value == root->value) {
+        return false;
+    }
+
+    if (value < root->value) {
+        return insertnumber(&(root->left), value);
+    } else {
+        return insertnumber(&(root->right), value);
+    }
+}
+
+bool findnumber(treenode* root, int value) {
+    if (root == NULL) return false;
+    if (root->value == value) return true;
+
+    if (value < root->value) {
+        return findnumber(root->left, value);
+    } else {
+        return findnumber(root->right, value);
+    }
+}
+
 int main() {
-    treenode *n1 = createnode(20);
-    treenode *n2 = createnode(5);
-    treenode *n3 = createnode(13);
-    treenode *n4 = createnode(4);
-    treenode *n5 = createnode(16);
-    treenode *n6 = createnode(9);
-    treenode *n7 = createnode(30);
-    treenode *n8 = createnode(2);
+    treenode *root = NULL;
 
-    n3->left = n6;
-    n6->left = n4;
-    n6->right = n2;
-    n4->left = n8;
-    n3->right = n5;
-    n5->left = n1;
-    n5->right = n7;
+    insertnumber(&root, 12);
+    insertnumber(&root, 3);
+    insertnumber(&root, 22);
+    insertnumber(&root, 33);
+    insertnumber(&root, 20);
+    insertnumber(&root, 10);
+    insertnumber(&root, 50);
+    insertnumber(&root, 9);
+    insertnumber(&root, 28);
+    insertnumber(&root, 39);
 
-    printEntiretree(n3);
+    printEntiretree(root); // The tree produced will be unbalanced
 
-    free(n1);
-    free(n2);
-    free(n3);
-    free(n4);
-    free(n5);
-    free(n6);
-    free(n7);
-    free(n8);
+    printf("\n\nLet's search for some numbers:\n");
+
+    printf("1. %d ... %s\n", 16, findnumber(root, 16) ? "yes" : "no" );
+    printf("2. %d ... %s\n", 22, findnumber(root, 22) ? "yes" : "no" );
+    printf("3. %d ... %s\n", 9, findnumber(root, 9) ? "yes" : "no" );
+
+    free(root);
 }
