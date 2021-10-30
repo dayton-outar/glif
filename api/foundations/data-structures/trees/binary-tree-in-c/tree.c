@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+#include <time.h> // Used in random number generator
+
 typedef struct treenode {
     int value;
     struct treenode *left;
@@ -88,16 +90,14 @@ bool findnumber(treenode* root, int value) {
 int main() {
     treenode *root = NULL;
 
-    insertnumber(&root, 12);
-    insertnumber(&root, 3);
-    insertnumber(&root, 22);
-    insertnumber(&root, 33);
-    insertnumber(&root, 20);
-    insertnumber(&root, 10);
-    insertnumber(&root, 50);
-    insertnumber(&root, 9);
-    insertnumber(&root, 28);
-    insertnumber(&root, 39);
+    time_t t;
+    srand((unsigned) time(&t));
+
+    int n;
+    for (int i = 0; i < 30; i++) {
+        n = rand() % 100;
+        insertnumber(&root, n);
+    }
 
     printEntiretree(root); // The tree produced will be unbalanced
 
