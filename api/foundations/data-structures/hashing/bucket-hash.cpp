@@ -16,8 +16,7 @@ const int recordLen = strLen;
 
 class File {
 public:
-    File() : empty('*'), delMarker('#') {
-    }
+    File() : empty('*'), delMarker('#') {}
     void processFile(char*);
 private:
     const char empty, delMarker;
