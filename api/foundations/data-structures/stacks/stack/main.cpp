@@ -1,6 +1,6 @@
 #include <iostream>
 #include "stack-vectors.h"
-#include "stacks-list.h"
+#include "stack-list.h"
 
 int main() {
     Stack<int> s;
