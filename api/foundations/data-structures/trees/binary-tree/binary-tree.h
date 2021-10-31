@@ -1,24 +1,26 @@
 #include <queue>
 #include <stack>
 
+using namespace std;
+
 #ifndef BINARY_SEARCH_TREE
 #define BINARY_SEARCH_TREE
 
 template<class T>
-class Stack : public std::stack<T> {
+class Stack : public stack<T> {
 public:
     T pop() {
-        T tmp = top();
+        T tmp = stack<T>::top();
         stack<T>::pop();
         return tmp;
     }
 };
 
 template<class T>
-class Queue : public std::queue<T> {
+class Queue : public queue<T> {
 public:
     T dequeue() {
-        T tmp = front();
+        T tmp = queue<T>::front();
         queue<T>::pop();
         return tmp;
     }
@@ -98,7 +100,7 @@ protected:
     void inorder(TreeNode<T>*);
     void postorder(TreeNode<T>*);
     virtual void visit(TreeNode<T>* p) { 
-        cout << p->el << ' '; 
+        std::cout << p->el << ' '; 
     }
 };
 
@@ -193,7 +195,7 @@ void Tree<T>::deleteByCopying(TreeNode<T>*& node) {
      else if (node->left == 0)              // node has no left child;
           node = node->right; 
      else {
-          tmp = node->left                  // node has both children;
+          tmp = node->left;                 // node has both children
           previous = node;                  // 1.
           while (tmp->right != 0) {         // 2.
               previous = tmp;

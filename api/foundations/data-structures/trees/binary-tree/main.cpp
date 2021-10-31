@@ -2,32 +2,33 @@
 #include "binary-tree.h"
 
 int main() {
-    Stack<int> s;
+    Tree<int> t;
 
-    s.push(12);
-    s.push(14);
-    s.push(80);
+    t.insert(45);
+    t.insert(52);
+    t.insert(13);
+    t.insert(20);
+    t.insert(10);
+    t.insert(7);
 
-    int t;
-    while (!s.isEmpty()) {
-        t = s.pop();
-        std::cout << "Popped: " << t << std::endl;
-    }
+    std::cout << "In order" << std::endl;
 
-    std::cout << "Now let's try this with a stack using linked list." << std::endl;
+    t.inorder();
 
-    LLStack<float> f;
+    std::cout << std::endl;
 
-    f.push(34.50);
-    f.push(12.33);
-    f.push(25.50);
-    f.push(77.05);
+    std::cout << "Pre order" << std::endl;
 
-    float b;
-    while (!f.isEmpty()) {
-        b = f.pop();
-        std::cout << "Popped: " << b << std::endl;
-    }
+    t.preorder();
+
+    std::cout << std::endl;
+
+    std::cout << "Post order" << std::endl;
+
+    t.postorder();
+
+    std::cout << std::endl;
+
 
     std::cout << "Done!" << std::endl;
 }
