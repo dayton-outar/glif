@@ -240,7 +240,9 @@ ___
 &copy; Prof. Stewart Weiss
 
  <sup id="fn-1">1</sup> This is not the best way to do this. I use a shell function called pathmunge() for modifying paths. You can find examples of pathmunge in web searches.
+
  <sup id="fn-2">2</sup> On some systems such as Solaris, there is no readelf; use elfdump instead
+ 
  <sup id="fn-3">3</sup> Added my Dayton Outar
 
 This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
