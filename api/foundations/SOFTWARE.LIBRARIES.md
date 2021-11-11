@@ -30,3 +30,9 @@ Static libraries can be recognized by their ending: they end in ".a". Shared lib
 ## 8 Using a Shared Library
 
 ## 9 Displaying the Contents of a Library
+
+___
+
+&copy; Prof. Stewart Weiss
+
+This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
