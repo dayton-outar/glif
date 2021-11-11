@@ -369,9 +369,9 @@ a portion of the output looks like this:
 Symbol table '.dynsym' contains 17 entries:
 | Num | Value   | Size | Type   | Bind   | Vis     | Ndx Name           |
 | ---:| :---    |  ---:| :---   | :---   | :---    | :---               |
-|    0| 00000000| 0    | NOTYPE | LOCAL  | DEFAULT | UND                |
-|    1| 00000000| 0    | FUNC   | GLOBAL | DEFAULT | UND show_time      |
-|    2| 00000000| 0    | NOTYPE | WEAK   | DEFAULT | UND __gmon_start__ |
+|    0| 00000000|    0 | NOTYPE | LOCAL  | DEFAULT | UND                |
+|    1| 00000000|    0 | FUNC   | GLOBAL | DEFAULT | UND show_time      |
+|    2| 00000000|    0 | NOTYPE | WEAK   | DEFAULT | UND __gmon_start__ |
 ```
 
 
