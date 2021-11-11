@@ -195,6 +195,35 @@ The `utils` library will have three names:
 
 #### Example 2
 
+If you look in the `/lib` directory, you will see that links are created in a specific way; for each shared library
+there are often at least three entries, such as
+
+```bash
+lrwxrwxrwx 1 root root 11 Aug 12 18:52 libacl.so -> libacl.so.1
+lrwxrwxrwx 1 root root 15 Aug 12 18:51 libacl.so.1 -> libacl.so.1.1.0
+-rwxr-xr-x 1 root root 31380 Aug 3 18:42 libacl.so.1.1.0
+```
+
+Notice that the compiler's name (without the version number) is a soft link to the soname, which is a soft link to the actual library file. When we set up our `libutils` library, we need to do the same thing. Every library will have three files in the directory where it is placed: the soname will be a soft link to the actual library file, and a soft link to the soname file named with the linker name.
+
+### Steps to Create the Library
+
+ 1. For each source code file that you intend to put into a shared library, say `stuff.c`, compile it _position independent code_ using the following command:
+    
+    ```bash
+    gcc -fPIC -g -Wall -c stuff.c
+    ```
+
+    This will produce an object file, `stuff.o`, with debugging information included (the `-g` option), with all warnings enabled (the `-Wall` option), which is always a safe thing to do. The `-fPIC` option is what generates the _position independent code_ (hence `PIC`). Position independent code is code that can be executed regardless of where it is placed in memory. This is not the same thing as a relocatable code. Relocatable code is code that cane be placed anywhere into memory with the help from a linkage editor or loader. Instructions such as those that specify address relative to the program counter are position independent.
+
+ 2. Suppose that `stuff.o` and `tools.o` are two object files generated in accordance with the first step. To create a shared library containing just those file with soname `libgoodstuff.so.1`, and real file name `libgoodstuff.so.1.0.1`, use the following command:
+    
+    ```bash
+    gcc -shared -Wl,-soname,libgoodstuff.so.1 -o libgoodstuff.so.1.0.1 stuff.o tools.o
+    ```
+
+    This will create the file ...
+
 ## 8 Using a Shared Library
 
 
