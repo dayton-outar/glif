@@ -113,11 +113,91 @@ _Note_. Do not put your static libraries into the same directories as your share
 
 ## 6 Using a Static Library
 
+To use the library in a program, you have to
+
+ 1. Tell the compiler to include its interface, i.e., its header
+ 2. Tell the linkage editor to link to the library itself 
+
+The first task is accomplished by putting an include directive in the program. The second task is achieved by using the `-l` option to `gcc` specify the name of the library. Remember that the name is everything between "`lib` " and the "`.`". _The `-l` option must follow the list of files that refer to that library_. For example, to link to the `libutils.a` library you would do two things:
+
+ 1. In the program you would include the header file for the library:
+    
+    ```bash
+    #include "utils.h"
+    ```
+
+ 2. To build the executable, you would issue the command
+
+    ```bash
+    gcc -o myprogram myprogram.c -lutils
+    ```
+
+    or the following if you did not modify your `CPATH`:
+
+    ```bash
+    gcc -o myprogram myprogram.c -lutils -I~/unix_demos/include
+    ```
+    but in either case, only if you are certain that there is not a shared library with the same name in a directory that will be searched ahead of the one in which `libutils.a` is located, or in the same directory as `libutils.a`. This is because `gcc`, by default, will always choose to link to a shared library of the same name rather than a static library of that name. _This is one reason why you should not put static libraries in the same directory as shared libraries_.
+
+    If you get the error message
+
+    ```bash
+    /usr/bin/ld: cannot find -lutils
+    collect2: ld returned 1 exit status
+    ```
+
+    it means that youd did not set up the `LIBRARY_PATH` properly. (Did you export it? Did you type it correctly?)
+
+    If you want to be safe, you can use `-L`_dir_ option to the compiler. This option adds _dir_ to the list of directories that will be searched when looking for libraries specified with the `-l` option, as in
+
+    ```bash
+    gcc -o myprogram myprogram.c -L~/unix_demos/lib -lutils
+    ```
+
+    Directories specified with `-L` will be searched before those contained in the `LIBRARY_PATH` environment variable.
+
+If you do a web search on this topic, you may see instructions for building your program of the form
+
+```bash
+gcc -static myprogram.c -o myprogram -lutils
+```
+
+This will probably fail with the error message
+
+```bash
+/usr/bin/ld: cannot find -lc
+collect2: ld returned 1 exit status
+```
+
+because the `-static` option tells `gcc` to statically link `myprogram.c` to all libraries, not just `libutils.a`. Since the C standard library no longer ships as a static library with most operating systems, the link editor, `ld`, will not find `libc.a` anywhere. Do not try to use the `-static` option. Follow my instructions instead.
+
 ## 7 Creating a Shared Library
 
 The `ar` command does not build shared libraries. You need to use `gcc` for that purpose. Before diving into the details though, you need to understand a few things about shared libraries in UNIX to make sense out of the options to be passed to `gcc` to create the library.
 
+### Shared Library Names
+
+Every shared library has a special name called its "_soname_". The _soname_ is constructed from the prefix "lib", followed by the name of the library, then the string "`.so`", and finally, a period and a version number that is incremented whenever the interface changes. So, for example, the soname of the math library, `m`, might be `libm.so.1`.
+
+Every shared library also has a "_real name_", which is the name of the actual file in which the library resides. The real name is longer than the soname; it must be formed by appending to the soname a period, and a minor number, and optionally, another period and a release number. The minor number and release number are used for configuration control.
+
+Lastly, the library has a name that is used by the compiler, which is the soname without the version number.
+
+#### Example 1
+
+The `utils` library will have three names:
+
+`libutils.so.1` - This will be its soname.
+
+`libutils.so.1.0.1` - This will be the name of the file. I will use a minor number of 0 and a release number 1.
+
+`libutils.so` - This is the name the compiler will use, which we will called the _linker name_.
+
+#### Example 2
+
 ## 8 Using a Shared Library
+
+
 
 ## 9 Displaying the Contents of a Library
 
