@@ -122,7 +122,7 @@ The first task is accomplished by putting an include directive in the program. T
 
  1. In the program you would include the header file for the library:
     
-    ```bash
+    ```c
     #include "utils.h"
     ```
 
