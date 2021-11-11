@@ -89,7 +89,7 @@ The steps to create a static library are fairly simple. Suppose that you have on
     ~/include/goodstuff.h
     ```
 
-5. Make sure that your `LIBRARY_PATH` environment variable contains paths to all of the directories in which you might put your ***static*** library files. Your `.bashrc` file should have lines of the form<sup>1</sup>.
+5. Make sure that your `LIBRARY_PATH` environment variable contains paths to all of the directories in which you might put your ***static*** library files. Your `.bashrc` file should have lines of the form<sup><a href="#fn-1">1</a></sup>.
 
     ```bash
     LIBRARY_PATH="$LIBRARY_PATH:~/lib:"
@@ -230,10 +230,17 @@ Notice that the compiler's name (without the version number) is a soft link to t
 
 ## 9 Displaying the Contents of a Library
 
+
+## Tutorial Videos<sup><a href="#fn-3">3</a></sup>
+
+ 1. [Libraries in C](https://www.youtube.com/playlist?list=PL9IEJIKnBJjFn6zQQkJ2e8vxCVxhl2yuD) - [Jacob Sorber](https://www.youtube.com/c/JacobSorber)
+ 2. [Debugging C Programs](https://www.youtube.com/playlist?list=PL9IEJIKnBJjHGWPN_S9NS_Ky1-tC8ZrUI) - [Jacob Sorber](https://www.youtube.com/c/JacobSorber)
 ___
 
 &copy; Prof. Stewart Weiss
 
- <sup>1</sup> This is not the best way to do this. I use a shell function called pathmunge() for modifying paths. You can find examples of pathmunge in web searches.
+ <sup id="fn-1">1</sup> This is not the best way to do this. I use a shell function called pathmunge() for modifying paths. You can find examples of pathmunge in web searches.
+ <sup id="fn-2">2</sup> On some systems such as Solaris, there is no readelf; use elfdump instead
+ <sup id="fn-3">3</sup> Added my Dayton Outar
 
 This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
