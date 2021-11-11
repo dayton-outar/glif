@@ -222,9 +222,57 @@ Notice that the compiler's name (without the version number) is a soft link to t
     gcc -shared -Wl,-soname,libgoodstuff.so.1 -o libgoodstuff.so.1.0.1 stuff.o tools.o
     ```
 
-    This will create the file ...
+    This will create the file `libgoodstuff.so.1.0.1` with the soname `libgoodstuff.so.1` stored internally. ***Note that there cannot be any white space before or after the commas***. The `-Wl` option tells `gcc` to pass the remaining comma-separated list to the link editor as options. You might be advised by someone else to use `-fpic` instead of `-fPIC` because it generates faster code. Do not do so. It is not guaranteed to work in all cases. `-fPIC` generates bigger code but it never fails to work.
+
+ 3. It is time to install the library in the appropriate place. Unless you have superuser privileges, you will not be able to install your nifty library in a standard location such as `/usr/local/lib`. Instead, you will most likely put it in your own `lib` directory, such as `~/lib`. Just copy the file into the directory.
+
+ 4. After you copy the file into the directory, you should run `ldconfig` on that directory, with a `-n` option, e.g.
+    
+    ```bash
+    ldconfig -n ~/lib
+    ```
+
+    `ldconfig`, with the `-n` option, creates the necessary links and cache to the most recent shared libraries found in the given directory. In particular, it will create a symbolic link from a file named with the soname to the actual library file. If there are multiple minor versions or release, `ldconfig` will link the soname file to the highest-numbered minor version and release combination. The `-n` option tells `ldconfig` not to make any changes to the standard set of library directories. After `ldconfig` runs in our example, we would have the link
+
+    ```bash
+    libgoodstuff.so.1 -> libgoodstuff.so.1.0.1
+    ```
+
+    After running `ldconfig`, you should manually create a link from a file with the linker name to the highest-numbered soname link. In our example, we would type
+
+    ```bash
+    ln -s libgoodstuff.so.1 libgoodstuff.so
+    ```
+
+    to create the link
+
+    ```bash
+    libgoodstuff.so -> libgoodstuff.so.1
+    ```
+
+ 5. If at some future time, you revise the `goodstuff` library, you would increment either the minor version number or the release number, or perhaps even the major version number, if the interface to the library changed. If you just change an algorithm internally or fixed a few bugs, you would not change the major number, only the minor one or the release number. Suppose that you create a new release, `libgoodstuff.so.1.0.2`, with soname `libgoodstuff.1`. You would copy the file into the same directory as the older release and run `ldconfig` again. `ldconfig` would change the link from the soname to the later release. A listing of that directory would then look like
+
+    ```bash
+    libutils.so -> libutils.so.1
+    libutils.so.1 -> libutils.so.0.2
+    libutils.so.1.0.1
+    libutils.so.1.0.2
+    ```
 
 ## 8 Using a Shared Library
+
+What you need to understand about how to use shared libraries is that it is a two-step linking process. In the first step, the linkage editor will create some static information in your executable file that will be used later by the dynamic linker at runtime. So both the linkage editor and a dynamic linker participate in creating a working executable.
+
+You link your program to a shared library in the same way that you link it to a static library, using the `-l` option to `gcc`, to name the library to which you want your program linked, and using the `-L`_dir_ option to tell it which directory it is in if it is not in a standard location. For example:
+
+```bash
+gcc -o myprogram myprogram.c -L~/lib -lgoodstuff
+```
+will create the executable `myprogram`, to be linked dynamically to the library `~/lib/libgoodstuff.so`. We can also write
+
+```bash
+gcc -o myprogram myprogram.c ~/lib/libgoodstuff.so
+```
 
 
 
@@ -242,7 +290,7 @@ ___
  <sup id="fn-1">1</sup> This is not the best way to do this. I use a shell function called pathmunge() for modifying paths. You can find examples of pathmunge in web searches.
 
  <sup id="fn-2">2</sup> On some systems such as Solaris, there is no readelf; use elfdump instead
- 
+
  <sup id="fn-3">3</sup> Added my Dayton Outar
 
 This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
