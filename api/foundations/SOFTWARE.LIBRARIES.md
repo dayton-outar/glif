@@ -17,15 +17,105 @@ Perhaps you might have reached the point where you realize that you are writing 
 
 ## 3 Static vs Shared Libraries in UNIX
 
+In UNIX, there are two kinds of library files, _static_ and _shared_. The term "static library" is short for "statically linked library". A _static library_ is a library that can be linked to the program statically, after the program is compiled, as part of the program executable file. In other words, it is incorporated into the program executable file as part of the build of that executable. A _shared library_ is a library that is linked dynamically, either at _loadtime_ or at _runtime_, depending on the particular system. Loadtime is when the program is loaded into memory in order for it to execute. Runtime is the interval of time during which it is actually running. If linking is delayed until runtime, then a symbol such as a function in the library is
+linked to the program only when the program calls that function or otherwise references that symbol. The fact that a shared library is a dynamically linked library is not to be confused with the use of that term by Microsoft in what they call a DLL. While "DLL" is short for "dynamically linked library", DLLs are different from UNIX shared libraries. In these notes, I use the term in the more general sense of a library that is linked to a program either at loadtime or at runtime.
+
+_Static linking_, which was the original form of linking, resolves references to externally-defined symbols such as functions, by copying the library code directly into the executable file when the executable (file) is built. The _linkage editor_, also called the _link editor_, or just the _linker_, performs static linking. The term "linker" is a bit ambiguous, so I will avoid using it.
+The primary advantage of static linking, perhaps now the only advantage, is that the executable is self-contained and can run on multiple platforms. For example, a program might use a graphical toolkit such as GTK that may not be present on all systems. With the toolkit's libraries statically linked into the executable, the executable can run on other systems (with the
+same machine architecture) without requiring the users on those systems to install those library files. Once upon a time, static linking resulted in faster code as well, but the gain is negligible today.
+
+_Dynamic linking_ can be done either when the program is loaded into memory, or while it is running and references an unresolved symbol. In the former case, the start-up time of the program is slightly longer than if it had been statically linked, since the libraries have to be located in memory (and possibly loaded into memory if they were not already there) and then linked to the program before it can actually begin execution. In the latter case, the program will experience slightly longer running time, because whenever an unresolved symbol is found and must be resolved, there is a bit of overhead in locating the library and linking to it. This latter approach is the more common approach because it only links symbols that are actually used. For example, if a function from a shared library is not called during execution, it will not be linked to the library at all, saving time.
+
+There are several advantages of linking dynamically over linking statically. One is that, because the executable program file does not contain the code of the libraries that must be linked to it, the executable file is smaller. This means that it loads into memory faster and that it uses less space on disk. Another advantage is that it makes possible the sharing of memory resources.
+Instead of multiple copies of a library being physically incorporated into multiple programs, a single memory-resident copy of the library can be linked to each program, provided that it is a shared library. Shared libraries are dynamically-linked libraries that are designed so that they are not modified when a process uses them. This is why they have the extension, "`.so`" - short for shared object.
+
+Another advantage of linking to shared libraries is that this makes it possible to update the libraries without recompiling the programs which use them, provided the interfaces to the libraries do not change. If bugs are discovered and fixed in these libraries, all that is necessary is to obtain the modified libraries. If they were statically linked, then all programs that use them would have to be recompiled.
+
+Still other advantages are related to security issues. Hackers often try to attack applications through knowledge of specific addresses in the executable code. Methods of deterring such types of attacks involve randomizing the locations of various relocatable segments in the code. With statically linked executables, only the stack and heap address can be randomized: all instructions have a fixed address in all invocations. With dynamically linked executables, the kernel has the ability to load the libraries at arbitrary addresses, independent of each other. This makes such attacks much harder.
+
 ## 4 Identifying Libraries
 
-Static libraries can be recognized by their ending: they end in ".a". Shared libraries have a ".so" extension, possibly with a version number following, such as `librt.so.1`. Both types of libraries start with the prefix "lib" and then have a unique name that identifies that library. So, for example, the standard C++ static library is `libstdc++.a`, and the shared real-time library is `librt.so.1`. The "rt" in the name is short for real-time.
+Static libraries can be recognized by their ending: they end in "`.a`". Shared libraries have a "`.so`" extension, possibly with a version number following, such as `librt.so.1`. Both types of libraries start with the prefix "`lib`" and then have a unique name that identifies that library. So, for example, the standard C++ static library is `libstdc++.a`, and the shared real-time library is `librt.so.1`. The "`rt`" in the name is short for real-time.
 
 ## 5 Creating a Static Library
+
+The steps to create a static library are fairly simple. Suppose that you have one or more source code files containing useful functions or perhaps definitions of useful types. For the sake of precision, suppose that `timestuff.c` and `error.c` are two such files.
+
+ 1. Create a header file that contains the prototypes of the functions defined in `timestuff.c` and `errors.c`. Suppose that file is called `utils.h`.
+
+ 2. Compile the C source files into object files using the command
+    
+    ```bash
+    gcc -c timestuff.c gcc -c errors.c
+    ```
+
+    This will create the two files, `timestuff.o` and `errors.o`
+
+ 3. Run the GNU archiver, `ar`, to create a new archive and insert the two object files into it:
+
+    ```bash
+    ar rcs libutils.a timestuff.o errors.o
+    ```
+
+    The "rcs" following the command name consists of a one-letter operation code followed by two modifiers. The "`r`" is the operation code that tells `ar` to insert the object files into the archive. The"`c`" and "`s`" are modifiers; `c` means "create the archive if it did not exist" and `s` means "create an index," like a table of contents, in the archive file. The name of the archive is given after the options but before the list of files to insert in the archive. In this case, our library will be named `libutils.a`.
+
+    This same command can be used to add new object files to the library, so if you later decide to add the file `datestuff.o` to your library, you would use the command
+
+    ```bash
+    ar rcs libutils.a datestuff.o
+    ```
+
+4. Install the library into some appropriate directory, and put the header file into an appropriate directory as well. I use the principle of "most-closely enclosing ancestral directory" for installing my custom libraries. For example, a library that will be used only for programs that I write for my UNIX Systems Programming class will be in a directory under the directory containing all of those programs, such as:
+
+    ```bash
+    ~/unix_demos/lib/libutils.a
+    ```
+
+    and its header will be
+
+    ```bash
+    ~/unix_demos/include/utils.h
+    ```
+
+    If I have a library, say `libgoodstuff.a`, that is generally useful to me for any programming task, I will put it in my `~/lib` directory:
+
+    ```bash
+    ~/lib/libgoodstuff.a
+    ```
+
+    with its header in my `~/include` directory:
+
+    ```bash
+    ~/include/goodstuff.h
+    ```
+
+5. Make sure that your `LIBRARY_PATH` environment variable contains paths to all of the directories in which you might put your ***static*** library files. Your `.bashrc` file should have lines of the form<sup>1</sup>.
+
+    ```bash
+    LIBRARY_PATH="$LIBRARY_PATH:~/lib:"
+    export LIBRARY_PATH
+    ```
+
+    so that `gcc` will know "where to look" for your custom static libraries. If you want your libraries to be searched before the standard ones, then reverse the order:
+
+    ```bash
+    LIBRARY_PATH="~/lib:$LIBRARY_PATH"
+    export LIBRARY_PATHs
+    ```
+
+ 6. Make sure that your `CPATH` or `C_INCLUDE_PATH` (or if using C++, your `CPLUS_INCLUDE_PATH`) contains the path to the directory in which you put the header file. My `.bashrc` file has the lines
+    
+    ```bash
+    CPATH="~/include"
+    export CPATH
+    ```
+_Note_. Do not put your static libraries into the same directories as your shared libraries. Keep them separate. There is a good reason for this, which will become clear later.
 
 ## 6 Using a Static Library
 
 ## 7 Creating a Shared Library
+
+The `ar` command does not build shared libraries. You need to use `gcc` for that purpose. Before diving into the details though, you need to understand a few things about shared libraries in UNIX to make sense out of the options to be passed to `gcc` to create the library.
 
 ## 8 Using a Shared Library
 
@@ -34,5 +124,7 @@ Static libraries can be recognized by their ending: they end in ".a". Shared lib
 ___
 
 &copy; Prof. Stewart Weiss
+
+ <sup>1</sup> This is not the best way to do this. I use a shell function called pathmunge() for modifying paths. You can find examples of pathmunge in web searches.
 
 This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
