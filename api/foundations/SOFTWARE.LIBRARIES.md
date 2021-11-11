@@ -273,11 +273,109 @@ will create the executable `myprogram`, to be linked dynamically to the library 
 ```bash
 gcc -o myprogram myprogram.c ~/lib/libgoodstuff.so
 ```
+and this will be equivalent as well. All of the above assume that the directory containing the header file is in your `CPATH` or is in a standard location. Otherwise remember to add the option `-I`_includedir_ to this command.
 
+This is just the first step. Your executable will not run correctly unless the dynamic linker can find you shared library file. One way to tell whether it will run correctly is with the `ldd` command. The `ldd` command prints shared dependencies in a file. Translation: it displays a list of shared libraries upon which your program depends. If `ldd` does not display the path to `~/lib/libgoodstuff.so`, then `myprogram` will fail to find the file and will not run. If the dynamic linker will be able to find my library, the output of `ldd` would look something like:
 
+```bash
+linux-gate.so.1 => (0x00a31000)
+libgoodstuff.so.1 => ~/lib/libgoodstuff.so.1 (0x00caa000)
+libc.so.6 => /lib/libc.so.6 (0x00110000)
+/lib/ld-linux.so.2 (0x00bd5000)
+```
+
+If it will not be able to nd it, I will see
+
+```bash
+linux-gate.so.1 => (0x00a31000)
+libgoodstuff.so.1 => not found
+libc.so.6 => /lib/libc.so.6 (0x00110000)
+/lib/ld-linux.so.2 (0x00bd5000)
+```
+
+If you had the means to put your shared library file in a standard directory, this problem would be solved easily. Unfortunately, with just user privileges and not superuser privileges, you cannot do this. The easiest solution to this problem is one that is not recommended for various reasons: you can modify the environment variable `LD_LIBRARY_PATH`, which the dynamic linker uses at loadtime and runtime to locate shared libraries.
+To be precise, the dynamic linker searches the directories in this variable before any in the standard locations. Therefore, you can put the line
+
+```bash
+LD_LIBRARY_PATH="~/lib"
+export LD_LIBRARY_PATH
+```
+
+in your `.bashrc` file to have the dynamic linker search that directory at run time. The alternative is to modify the variable every time you run the program, which is a nuisance I think, or to hard code the path to the libraries into the executable using the `-rpath` option to the linkage editor (which is described in the `ld` man page.)
+
+There is one other option. You can define the `LD_RUN_PATH` variable to contain the directory in which you put your libraries, in your `.bashrc` file:
+
+```bash
+LD_RUN_PATH="~/lib"
+export LD_RUN_PATH
+```
+
+If this variable is defned when you compile the executable, then the run path will be hard-coded into the executable and the dynamic linker will find your libraries at run time.
 
 ## 9 Displaying the Contents of a Library
 
+This section is a bit more advanced and can be skipped if all you want to do is create your own libraries. It is also not very thorough. Its purpose is to give you some "leads" in case you want to understand more about the structure of libraries and code in general. There are several utilities that can be used to examine the contents of library files, with varying degrees of information provided and ease of use.
+
+The least amount of information is obtained with the GNU archiver, `ar`, which will display a list of the names of the `.0` files contained in a static library file. Use the `t` operation code. For example, if you list the `.o` files in the GNU Standard C++ library, you would first find it, usually in a directory such as `/usr/lib/gcc/<machine_architecture>/<version>`. For example, on my system it is in `/usr/lib/gcc/i686-redhat-linux/4.4.5`. Then the command
+
+```bash
+ar t libstdc++.a
+```
+
+will produce a very long list containing each of the object files that has been incorporated into the library. A partial list would include
+
+```bash
+atomic.o
+codecvt.o
+compatibility.o
+complex_io.o
+ctype.o
+debug.o
+hash.o
+globals_io.o
+hashtable.o
+ios.o
+...
+```
+
+This doesn't tell you very much, and `ar` does not work on shared libraries. You can use the `nm -s` command to get information about shared and static libraries. For static libraries, you would type
+
+```bash
+nm -s <libraryname>
+```
+
+For shared libraries, you need the `--dynamic` option:
+
+```bash
+nm -s --dynamic <libraryname>
+```
+In either case, unless you know how to interpret the output, this will not be very useful. But if all you want to do is see if a particular function name is actually in the library, you can `grep` for the name in the output. If you do not find it, it is not in that library.
+
+The `readelf` utility is a command designed to display information about ELF files in general<sup><a href="fn-2">2</a></sup>. ELF stands for "Executable and Linkable Format". ELF is a standard format for executable files, object files, and libraries. It replaces the older "a.out" and COFF formats. It was developed by UNIX System Laboratories and has been adopted by almost all UNIX vendors. It will be even more difficult to understand the output of `readelf` unless you spend some time learning about the structure of ELF files and the output of the `readelf` command itself. But if all you want to do is check what functions or other symbols are in an executable, you can type
+
+```bash
+readelf -s <elf-file>
+```
+
+and you will see a large amount of output that you can pass through a filter. For example, if I run `readelf` on a program, say `myprogram`, that was linked to my `libutils.so` shared library,
+
+```bash
+readelf -s myprogram
+```
+
+a portion of the output looks like this:
+
+```bash
+Symbol table '.dynsym' contains 17 entries:
+| Num | Value   | Size | Type   | Bind   | Vis     | Ndx Name           |
+| ---:| :---    | ---: | :---   | :---   | :---    | :---               |
+|    0| 00000000| 0    | NOTYPE | LOCAL  | DEFAULT | UND                |
+|    1| 00000000| 0    | FUNC   | GLOBAL | DEFAULT | UND show_time      |
+|    2| 00000000| 0    | NOTYPE | WEAK   | DEFAULT | UND __gmon_start__ |
+```
+
+
+The fact that `show_time` has a value of 0 means that it is not yet bound to an address. This is to be expected, because the actual binding not take place until runtime. To learn more, read the man page for ELF and then for `readelf`. You can also download the specification of ELF at various websites.
 
 ## Tutorial Videos<sup><a href="#fn-3">3</a></sup>
 
