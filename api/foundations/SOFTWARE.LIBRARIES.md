@@ -27,7 +27,7 @@ same machine architecture) without requiring the users on those systems to insta
 _Dynamic linking_ can be done either when the program is loaded into memory, or while it is running and references an unresolved symbol. In the former case, the start-up time of the program is slightly longer than if it had been statically linked, since the libraries have to be located in memory (and possibly loaded into memory if they were not already there) and then linked to the program before it can actually begin execution. In the latter case, the program will experience slightly longer running time, because whenever an unresolved symbol is found and must be resolved, there is a bit of overhead in locating the library and linking to it. This latter approach is the more common approach because it only links symbols that are actually used. For example, if a function from a shared library is not called during execution, it will not be linked to the library at all, saving time.
 
 There are several advantages of linking dynamically over linking statically. One is that, because the executable program file does not contain the code of the libraries that must be linked to it, the executable file is smaller. This means that it loads into memory faster and that it uses less space on disk. Another advantage is that it makes possible the sharing of memory resources.
-Instead of multiple copies of a library being physically incorporated into multiple programs, a single memory-resident copy of the library can be linked to each program, provided that it is a shared library. Shared libraries are dynamically-linked libraries that are designed so that they are not modified when a process uses them. This is why they have the extension, "`.so`" - short for shared object.
+Instead of multiple copies of a library being physically incorporated into multiple programs, a single memory-resident copy of the library can be linked to each program, provided that it is a shared library. Shared libraries are dynamically-linked libraries that are designed so that they are not modified when a process uses them. This is why they have the extension, `.so` - short for shared object.
 
 Another advantage of linking to shared libraries is that this makes it possible to update the libraries without recompiling the programs which use them, provided the interfaces to the libraries do not change. If bugs are discovered and fixed in these libraries, all that is necessary is to obtain the modified libraries. If they were statically linked, then all programs that use them would have to be recompiled.
 
@@ -35,7 +35,7 @@ Still other advantages are related to security issues. Hackers often try to atta
 
 ## 4 Identifying Libraries
 
-Static libraries can be recognized by their ending: they end in "`.a`". Shared libraries have a "`.so`" extension, possibly with a version number following, such as `librt.so.1`. Both types of libraries start with the prefix "`lib`" and then have a unique name that identifies that library. So, for example, the standard C++ static library is `libstdc++.a`, and the shared real-time library is `librt.so.1`. The "`rt`" in the name is short for real-time.
+Static libraries can be recognized by their ending: they end in `.a`. Shared libraries have a `.so` extension, possibly with a version number following, such as `librt.so.1`. Both types of libraries start with the prefix `lib` and then have a unique name that identifies that library. So, for example, the standard C++ static library is `libstdc++.a`, and the shared real-time library is `librt.so.1`. The `rt` in the name is short for real-time.
 
 ## 5 Creating a Static Library
 
@@ -57,7 +57,7 @@ The steps to create a static library are fairly simple. Suppose that you have on
     ar rcs libutils.a timestuff.o errors.o
     ```
 
-    The "rcs" following the command name consists of a one-letter operation code followed by two modifiers. The "`r`" is the operation code that tells `ar` to insert the object files into the archive. The"`c`" and "`s`" are modifiers; `c` means "create the archive if it did not exist" and `s` means "create an index," like a table of contents, in the archive file. The name of the archive is given after the options but before the list of files to insert in the archive. In this case, our library will be named `libutils.a`.
+    The `rcs` following the command name consists of a one-letter operation code followed by two modifiers. The `r` is the operation code that tells `ar` to insert the object files into the archive. The `c` and `s` are modifiers; `c` means "create the archive if it did not exist" and `s` means "create an index," like a table of contents, in the archive file. The name of the archive is given after the options but before the list of files to insert in the archive. In this case, our library will be named `libutils.a`.
 
     This same command can be used to add new object files to the library, so if you later decide to add the file `datestuff.o` to your library, you would use the command
 
@@ -118,7 +118,7 @@ To use the library in a program, you have to
  1. Tell the compiler to include its interface, i.e., its header
  2. Tell the linkage editor to link to the library itself 
 
-The first task is accomplished by putting an include directive in the program. The second task is achieved by using the `-l` option to `gcc` specify the name of the library. Remember that the name is everything between "`lib` " and the "`.`". _The `-l` option must follow the list of files that refer to that library_. For example, to link to the `libutils.a` library you would do two things:
+The first task is accomplished by putting an include directive in the program. The second task is achieved by using the `-l` option to `gcc` specify the name of the library. Remember that the name is everything between `lib` and the `.`. _The `-l` option must follow the list of files that refer to that library_. For example, to link to the `libutils.a` library you would do two things:
 
  1. In the program you would include the header file for the library:
     
@@ -177,7 +177,7 @@ The `ar` command does not build shared libraries. You need to use `gcc` for that
 
 ### Shared Library Names
 
-Every shared library has a special name called its "_soname_". The _soname_ is constructed from the prefix "lib", followed by the name of the library, then the string "`.so`", and finally, a period and a version number that is incremented whenever the interface changes. So, for example, the soname of the math library, `m`, might be `libm.so.1`.
+Every shared library has a special name called its "_soname_". The _soname_ is constructed from the prefix "lib", followed by the name of the library, then the string `.so`, and finally, a period and a version number that is incremented whenever the interface changes. So, for example, the soname of the math library, `m`, might be `libm.so.1`.
 
 Every shared library also has a "_real name_", which is the name of the actual file in which the library resides. The real name is longer than the soname; it must be formed by appending to the soname a period, and a minor number, and optionally, another period and a release number. The minor number and release number are used for configuration control.
 
@@ -284,7 +284,7 @@ libc.so.6 => /lib/libc.so.6 (0x00110000)
 /lib/ld-linux.so.2 (0x00bd5000)
 ```
 
-If it will not be able to nd it, I will see
+If it will not be able to find it, I will see
 
 ```bash
 linux-gate.so.1 => (0x00a31000)
@@ -389,6 +389,6 @@ ___
 
  <sup id="fn-2">2</sup> On some systems such as Solaris, there is no readelf; use elfdump instead
 
- <sup id="fn-3">3</sup> Added my Dayton Outar
+ <sup id="fn-3">3</sup> Added by Dayton Outar
 
 This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
