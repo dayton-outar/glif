@@ -351,7 +351,7 @@ nm -s --dynamic <libraryname>
 ```
 In either case, unless you know how to interpret the output, this will not be very useful. But if all you want to do is see if a particular function name is actually in the library, you can `grep` for the name in the output. If you do not find it, it is not in that library.
 
-The `readelf` utility is a command designed to display information about ELF files in general<sup><a href="fn-2">2</a></sup>. ELF stands for "Executable and Linkable Format". ELF is a standard format for executable files, object files, and libraries. It replaces the older "a.out" and COFF formats. It was developed by UNIX System Laboratories and has been adopted by almost all UNIX vendors. It will be even more difficult to understand the output of `readelf` unless you spend some time learning about the structure of ELF files and the output of the `readelf` command itself. But if all you want to do is check what functions or other symbols are in an executable, you can type
+The `readelf` utility is a command designed to display information about ELF files in general<sup><a href="#fn-2">2</a></sup>. ELF stands for "Executable and Linkable Format". ELF is a standard format for executable files, object files, and libraries. It replaces the older "a.out" and COFF formats. It was developed by UNIX System Laboratories and has been adopted by almost all UNIX vendors. It will be even more difficult to understand the output of `readelf` unless you spend some time learning about the structure of ELF files and the output of the `readelf` command itself. But if all you want to do is check what functions or other symbols are in an executable, you can type
 
 ```bash
 readelf -s <elf-file>
