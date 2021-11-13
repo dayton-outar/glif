@@ -61,7 +61,7 @@ the maze is immediately surrounded with a frame of 1s
 
 Note that in step four (Figure 4.23d), the position `(2 2)` is pushed onto the stack, although it is already there. However, this poses no danger, because when the second instance of this position is popped from the stack, all the paths leading from this position have already been investigated using the first instance of this position on the stack. Note also that the mouse makes a detour, although there is a shorter path from its initial position to the exit.
 
-[main.cpp] contains code implementing the maze exiting algorithm. Note that the program defines a class `Stack` derived from stack. `Stack` inherits from `stack` all the member functions, but it redefines `pop()` so that a call to a new `pop()` results in both removing the top element from the stack and returning it to the caller.
+[main.cpp](main.cpp) contains code implementing the maze exiting algorithm. Note that the program defines a class `Stack` derived from stack. `Stack` inherits from `stack` all the member functions, but it redefines `pop()` so that a call to a new `pop()` results in both removing the top element from the stack and returning it to the caller.
 
 **FIGURE 4.23** An example of processing a maze.
 ![Figure 4.23](./fig-4.23.png)
