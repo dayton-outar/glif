@@ -36,7 +36,8 @@ The stack stores coordinates of positions of cells. This could be done, for inst
 Consider an example shown in Figure 4.23. The program actually prints out the
 maze after each step made by the mouse.
 
-    **0.** After the user enters the maze
+**0.** After the user enters the maze
+
     ````
     1100
     000e
