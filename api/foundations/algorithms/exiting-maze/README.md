@@ -38,21 +38,21 @@ maze after each step made by the mouse.
 
 **0.** After the user enters the maze
 
-    ````
-    1100
-    000e
-    00m1
-    ```
+```
+1100
+000e
+00m1
+```
 
 the maze is immediately surrounded with a frame of 1s
 
-    ```
-    111111
-    111001
-    1000e1
-    100m11
-    111111
-    ```
+```
+111111
+111001
+1000e1
+100m11
+111111
+```
 
 `entryCell` and `currentCell` are initialized to `(3 3)` and `exitCell` to `(2 4)` (Figure 4.23a).
 
