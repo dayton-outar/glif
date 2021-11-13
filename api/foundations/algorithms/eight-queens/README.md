@@ -53,4 +53,4 @@ activation record stores a return address and the values of `row` and `col`. Fig
 
 **{5}** As a result, the first call of putQueen() resumes execution by placing the first queen in position (0, 1).
 
-**{6-8}**This time execution continues smoothly and we obtain a complete solution.
+**{6-8}** This time execution continues smoothly and we obtain a complete solution.
