@@ -1,7 +1,7 @@
 
 # Tower of Hanoi
 
-![8 Disks](./Tower_of_Hanoin.jpeg)
+![8 Disks](./Tower_of_Hanoi.jpeg)
 
 ![Animated Tower of Hanoi](./Tower_of_Hanoi_4.gif)
 
