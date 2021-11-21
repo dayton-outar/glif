@@ -13,9 +13,7 @@ Once [GraphViz](https://graphviz.org/) is installed, run the command,
 dot example.dot -Tpdf > graph.pdf
 ```
 
-**NOTE** The Makefile is not working too well.
-
-To print output of C program graph
+To print output of C program graph without using `make vis`
 
 ```bash
 ./main | dot -Tpdf > vis.pdf
