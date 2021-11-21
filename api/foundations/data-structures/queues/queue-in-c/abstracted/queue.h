@@ -6,18 +6,13 @@
 
 #define QUEUE_EMPTY INT_MIN
 
-typedef struct node {
-    int value;
-    struct node* next;
-} node;
+typedef struct dq queue;
 
-typedef struct {
-    node *head;
-    node *tail;
-} queue;
-
-void init_queue(queue *q);
-bool enqueue(queue *q, int value);
-int dequeue(queue *q);
+queue* q_create(int max_size);
+bool q_enqueue(queue *q, int value);
+int q_dequeue(queue *q);
+void q_destroy(queue *q);
+bool q_empty(queue *);
+bool q_full(queue *);
 
 #endif

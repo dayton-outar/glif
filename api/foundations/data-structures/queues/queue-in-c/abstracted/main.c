@@ -3,16 +3,15 @@
 #include "queue.h"
 
 int main() {
-    queue q1;
-    init_queue(&q1);
+    queue *q1 = q_create(4);
 
-    enqueue(&q1, 56);   
-    enqueue(&q1, 78);
-    enqueue(&q1, 45);
-    enqueue(&q1, 13);
+    q_enqueue(q1, 56);   
+    q_enqueue(q1, 78);
+    q_enqueue(q1, 45);
+    q_enqueue(q1, 13);
 
     int t;    
-    while ((t = dequeue(&q1)) != QUEUE_EMPTY) {
+    while ((t = q_dequeue(q1)) != QUEUE_EMPTY) {
         printf("t = %d\n", t);
     }
 }
