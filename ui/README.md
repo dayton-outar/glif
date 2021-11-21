@@ -47,3 +47,5 @@
 28. [React Material-UI Themes: Customize Material Components for your Project](https://youtu.be/bDkB3LoQKxs)
 29. [Top 10 VS Code Updates You Don't Know About!! (2020)](https://youtu.be/WHBQ1szkhtI)
 30. [Full Page Scrolling Effects | Pure CSS Scroll Effects](https://youtu.be/vHr3Li0-SP0)
+31. [Android Development for Beginners](https://youtu.be/fis26HvvDII)
+32. [Android Development for Beginners - Part 2](https://youtu.be/RcSHAkpwXAQ)
