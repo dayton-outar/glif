@@ -18,3 +18,9 @@ To print output of C program graph without using `make vis`
 ```bash
 ./main | dot -Tpdf > vis.pdf
 ```
+
+Had to use the command below to reset vscode personal access token,
+
+```bash
+git remote set-url origin https://username:token@github.com/username/repository.git
+```
