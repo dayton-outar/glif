@@ -1,0 +1,8 @@
+graph {
+    Mike -- Jane;
+    Jane -- Steve;
+    Susan -- Carey;
+    Josey -- John;
+    John -- Mike;
+    John -- Jane;
+}
