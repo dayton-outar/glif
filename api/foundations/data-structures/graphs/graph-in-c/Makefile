@@ -1,5 +1,7 @@
 CC=gcc
 CFLAGS=-g -Wall
+OBJ=graph_adj_mat.o
+BIN=main
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
