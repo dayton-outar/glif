@@ -6,8 +6,8 @@ I noticed that C++ files had two (2) different type of extensions: `.cc` and `.c
 I found [this](https://stackoverflow.com/questions/18590135/what-is-the-difference-between-cc-and-cpp-file-suffix)<sup><a href="#fn-1">1</a></sup> entry on StackOverflow.
 
 <blockquote>
-Conventions.
- 
+<p>Conventions.</p>
+
 Historically, the suffix for a C++ source file was `.C`. This caused a few problems the first time C++ was ported to a system where case wasn't significant in the filename.
 
 Different users adopted different solutions: `.cc`, `.cpp`, `.cxx` and possibly others. Today, outside of the Unix world, it's mostly `.cpp`. Unix seems to use `.cc` more often.
