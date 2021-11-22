@@ -21,7 +21,7 @@ I found [this](https://stackoverflow.com/questions/18590135/what-is-the-differen
 
 > In the case of source files different endings will cause the compiler to assume a different language. But this can normally be overridden, and I used `.cc` with VC++ long before VC++ recognized it as C++.
 
-Another good explanation was from an entry<sup><a href="#fn-2"></a></sup> on Quora.
+Another good explanation was from an entry<sup><a href="#fn-2">2</a></sup> on Quora.
 
 > Programming languages, like human languages, grow out of specific communities of people. The same goes for the various tools that work with programming languages.
 
