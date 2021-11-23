@@ -9,16 +9,17 @@ std::map<std::string, int> word_counter(std::vector<std::string> &words) {
     std::map<std::string,int> counter;
 
     // TODO: use STL foreach
-    //counter.insert()
+    for (auto word : words) {
+        counter[word]++;
+    }
+    
+    return counter;
 }
 
 int main()
 {
-    std::map<std::string,int> counter;
-    counter["dog"] = 8;
-    counter["cat"]++;
-    counter["cat"]++;
-    counter["1"] = 0;
+    std::vector<std::string> words = { "dog", "cat", "cat", "beer" };
+    std::map<std::string,int> counter = word_counter(words);
 
     for (auto pair : counter) {
         cout << pair.first << ":" << pair.second << std::endl;
