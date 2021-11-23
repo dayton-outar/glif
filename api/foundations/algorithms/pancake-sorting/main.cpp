@@ -1,5 +1,5 @@
 // Credit: https://www.geeksforgeeks.org/pancake-sorting/
-// g++ main.cpp -o main
+// g++ --print-memory-usage main.cpp -o main
 // ---
 // C++ program to
 // sort array using
