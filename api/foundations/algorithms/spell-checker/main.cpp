@@ -179,6 +179,12 @@ auto mutations(std::string const &word) {
     return muts;
 }
 
+/*
+auto candidates(std::string const &word) {
+    return variants(word) | mutations(word);
+}
+*/
+
 int main()
 {
     //std::string content = readfile("words.txt");
