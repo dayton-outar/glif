@@ -72,14 +72,93 @@ double probability(std::string const &word, std::map<std::string, int> &wordCoun
     return static_cast<double>(wordCounts[word]) / n;
 }
 
-int main()
-{
-    std::string content = readfile("words.txt");
-    std::map<std::string,int> counter = word_counter(words_split(content));
+std::map<std::string, std::string> splits(std::string const &word) {
+    std::map<std::string, std::string> wordSplits;
 
-    for (auto pair : counter) {
-        cout << pair.first << ":" << pair.second << std::endl;
+    auto len = word.length() + 1;
+    for (int i = 0; i < len; i++) {
+        wordSplits[word.substr(0, i)] = word.substr(i, len);
     }
 
-    cout << "probability of rat: " << probability("rat", counter) << endl;
+    return wordSplits;
+}
+
+std::vector<std::string> deletes(std::map<std::string, std::string> const &splits) {
+    std::vector<std::string> dels;
+
+    // Adapted from: https://thispointer.com/how-to-copy-all-values-from-a-map-to-a-vector-in-c/
+    std::for_each(splits.begin(), splits.end(),
+        [&](auto &el) {
+            if (!el.second.empty()) {
+                auto len = el.second.length() - 1;
+                dels.push_back( el.first + el.second.substr(1, len) );
+            }
+        }
+    );
+
+    return dels;
+}
+
+std::vector<std::string> transposes(std::map<std::string, std::string> const &splits) {
+    std::vector<std::string> tsps;
+
+    std::for_each(splits.begin(), splits.end(),
+        [&](auto &el) {
+            auto len = el.second.length();
+            if (len > 1) {
+                tsps.push_back( el.first + el.second.substr(1, 1) + el.second.substr(0, 1) + el.second.substr(2, len) );
+            }
+        }
+    );
+
+    return tsps;
+}
+
+std::vector<std::string> replaces(std::map<std::string, std::string> const &splits) {
+    std::vector<std::string> rplcs;
+    std::string letters = "abcdefghijklmnopqrstuvwxyz";
+
+    std::for_each(splits.begin(), splits.end(),
+        [&](auto &el) {
+            for (int x = 0; x < letters.length(); x++) {
+                if (!el.second.empty()) {
+                    auto len = el.second.length() - 1;
+                    rplcs.push_back( el.first + letters[x] + el.second.substr(1, len) );
+                }
+            }
+        }
+    );
+
+    return rplcs;
+}
+
+std::vector<std::string> inserts(std::map<std::string, std::string> const &splits) {
+    std::vector<std::string> insts;
+    std::string letters = "abcdefghijklmnopqrstuvwxyz";
+
+    std::for_each(splits.begin(), splits.end(),
+        [&](auto &el) {
+            for (int x = 0; x < letters.length(); x++) {
+                insts.push_back( el.first + letters[x] + el.second );
+            }
+        }
+    );
+
+    return insts;
+}
+
+int main()
+{
+    //std::string content = readfile("words.txt");
+    //std::map<std::string,int> counter = word_counter(words_split(content));
+
+    auto flowers = splits("flower");
+    //auto dels = deletes(flowers);
+    //auto tsps = transposes(flowers);
+    //auto rplcs = replaces(flowers);
+    auto insts = replaces(flowers);
+
+    for (auto inst : insts) {
+        cout << inst << endl;
+    }
 }
