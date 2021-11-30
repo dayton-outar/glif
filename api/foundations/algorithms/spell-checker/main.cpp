@@ -147,18 +147,45 @@ std::vector<std::string> inserts(std::map<std::string, std::string> const &split
     return insts;
 }
 
+auto variants(std::string const &word) {
+    std::vector<std::string> vrnts;
+
+    auto flowers = splits(word);
+
+    auto dels = deletes(flowers);
+    auto tsps = transposes(flowers);
+    auto rplcs = replaces(flowers);
+    auto insts = replaces(flowers);
+
+    // Append vectors
+    // Learnt from https://www.delftstack.com/howto/cpp/append-vector-to-vector-cpp/
+    vrnts.insert(vrnts.end(), dels.begin(), dels.end());
+    vrnts.insert(vrnts.end(), tsps.begin(), tsps.end());
+    vrnts.insert(vrnts.end(), rplcs.begin(), rplcs.end());
+    vrnts.insert(vrnts.end(), insts.begin(), insts.end());
+
+    return vrnts;
+}
+
+auto mutations(std::string const &word) {
+    std::vector<std::string> muts;
+
+    for (auto var : variants(word)) {
+        for (auto mut: variants(var)) {
+            muts.push_back(mut);
+        }
+    }
+
+    return muts;
+}
+
 int main()
 {
     //std::string content = readfile("words.txt");
     //std::map<std::string,int> counter = word_counter(words_split(content));
+    auto flowers = variants("flower");
 
-    auto flowers = splits("flower");
-    //auto dels = deletes(flowers);
-    //auto tsps = transposes(flowers);
-    //auto rplcs = replaces(flowers);
-    auto insts = replaces(flowers);
-
-    for (auto inst : insts) {
-        cout << inst << endl;
+    for (auto flwr : flowers) {
+        cout << flwr << endl;
     }
 }
