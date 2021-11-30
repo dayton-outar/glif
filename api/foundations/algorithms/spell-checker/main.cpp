@@ -1,9 +1,15 @@
 // Adopted from: https://stackoverflow.com/questions/53055563/what-is-the-c-equivalent-of-python-collections-counter
+/**
+ * Originally from Peter Norvig (2007-2016) and written in Python.
+ * See http://norvig.com/spell-correct.html
+ * 
+ */
 #include <iostream>
 #include <fstream>
 #include <map>
 #include <vector>
 #include <regex>
+#include <numeric>
 
 using namespace std;
 
@@ -42,6 +48,30 @@ std::map<std::string, int> word_counter(std::vector<std::string> const &words) {
     return counter;
 }
 
+/**
+ * Returns the probability of a word existing within a word collection
+ * 
+ * This is using basic probability, where the word count is 
+ * divided by the total number of words in the collection gathered
+ * from the document. 
+ * 
+ * @param word Word to be checked for a probability score
+ * @param wordCount Mapping of words to their word count from a given document
+ * @return Probability score of word in this collection
+ */
+double probability(std::string const &word, std::map<std::string, int> &wordCounts) {
+
+    // Adapted from https://stackoverflow.com/questions/31354947/adding-all-values-of-map-using-stdaccumulate
+    int n = std::accumulate(std::begin(wordCounts)
+              , std::end(wordCounts)
+              , 0
+              , [] (int value, const std::map<std::string, int>::value_type& p)
+                   { return value + p.second; }
+               );
+    
+    return static_cast<double>(wordCounts[word]) / n;
+}
+
 int main()
 {
     std::string content = readfile("words.txt");
@@ -50,4 +80,6 @@ int main()
     for (auto pair : counter) {
         cout << pair.first << ":" << pair.second << std::endl;
     }
+
+    cout << "probability of rat: " << probability("rat", counter) << endl;
 }
