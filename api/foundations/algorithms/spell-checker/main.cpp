@@ -234,7 +234,7 @@ auto correct(std::string const &word, std::map<std::string, int> &wordCounts) {
 int main()
 {
     cout << "read file ..." << endl;
-    string content = readfile("kite.txt");
+    string content = readfile("words.txt");
     cout << endl;
 
     cout << "mapping words ..." << endl;
