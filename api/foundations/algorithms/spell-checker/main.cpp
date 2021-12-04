@@ -29,6 +29,7 @@ std::vector<std::string> words_split(std::string &text) {
 
     // Adapted from: https://www.geeksforgeeks.org/program-to-find-all-match-of-a-regex-in-a-string/
     while (std::regex_search(text, sm, exp)) {
+        cout << "pushing [ " << sm.str(0) << " ]" << endl;
         words.push_back(sm.str(0));
 
         text = sm.suffix().str();
@@ -189,7 +190,7 @@ auto candidates(std::string const &word) {
 }
 */
 
-auto known(std::vector<std::string>& words, std::map<std::string, int> &wordCounts) {
+auto known(std::vector<std::string> &words, std::map<std::string, int> &wordCounts) {
     std::vector<std::string> wordFound;
 
     for (auto w: words) {
@@ -201,12 +202,36 @@ auto known(std::vector<std::string>& words, std::map<std::string, int> &wordCoun
     return wordFound;
 }
 
+auto candidates(std::string const &word, std::map<std::string, int> &wordCounts) {
+    std::vector<std::string> candidateWords{ word };
+
+    candidateWords = known(candidateWords, wordCounts);
+
+    if ( candidateWords.empty() ) {
+        auto v = variants(word);
+        candidateWords = known(v, wordCounts);
+    }
+
+    if ( candidateWords.empty() ) {
+        auto m = mutations(word);
+        candidateWords = known(m, wordCounts);
+    }
+
+    return candidateWords;
+}
+
+auto correct(std::vector<std::string> &words, std::map<std::string, int> &wordCounts) {
+    return max_element(words.begin(), words.end(), probability); // Need a comparator to use probability here
+}
+
 int main()
 {
-    std::string content = readfile("words.txt");
+    std::string content = readfile("kite.txt");
+    cout << "read file ..." << endl;
     std::map<std::string,int> counter = word_counter(words_split(content));
-    std::vector<std::string> w{ "flower" };
-    auto knowns = known(w, counter);
+    cout << "finished mapping" << endl;
+
+    auto knowns = candidates( "carrt", counter );
 
     for (auto knwns : knowns) {
         cout << knwns << endl;
