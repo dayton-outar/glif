@@ -29,7 +29,7 @@ std::vector<std::string> words_split(std::string &text) {
 
     // Adapted from: https://www.geeksforgeeks.org/program-to-find-all-match-of-a-regex-in-a-string/
     while (std::regex_search(text, sm, exp)) {
-        cout << "pushing [ " << sm.str(0) << " ]" << endl;
+        //cout << "pushing [ " << sm.str(0) << " ]" << endl;
         words.push_back(sm.str(0));
 
         text = sm.suffix().str();
@@ -184,19 +184,14 @@ auto mutations(std::string const &word) { // edits2
     return muts;
 }
 
-/*
-auto candidates(std::string const &word) {
-    return variants(word) | mutations(word);
-}
-*/
-
 auto known(std::vector<std::string> &words, std::map<std::string, int> &wordCounts) {
     std::vector<std::string> wordFound;
 
     for (auto w: words) {
         // https://stackoverflow.com/questions/1939953/how-to-find-if-a-given-key-exists-in-a-c-stdmap
-        if (wordCounts.find(w) == wordCounts.end())
+        if ( wordCounts.find(w) != wordCounts.end() ) {
             wordFound.push_back(w);
+        }
     }
 
     return wordFound;
@@ -220,20 +215,45 @@ auto candidates(std::string const &word, std::map<std::string, int> &wordCounts)
     return candidateWords;
 }
 
-auto correct(std::vector<std::string> &words, std::map<std::string, int> &wordCounts) {
-    return max_element(words.begin(), words.end(), probability); // Need a comparator to use probability here
+auto correct(std::string const &word, std::map<std::string, int> &wordCounts) {
+    string correction = "";
+    std::vector<std::string> words = candidates( word, wordCounts);    
+
+    if (words.size() > 0) {
+        correction = *max_element(words.begin(), words.end(), [&wordCounts](std::string const &wa, std::string const &wb) {
+                            auto wpa = probability(wa, wordCounts);
+                            auto wpb = probability(wb, wordCounts);
+                            
+                            return wpa < wpb;
+                        });
+    }
+
+    return correction;
 }
 
 int main()
 {
-    std::string content = readfile("kite.txt");
     cout << "read file ..." << endl;
-    std::map<std::string,int> counter = word_counter(words_split(content));
-    cout << "finished mapping" << endl;
+    string content = readfile("kite.txt");
+    cout << endl;
 
-    auto knowns = candidates( "carrt", counter );
+    cout << "mapping words ..." << endl;
+    map<string, int> wordMap = word_counter(words_split(content));
+    cout << endl;
+    
+    string request;
+	while (request != "quit")
+	{
+		cout << "Enter a word\n";
+		cin >> request;
 
-    for (auto knwns : knowns) {
-        cout << knwns << endl;
-    }
+		string suggestion = correct(request, wordMap);
+
+		if (suggestion != "")
+			cout << "You meant: " << suggestion << "?\n\n\n";
+		else
+			cout << "No correction suggestion\n\n\n";
+	}
+
+	cin.get();
 }
