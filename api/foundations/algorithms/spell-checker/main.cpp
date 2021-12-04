@@ -83,6 +83,8 @@ std::map<std::string, std::string> splits(std::string const &word) {
     return wordSplits;
 }
 
+#pragma region Helpers
+
 std::vector<std::string> deletes(std::map<std::string, std::string> const &splits) {
     std::vector<std::string> dels;
 
@@ -147,7 +149,9 @@ std::vector<std::string> inserts(std::map<std::string, std::string> const &split
     return insts;
 }
 
-auto variants(std::string const &word) {
+#pragma endregion Helpers
+
+auto variants(std::string const &word) { // edits1
     std::vector<std::string> vrnts;
 
     auto flowers = splits(word);
@@ -167,7 +171,7 @@ auto variants(std::string const &word) {
     return vrnts;
 }
 
-auto mutations(std::string const &word) {
+auto mutations(std::string const &word) { // edits2
     std::vector<std::string> muts;
 
     for (auto var : variants(word)) {
@@ -185,13 +189,26 @@ auto candidates(std::string const &word) {
 }
 */
 
+auto known(std::vector<std::string>& words, std::map<std::string, int> &wordCounts) {
+    std::vector<std::string> wordFound;
+
+    for (auto w: words) {
+        // https://stackoverflow.com/questions/1939953/how-to-find-if-a-given-key-exists-in-a-c-stdmap
+        if (wordCounts.find(w) == wordCounts.end())
+            wordFound.push_back(w);
+    }
+
+    return wordFound;
+}
+
 int main()
 {
-    //std::string content = readfile("words.txt");
-    //std::map<std::string,int> counter = word_counter(words_split(content));
-    auto flowers = variants("flower");
+    std::string content = readfile("words.txt");
+    std::map<std::string,int> counter = word_counter(words_split(content));
+    std::vector<std::string> w{ "flower" };
+    auto knowns = known(w, counter);
 
-    for (auto flwr : flowers) {
-        cout << flwr << endl;
+    for (auto knwns : knowns) {
+        cout << knwns << endl;
     }
 }
