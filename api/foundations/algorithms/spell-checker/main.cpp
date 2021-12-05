@@ -24,15 +24,14 @@ std::string readfile(std::string const &filename) {
 
 std::vector<std::string> words_split(std::string &text) {
     std::vector<std::string> words;
-    const std::regex exp("\\w+"); // FIX: It's not finding all the words
-    std::smatch sm;
+    std::regex e ("\\w+");    
 
     // Adapted from: https://www.geeksforgeeks.org/program-to-find-all-match-of-a-regex-in-a-string/
-    while (std::regex_match(text, sm, exp)) {
-        //cout << "pushing [ " << sm.str(0) << " ]" << endl;
+    for (sregex_iterator it = sregex_iterator(text.begin(), text.end(), e);
+         it != sregex_iterator(); it++) {
+        std::smatch sm;
+        sm = *it;
         words.push_back(sm.str(0));
-
-        text = sm.suffix().str();
     }
 
     return words;
@@ -41,7 +40,6 @@ std::vector<std::string> words_split(std::string &text) {
 std::map<std::string, int> word_counter(std::vector<std::string> const &words) {
     std::map<std::string,int> counter;
 
-    // TODO: use STL foreach
     for (auto word : words) {
         counter[word]++;
     }
@@ -73,6 +71,8 @@ double probability(std::string const &word, std::map<std::string, int> &wordCoun
     return static_cast<double>(wordCounts[word]) / n;
 }
 
+#pragma region WordCombo
+
 std::map<std::string, std::string> splits(std::string const &word) {
     std::map<std::string, std::string> wordSplits;
 
@@ -83,8 +83,6 @@ std::map<std::string, std::string> splits(std::string const &word) {
 
     return wordSplits;
 }
-
-#pragma region Helpers
 
 std::vector<std::string> deletes(std::map<std::string, std::string> const &splits) {
     std::vector<std::string> dels;
@@ -150,17 +148,16 @@ std::vector<std::string> inserts(std::map<std::string, std::string> const &split
     return insts;
 }
 
-#pragma endregion Helpers
-
 auto variants(std::string const &word) { // edits1
     std::vector<std::string> vrnts;
+    std::vector<std::string> unique;
 
     auto flowers = splits(word);
 
     auto dels = deletes(flowers);
     auto tsps = transposes(flowers);
     auto rplcs = replaces(flowers);
-    auto insts = replaces(flowers);
+    auto insts = inserts(flowers);
 
     // Append vectors
     // Learnt from https://www.delftstack.com/howto/cpp/append-vector-to-vector-cpp/
@@ -169,7 +166,14 @@ auto variants(std::string const &word) { // edits1
     vrnts.insert(vrnts.end(), rplcs.begin(), rplcs.end());
     vrnts.insert(vrnts.end(), insts.begin(), insts.end());
 
-    return vrnts;
+    for ( auto w : vrnts) {
+        if (std::find(unique.begin(), unique.end(), w) == unique.end()) {
+            // someName not in name, add it
+            unique.push_back(w);
+        }
+    }
+
+    return unique;
 }
 
 auto mutations(std::string const &word) { // edits2
@@ -184,12 +188,14 @@ auto mutations(std::string const &word) { // edits2
     return muts;
 }
 
-auto known(std::vector<std::string> &words, std::map<std::string, int> &wordCounts) {
+#pragma endregion Helpers
+
+auto known(std::vector<std::string> words, std::map<std::string, int> &wordMap) {
     std::vector<std::string> wordFound;
 
     for (auto w: words) {
         // https://stackoverflow.com/questions/1939953/how-to-find-if-a-given-key-exists-in-a-c-stdmap
-        if ( wordCounts.find(w) != wordCounts.end() ) {
+        if ( wordMap.find(w) != wordMap.end() ) {
             wordFound.push_back(w);
         }
     }
@@ -198,21 +204,26 @@ auto known(std::vector<std::string> &words, std::map<std::string, int> &wordCoun
 }
 
 auto candidates(std::string const &word, std::map<std::string, int> &wordCounts) {
+    std::vector<std::string> response;
     std::vector<std::string> candidateWords{ word };
 
-    candidateWords = known(candidateWords, wordCounts);
+    response = known(candidateWords, wordCounts);
 
-    if ( candidateWords.empty() ) {
+    if ( response.empty() ) {
         auto v = variants(word);
-        candidateWords = known(v, wordCounts);
+        response = known(v, wordCounts);
     }
 
-    if ( candidateWords.empty() ) {
+    if ( response.empty() ) {
         auto m = mutations(word);
-        candidateWords = known(m, wordCounts);
+        response = known(m, wordCounts);
     }
 
-    return candidateWords;
+    if ( response.empty() ) {
+        response = candidateWords;
+    }
+
+    return response;
 }
 
 auto correct(std::string const &word, std::map<std::string, int> &wordCounts) {
@@ -244,7 +255,8 @@ int main(int argc, char** argv)
     cout << "mapping words ..." << endl;
     map<string, int> wordMap = word_counter(words);
     cout << endl;
-    
+
+    // Adapted from https://github.com/felipefarinon/spellingcorrector/blob/master/spellingcorrector/main.cpp
     string request;
 	while (request != "quit")
 	{
