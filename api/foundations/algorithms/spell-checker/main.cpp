@@ -28,7 +28,7 @@ std::vector<std::string> words_split(std::string &text) {
     std::smatch sm;
 
     // Adapted from: https://www.geeksforgeeks.org/program-to-find-all-match-of-a-regex-in-a-string/
-    while (std::regex_search(text, sm, exp)) {
+    while (std::regex_match(text, sm, exp)) {
         //cout << "pushing [ " << sm.str(0) << " ]" << endl;
         words.push_back(sm.str(0));
 
@@ -231,14 +231,18 @@ auto correct(std::string const &word, std::map<std::string, int> &wordCounts) {
     return correction;
 }
 
-int main()
+int main(int argc, char** argv)
 {
     cout << "read file ..." << endl;
-    string content = readfile("words.txt");
+    string content = readfile(argv[1]);
+    cout << endl;
+
+    cout << "splitting words ..." << endl;
+    auto words = words_split(content);
     cout << endl;
 
     cout << "mapping words ..." << endl;
-    map<string, int> wordMap = word_counter(words_split(content));
+    map<string, int> wordMap = word_counter(words);
     cout << endl;
     
     string request;
