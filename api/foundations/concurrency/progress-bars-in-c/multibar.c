@@ -9,6 +9,11 @@
 const int PROG_BAR_LENGTH = 30;
 const int NUMTHREADS = 5;
 
+#define ESC "\033"
+#define CSI "["
+#define PREVIOUSLINE "F"
+#define BACKSPACE "D"
+
 typedef struct {
     int count_to_val;
     int progress;
@@ -20,6 +25,9 @@ void update_bar(thread_info* tinfo) {
     printf("\r[");
     for (int i = 0; i < num_char; i++) {
         printf("=");
+    }
+    if (tinfo->progress < tinfo->count_to_val) {
+        printf(ESC CSI BACKSPACE ">");
     }
     for (int i = 0; i < PROG_BAR_LENGTH - num_char; i++) {
         printf(" ");
@@ -60,7 +68,7 @@ int main() {
         }
         if (!done) {
             // Escape sequence for ESC and Move up five lines
-            printf("\033[%dF", NUMTHREADS);
+            printf(ESC CSI "%d" PREVIOUSLINE, NUMTHREADS);
         }
         
         usleep(10000);
