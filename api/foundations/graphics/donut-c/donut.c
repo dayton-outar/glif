@@ -1,3 +1,4 @@
+// https://stackoverflow.com/questions/11336477/gcc-will-not-properly-include-math-h
 // gcc donut.c -lm -o donut
 #include <stdio.h>
 #include <math.h>
