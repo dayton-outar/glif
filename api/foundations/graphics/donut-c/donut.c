@@ -1,3 +1,4 @@
+// gcc donut.c -lm -o donut
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
