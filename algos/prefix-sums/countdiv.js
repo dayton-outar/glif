@@ -10,7 +10,11 @@
 
 function solution(A, B, K) {
     // write your code in JavaScript (Node.js 14)
-    return ( ( A % K ) == 0 ? 1 : 0 ) + Math.floor( ((B - A) / K ) ) + ( ( B % K ) == 0 ? 1 : 0 );
+    return ( ( A % K ) == 0 ? 1 : 0 ) + Math.floor( ((B - A) / K ) ); // 75%
+}
+
+function solution2(A, B, K) { // Credit: https://gist.github.com/edulelis/11db5980bceef67a24f87f31c0644e0a
+    return Math.floor(B/K) - Math.ceil(A/K) + 1;
 }
 
 console.log( solution(0, 1, 11) );
