@@ -1,25 +1,50 @@
-let x = 612000;
-
-// TODO: Fix this. Not correct
 function solution(X) {
     // write your code in JavaScript (Node.js 8.9.4)
-    const week = 604800;
-    const day = 86400;
-    const hour = 3600;
     const minute = 60;
+    const hour = 60 * minute;
+    const day = 24 * hour;
+    const week = 7 * day;
 
-    let timeAbv = '';
-    if (X >= week) {
-        timeAbv = `${parseInt(X / week, 10)}w${parseInt((X % week) / day, 10) === 0 ? `${parseInt(Math.ceil((X % week) / hour), 10)}h` : `${parseInt(Math.ceil((X % week)/day, 10))}d`}`;
-    } else if (X >= day) {
-        timeAbv = `${parseInt(X / day, 10)}d${parseInt((X % day) / hour, 10) === 0 ? `${parseInt(Math.ceil((X % day) / minute), 10)}m` : `${parseInt(Math.ceil((X % day)/hour, 10))}h`}`;
-    } else if (X >= hour) {
-        timeAbv = `${parseInt(X / hour, 10)}h${parseInt((X % hour) / minute, 10) === 0 ? `${parseInt(Math.ceil((X % hour) % minute), 10)}s` : `${parseInt(Math.ceil((X % hour) / minute, 10))}m`}`;
-    } else {
-        timeAbv = `${parseInt(X / minute, 10)}m${(X % minute) === 0 ? '' : `${parseInt(Math.ceil((X % minute), 10))}s`}`;
+    let timeLeft = X
+    const numberOfWeeks = Math.floor( timeLeft / week );
+    timeLeft = timeLeft - ( numberOfWeeks * week );
+    const numberOfDays = Math.floor( timeLeft / day );
+    timeLeft = timeLeft - ( numberOfDays * day );
+    const numberOfHours = Math.floor( timeLeft / hour );
+    timeLeft = timeLeft - ( numberOfHours * hour );
+    const numberOfMinutes = Math.floor( timeLeft / minute );
+    timeLeft = timeLeft - ( numberOfMinutes * minute );
+    const numberOfSeconds = timeLeft;
+
+    let abv = [];
+    
+    if (numberOfWeeks > 0) {
+        abv.push(`${numberOfWeeks}w`);
     }
 
-    return timeAbv;
+    if (numberOfDays > 0 && abv.length < 2) {
+        abv.push(`${numberOfDays}d`);
+    }
+
+    if (numberOfHours > 0 && abv.length < 2) {
+        abv.push(`${numberOfHours}h`);
+    }
+
+    if (numberOfMinutes > 0 && abv.length < 2) {
+        abv.push(`${numberOfMinutes}m`);
+    }
+
+    if (numberOfSeconds > 0 && abv.length < 2) {
+        abv.push(`${numberOfSeconds}s`);
+    }
+
+    return abv.join('');
 }
 
-console.log( solution(x) );
+console.log( solution(612060) ); // 1 week 2 hours
+
+console.log( solution(604800) ); // 1 week
+
+console.log( solution(604862) ); // 1 week 1 minute
+
+console.log( solution(604840) ); // 1 week 40 seconds
