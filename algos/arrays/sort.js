@@ -31,7 +31,7 @@ list.forEach((value) => {
 });
 
 console.log();
-console.log('Sorting by identifier [no] ...');
+console.log('Sorting by identifier [no] in ascending order ...');
 console.log();
 
 list.sort((a, b) => a.no - b.no);
@@ -41,7 +41,7 @@ list.forEach((value) => {
 });
 
 console.log();
-console.log('Reverse the order of [no] ...');
+console.log('Reverse the order of [no] in descending order ...');
 console.log();
 
 list.sort((a, b) => b.no - a.no);
