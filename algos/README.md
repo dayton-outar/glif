@@ -18,8 +18,9 @@
 14. [Fish](./stacks-queues/fish.js)
 15. [Stone Wall](./stacks-queues/stone-wall.js) <sup><a href="http://straightdeveloper.com/how-to-get-100-score-on-the-stonewall-exercise-on-codility/">ref</a></sup>
 16. [Equi Leader](./leader/equi.js) <sup>*</sup>
-17. [Max Profit](/maximum-slice/profit.js) <sup>*</sup>
-18. [Max Slice Sum](/maximum-slice/num.js) <sup>*</sup>
+17. [Max Profit](./maximum-slice/profit.js) <sup>*</sup>
+18. [Max Slice Sum](./maximum-slice/num.js) <sup>*</sup>
+19. [Max Double Slice Sum](./maximum-slice/sum.js) <sup>**</sup>
 
 
 ## Further Reading
