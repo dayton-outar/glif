@@ -1,5 +1,10 @@
 # JS Data Structures and Algorithms
 
+Practiced from most of the problems on,
+
+1. [Codility](https://app.codility.com/programmers/)
+2. [Leetcode](https://leetcode.com/)
+
 ## Most Challenging Problems
 
 1. [Binary Gap](./iterations/binary-gap.js)
