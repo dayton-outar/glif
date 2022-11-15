@@ -34,6 +34,10 @@ Practiced from most of the problems on,
 25. [Count Semiprimes](./sieve/semi-primes.js) <sup><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">**</a></sup>
 26. [Chocolates by Numbers](./euclidean/chocolates.js) <sup><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">**</a></sup>
 27. [Common Prime Divisors](./euclidean/prime-divisors.js) <sup><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">**</a></sup>
+28. [Count Distinct Slices](./caterpillar/slices.js) <sup>*</sup>
+29. [Count Triangle](./caterpillar/triangle.js) <sup>*</sup>
+30. [Max Non-overlapping Segments](./greedy/segments.js) <sup>*</sup>
+31. [Tie Rpes](./greedy/ropes.js)
 
 
 ## Further Reading
