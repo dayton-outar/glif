@@ -1,7 +1,7 @@
 
 I noticed that C++ files had two (2) different type of extensions: `.cc` and `.cpp`. This got me curious to find out if there were any nuances between the two (2).
 
-<sup><strong>NOTE</strong></sup> C++ files are also saved with the following extensions: `.cp`, `.c++`, `cxx`.
+<sup><strong>NOTE</strong></sup> C++ files are also saved with the following extensions: `.cp`, `.c++`, `.cxx`.
 
 I found [this](https://stackoverflow.com/questions/18590135/what-is-the-difference-between-cc-and-cpp-file-suffix)<sup><a href="#fn-1">1</a></sup> entry on StackOverflow.
 
