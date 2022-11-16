@@ -75,7 +75,7 @@ const triangles = A => {
     return result;
 }
 ```
-___
+
 The time complexity of the above algorithm is _O(n^2)_, because for every stick _x_ the values of _y_ and _z_ increase _O(n)_ number of times.
 
 ## References
