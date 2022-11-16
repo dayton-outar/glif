@@ -37,7 +37,7 @@ Practiced from most of the problems on,
 28. [Count Distinct Slices](./caterpillar/slices.js) <sup>*</sup>
 29. [Count Triangle](./caterpillar/triangle.js) <sup>*</sup>
 30. [Max Non-overlapping Segments](./greedy/segments.js) <sup>*</sup>
-31. [Tie Rpes](./greedy/ropes.js)
+31. [Tie Ropes](./greedy/ropes.js)
 
 
 ## Further Reading
