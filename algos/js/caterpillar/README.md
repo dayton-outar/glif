@@ -6,7 +6,7 @@ The Caterpillar method is a likeable name for a popular means of solving algorit
 
 Let’s check whether a sequence ${a_0, a_1, \dots, a_{n − 1} (1 \leq a_i \leq 10^9)}$ contains a contiguous subsequence whose sum of elements equals $s$. For example, in the following sequence we are looking for a subsequence whose total equals $s = 12$.
 
-![Sub-sequence in a sequence](../../../.attachments/caterpillar-sequence.png")
+![Sub-sequence in a sequence](/.attachments/caterpillar-sequence.png")
 
 
 Each position of the caterpillar will represent a different contiguous subsequence in which the total of the elements is not greater than $s$. Let’s initially set the caterpillar on the first element. Next we will perform the following steps:
