@@ -49,8 +49,32 @@ The above estimation of time complexity is based on amortized cost, which will b
 
 ## 15.2 Exercise
 
-**Problem:** You are given
-**Solution:** _O(n^2)_. For every pair
+**Problem:** You are given _n_ sticks (of length ${1 \leq a_0 \leq a_1 \leq \dots \leq a_{n − 1} \leq 10^9}$). The goal is to count the number of triangles that can be constructed using these sticks. More precisely, we have to count the number of triplets at indices ${x < y < z}$, such that ${a_x + a_y > a_z}$.
+
+**Solution:** _O(n^2)_. For every pair _x_, _y_ we can find the largest stick _z_ that can be used to construct the triangle. Every stick _k_, such that ${y < k \leq z}$, can also be used, because the condition ${a_x + a_y > a_k}$ will still be trye. We can add up all these triangles at once.
+
+If the value _z_ is found every time from the beginning then we get a _O(n^3)_ time complexity solution. However, we can instead use the caterpillar method. When increasing the value of _y_, we can increase (as far as possible) the value of _z_.
+
+**15.2 The number of triangles in _O(n^2)_.**
+```js
+let range = n => Array.from(Array(n).keys());
+
+const triangles = A => {
+    const n = A.length;
+    let result  = 0;
+
+    for ( const x in range(n) ) {
+        z = x + 2;
+        for ( ... )
+            while (z < n && A[x] + A[y] > A[z]) {
+                z++;
+            }
+            result += z - y - 1;
+    }
+
+    return result;
+}
+```
 ___
 The time complexity of the above algorithm is _O(n^2)_, because for every stick _x_ the values of _y_ and _z_ increase _O(n)_ number of times.
 
