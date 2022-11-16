@@ -2,7 +2,7 @@
 
 The Caterpillar method is a likeable name for a popular means of solving algorithmic tasks. The idea is to check elements in a way that’s reminiscent of movements of a caterpillar. The caterpillar crawls through the array. We remember the front and back positions of the caterpillar, and at every step either of them is moved forward.
 
-![Caterpillar moving](/.attachments/moving-caterpillar.jpeg)
+![Caterpillar moving](/.attachments/moving-caterpillar.gif)
 
 ## 15.1 Usage example
 
@@ -49,7 +49,7 @@ The above estimation of time complexity is based on amortized cost, which will b
 
 ## 15.2 Exercise
 
-**Problem:** You ..
+**Problem:** You are given
 **Solution:** _O(n^2)_. For every pair
 ___
 The time complexity of the above algorithm is _O(n^2)_, because for every stick _x_ the values of _y_ and _z_ increase _O(n)_ number of times.
