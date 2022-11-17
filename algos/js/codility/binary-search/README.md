@@ -109,6 +109,5 @@ The total time complexity of such a solution is ${O(n log(n))}$ due to the binar
 
 1. [Codility Training Media - Binary Search Method](https://codility.com/media/train/12-BinarySearch.pdf)
 
-___
 
 [^1]: Initially, the problem is not clear but as I re-read I get that there is an array of 1s and 0s and the $k$ represents the number of boards which is the same size of the array of 1s and 0s. So, the goal is to choose the smallest size of the boards that can cover all the holes. $k$ is confusing.
