@@ -14,6 +14,7 @@ Consider $n$ denominations $0 < m0 \leq m1 \leq \ldots \leq m_{n − 1}$ and the
 
 **16.1: The greedy algorithm for ﬁnding change.**
 ```js
+const greedy
 ```
 
 The function returns the list of pairs: denomination, number of coins. The time complexity of the above algorithm is $O(n)$ as the number of coins is added once for every denomination.
@@ -37,6 +38,7 @@ heavy and light will change over time — as the heaviest heavy gets closer to t
 
 **16.2: Canoeist in $O(n)$ solution.**
 ```js
+
 ```
 
 **Proof of correctness:** There exists an optimal solution in which the heaviest _heavy_ $h$ and the heaviest _light_ $l$ are seated together. If there were a better solution in which $h$ sat alone then $l$ could be seated with him/her anyway. If heavy $h$ were seated with some light $x \leq l$, then $x$ and $l$ could just be swapped. If $l$ has any companion $y$, $x$ and $y$ would ﬁt together, as $y \leq h$.
