@@ -31,10 +31,10 @@ let range = (n, m) => Array.from(Array((m - n)).keys()).map(e => e + n);
 
 const fibonacciDynamics = n => {
     let fib = Array(n + 2).fill(0);
-
     fib[1] = 1; // So, starting with 0, 1, ... sets the basis
-    for ( const i in range(2, n + 1) ) {
-        fib[i] = fib[i - 1] + fib[i - 2];
+    const R = range(2, n + 1 );
+    for ( let i in R ) {
+        fib[R[i]] = fib[R[i] - 1] + fib[R[i] - 2];
     }
 
     return fib[n];
@@ -77,5 +77,9 @@ In summary, for each number $x_i$ we can answer whether it is the sum of two Fib
 
 1. [Codility Training Media - Fibonacci Numbers](https://codility.com/media/train/11-Fibonacci.pdf)
 
+## Videos
+
+1. [Fibonacci's Explicit: Binet's Formula](https://youtu.be/3vbHTi6sID0)
+
 [^1]: Why such a statement? It must be inefficiency in space but certainly not time. Recursion takes up memory but not processing time.
-[^2]: How was this formula deduced? May need to check Knuth for proof.
+[^2]: This formula is called Binet's formula. See proof [here](https://www.themathdoctors.org/a-few-inductive-fibonacci-proofs/), [here](http://www.milefoot.com/math/discrete/sequences/binetformula.htm#:~:text=The%20explicit%20formula%20for%20the,the%20first%20to%20use%20it.) and [here](https://planetmath.org/derivationofbinetformula).
