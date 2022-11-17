@@ -45,7 +45,7 @@ caterpillarMethod( [6, 2, 7, 4, 1, 3, 6], 12 ); // Output: true
 
 Let’s estimate the time complexity of the above algorithm. At the first glance we have two nested loops, what suggest quadratic time. However, notice that at every step we move the front or the back of the caterpillar, and their positions will never exceed $n$. Thus we actually get an _O(n)_ solution.
 
-The above estimation of time complexity is based on amortized cost[^1], which will be explained more precisely in future lessons.
+The above estimation of time complexity is based on amortized cost[^1].
 
 ## 15.2 Exercise
 
@@ -86,4 +86,4 @@ The time complexity of the above algorithm is $O(n^2)$, because for every stick 
 
 1. [Codility Count Distinct Slices solution](https://youtu.be/6CkGw6u0n9A)
 
-[^1]: This term comes out of a concept called, <a href="https://en.wikipedia.org/wiki/Amortized_analysis" target="_blank">Amortized analysis</a>. "The motivation for amortized analysis is that looking at the worst-case run time can be too pessimistic. Instead, amortized analysis averages the running times of operations in a sequence over that sequence."
+[^1]: This term comes out of a concept called, [Amortized analysis](https://en.wikipedia.org/wiki/Amortized_analysis). "The motivation for amortized analysis is that looking at the worst-case run time can be too pessimistic. Instead, amortized analysis averages the running times of operations in a sequence over that sequence."
