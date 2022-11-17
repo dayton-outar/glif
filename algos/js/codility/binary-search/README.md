@@ -103,7 +103,7 @@ const check = (A, k) => {
 }
 ```
 
-The total time complexity of such a solution is ${O(n log(n))}$ due to the binary search time.
+The total time complexity of such a solution is ${O(n \times log(n))}$ due to the binary search time.
 
 ## References
 

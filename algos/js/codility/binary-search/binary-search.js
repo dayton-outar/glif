@@ -20,7 +20,7 @@ const binarySearch = (A, x) => {
     return result;
 }
 
-binarySearch( [12, 15, 15, 19, 24, 31, 53, 59, 60], 31 );
+//binarySearch( [12, 15, 15, 19, 24, 31, 53, 59, 60], 31 );
 
 const boards = (A, k) => {
     const n = A.length;
@@ -58,3 +58,5 @@ const check = (A, k) => {
     
     return boards;
 }
+
+console.log( boards( [0, 0, 1, 0, 0, 1, 1, 0, 0, 1], 10 ) ); // Output: 1
