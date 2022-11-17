@@ -2,7 +2,12 @@
 
 The Fibonacci numbers form a sequence of integers deﬁned recursively in the following way. The ﬁrst two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two.
 
-$$\large{ F_n = \begin{cases} 0 \qquad \text{for }n=0\\1 \qquad \text{for }n=1\\{F_{n - 1} + F_{n - 2}} \quad \text{for }n>1 \end{cases}}$$
+$$\large
+F_n = \begin{cases}
+0 \qquad \text{for }n=0\\
+1 \qquad \text{for }n=1\\
+{F_{n - 1} + F_{n - 2}} \quad \text{for }n>1 
+\end{cases}$$
 
 The first twelve Fibonacci numbers are:
 
@@ -54,11 +59,11 @@ F_n & F_{n - 1}
 \text{for }n \geq 1
 $$
 
-Even faster solution is possible by using the following formula:
+Even faster solution is possible by using the following formula:[^2]
 
 $$\large
 Fib_n = {({1 + \sqrt 5 \over 2})^n} - {({1 - \sqrt 5 \over 2})^n} \over \sqrt 5
-$$[^2]
+$$
 
 ## 13.2 Exercise
 
