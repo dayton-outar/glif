@@ -67,7 +67,7 @@ $$
 
 ## 13.2 Exercise
 
-**Problem:** For all the given numbers $x_0, x_1, \ldots, x_{n - 1}$ such that $$, check whether they may be presented as the sum of two Fibonacci numbers.
+**Problem:** For all the given numbers $x_0, x_1, \ldots, x_{n - 1}$ such that $1 \leq x_i \leq m \leq 1,000,000$, check whether they may be presented as the sum of two Fibonacci numbers.
 
 **Solution:** Notice that that only a few tens of Fibonacci numbers are smaller than the maximal $m$ (exactly 31). We consider all the pairs. If some of them sum to $k \leq m$, then we mark index $k$ in the array to denote that the value $k$ can be presented as the sum of two Fibonacci numbers.
 
