@@ -86,4 +86,4 @@ The time complexity of the above algorithm is $O(n^2)$, because for every stick 
 
 1. [Codility Count Distinct Slices solution](https://youtu.be/6CkGw6u0n9A)
 
-[^1]: This term comes out of a concept called, [Amortized analysis](https://en.wikipedia.org/wiki/Amortized_analysis). "The motivation for amortized analysis is that looking at the worst-case run time can be too pessimistic. Instead, amortized analysis averages the running times of operations in a sequence over that sequence."
+[^1]: This term comes out of a concept called, <a href="https://en.wikipedia.org/wiki/Amortized_analysis" target="_blank">Amortized analysis</a>. "The motivation for amortized analysis is that looking at the worst-case run time can be too pessimistic. Instead, amortized analysis averages the running times of operations in a sequence over that sequence."
