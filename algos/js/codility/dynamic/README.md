@@ -57,6 +57,11 @@ More precisely, $dp[j]$ is increased by the value of $dp[j − s_i]$ (for all $s
 
 **17.3: Solution in time complexity $O(n · k)$ and space complexity $O(k)$.**
 ```js
+
 ```
 
 The time complexity is $O(n · k)$ (all cells of array dp are visited for every jump) and the space complexity is $O(k)$.
+
+## References
+
+1. [Codility Training Media - Dynamic Programming](https://codility.com/media/train/15-DynamicProgramming.pdf)

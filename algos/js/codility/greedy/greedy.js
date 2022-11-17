@@ -11,8 +11,8 @@ const greedy = (M, k) => {
     let result = [];
 
     const R = range(n - 1, -1, -1);
-    for ( const i in R) {
-        result += 
-    }
+    // for ( const i in R) {
+    //     result += 
+    // }
 
 }
