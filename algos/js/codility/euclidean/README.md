@@ -78,7 +78,7 @@ This algorithm is superior to the previous one for very large integers when it c
 Denote by $(a_i , b_i)$ pairs of values $a$ and $b$, for which the above algorithm performs $i$ steps. We have $a_i + 1 \geq a_i$ , $b_i + 1 \geq bi$, $b_1 = a_1 > 0$. In the ﬁrst three cases, $a_i + 1 · b_i + 1 \geq 2 · a_i · b_i$. In the fourth case, $a_i + 1 · b_i + 1 \geq 2 · a_i − 1 · b_i − 1$, because a diﬀerence of two odd numbers is an even number. By induction we get:
 
 $$\large
-a_i · b_i \geq 2^{\lfoor {i - 1} \over 2 \rfloor}
+a_i · b_i \geq 2^{\lfloor{ {i - 1} \over 2 }\rfloor }
 $$
 
 ## 12.4. Least common multiple
