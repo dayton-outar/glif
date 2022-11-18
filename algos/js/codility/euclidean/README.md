@@ -86,7 +86,7 @@ $$
 The least common multiple ($lcm$) of two integers $a$ and $b$ is the smallest positive integer that is divisible by both $a$ and $b$. There is the following relation:
 
 $$\large
-lcm(a, b) = {a · b} \over {gcd(a, b)}
+lcm(a, b) = { {a · b} \over gcd(a, b) }
 $$
 
 Knowing how to compute the $gcd(a, b)$ in $O(log(a+b))$ time, we can also compute the $lcm(a, b)$ in the same time complexity.
