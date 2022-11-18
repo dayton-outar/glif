@@ -8,7 +8,7 @@ The original version of Euclid’s algorithm is based on subtraction: we recursi
 
 **12.1 Greatest common divisor by subtraction.**
 ```js
-
+const gcd = (a, b) => (a == b) ? a : ((a > b) ? gcd(a - b, b) : gcd(a, b - a));
 ```
 
 Let’s estimate this algorithm’s time complexity (based on $n = a + b$). The number of steps can be linear, for e.g. $gcd(x, 1)$, so the time complexity is $O(n)$. This is the worst-case complexity, because the value $x + y$ decreases with every step.

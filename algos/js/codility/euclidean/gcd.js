@@ -1,8 +1,11 @@
+const gcdBySub = (a, b) => (a == b) ? a : ((a > b) ? gcd(a - b, b) : gcd(a, b - a));
 const gcd = (a, b) => a % b == 0 ? b : gcd(b, a % b);
 
-console.log(`gcd(16, 8) ==> ${gcd(8, 2)}`);
+console.log(`gcd(16, 8) ==> ${gcd(16, 8)}`);
 console.log(`gcd(27, 9) ==> ${gcd(27, 9)}`);
 console.log(`gcd(34, 17) ==> ${gcd(34, 17)}`);
+
+console.log(`gcd(16, 8) ==> ${gcdBySub(16, 8)}`);
 
 const euclidean = (a, b, res) => {
     if (a == b)
