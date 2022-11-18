@@ -36,8 +36,15 @@ Practiced from most of the problems on,
 27. [Common Prime Divisors](./codility/euclidean/prime-divisors.js) <sup><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">**</a></sup>
 28. [Count Distinct Slices](./codility/caterpillar/slices.js) <sup>*</sup>
 29. [Count Triangle](./codility/caterpillar/triangle.js) <sup>*</sup>
-30. [Max Non-overlapping Segments](./codility/greedy/segments.js) <sup>*</sup>
-31. [Tie Ropes](./codility/greedy/ropes.js)
+30. [Min Absolute Sum of Two](./codility/caterpillar/two.js) <sup>*</sup>
+31. [Max Non-overlapping Segments](./codility/greedy/segments.js) <sup>*</sup>
+32. [Tie Ropes](./codility/greedy/ropes.js)
+33. [Fib Frog](./codility/fibonacci/frog.js) <sup>*</sup>
+34. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
+35. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
+36. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
+37. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
+38. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
 
 
 ## Further Reading
