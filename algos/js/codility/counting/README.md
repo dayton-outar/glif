@@ -8,6 +8,8 @@ $$
 
 We can also store the data in a slightly diﬀerent way, by making an array of counters. Each number may be counted in the array by using an index that corresponds to the value of the given number.
 
+![Sequence of numbers counted](/.attachments/counter-sequence.png)
+
 Notice that we do not place elements directly into a cell; rather, we simply count their occurrences. It is important that the array in which we count elements is suﬃciently large. If we know that all the elements are in the set { $0, 1, \ldots , m$ }, then the array used for counting should be of size $m + 1$.
 
 **4.1: Counting elements - $O(n + m)$.**
