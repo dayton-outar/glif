@@ -33,7 +33,7 @@ The time complexity of the above algorithm is $O(n\text{ }log\text{ }n)$ due to 
 
 ## 8.3. Solution with $O(n)$ time complexity
 
-Notice that if the sequence ${a_0 , a_1 ,\ldots , a_{n − 1}} contains a leader, then after removing a pair of elements of diﬀerent values, the remaining sequence still has the same leader. Indeed, if we remove two diﬀerent elements then only one of them could be the leader. The leader in the new sequence occurs more than ${n \over 2} − 1 = {{n − 2} \over 2}$ times. Consequently, it is still the leader of the new sequence of $n − 2$ elements.
+Notice that if the sequence ${a_0 , a_1 ,\ldots , a_{n − 1}}$ contains a leader, then after removing a pair of elements of diﬀerent values, the remaining sequence still has the same leader. Indeed, if we remove two diﬀerent elements then only one of them could be the leader. The leader in the new sequence occurs more than ${ n \over 2} − 1 = { {n − 2} \over 2 }$ times. Consequently, it is still the leader of the new sequence of $n − 2$ elements.
 
 ![Two sequences](/.attachments/leader-sequence-3.png)
 
