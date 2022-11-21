@@ -11,7 +11,7 @@ Significant lessons from Codility,
 - [Leader](./codility/prefix-sums/README.md)
 - [Maximum Slice](./codility/maximum-slice/README.md)
 - [Prime and composite numbers](./codility/prime/README.md)
-- [Sieve of Erastosthenes]()
+- [Sieve of Erastosthenes](./codility/sieve/README.md)
 - [Euclidean Algorithm](./codility/euclidean/README.md)
 - [Fibonacci Numbers](./codility/fibonacci/README.md)
 - [Binary Search](./codility/binary-search/README.md)
