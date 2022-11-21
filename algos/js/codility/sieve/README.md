@@ -4,7 +4,7 @@ The Sieve of Eratosthenes is a very simple and popular technique for ﬁnding al
 
 Initially, we have the set of all the numbers {$2, 3, \ldots, n$}. At each step we choose the smallest number in the set and remove all its multiples. Notice that every composite number has a divisor of at most $\sqrt n$. In particular, it has a divisor which is a prime number. It is suﬃcient to remove only multiples of prime numbers not exceeding $\sqrt n$. In this way, all composite numbers will be removed.
 
-![3 rows of sequences](/.attachments/3-rows-sequences.png)
+![3 rows of sequences](/.attachments/3-rows-sequence.png)
 
 The above illustration shows steps of sieving for $n = 17$. The elements of the processed set are in white, and removed composite numbers are in gray. First, we remove multiples of the smallest element in the set, which is 2. The next element remaining in the set is 3, and we also remove its multiples, and so on.
 
