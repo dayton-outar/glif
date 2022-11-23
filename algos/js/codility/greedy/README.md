@@ -4,6 +4,8 @@ We consider problems in which a result comprises a sequence of steps or choices 
 
 Depending on the problem, the greedy method of solving a task may or may not be the best approach. If it is not the best approach, then it often returns a result which is approximately correct but suboptimal. In such cases dynamic programming or brute-force can be the optimal approach. On the other hand, if it works correctly, its running time is usually faster than those of dynamic programming or brute-force.
 
+> For many problems, resorting to dynamic programming is overkill and a simpler algorithm will suffice. [^1]
+
 ## 16.1. The Coin Changing Problem
 
 For a given set of denominations, you are asked to ﬁnd the minimum number of coins with which a given amount of money can be paid. That problem can be approached by a greedy algorithm that always selects the largest denomination not exceeding the remaining amount of money to be paid. As long as the remaining amount is greater than zero, the process is repeated.
@@ -66,3 +68,5 @@ If the heaviest canoeist is seated alone, it is not possible to seat anybody wit
 ## References
 
 1. [Codility Training Media - Greedy Algorithms](https://codility.com/media/train/14-GreedyAlgorithms.pdf)
+
+[^1]: Page 217. Chapter 14: Advanced Algorithms. Data Structures and Algorithms with JavaScript by Michael McMillan.

@@ -7,7 +7,13 @@ Practiced from most of the problems on,
 
 Significant lessons from Codility,
 - [Counting Elements](./codility/counting/README.md)
+
+  Basically creating a hashtable to count occurrences of an element
+
 - [Prefix Sums](./codility/counting/README.md)
+  
+  Perfect for best performing algorithm to get sum of slices
+
 - [Leader](./codility/prefix-sums/README.md)
 - [Maximum Slice](./codility/maximum-slice/README.md)
 - [Prime and composite numbers](./codility/prime/README.md)

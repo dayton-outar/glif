@@ -4,7 +4,7 @@ There is a simple yet powerful technique that allows for the fast calculation of
 
 |           | $a_0$       | $a_1$             | $a_2$                  | $\ldots$ | $a_{n - 1}                            |
 |:---------:|:-----------:|:-----------------:|:----------------------:|:--------:|:-------------------------------------:|
-| $p_0 = 0$ | $p_1 = a_0$ | $p_1 = a_0 + a_1$ |$p_1 = a_0 + a_1 + a_2$ | $\ldots$ | $p_1 = a_0 + a_1 + \dots + a_{n - 1}$ |
+| $p_0 = 0$ | $p_1 = a_0$ | $p_2 = a_0 + a_1$ |$p_3 = a_0 + a_1 + a_2$ | $\ldots$ | $p_n = a_0 + a_1 + \dots + a_{n - 1}$ |
 
 We can easily calculate the prefix sums in $O(n)$ time complexity. Notice that the total $p_k$ equals $p_{k - 1} + a_{k - 1}$, so each consecutive value can be calculated in a constant time.
 
@@ -20,28 +20,31 @@ const prefixSums = (A) => {
 
     return P;
 }
+
+prefixSums([2, 1, 5, 3, 2]); // [ 0, 2, 3, 8, 11, 13 ]
 ```
 
-Similarly, we can calculate suﬃx sums, which are the totals of the $k$ last values. Using preﬁx (or suﬃx) sums allows us to calculate the total of any slice of the array very quickly. For example, assume that you are asked about the totals of $m$ slices [$x$..$y$] such that $0 \leq x \leq y < n$, where the total is the sum $a_x + a_{x + 1} + \ldots + a_{y - 1} + a_y$.
+Similarly, we can calculate suﬃx sums, which are the totals of the $k$ last values. Using preﬁx (or suﬃx) sums allows us to calculate the total of any slice of the array very quickly. For example, assume that you are asked about the totals of $m$ slices $[x..y]$ such that $0 \leq x \leq y < n$, where the total is the sum $a_x + a_{x + 1} + \ldots + a_{y - 1} + a_y$.
 
-The simples approach is to iterate through the whole array for each result separately; however, that requires $O(n · m)$ time. The better approach is to use preﬁx sums. If we calculate the preﬁx sums then we can answer each question directly in constant time.
+The simplest approach is to iterate through the whole array for each result separately; however, that requires $O(n · m)$ time. The better approach is to use preﬁx sums. If we calculate the preﬁx sums then we can answer each question directly in constant time.
 
-|              |       |       |          |            |
+| $p_{y + 1}$  | $a_0$ | $a_1$ | $\ldots$ | $a_{x - 1}$ |
 |:------------:|:-----:|:-----:|:--------:|:----------:|
-| $p_{y + 1}$  | $a_0$ | $a_1$ | $\ldots$ | $a_{x - 1} |
-| $p_x$        | $a_0$ | $a_1$ | $\ldots$ | $a_{x - 1} |
+| $p_x$        | $a_0$ | $a_1$ | $\ldots$ | $a_{x - 1}$ |
 | $p_{x + 1} = p_x$ |  |  |  | $\ldots$ | $p_1 = a_0 + a_1 + \dots + a_{n - 1}$ |
 
 **5.2: Total of one slice - $O(1)$.**
 ```js
-const countTotal = (P, x, y) => P[y + 1] - P[x]; // Not sure about this
+const countTotal = (P, x, y) => P[y + 1] - P[x];
+
+countTotal([ 0, 2, 3, 8, 11, 13 ], 1, 2); // 8 - 2 = 6
 ```
 
 We have calculated the total of $a_x + a_{x - 1} + \ldots + a_{y - 1} + a_y$ in $O(1)$ time. Using this approach, the total time complexity is $O(n + m)$.
 
 ## 5.1. Exercise
 
-**Problem:** You are given a non-empty, zero-indexed array $A$ of $n$ ($1 \leq n \leq 100,000$) integers $a_0 ,a_1 , \ldots, a_{n − 1}$ ($0 \leq ai \leq 1,000$). This array represents number of mushrooms growing on the consecutive spots along a road. You are also given integers $k$ and $m$ ($0 \leq k, m < n$). 
+**Problem:** You are given a non-empty, zero-indexed array $A$ of $n$ ($1 \leq n \leq 100,000$) integers $a_0 ,a_1 , \ldots, a_{n − 1}$ ($0 \leq ai \leq 1,000$). This array represents number of mushrooms growing on the consecutive spots along a road. You are also given integers $k$ and $m$ $(0 \leq k, m < n)$. 
 
 A mushroom picker is at spot number $k$ on the road and should perform $m$ moves. In one move she moves to an adjacent spot. She collects all the mushrooms growing on spots she visits. The goal is to calculate the maximum number of mushrooms that the mushroom picker can collect in $m$ moves.
 

@@ -1,3 +1,5 @@
+console.log( [2, 1, 5, 3, 2] );
+
 const prefixSums = (A) => {
     const n = A.length;
     let P = Array(n + 1).fill(0);
@@ -10,3 +12,15 @@ const prefixSums = (A) => {
 }
 
 console.log( prefixSums([2, 1, 5, 3, 2]) );
+
+const countTotal = (P, x, y) => P[y + 1] - P[x];
+
+console.log( countTotal([ 0, 2, 3, 8, 11, 13 ], 1, 2) ); // 8 - 2 = 6
+
+const mushrooms = (A, k, m) => {
+    let n = A.length;
+    let result = 0;
+    const sums = prefixSums(A);
+
+    return result;
+}

@@ -2,6 +2,10 @@
 
 Dynamic programming is a method by which a solution is determined based on solving successively similar but smaller problems. This technique is used in algorithmic tasks in which the solution of a bigger problem is relatively easy to ﬁnd, if we have solutions for its sub-problems.
 
+> Many programming problems that have recursive solutions can be rewritten using the techniques of dynamic programming. A dynamic programming solution builds a table, usually using an array, that holds the results of the many subsolutions as the problem is broken down. When the algorithm is complete, the solution is found in a distinct spot in the table. [^1]
+
+Based on the above-mentioned statement, we can reference [Fibonacci Numbers](../fibonacci/README.md) to appreciate that statement.
+
 ## 17.1 The Coin Changing Problem
 
 For a given set of denominations, you are asked to ﬁnd the minimum number of coins with which a given amount of money can be paid. Assume that you can use as many coins of a particular denomination as necessary. The greedy algorithmic approach is always to select the largest denomination not exceeding the remaining amount of money to be paid. As long as the remaining amount is greater than zero, the process is repeated. However, this algorithm may return a suboptimal result. For instance, for an amount of 6 and coins of values 1, 3, 4, we get 6 = 4 + 1 + 1, but the optimal solution here is 6 = 3 + 3.
@@ -65,3 +69,5 @@ The time complexity is $O(n · k)$ (all cells of array dp are visited for every 
 ## References
 
 1. [Codility Training Media - Dynamic Programming](https://codility.com/media/train/15-DynamicProgramming.pdf)
+
+[^1]: Page 208. Chapter 14: Advanced Algorithms. Data Structures and Algorithms with JavaScript by Michael McMillan.

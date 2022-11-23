@@ -89,3 +89,34 @@ const fastSolution = (A, B, m) => {
     return false;
 }
 ```
+
+## Observations
+
+For the final solution presented where the difference was arrived at and then used in `fastSolution`. It was not clearly explained the reason for returning `false` after checking if the difference was an odd number. This was done by,
+
+```js
+if (d % 2 == 1) return false;
+```
+
+Eventually, after running a few cases you begin to understand that only a difference that is an even number can be split and swapped. For example, if the sum difference between two (2) sequences is 2, the difference can be split in two (2) and shared across both seqences. Let's say one sequence has $[3, 2, 2]$ and another sequence has $[3, 1, 1]$, after splitting the difference any of the 2 from first sequence can be swapped with a 1 from the second sequence to get both sequences to have equal sum: $[3, 2, 1]$, $[3, 2, 1]$.
+
+So, the line of code below splits the difference of the sum between the two sequences,
+
+```js
+d = Math.floor( d / 2 );
+```
+
+You could not possibly split an odd number and, in a sense, the `Math.floor` may be unnecessary. `Math.floor` was a translation from Python's version of floor division that was taken from the original snippet from Codility.
+
+Now, unto the logic within the loop and using the case mentioned above ($[3, 2, 2]$, $[3, 1, 1]$). Since we need to swap one element (at least one element) from each sequence, we need to find numbers that can close the difference in sum between the two. So, this is the reason we need to look in one sequence, take that value and use the difference between that value and the split difference, which can _restore balance_ between the two sequences. Hence, the line,
+
+```js
+let value = B[i] - d;
+```
+
+Now, that we have a value that _restores balance_ we can apply a few conditions to identify a number that can be swapped. Here are the conditions,
+
+1. The value needs to be within the range between 0 and $m$. So, this explains `(0 < value) && (value <= m)`
+2. Does this value exist in the first sequence? So, we use `(count[value] > 0)`
+
+Once both conditions are met, we now there exists a number in the first sequence that can be swapped into the second sequence to make both sequences have a sum that equal to each other.

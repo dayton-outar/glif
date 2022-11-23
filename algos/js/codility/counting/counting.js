@@ -38,18 +38,17 @@ const fastSolution = (A, B, m) => {
     const sumB = B.reduce((p, c) => p + c, 0);
 
     let d = Math.abs(sumB - sumA);
-    console.log( `before = ${d}` );
+
     if (d % 2 == 1) return false; // Why odd number difference fails requirement?
 
     d = Math.floor( d / 2 );
-    console.log( `after = ${d}` );
 
     let count = counting(A, m);
     console.log( `count(s): ${count}` );
     for ( let i = 0; i < n; i++ ) {
         let value = B[i] - d;
-        if ( (value > 0) && (value <= m) && (count[value] > 0) ) {
-            console.log( ` i: ${i} --> value: ${value} --> count: ${count[value]}` );
+        console.log( ` i: ${i} --> value: ${value} --> count: ${count[value]}` );
+        if ( (value > 0) && (value <= m) && (count[value] > 0) ) {            
             return true;
         }
     }
@@ -58,4 +57,8 @@ const fastSolution = (A, B, m) => {
 }
 
 // console.log( fastSolution([0, 1, 1, 4, 5, 3, 2, 1], [5, 4, 3, 2, 1, 1, 1, 0], 5) ); //
-console.log( fastSolution([0, 1, 1, 4, 5, 3, 2, 1], [5, 4, 3, 2, 1, 2, 1, 1], 5) );
+console.log( fastSolution([0, 1, 1, 4, 5, 3, 2, 1], [5, 4, 3, 2, 1, 2, 1, 1, 3, 3], 5) );
+
+console.log( fastSolution([4, 4, 4, 4, 4], [5, 5, 5, 5], 5) );
+
+console.log( fastSolution([3, 2, 2], [3, 1, 1], 3) );
