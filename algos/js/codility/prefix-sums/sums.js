@@ -26,9 +26,9 @@ const mushrooms = (A, k, m) => {
     console.log(`min2 ----> ${min1}`);
     for ( let i = 0; i < min1; i++ ) {
         let leftPos = k - i;
-        let rightPos = Math.min( n - 1, Math.max( k, (k + m - 2 * i) ) );
-        console.log( leftPos, rightPos );
+        let rightPos = Math.min( n - 1, Math.max( k, (k + m - 2 * i) ) );        
         result = Math.max( result, countTotal( sums, leftPos, rightPos ) );
+        console.log( leftPos, rightPos, `---> ${result}` );
     }
 
     const min2 = Math.min( m + 1, n - k );
@@ -36,12 +36,12 @@ const mushrooms = (A, k, m) => {
     for ( let i = 0; i < min2; i++ ) {
         let rightPos = k + i;
         let leftPos = Math.max( 0, Math.min( k, (k - (m - 2 * i) ) ) );
-        console.log( leftPos, rightPos );
         result = Math.max( result, countTotal( sums, leftPos, rightPos ) );
+        console.log( leftPos, rightPos, `---> ${result}` );
     }
 
     return result;
 }
 
-console.log( [2, 3, 7, 5, 1, 3, 9] );
+console.log( [2, 3, 7, 5, 1, 3, 9], prefixSums( [2, 3, 7, 5, 1, 3, 9] ) );
 console.log( mushrooms( [2, 3, 7, 5, 1, 3, 9], 4, 6) );
