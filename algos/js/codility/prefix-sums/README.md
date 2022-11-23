@@ -28,10 +28,10 @@ Similarly, we can calculate suﬃx sums, which are the totals of the $k$ last va
 
 The simplest approach is to iterate through the whole array for each result separately; however, that requires $O(n · m)$ time. The better approach is to use preﬁx sums. If we calculate the preﬁx sums then we can answer each question directly in constant time.
 
-| $p_{y + 1}$  | $a_0$ | $a_1$ | $\ldots$ | $a_{x - 1}$ |
-|:------------:|:-----:|:-----:|:--------:|:----------:|
-| $p_x$        | $a_0$ | $a_1$ | $\ldots$ | $a_{x - 1}$ |
-| $p_{x + 1} = p_x$ |  |  |  | $\ldots$ | $p_1 = a_0 + a_1 + \dots + a_{n - 1}$ |
+| $p_{y + 1}$  | $a_0$ | $a_1$ | $\ldots$ | $a_{x - 1}$ | $a_x$ | $a_{x + 1}$ | $\ldots$ | $a_{y -1}$ | $a_y$ |
+|:------------:|:-----:|:-----:|:--------:|:-----------:|:-----:|:-----------:|:--------:|:----------:|:-----:|
+| $p_x$        | $a_0$ | $a_1$ | $\ldots$ | $a_{x - 1}$ |       |             |          |            |       |
+| $p_{x + 1} = p_x$ |  |       |          |             | $a_x$ | $a_{x + 1}$ | $\ldots$ | $a_{y -1}$ | $a_y$ |
 
 **5.2: Total of one slice - $O(1)$.**
 ```js
@@ -60,4 +60,29 @@ The mushroom picker starts at spot k = 4 and should perform $m = 6$ moves. She m
 
 **5.3: Mushroom picker - $O(n + m)$**
 ```js
+const mushrooms = (A, k, m) => {
+    let n = A.length;
+    let result = 0;
+    const sums = prefixSums(A);
+
+    const min1 = Math.min(m , k) + 1;
+    for ( let i = 0; i < min1; i++ ) {
+        let leftPos = k - i;
+        let rightPos = Math.min( n - 1, Math.max( k, (k + m - 2 * i) ) );
+        result = Math.max( result, countTotal( sums, leftPos, rightPos ) );
+    }
+
+    const min2 = Math.min( m + 1, n - k );
+    for ( let i = 0; i < min2; i++ ) {
+        let rightPos = k + i;
+        let leftPos = Math.max( 0, Math.min( k, (k - (m - 2 * i) ) ) );
+        result = Math.max( result, countTotal( sums, leftPos, rightPos ) );
+    }
+
+    return result;
+}
+
+mushrooms( [2, 3, 7, 5, 1, 3, 9], 4, 6); // 25
 ```
+
+The total time complexity of such a solution is $O(n + m)$.
