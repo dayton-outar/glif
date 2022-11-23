@@ -2,7 +2,7 @@
 
 There is a simple yet powerful technique that allows for the fast calculation of sums of elements in given slice (contiguous segments of array). Its main idea uses preﬁx sums which are deﬁned as the consecutive totals of the ﬁrst $0, 1, 2, \dots, n$ elements of an array.
 
-|           | $a_0$       | $a_1$             | $a_2$                  | $\ldots$ | $a_{n - 1}                            |
+|           | $a_0$       | $a_1$             | $a_2$                  | $\ldots$ | $a_{n - 1}$                           |
 |:---------:|:-----------:|:-----------------:|:----------------------:|:--------:|:-------------------------------------:|
 | $p_0 = 0$ | $p_1 = a_0$ | $p_2 = a_0 + a_1$ |$p_3 = a_0 + a_1 + a_2$ | $\ldots$ | $p_n = a_0 + a_1 + \dots + a_{n - 1}$ |
 
@@ -44,7 +44,7 @@ We have calculated the total of $a_x + a_{x - 1} + \ldots + a_{y - 1} + a_y$ in 
 
 ## 5.1. Exercise
 
-**Problem:** You are given a non-empty, zero-indexed array $A$ of $n$ ($1 \leq n \leq 100,000$) integers $a_0 ,a_1 , \ldots, a_{n − 1}$ ($0 \leq ai \leq 1,000$). This array represents number of mushrooms growing on the consecutive spots along a road. You are also given integers $k$ and $m$ $(0 \leq k, m < n)$. 
+**Problem:** You are given a non-empty, zero-indexed array $A$ of $n$ $(1 \leq n \leq 100,000)$ integers $a_0 ,a_1 , \ldots, a_{n − 1}$ $(0 \leq ai \leq 1,000)$. This array represents number of mushrooms growing on the consecutive spots along a road. You are also given integers $k$ and $m$ $(0 \leq k, m < n)$. 
 
 A mushroom picker is at spot number $k$ on the road and should perform $m$ moves. In one move she moves to an adjacent spot. She collects all the mushrooms growing on spots she visits. The goal is to calculate the maximum number of mushrooms that the mushroom picker can collect in $m$ moves.
 

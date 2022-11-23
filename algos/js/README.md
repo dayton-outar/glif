@@ -14,7 +14,7 @@ Significant lessons from Codility,
   
   Perfect for best performing algorithm to get sum of slices
 
-- [Leader](./codility/prefix-sums/README.md)
+- [Leader](./codility/leader/README.md)
 - [Maximum Slice](./codility/maximum-slice/README.md)
 - [Prime and composite numbers](./codility/prime/README.md)
 - [Sieve of Erastosthenes](./codility/sieve/README.md)

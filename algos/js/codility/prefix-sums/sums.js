@@ -22,5 +22,8 @@ const mushrooms = (A, k, m) => {
     let result = 0;
     const sums = prefixSums(A);
 
+    //for ( let i = 0; i < )
     return result;
 }
+
+console.log( mushrooms( [], 4, 6) );
