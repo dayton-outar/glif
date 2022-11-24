@@ -26,17 +26,19 @@ const mushrooms = (A, k, m) => {
     console.log(`min2 ----> ${min1}`);
     for ( let i = 0; i < min1; i++ ) {
         let leftPos = k - i;
-        let rightPos = Math.min( n - 1, Math.max( k, (k + m - 2 * i) ) );        
+        let rightPos = Math.min( n - 1, Math.max( k, ( (k + m) - 2 * i) ) );        
         result = Math.max( result, countTotal( sums, leftPos, rightPos ) );
-        console.log( leftPos, rightPos, `---> ${result}` );
+        console.log(`(k: ${k} + m: ${m} - 2 * i: ${i}) ... ${(k + m - 2 * i)}`);
+        console.log( leftPos, rightPos, `---> ${result}` );        
     }
 
     const min2 = Math.min( m + 1, n - k );
     console.log(`min2 ----> ${min2}`);
     for ( let i = 0; i < min2; i++ ) {
         let rightPos = k + i;
-        let leftPos = Math.max( 0, Math.min( k, (k - (m - 2 * i) ) ) );
+        let leftPos = Math.max( 0, Math.min( k, ( (k - m) - 2 * i ) ) );
         result = Math.max( result, countTotal( sums, leftPos, rightPos ) );
+        console.log(`(k: ${k} - (m: ${m} - 2 * i: ${i}) ) ... ${(k - (m - 2 * i) )}`);
         console.log( leftPos, rightPos, `---> ${result}` );
     }
 

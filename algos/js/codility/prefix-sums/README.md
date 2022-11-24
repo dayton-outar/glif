@@ -52,7 +52,7 @@ For example, consider array A such that:
 
 ![Array A](/.attachments/prefix-array-sums.png)
 
-The mushroom picker starts at spot k = 4 and should perform $m = 6$ moves. She might move to spots 3, 2, 3, 4, 5, 6 and thereby collect 1 + 5 + 7 + 3 + 9 = 25 mushrooms. This is the maximal number of mushrooms she can collect.
+The mushroom picker starts at spot $k = 4$ and should perform $m = 6$ moves. She might move to spots 3, 2, 3, 4, 5, 6 and thereby collect 1 + 5 + 7 + 3 + 9 = 25 mushrooms. This is the maximal number of mushrooms she can collect.
 
 **Solution $O(m^2)$:** Note that the best strategy is to move in one direction optionally followed by some moves in the opposite direction. In other words, the mushroom picker should not change direction more than once. With this observation we can ﬁnd the simplest solution. Make the ﬁrst $p = 0, 1, 2, \\dots, m $moves in one direction, then the next $m − p$ moves in the opposite direction. This is just a simple simulation of the moves of the mushroom picker which requires $O(m^2)$ time.
 
@@ -68,14 +68,14 @@ const mushrooms = (A, k, m) => {
     const min1 = Math.min(m , k) + 1;
     for ( let i = 0; i < min1; i++ ) {
         let leftPos = k - i;
-        let rightPos = Math.min( n - 1, Math.max( k, (k + m - 2 * i) ) );
+        let rightPos = Math.min( n - 1, Math.max( k, ( (k + m) - 2 * i) ) );
         result = Math.max( result, countTotal( sums, leftPos, rightPos ) );
     }
 
     const min2 = Math.min( m + 1, n - k );
     for ( let i = 0; i < min2; i++ ) {
         let rightPos = k + i;
-        let leftPos = Math.max( 0, Math.min( k, (k - (m - 2 * i) ) ) );
+        let leftPos = Math.max( 0, Math.min( k, ( (k - m) - 2 * i ) ) );
         result = Math.max( result, countTotal( sums, leftPos, rightPos ) );
     }
 
@@ -86,3 +86,9 @@ mushrooms( [2, 3, 7, 5, 1, 3, 9], 4, 6); // 25
 ```
 
 The total time complexity of such a solution is $O(n + m)$.
+
+## Observations
+
+In the `mushrooms` function, there are two (2) loops. Both of which are getting the maximum sum of a slice of the array.
+
+In the loops, the idea is to calculate the right position and the left position to get the sum between those positions. The formulas to derive the positions are most interesting. For the first loop, the minimum number between the length of the array and the maximum of `k` and `(k + m) - 2 * i` is derived for the `rightPos`. The second loop uses an inverse approach to arrive at the left position and includes the formula `(k - m) - 2 * i)`. Why the need for these formulas? Why do they work?
