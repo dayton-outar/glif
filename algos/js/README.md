@@ -15,7 +15,13 @@ Significant lessons from Codility,
   Perfect for best performing algorithm to get sum of slices
 
 - [Leader](./codility/leader/README.md)
+
+  Ways to identify an element that occurs more than once
+
 - [Maximum Slice](./codility/maximum-slice/README.md)
+
+  Basically maintaining track of the maximum running total
+
 - [Prime and composite numbers](./codility/prime/README.md)
 - [Sieve of Erastosthenes](./codility/sieve/README.md)
 - [Euclidean Algorithm](./codility/euclidean/README.md)

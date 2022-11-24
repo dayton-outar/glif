@@ -70,6 +70,10 @@ $$
 
 In summary, for each number $x_i$ we can answer whether it is the sum of two Fibonacci numbers in constant time. The total time complexity is $O(n + m)$.
 
+## Observations
+
+I'm pretty impressed with _Binet's formula_ and started looking at the proof. Usually, when I encounter formulas like these, I start to look for the proof.
+
 ## References
 
 1. [Codility Training Media - Fibonacci Numbers](https://codility.com/media/train/11-Fibonacci.pdf)
