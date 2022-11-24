@@ -93,7 +93,7 @@ Still these solutions are not optimal.
 
 ## 9.3. Solution with $O(n)$ time complexity
 
-This problem can be solved even faster. For each position, we compute the largest sum that ends in that position. If we assume that the maximum sum of a slice ending in position $i$ equals $max_ending$, then the maximum slice ending in position $i + 1$ equals $max(0, max_ending + a_{i + 1})$.
+This problem can be solved even faster. For each position, we compute the largest sum that ends in that position. If we assume that the maximum sum of a slice ending in position $i$ equals $maxEnding$, then the maximum slice ending in position $i + 1$ equals $max(0, maxEnding + a_{i + 1})$.
 
 **9.4: Maximal slice - $O(n^2)$**
 ```js
