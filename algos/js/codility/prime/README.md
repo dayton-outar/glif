@@ -75,7 +75,7 @@ Then, $n$ people turn over corresponding coins as follows. Person $i$ reverses c
 ![Coins 1, 4, 9 flipped](/.attachments/coins-1-4-9.png)
 
 **Solution $O(n\text{ }log\text{ }n)$:** We can simulate the results of each person reversing coins.
-**10.2: Primality test - $O(n\text{ }log\text{ }n)$.**
+**10.3: Reversing coins - $O(n\text{ }log\text{ }n)$.**
 ```js
 const coins = n => {
     let result = 0;
@@ -84,7 +84,6 @@ const coins = n => {
     for ( let i = 1; i < (n + 1);i++ ) {
         let k = i;
         while ( k <= n ) {
-            console.log( `i --> ${i} ... k --> ${k}` );
             coin[k] = (coin[k] + 1) % 2;
             k++;
         }
@@ -99,7 +98,7 @@ const coins = n => {
 coins(10); // 5
 ```
 
-The number of operation can be estimated by ${n \over 1} + {n \over 2} + \ldots + {n \over n}$, what equals $n · ({1 \over 1} + {1 \over 2} + \ldots + {1 \over n})$. The sums of multiplicative inverses (reciprocals) of the ﬁrst $n$ numbers are called harmonic numbers, which asymptotically equal $O(log\text{ }n)$. In summary, the total time complexity is $O(n\text{ }log\text{ }n)$.
+The number of operation can be estimated by ${n \over 1} + {n \over 2} + \ldots + {n \over n}$, what equals $n · ({1 \over 1} + {1 \over 2} + \ldots + {1 \over n})$. The sums of multiplicative inverses (reciprocals) of the ﬁrst $n$ numbers are called harmonic numbers, which asymptotically equal $O(log\text{ }n)$[^2]. In summary, the total time complexity is $O(n\text{ }log\text{ }n)$.
 
 **Solution $O(n\text{ }log\text{ }n)$:** Notice that each coin will be turned over exactly as many times as the number of its divisors. The coins that are reversed an odd number of times show tails, meaning that it is suﬃcient to ﬁnd the coins with an odd number of divisors. 
 
@@ -110,3 +109,4 @@ We know that almost every number has a symmetric divisor (apart from divisors of
 The hardest thing to grasp is the problem in the Exercise. ...
 
 [^1]: Page 105. 4.2 Primes. Concrete Mathematics by Donald Knuth.
+[^2]: An explanation of this deduction can be found [here](https://math.stackexchange.com/questions/716/sum-of-the-alternating-harmonic-series-sum-k-1-infty-frac-1k1k). Basically, the integral of $1 \over n$ is $log_e\text{ }n$ (or $ln n$), where $e$ is Euler's number.
