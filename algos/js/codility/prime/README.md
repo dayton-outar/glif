@@ -116,6 +116,8 @@ The coins are showing heads at the very beginning of this exercise.
 See below the outcome of each person flipping the coins below (0s means coins showing heads and 1s means coins showing tails),
 
 ```
+Begin: 0,0,0,0,0,0,0,0,0,0
+
 1  ... 1,1,1,1,1,1,1,1,1,1
 2  ... 1,0,1,0,1,0,1,0,1,0
 3  ... 1,0,0,0,1,1,1,0,0,0
@@ -127,6 +129,40 @@ See below the outcome of each person flipping the coins below (0s means coins sh
 9  ... 1,0,0,1,0,0,0,0,1,1
 10 ... 1,0,0,1,0,0,0,0,1,0
 ```
+
+For the outcomes above, the table below shows how many coins were flipped for each person (persons numbered from 1 to 10).
+
+| Person | Flips |
+|:------:|:-----:|
+| 1      | 10    |
+| 2      | 5     |
+| 3      | 3     |
+| 4      | 2     |
+| 5      | 2     |
+| 6      | 1     |
+| 7      | 1     |
+| 8      | 1     |
+| 9      | 1     |
+| 10     | 1     |
+
+Now, according to the second solution in the Exercise, _"each coin will be turned over exactly as many times as the number of its divisors"_. So, coin 1 is only turned over once and 1 has only 1 divisor; coin 3 is turned over twice and has 2 divisors (1 and itself); coin 10 is turned over 4 times and has 4 divisors.
+
+So below is another table showing the number of times that each coin was flipped.
+
+| Coin   | Flips |
+|:------:|:-----:|
+| 1      | 1     |
+| 2      | 2     |
+| 3      | 2     |
+| 4      | 3     |
+| 5      | 2     |
+| 6      | 4     |
+| 7      | 2     |
+| 8      | 4     |
+| 9      | 3     |
+| 10     | 4     |
+
+Coins _that are reversed an odd number of times_ are 1, 4 and 9.
 
 [^1]: Page 105. 4.2 Primes. Concrete Mathematics by Donald Knuth.
 [^2]: An explanation of this deduction can be found [here](https://math.stackexchange.com/questions/716/sum-of-the-alternating-harmonic-series-sum-k-1-infty-frac-1k1k). Basically, the integral of $1 \over n$ is $log_e\text{ }n$ (or $ln\text{ }n$), where $e$ is Euler's number.

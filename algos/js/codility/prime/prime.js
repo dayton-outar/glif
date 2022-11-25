@@ -16,7 +16,7 @@ const divisors = n => {
     return result;
 }
 
-console.log( divisors(8) );
+console.log( divisors(9) );
 
 const primality = n => {
     let i = 2;
