@@ -34,19 +34,16 @@ console.log( primality(9) );
 
 const coins = n => {
     let result = 0;
-    let coin = Array(n + 1).fill(0);
+    let coin = Array(n).fill(0);
 
-    for ( let i = 1; i < (n + 1);i++ ) {
+    for ( let i = 1; i <= n;i++ ) {
         let k = i;
         while ( k <= n ) {
-            console.log( `i --> ${i} ... k --> ${k}` );
-            coin[k] = (coin[k] + 1) % 2;
-            k++;
+            coin[k - 1] = (coin[k - 1] + 1) % 2;
+            k += i;
         }
-        result += coin[i];
+        result += coin[i - 1];
     }
-
-    console.log( coin );
 
     return result;
 }

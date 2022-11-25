@@ -80,23 +80,22 @@ Then, $n$ people turn over corresponding coins as follows. Person $i$ reverses c
 ```js
 const coins = n => {
     let result = 0;
-    let coin = Array(n + 1).fill(0);
+    //  0 represents coins showing heads while 1 represents coins showing tails
+    let coin = Array(n).fill(0); // We begin with all coins showing heads
 
-    for ( let i = 1; i < (n + 1);i++ ) {
+    for ( let i = 1; i <= n;i++ ) {
         let k = i;
         while ( k <= n ) {
-            coin[k] = (coin[k] + 1) % 2;
-            k++;
+            coin[k - 1] = (coin[k - 1] + 1) % 2; // Shift k - 1 to accommodate array index
+            k += i; // Increment by i. This fulfills requirement that person i can only flip coins that are multiple of i
         }
-        result += coin[i];
+        result += coin[i - 1]; // Counting the 1s (the coins showing tails). Shift to accomodate array index based on starting at i = 1
     }
-
-    console.log( coin );
 
     return result;
 }
 
-coins(10); // 5
+coins(10); // 3 ... coin array = [0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0]
 ```
 
 The number of operation can be estimated by ${n \over 1} + {n \over 2} + \ldots + {n \over n}$, what equals $n · ({1 \over 1} + {1 \over 2} + \ldots + {1 \over n})$. The sums of multiplicative inverses (reciprocals) of the ﬁrst $n$ numbers are called harmonic numbers, which asymptotically equal $O(log\text{ }n)$[^2]. In summary, the total time complexity is $O(n\text{ }log\text{ }n)$.
@@ -107,7 +106,27 @@ We know that almost every number has a symmetric divisor (apart from divisors of
 
 ## Observations
 
-The hardest thing to grasp is the problem in the Exercise. ...
+The hardest thing to grasp is the problem in the Exercise because of it's brevity. The impression of the problem is that given we have 10 coins, there will be 10 persons to flip the coins. Each person is assigned a number, for the case of 10 persons flipping 10 coins, we start with person #1 only allowed to flip coins of multiples of 1. Person #2 is allowed to flip coins that are multiples of 2. So, the coins will go through a lot of flipping as we progress from person #1 to person #10.
+
+The coins are showing heads at the very beginning of this exercise.
+
+- The first person flips all coins since all numbers are a multiple of 1. So, all numbers are now showing tails.
+- The second person flips 2, 4, 6, 8, 10 since they can only flip multiples of 2.
+
+See below the outcome of each person flipping the coins below (0s means coins showing heads and 1s means coins showing tails),
+
+```
+1  ... 1,1,1,1,1,1,1,1,1,1
+2  ... 1,0,1,0,1,0,1,0,1,0
+3  ... 1,0,0,0,1,1,1,0,0,0
+4  ... 1,0,0,1,1,1,1,1,0,0
+5  ... 1,0,0,1,0,1,1,1,0,1
+6  ... 1,0,0,1,0,0,1,1,0,1
+7  ... 1,0,0,1,0,0,0,1,0,1
+8  ... 1,0,0,1,0,0,0,0,0,1
+9  ... 1,0,0,1,0,0,0,0,1,1
+10 ... 1,0,0,1,0,0,0,0,1,0
+```
 
 [^1]: Page 105. 4.2 Primes. Concrete Mathematics by Donald Knuth.
 [^2]: An explanation of this deduction can be found [here](https://math.stackexchange.com/questions/716/sum-of-the-alternating-harmonic-series-sum-k-1-infty-frac-1k1k). Basically, the integral of $1 \over n$ is $log_e\text{ }n$ (or $ln\text{ }n$), where $e$ is Euler's number.
