@@ -10,7 +10,7 @@ In the above picture the primes are highlighted in white and composite numbers a
 
 ## 10.1. Counting Divisors
 
-Let’s count the number of divisors of $n$. The easiest approach is to iterate through all the numbers from 1 to n and check whether or not each one is a divisor. The time complexity of this solution is $O(n)$.
+Let’s count the number of divisors of $n$. The easiest approach is to iterate through all the numbers from 1 to $n$ and check whether or not each one is a divisor. The time complexity of this solution is $O(n)$.
 
 There is a simple way to improve the above solution. Based on one divisor, we can ﬁnd the symmetric divisor. More precisely, if number $a$ is a divisor of $n$, then $n \over a$ is also a divisor. One of these two divisors is less than or equal to $\sqrt n$. (If that were not the case, $n$ would be a product of two numbers greater than $\sqrt n$, which is impossible.)
 
@@ -75,6 +75,7 @@ Then, $n$ people turn over corresponding coins as follows. Person $i$ reverses c
 ![Coins 1, 4, 9 flipped](/.attachments/coins-1-4-9.png)
 
 **Solution $O(n\text{ }log\text{ }n)$:** We can simulate the results of each person reversing coins.
+
 **10.3: Reversing coins - $O(n\text{ }log\text{ }n)$.**
 ```js
 const coins = n => {
@@ -109,4 +110,4 @@ We know that almost every number has a symmetric divisor (apart from divisors of
 The hardest thing to grasp is the problem in the Exercise. ...
 
 [^1]: Page 105. 4.2 Primes. Concrete Mathematics by Donald Knuth.
-[^2]: An explanation of this deduction can be found [here](https://math.stackexchange.com/questions/716/sum-of-the-alternating-harmonic-series-sum-k-1-infty-frac-1k1k). Basically, the integral of $1 \over n$ is $log_e\text{ }n$ (or $ln n$), where $e$ is Euler's number.
+[^2]: An explanation of this deduction can be found [here](https://math.stackexchange.com/questions/716/sum-of-the-alternating-harmonic-series-sum-k-1-infty-frac-1k1k). Basically, the integral of $1 \over n$ is $log_e\text{ }n$ (or $ln\text{ }n$), where $e$ is Euler's number.
