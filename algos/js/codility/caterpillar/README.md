@@ -20,13 +20,11 @@ Each position of the caterpillar will represent a different contiguous subsequen
 
 **15.1 Caterpillar in _O(n)_ time complexity.**
 ```js
-let range = n => Array.from(Array(n).keys());
-
 const caterpillarMethod = (A, s) => {
     const n = A.length;
     let front = 0, total = 0;
 
-    for ( const back in range(n) ) {
+    for ( let i = 0; i < n; i++ ) {
         while (front < n && total + A[front] <= s) {
             total += A[front];
             front += 1;
@@ -34,7 +32,7 @@ const caterpillarMethod = (A, s) => {
 
         if (total == s) return true;
 
-        total -= A[back];
+        total -= A[i];
     }
 
     return false;
@@ -57,16 +55,14 @@ If the value $z$ is found every time from the beginning then we get a _O(n^3)_ t
 
 **15.2 The number of triangles in $O(n^2)$.**
 ```js
-let range = n => Array.from(Array(n).keys());
-
 const triangles = A => {
     const n = A.length;
     let result  = 0;
 
-    for ( const x in range(n) ) {
-        z = x + 2;
-        for ( ... )
-            while (z < n && A[x] + A[y] > A[z]) {
+    for ( let i = 0; i < n; i++ ) {
+        z = i + 2;
+        for ( let j = i + 1; i < n; j++ )
+            while (z < n && A[i] + A[j] > A[z]) {
                 z++;
             }
             result += z - y - 1;
@@ -77,6 +73,10 @@ const triangles = A => {
 ```
 
 The time complexity of the above algorithm is $O(n^2)$, because for every stick $x$ the values of $y$ and $z$ increase $O(n)$ number of times.
+
+## Observations
+
+The triangle problem is not easy to grasp ...
 
 ## References
 

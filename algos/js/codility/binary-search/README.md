@@ -54,7 +54,7 @@ Thus, the problem of find ing the optimal value reduces to checking whether some
 
 ## 14.4 Exercise
 
-**Problem:** You are given $n$ binary values ${x_0, x_1, \ldots, x_{n - 1}}$, such that ${x_i \in$ {0, 1}. This array represents holes in a roof (1 is a hole). You are also given $k$ boards of the same size. The goal is to choose the optimal (minimal) size of the boards that allows all the holes to be covered by boards.[^1]
+**Problem:** You are given $n$ binary values ${x_0, x_1, \ldots, x_{n - 1}}$, such that $x_i \in$ {0, 1}$. This array represents holes in a roof (1 is a hole). You are also given $k$ boards of the same size. The goal is to choose the optimal (minimal) size of the boards that allows all the holes to be covered by boards.[^1]
 
 **Solution:** The size of the boards can be found with a binary search. If size $x$ is suﬃcient to cover all the holes, then we know that sizes ${x + 1, x + 2, \ldots, n}$ are also sufficient. On the other hand, if we know that $x$ is not sufficient to cover all the holes, then sizes ${x - 1, x - 2, \dots, 1}$ are also insufficient.
 
@@ -85,14 +85,12 @@ There is the question of how to check whether size $x$ is sufficient. We can go 
 
 **14.3: Greedily check in ${O(log(n))}$.**
 ```js
-let range = n => Array.from(Array(n).keys());
-
 const check = (A, k) => {
     const n = A.length;
     let boards = 0;
     let last = -1;
 
-    for ( const i in range(n) ) {
+    for ( let i = 0; i < n; i++ ) {
         if ( A[i] == 1 && last < i ) {
             boards += 1;
             last = i + k - 1;
@@ -104,6 +102,10 @@ const check = (A, k) => {
 ```
 
 The total time complexity of such a solution is ${O(n \times log(n))}$ due to the binary search time.
+
+## Observations
+
+...
 
 ## References
 

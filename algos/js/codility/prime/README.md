@@ -2,6 +2,8 @@
 
 People have been analyzing prime numbers since time immemorial, but still we continue to search for fast new algorithms that can check the primality of numbers. A prime number is a natural number greater than 1 that has exactly two divisors (1 and itself). A composite number has more than two divisors.
 
+> Every integer greater than 1 is either prime or composite, but not both.[^1]
+
 ![Primes highlighted in sequence from 2 to 14](/.attachments/non-prime-highlighted.png)
 
 In the above picture the primes are highlighted in white and composite numbers are shown in gray.
@@ -53,3 +55,5 @@ The number of operation can be estimated by ${n \over 1} + {n \over 2} + \ldots 
 **Solution $O(n\text{ }log\text{ }n)$:** Notice that each coin will be turned over exactly as many times as the number of its divisors. The coins that are reversed an odd number of times show tails, meaning that it is suﬃcient to ﬁnd the coins with an odd number of divisors. 
 
 We know that almost every number has a symmetric divisor (apart from divisors of the form $\sqrt n$). Thus, every number of the form $k^2$ has an odd number of divisors. There are exactly $\lfloor \sqrt n \rfloor$ such numbers between 1 and $n$. Finding the value of $\lfloor \sqrt n \rfloor$ takes logarithmic time (or constant time if we use operations on ﬂoating point numbers).
+
+[^1]: Page 105. 4.2 Primes. Concrete Mathematics by Donald Knuth.

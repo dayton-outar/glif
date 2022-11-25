@@ -1,23 +1,23 @@
-const gcdBySub = (a, b) => (a == b) ? a : ((a > b) ? gcd(a - b, b) : gcd(a, b - a));
+const gcdBySub = (a, b) => (a == b) ? a : ((a > b) ? gcdBySub(a - b, b) : gcdBySub(a, b - a));
+
 const gcd = (a, b) => a % b == 0 ? b : gcd(b, a % b);
-
-console.log(`gcd(16, 8) ==> ${gcd(16, 8)}`);
-console.log(`gcd(27, 9) ==> ${gcd(27, 9)}`);
-console.log(`gcd(34, 17) ==> ${gcd(34, 17)}`);
-
-console.log(`gcd(16, 8) ==> ${gcdBySub(16, 8)}`);
 
 const euclidean = (a, b, res) => {
     if (a == b)
-        return res * a
+        return res * a;
     else if ((a % 2 == 0) && (b % 2 == 0))
-        return gcd(Math.floor(a / 2), Math.floor(b / 2), 2 * res)
+        return gcd(Math.floor(a / 2), Math.floor(b / 2), 2 * res);
     else if ((a % 2 == 0))
-        return gcd(Math.floor(a / 2), b, res)
+        return gcd(Math.floor(a / 2), b, res);
     else if (b % 2 == 0)
-        return gcd(a, Math.floor(b / 2), res)
+        return gcd(a, Math.floor(b / 2), res);
     else if (a > b)
         return gcd(a - b, b, res);
     else
         return gcd(a, b - a, res);
 }
+
+console.log(`gcd(12, 18) ==> ${gcd(12, 18)}`);
+console.log(`gcd(24, 9) ==> ${gcd(24, 9)}`);
+console.log(`gcd(9, 6) ==> ${gcdBySub(9, 6)}`);
+console.log(`gcd(6, 3) ==> ${gcd(6, 3)}`);

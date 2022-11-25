@@ -17,7 +17,7 @@ Let’s estimate this algorithm’s time complexity (based on $n = a + b$). The 
 
 Let’s start by understanding the algorithm and then go on to prove its correctness. For two given numbers $a$ and $b$, such that $a \geq b$:
 
-- if $b | a$, then $gcd(a, b) = b$,
+- if $b | a$[^1], then $gcd(a, b) = b$,
 - otherwise $gcd(a, b) = gcd(b, a\text{ mod }b)$.
 
 ![Progression of GCD](/.attachments/gcd-progression.png)
@@ -44,10 +44,10 @@ $b_{k − 1} = a_k$ mod $b_k$ , so $a_k = q · b_k + b_{k − 1}$ for some $q \g
 Fibonacci numbers can be approximated by:
 
 $$\large
-Fib_n \approx {({1 + \sqrt 5 \over 2})^n} \over \sqrt 5
+Fib_n \approx { {({1 + \sqrt 5 \over 2})^n} \over \sqrt 5 }
 $$
 
-Thus, the time complexity is logarithmic based on the sum of $a$ and $b — O(log(a + b))$.
+Thus, the time complexity is logarithmic based on the sum of $a$ and $b$ — $O(log(a + b))$.
 
 ## 12.3. Binary Euclidean algorithm
 
@@ -59,13 +59,13 @@ The following function calculate $gcd(a, b, res) = gcd(a, b, 1) · res$. So to c
 ```js
 const gcd = = (a, b, res) => {
     if (a == b)
-        return res * a
+        return res * a;
     else if ((a % 2 == 0) && (b % 2 == 0))
-        return gcd(Math.floor(a / 2), Math.floor(b / 2), 2 * res)
+        return gcd(Math.floor(a / 2), Math.floor(b / 2), 2 * res);
     else if ((a % 2 == 0))
-        return gcd(Math.floor(a / 2), b, res)
+        return gcd(Math.floor(a / 2), b, res);
     else if (b % 2 == 0)
-        return gcd(a, Math.floor(b / 2), res)
+        return gcd(a, Math.floor(b / 2), res);
     else if (a > b)
         return gcd(a - b, b, res);
     else
@@ -73,7 +73,7 @@ const gcd = = (a, b, res) => {
 }
 ```
 
-This algorithm is superior to the previous one for very large integers when it cannot be assumed that all the arithmetic operations used here can be done in a constant time. Due to the binary representation, operations are performed in linear time based on the length of the binary representation, even for very big integers. On the other hand, modulo applied in algorithm 10.2 has worse time complexity. It exceeds $O(log n · log\text{ }log\text{ }n)$, where $n = a + b$.
+This algorithm is superior to the previous one for very large integers when it cannot be assumed that all the arithmetic operations used here can be done in a constant time. Due to the binary representation, operations are performed in linear time based on the length of the binary representation, even for very big integers. On the other hand, modulo applied in algorithm 12.2 has worse time complexity. It exceeds $O(log\text{ }n · log\text{ }log\text{ }n)$, where $n = a + b$.
 
 Denote by $(a_i , b_i)$ pairs of values $a$ and $b$, for which the above algorithm performs $i$ steps. We have $a_i + 1 \geq a_i$ , $b_i + 1 \geq bi$, $b_1 = a_1 > 0$. In the ﬁrst three cases, $a_i + 1 · b_i + 1 \geq 2 · a_i · b_i$. In the fourth case, $a_i + 1 · b_i + 1 \geq 2 · a_i − 1 · b_i − 1$, because a diﬀerence of two odd numbers is an even number. By induction we get:
 
@@ -83,7 +83,7 @@ $$
 
 ## 12.4. Least common multiple
 
-The least common multiple ($lcm$) of two integers $a$ and $b$ is the smallest positive integer that is divisible by both $a$ and $b$. There is the following relation:
+The least common multiple $(lcm)$ of two integers $a$ and $b$ is the smallest positive integer that is divisible by both $a$ and $b$. There is the following relation:
 
 $$\large
 lcm(a, b) = { {a · b} \over gcd(a, b) }
@@ -106,3 +106,5 @@ We simply ﬁnd the $lcm$ $n$ times, and each step works in logarithmic time.
 ## References
 
 1. [Codility Training Media - Euclidean Algorithm](https://codility.com/media/train/10-Gcd.pdf)
+
+[^1]: [Vertical bar](https://en.wikipedia.org/wiki/Vertical_bar) represent divisibility. So $b | a$ means _b divides a_.
