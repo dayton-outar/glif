@@ -8,7 +8,7 @@ Practiced from most of the problems on,
 Significant lessons from Codility,
 - [Counting Elements](./codility/counting/README.md)
 
-  Basically creating a hashtable to count occurrences of an element
+  Creating a hashtable to count occurrences of an element
 
 - [Prefix Sums](./codility/counting/README.md)
   
@@ -20,10 +20,16 @@ Significant lessons from Codility,
 
 - [Maximum Slice](./codility/maximum-slice/README.md)
 
-  Basically maintaining track of the maximum running total
+  Maintaining track of the maximum running total
 
 - [Prime and composite numbers](./codility/prime/README.md)
+
+  Using prime and composite numbers to solve problems
+
 - [Sieve of Erastosthenes](./codility/sieve/README.md)
+
+  An old but crafty way of identifying all primes up to a certain number
+
 - [Euclidean Algorithm](./codility/euclidean/README.md)
 - [Fibonacci Numbers](./codility/fibonacci/README.md)
 - [Binary Search](./codility/binary-search/README.md)

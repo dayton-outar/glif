@@ -100,7 +100,7 @@ coins(10); // 3 ... coin array = [0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0]
 
 The number of operation can be estimated by ${n \over 1} + {n \over 2} + \ldots + {n \over n}$, what equals $n · ({1 \over 1} + {1 \over 2} + \ldots + {1 \over n})$. The sums of multiplicative inverses (reciprocals) of the ﬁrst $n$ numbers are called harmonic numbers, which asymptotically equal $O(log\text{ }n)$[^2]. In summary, the total time complexity is $O(n\text{ }log\text{ }n)$.
 
-**Solution $O(n\text{ }log\text{ }n)$:** Notice that each coin will be turned over exactly as many times as the number of its divisors. The coins that are reversed an odd number of times show tails, meaning that it is suﬃcient to ﬁnd the coins with an odd number of divisors. 
+**Solution $O(log\text{ }n)$:** Notice that each coin will be turned over exactly as many times as the number of its divisors. The coins that are reversed an odd number of times show tails, meaning that it is suﬃcient to ﬁnd the coins with an odd number of divisors. 
 
 We know that almost every number has a symmetric divisor (apart from divisors of the form $\sqrt n$). Thus, every number of the form $k^2$ has an odd number of divisors. There are exactly $\lfloor \sqrt n \rfloor$ such numbers between 1 and $n$. Finding the value of $\lfloor \sqrt n \rfloor$ takes logarithmic time (or constant time if we use operations on ﬂoating point numbers).
 
