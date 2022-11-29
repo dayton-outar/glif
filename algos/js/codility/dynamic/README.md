@@ -130,8 +130,7 @@ $$\large
 $$
 
 Take for example $\binom{4}{3}$, we would get evaluation from the value in co-ordinates 
-$$\large
-\left(
+$\left(
     \begin{matrix}
     3 \\ 
     2
@@ -143,9 +142,7 @@ $$\large
     1
     \end{matrix}
 \right)
-$$
-
-(or (3, 2) and (3, 1): row 3 column **k = 2** and row 3 column **k = 1**). The value from these positions are 3 and 1, which evaluates to 4 for $\binom{4}{3}$.
+$ (or (3, 2) and (3, 1): row 3 column **k = 2** and row 3 column **k = 1**). The value from these positions are 3 and 1, which evaluates to 4 for $\binom{4}{3}$.
 
 ## 17.3. Exercise
 
