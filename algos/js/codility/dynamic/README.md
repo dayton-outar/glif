@@ -6,6 +6,11 @@ Dynamic programming is a method by which a solution is determined based on solvi
 
 Based on the above-mentioned statement, we can reference [Fibonacci Numbers](../fibonacci/README.md) to appreciate that statement.
 
+> Algorithms for optimization problems require proof that they _always_ return the best possible solution. Greedy algorithms that make the best local decision at each step are typically eﬃcient, but usually do not guarantee global optimality. Exhaustive search algorithms that try all possibilities and select the best always produce the optimum result, but usually at a prohibitive cost in terms of time complexity.[^2]
+
+> Dynamic programming is a technique for eﬃciently implementing a recursive algorithm by storing partial results. It requires seeing that a naive recursive algorithm computes the same subproblems over and over and over again.[^2]
+
+> Dynamic programming is essentially a tradeoﬀ of space for time. Repeatedly computing a given quantity can become a drag on performance. If so, we are better oﬀ storing the results of the initial computation and looking them up instead of recomputing them.[^2]
 ## 17.1 The Coin Changing Problem
 
 For a given set of denominations, you are asked to ﬁnd the minimum number of coins with which a given amount of money can be paid. Assume that you can use as many coins of a particular denomination as necessary. The greedy algorithmic approach is always to select the largest denomination not exceeding the remaining amount of money to be paid. As long as the remaining amount is greater than zero, the process is repeated. However, this algorithm may return a suboptimal result. For instance, for an amount of 6 and coins of values 1, 3, 4, we get 6 = 4 + 1 + 1, but the optimal solution here is 6 = 3 + 3.
@@ -75,7 +80,40 @@ const dynamicCoinChanging = (C, k) => {
 
 The time complexity is $O(n · k)$ and the space complexity is $O(k)$.
 
-## 17.2. Exercise
+## 17.2 Binomial Coefficient
+
+How do you compute binomial coeﬃcients? First, nk = k! (n−k)!, so in principle you can compute them straight from factorials. However, this method has a serious drawback. Intermediate calculations can easily cause arithmetic overﬂow, even when the ﬁnal coeﬃcient ﬁts comfortably within an integer.
+
+A more stable way to compute binomial coeﬃcients is using the recurrence relation implicit in the construction of Pascal’s triangle:
+
+![Pascal's Triangle](/.attachments/pascal-triangle.png)
+
+We can use a matrix to mimic the Pascal triangle. Take the table shown below (credit to _The Algorithm Design Manual_),
+
+| n / k | k = 0 | k = 1 | k = 2 | k = 3 | k = 4 | k = 5 |
+|------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|     0 | A     |       |       |       |       |       |
+|     1 | B     | G     |       |       |       |       |
+|     2 | C     | 1     | H     |       |       |       |
+|     3 | D     | 2     | 3     | I     |       |       |
+|     4 | E     | 4     | 5     | 6     | J     |       |
+|     5 | F     | 7     | 8     | 9     | 10    | K     |
+
+
+The initialization conditions are labeled A - K and the evaluation of the recurrence relations are labeled 1 - 10. When the evaluation is complete for the range of values $0 \leq n \leq 5$ and $0 \leq k \leq 5$, we arrive at the following matrix,
+
+| n / k | k = 0 | k = 1 | k = 2 | k = 3 | k = 4 | k = 5 |
+|------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|     0 | 1     |       |       |       |       |       |
+|     1 | 1     | 1     |       |       |       |       |
+|     2 | 1     | 1     | 1     |       |       |       |
+|     3 | 1     | 2     | 3     | 1     |       |       |
+|     4 | 1     | 4     | 5     | 6     | 1     |       |
+|     5 | 2     | 7     | 8     | 9     | 10    | 1     |
+
+
+
+## 17.3. Exercise
 
 **Problem:** A small frog wants to get from position 0 to $k$ $(1 \leq k \leq 10,000)$. The frog can jump over any one of n ﬁxed distances $s_0 , s_1 , \dots , s_{n − 1}$ $(1 \leq si \leq k)$. The goal is to count the number of diﬀerent ways in which the frog can jump to position $k$. To avoid overﬂow, it is suﬃcient to return the result modulo $q$, where $q$ is a given number.
 
@@ -116,8 +154,16 @@ The time complexity is $O(n · k)$ (all cells of array dp are visited for every 
 
 ...
 
+## Videos
+
+1. [5 Simple Steps for Solving Dynamic Programming Problems](https://youtu.be/aPQY__2H3tE)
+
 ## References
 
 1. [Codility Training Media - Dynamic Programming](https://codility.com/media/train/15-DynamicProgramming.pdf)
+2. Chapter 14. Dynamic Programming. Introduction to Algorithms by Thomas H. Cormen, Charles E. Leiserson, Ronald Rivest and Clifford Stein
+2. Chapter 10: Dynamic Programming. The Algorithm Design Manual by Steven Skiena.
 
 [^1]: Page 208. Chapter 14: Advanced Algorithms. Data Structures and Algorithms with JavaScript by Michael McMillan.
+
+[^2]: Chapter 10: Dynamic Programming. The Algorithm Design Manual by Steven Skiena.
