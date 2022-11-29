@@ -106,10 +106,10 @@ The initialization conditions are labeled A - K and the evaluation of the recurr
 |------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 |     0 | 1     |       |       |       |       |       |
 |     1 | 1     | 1     |       |       |       |       |
-|     2 | 1     | 1     | 1     |       |       |       |
-|     3 | 1     | 2     | 3     | 1     |       |       |
-|     4 | 1     | 4     | 5     | 6     | 1     |       |
-|     5 | 2     | 7     | 8     | 9     | 10    | 1     |
+|     2 | 1     | 2     | 1     |       |       |       |
+|     3 | 1     | 3     | 3     | 1     |       |       |
+|     4 | 1     | 4     | 6     | 4     | 1     |       |
+|     5 | 1     | 5     | 10    | 10    | 5     | 1     |
 
 Each number is the sum of the two numbers directly above it. The recurrence relation implicit in this is
 
@@ -131,7 +131,7 @@ $$
 
 ## 17.3. Exercise
 
-**Problem:** A small frog wants to get from position 0 to $k$ $(1 \leq k \leq 10,000)$. The frog can jump over any one of n ﬁxed distances $s_0 , s_1 , \dots , s_{n − 1}$ $(1 \leq si \leq k)$. The goal is to count the number of diﬀerent ways in which the frog can jump to position $k$. To avoid overﬂow, it is suﬃcient to return the result modulo $q$, where $q$ is a given number.
+**Problem:** A small frog wants to get from position 0 to $k$ $(1 \leq k \leq 10,000)$. The frog can jump over any one of n ﬁxed distances $s_0 , s_1 , \dots , s_{n − 1}$ $(1 \leq s_i \leq k)$. The goal is to count the number of diﬀerent ways in which the frog can jump to position $k$. To avoid overﬂow, it is suﬃcient to return the result modulo $q$, where $q$ is a given number.
 
 We assume that two patterns of jumps are diﬀerent if, in one pattern, the frog visits a position which is not visited in the other pattern.
 
