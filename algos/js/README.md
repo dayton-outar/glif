@@ -31,9 +31,18 @@ Significant lessons from Codility,
   An old but crafty way of identifying all primes up to a certain number
 
 - [Euclidean Algorithm](./codility/euclidean/README.md)
+
+  Finding common divisor and common multiples
+
 - [Fibonacci Numbers](./codility/fibonacci/README.md)
+
+  Finding numbers in the most efficient way in a fibonacci sequence
+
 - [Binary Search](./codility/binary-search/README.md)
 - [Caterpillar Method](./codility/caterpillar/README.md)
+
+  Finding aggregates by the use of more than one pointer in a loop
+
 - [Greedy Algorithms](./codility/greedy/README.md)
 - [Dynamic Programming](./codility/dynamic/README.md)
 

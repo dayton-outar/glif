@@ -164,5 +164,9 @@ So below is another table showing the number of times that each coin was flipped
 
 Coins _that are reversed an odd number of times_ are 1, 4 and 9.
 
+## References
+
+1. [Codility Training Media - Prime and Composite Numbers](https://codility.com/media/train/8-PrimeNumbers.pdf)
+
 [^1]: Page 105. 4.2 Primes. Concrete Mathematics by Donald Knuth.
 [^2]: An explanation of this deduction can be found [here](https://math.stackexchange.com/questions/716/sum-of-the-alternating-harmonic-series-sum-k-1-infty-frac-1k1k). Basically, the integral of $1 \over n$ is $log_e\text{ }n$ (or $ln\text{ }n$), where $e$ is Euler's number.

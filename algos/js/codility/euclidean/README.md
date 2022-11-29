@@ -103,6 +103,10 @@ $$
 
 We simply ﬁnd the $lcm$ $n$ times, and each step works in logarithmic time.
 
+## Observations
+
+...
+
 ## References
 
 1. [Codility Training Media - Euclidean Algorithm](https://codility.com/media/train/10-Gcd.pdf)

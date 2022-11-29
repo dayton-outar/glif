@@ -7,7 +7,7 @@ const caterpillarMethod = (A, s) => {
         while (front < n && total + A[front] <= s) {
             console.log('before', front, total, A[front]);
             total += A[front];
-            front += 1;
+            front ++;
             console.log('after', front, total, A[front]);
         }
 
@@ -20,20 +20,23 @@ const caterpillarMethod = (A, s) => {
     return false;
 }
 
-console.log( caterpillarMethod( [6, 2, 7, 4, 1, 3, 6], 12 ) );
+// console.log( caterpillarMethod( [6, 2, 7, 4, 1, 3, 6], 12 ) );
 
 const triangles = A => {
     const n = A.length;
     let result  = 0;
 
     for ( let i = 0; i < n; i++ ) {
-        z = i + 2;
-        for ( let j = i + 1; i < n; j++ )
-            while (z < n && A[i] + A[j] > A[z]) {
-                z++;
+        k = i + 2;
+        for ( let j = i + 1; j < n; j++ ) {
+            while ( k < n && A[i] + A[j] > A[k] ) {
+                k++;
             }
-            result += z - y - 1;
+            result += k - j - 1;
+        }
     }
 
     return result;
 }
+
+console.log( triangles( [1, 3, 1, 2, 2, 5, 4, 6, 1] ) );

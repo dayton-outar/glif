@@ -33,6 +33,7 @@ Consider n denominations, $0 < c0 \leq c1 \leq \ldots \leq c_{n − 1}$. The alg
 
 **17.1: The dynamic algorithm for ﬁnding change.**
 ```js
+
 ```
 
 Both the time complexity and the space complexity of the above algorithm is $O(n · k)$. In the above implementation, memory usage can be optimized. Notice that, during the calculation of $dp$, we only use the previous row, so we don’t need to remember all of the rows.
@@ -65,6 +66,10 @@ More precisely, $dp[j]$ is increased by the value of $dp[j − s_i]$ (for all $s
 ```
 
 The time complexity is $O(n · k)$ (all cells of array dp are visited for every jump) and the space complexity is $O(k)$.
+
+## Observations
+
+...
 
 ## References
 

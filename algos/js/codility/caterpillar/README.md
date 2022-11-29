@@ -27,7 +27,7 @@ const caterpillarMethod = (A, s) => {
     for ( let i = 0; i < n; i++ ) {
         while (front < n && total + A[front] <= s) {
             total += A[front];
-            front += 1;
+            front++;
         }
 
         if (total == s) return true;
@@ -51,7 +51,7 @@ The above estimation of time complexity is based on amortized cost[^1].
 
 **Solution ${O(n^2)}$:** For every pair $x$, $y$ we can find the largest stick $z$ that can be used to construct the triangle. Every stick $k$, such that ${y < k \leq z}$, can also be used, because the condition ${a_x + a_y > a_k}$ will still be trye. We can add up all these triangles at once.
 
-If the value $z$ is found every time from the beginning then we get a _O(n^3)_ time complexity solution. However, we can instead use the caterpillar method. When increasing the value of $y$, we can increase (as far as possible) the value of $z$.
+If the value $z$ is found every time from the beginning then we get a $O(n^3)$ time complexity solution. However, we can instead use the caterpillar method. When increasing the value of $y$, we can increase (as far as possible) the value of $z$.
 
 **15.2 The number of triangles in $O(n^2)$.**
 ```js
@@ -60,16 +60,19 @@ const triangles = A => {
     let result  = 0;
 
     for ( let i = 0; i < n; i++ ) {
-        z = i + 2;
-        for ( let j = i + 1; i < n; j++ )
-            while (z < n && A[i] + A[j] > A[z]) {
-                z++;
+        k = i + 2;
+        for ( let j = i + 1; j < n; j++ ) {
+            while ( k < n && A[i] + A[j] > A[k] ) {
+                k++;
             }
-            result += z - y - 1;
+            result += k - j - 1;
+        }
     }
 
     return result;
 }
+
+triangles( [1, 3, 1, 2, 2, 5, 4, 6, 1] ); // 36
 ```
 
 The time complexity of the above algorithm is $O(n^2)$, because for every stick $x$ the values of $y$ and $z$ increase $O(n)$ number of times.

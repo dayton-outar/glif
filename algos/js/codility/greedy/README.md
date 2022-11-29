@@ -16,7 +16,20 @@ Consider $n$ denominations $0 < m0 \leq m1 \leq \ldots \leq m_{n − 1}$ and the
 
 **16.1: The greedy algorithm for ﬁnding change.**
 ```js
-const greedy
+const greedyCoinChanging = (M, k) => {
+    const n = M.length;
+    let result = [];
+
+    for ( let i = (n - 1); i > -1; i-- ) {
+        result.push([M[i], Math.floor( k / M[i] ) ]);
+        k %= M[i];
+    }
+
+    return result;
+}
+
+// Denominations: 1, 3, 4
+greedyCoinChanging( [ 1, 3, 4 ], 6 ); // [ [ 4, 1 ], [ 3, 0 ], [ 1, 2 ] ] ... 1 "4" coin and 2 "1" coins
 ```
 
 The function returns the list of pairs: denomination, number of coins. The time complexity of the above algorithm is $O(n)$ as the number of coins is added once for every denomination.
@@ -40,7 +53,43 @@ heavy and light will change over time — as the heaviest heavy gets closer to t
 
 **16.2: Canoeist in $O(n)$ solution.**
 ```js
+const greedyCanoeistA = (W, k) => {
+    const n = W.length;
+    let light = [];
+    let heavy = [];
 
+    for( let i = 0; i < (n - 1); i++ ) {
+        if ( W[i] + W[-1] <= k ) {
+            light.push( W[i] );
+        } else {
+            heavy.push( W[i] );
+        }
+    }
+
+    heavy.push( W[-1] );
+    let canoes = 0;
+
+    while( light.length || heavy.length ) {
+        if ( light.length > 0 ) {
+            light.pop()
+        }
+        
+        heavy.pop();
+        canoes++;
+
+        if ( !heavy.length && light.length ) {
+            heavy.push( light.pop() );
+        }
+
+        while ( heavy.length > 1 && heavy[-1] + heavy[0] <= k ) {
+            light.push( heavy.unshift() )
+        }
+    }
+
+    return canoes;
+}
+
+greedyCanoeistA( [2, 4, 5, 2, 1, 5, 6, 7, 8, 9, 7], 5); // 11
 ```
 
 **Proof of correctness:** There exists an optimal solution in which the heaviest _heavy_ $h$ and the heaviest _light_ $l$ are seated together. If there were a better solution in which $h$ sat alone then $l$ could be seated with him/her anyway. If heavy $h$ were seated with some light $x \leq l$, then $x$ and $l$ could just be swapped. If $l$ has any companion $y$, $x$ and $y$ would ﬁt together, as $y \leq h$.
@@ -57,6 +106,23 @@ of the inner while loop has to be O(n).
 
 **16.3: Canoeist in $O(n)$ solution.**
 ```js
+const greedyCanoeistB = (W, k) => {
+    let canoes = 0;
+    let j = 0;
+    let i = W.length - 1;
+
+    while ( i >= j ) {
+        if ( W[i] + W[j] <= k ) {
+            j++;
+        }
+        canoes++;
+        i--;
+    }
+
+    return canoes;
+}
+
+greedyCanoeistA( [2, 4, 5, 2, 1, 5, 6, 7, 8, 9, 7], 5); // 11
 ```
 
 The time complexity is O(n), because with each step of the loop, at least one canoeist is seated.
@@ -64,6 +130,10 @@ The time complexity is O(n), because with each step of the loop, at least one ca
 **Proof of correctness:** Analogically to solution A. If _light_ $l$ were seated with some heavy $x < h$, then $x$ and $h$ could just be swapped.
 
 If the heaviest canoeist is seated alone, it is not possible to seat anybody with him/her. If there exists a solution in which the heaviest canoeist $h$ is seated with some other $x$, we can swap $x$ with the lightest canoeist $l$, because $l$ can sit in place of $x$ since $x \geq l$. Also, $x$ can sit in place of $l$, since if $l$ has any companion $y$, we have $y \leq h$.
+
+## Observations
+
+...
 
 ## References
 

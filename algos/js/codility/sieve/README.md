@@ -104,13 +104,14 @@ My only observation here is that the performance of the nested loops were booste
 
 The real challenge in this lesson is to understand how the harmonic series arrives at $O(log\text{ }\log\text{ }n)$.
 
+## References
+
+1. [Codility Training Media - Sieve of Eratosthenes](https://codility.com/media/train/9-Sieve.pdf)
+2. [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+3. [How is the time complexity of Sieve of Eratosthenes is n*log(log(n))?](https://www.geeksforgeeks.org/how-is-the-time-complexity-of-sieve-of-eratosthenes-is-nloglogn/)
+
 ## Videos
 
 1. [Sieve of Eratosthenes](https://youtu.be/klclklsWzrY) - [Khan Academy Labs](https://youtube.com/@KhanAcademyLabs)
-
-## References
-
-1. [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
-2. [How is the time complexity of Sieve of Eratosthenes is n*log(log(n))?](https://www.geeksforgeeks.org/how-is-the-time-complexity-of-sieve-of-eratosthenes-is-nloglogn/)
 
 [^1]: Proof of the time complexity involves the integral of the Harmonic Progression of the sum of primes. Details can be found [here](https://www.geeksforgeeks.org/how-is-the-time-complexity-of-sieve-of-eratosthenes-is-nloglogn/).
