@@ -82,7 +82,7 @@ The time complexity is $O(n · k)$ and the space complexity is $O(k)$.
 
 ## 17.2 Binomial Coefficient
 
-How do you compute binomial coeﬃcients? First, nk = k! (n−k)!, so in principle you can compute them straight from factorials. However, this method has a serious drawback. Intermediate calculations can easily cause arithmetic overﬂow, even when the ﬁnal coeﬃcient ﬁts comfortably within an integer.
+How do you compute binomial coeﬃcients? First, $\binom{n}{k} = \frac{k!}{k!(n−k)!}$, so in principle you can compute them straight from factorials. However, this method has a serious drawback. Intermediate calculations can easily cause arithmetic overﬂow, even when the ﬁnal coeﬃcient ﬁts comfortably within an integer.
 
 A more stable way to compute binomial coeﬃcients is using the recurrence relation implicit in the construction of Pascal’s triangle:
 
@@ -111,7 +111,11 @@ The initialization conditions are labeled A - K and the evaluation of the recurr
 |     4 | 1     | 4     | 5     | 6     | 1     |       |
 |     5 | 2     | 7     | 8     | 9     | 10    | 1     |
 
+Each number is the sum of the two numbers directly above it. The recurrence relation implicit in this is
 
+$$\large
+\binom{n}{k} = \left(\begin{matrix}{n - 1} \\ {k - 1}\end{matrix}\right) + \left(\begin{matrix}{n - 1} \\ k\end{matrix}\right)
+$$
 
 ## 17.3. Exercise
 
