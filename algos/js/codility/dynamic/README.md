@@ -114,7 +114,19 @@ The initialization conditions are labeled A - K and the evaluation of the recurr
 Each number is the sum of the two numbers directly above it. The recurrence relation implicit in this is
 
 $$\large
-\binom{n}{k} = \left(\begin{matrix}{n - 1} \\ {k - 1}\end{matrix}\right) + \left(\begin{matrix}{n - 1} \\ k\end{matrix}\right)
+\binom{n}{k} = 
+\left(
+    \begin{matrix}
+    {n - 1} \\ 
+    {k - 1}
+    \end{matrix}
+\right) + 
+\left(
+    \begin{matrix}
+    {n - 1} \\ 
+    k
+    \end{matrix}
+\right)
 $$
 
 ## 17.3. Exercise
