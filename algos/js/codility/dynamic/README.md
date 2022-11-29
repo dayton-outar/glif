@@ -129,6 +129,8 @@ $$\large
 \right)
 $$
 
+Take for example $\binom{4}{3}$, we would get evaluation from the value in co-ordinates $\left(\begin{matrix}3 \\ 2\end{matrix}\right) + \left(\begin{matrix}3 \\ 1\end{matrix}\right)$ (or (3, 2) and (3, 1): row 3 column **k = 2** and row 3 column **k = 1**). The value from these positions are 3 and 1, which evaluates to 4 for $\binom{4}{3}$.
+
 ## 17.3. Exercise
 
 **Problem:** A small frog wants to get from position 0 to $k$ $(1 \leq k \leq 10,000)$. The frog can jump over any one of n ﬁxed distances $s_0 , s_1 , \dots , s_{n − 1}$ $(1 \leq s_i \leq k)$. The goal is to count the number of diﬀerent ways in which the frog can jump to position $k$. To avoid overﬂow, it is suﬃcient to return the result modulo $q$, where $q$ is a given number.
