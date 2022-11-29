@@ -33,20 +33,51 @@ Consider n denominations, $0 < c0 \leq c1 \leq \ldots \leq c_{n − 1}$. The alg
 
 **17.1: The dynamic algorithm for ﬁnding change.**
 ```js
+const dynamicCoinChanging = (C, k) => {
+    const n = C.length;
+    const dp = Array(n + 1).fill( Array(k + 1).fill(0) );
+    
+    for ( let i = 1; i < dp[0].length; i++ ) {
+        dp[0][i] = Number.MAX_SAFE_INTEGER;
+    }
 
+    for ( let i = 1; i < (n + 1); i++ ) {
+        for ( let j = 1; j < C[i - 1]; j++ ) {
+            dp[i][j] = dp[i - 1][j];
+        }
+        for ( let j = C[i - 1]; j < (k + 1); j++ ) {
+            dp[i][j] = Math.min(dp[i][j - C[i - 1]] + 1, dp[i - 1][j]);
+        }
+    }
+
+    return dp[n];
+}
 ```
 
 Both the time complexity and the space complexity of the above algorithm is $O(n · k)$. In the above implementation, memory usage can be optimized. Notice that, during the calculation of $dp$, we only use the previous row, so we don’t need to remember all of the rows.
 
 **17.2: The dynamic algorithm for ﬁnding change with optimized memory.**
 ```js
+const dynamicCoinChanging = (C, k) => {
+    const n = C.length;
+    const dp = Array(k + 1).fill(Number.MAX_SAFE_INTEGER);
+    dp[0] = 0;
+
+    for ( let i = 1; i < (n + 1); i++ ) {
+        for ( let j = C[i - 1]; j < (k + 1); j++ ) {
+            dp[j] = Math.min(dp[j - C[i - 1]] + 1, dp[j]);
+        }
+    }
+
+    return dp;
+}
 ```
 
 The time complexity is $O(n · k)$ and the space complexity is $O(k)$.
 
 ## 17.2. Exercise
 
-**Problem:** A small frog wants to get from position 0 to $k$ ($1 \leq k \leq 10,000$). The frog can jump over any one of n ﬁxed distances $s_0 , s_1 , \dots , s_{n − 1}$ ($1 \leq si \leq k$). The goal is to count the number of diﬀerent ways in which the frog can jump to position $k$. To avoid overﬂow, it is suﬃcient to return the result modulo $q$, where $q$ is a given number.
+**Problem:** A small frog wants to get from position 0 to $k$ $(1 \leq k \leq 10,000)$. The frog can jump over any one of n ﬁxed distances $s_0 , s_1 , \dots , s_{n − 1}$ $(1 \leq si \leq k)$. The goal is to count the number of diﬀerent ways in which the frog can jump to position $k$. To avoid overﬂow, it is suﬃcient to return the result modulo $q$, where $q$ is a given number.
 
 We assume that two patterns of jumps are diﬀerent if, in one pattern, the frog visits a position which is not visited in the other pattern.
 
@@ -62,7 +93,21 @@ More precisely, $dp[j]$ is increased by the value of $dp[j − s_i]$ (for all $s
 
 **17.3: Solution in time complexity $O(n · k)$ and space complexity $O(k)$.**
 ```js
+const frog = (S, k, q) => {
+    const n = S.length;
+    const dp = Array(k + 1).fill(0);
+    dp[0] = 1;
 
+    for ( let j = 1; j < (k + 1); j++ ) {
+        for ( let i = 0; i < n; i++ ) {
+            if ( S[i] <= j ) {
+                dp[j] = (dp[j] + dp[j - S[i]]) % q;
+            }
+        }
+    }
+
+    return dp[k];
+}
 ```
 
 The time complexity is $O(n · k)$ (all cells of array dp are visited for every jump) and the space complexity is $O(k)$.
