@@ -13,7 +13,7 @@ Based on the above-mentioned statement, we can reference [Fibonacci Numbers](../
 > Dynamic programming is essentially a tradeoﬀ of space for time. Repeatedly computing a given quantity can become a drag on performance. If so, we are better oﬀ storing the results of the initial computation and looking them up instead of recomputing them.[^2]
 ## 17.1 The Coin Changing Problem
 
-For a given set of denominations, you are asked to ﬁnd the minimum number of coins with which a given amount of money can be paid. Assume that you can use as many coins of a particular denomination as necessary. The greedy algorithmic approach is always to select the largest denomination not exceeding the remaining amount of money to be paid. As long as the remaining amount is greater than zero, the process is repeated. However, this algorithm may return a suboptimal result. For instance, for an amount of 6 and coins of values 1, 3, 4, we get 6 = 4 + 1 + 1, but the optimal solution here is 6 = 3 + 3.
+For a given set of denominations, you are asked to ﬁnd the minimum number of coins with which a given amount of money can be paid. Assume that you can use as many coins of a particular denomination as necessary. The greedy algorithmic approach is always to select the largest denomination not exceeding the remaining amount of money to be paid. As long as the remaining amount is greater than zero, the process is repeated. However, this algorithm may return a suboptimal result. _For instance, for an amount of 6 and coins of values 1, 3, 4, we get 6 = 4 + 1 + 1, but the optimal solution here is 6 = 3 + 3_.[^3]
 
 A dynamic algorithm ﬁnds solutions to this problem for all amounts not exceeding the given amount, and for increasing sets of denominations. For the example data, it would consider all the amounts from 0 to 6, and the following sets of denominations: $\emptyset$, {1}, {1, 3} and {1, 3, 4}. Let $dp[i, j]$ be the minimum number of coins needed to pay the amount $j$ if we use the set containing the $i$ smallest denominations. The number of coins needed must satisfy the following rules:
 
@@ -40,10 +40,10 @@ Consider n denominations, $0 < c0 \leq c1 \leq \ldots \leq c_{n − 1}$. The alg
 ```js
 const dynamicCoinChanging = (C, k) => {
     const n = C.length;
-    const dp = Array(n + 1).fill( Array(k + 1).fill(0) );
-    
+    const dp = Array.from(Array(n + 1), () => new Array(k + 1).fill(0) );
+
     for ( let i = 1; i < dp[0].length; i++ ) {
-        dp[0][i] = Number.MAX_SAFE_INTEGER;
+        dp[0][i] = Number.MAX_SAFE_INTEGER; // MAX_SAFE_INTEGER represents infinity
     }
 
     for ( let i = 1; i < (n + 1); i++ ) {
@@ -57,6 +57,8 @@ const dynamicCoinChanging = (C, k) => {
 
     return dp[n];
 }
+
+dynamicCoinChanging( [1, 3, 4], 6 ); // [  0, 1, 2, 1, 1, 2, 2 ]
 ```
 
 Both the time complexity and the space complexity of the above algorithm is $O(n · k)$. In the above implementation, memory usage can be optimized. Notice that, during the calculation of $dp$, we only use the previous row, so we don’t need to remember all of the rows.
@@ -76,6 +78,8 @@ const dynamicCoinChanging = (C, k) => {
 
     return dp;
 }
+
+dynamicCoinChanging( [1, 3, 4], 6 ); // [  0, 1, 2, 1, 1, 2, 2 ]
 ```
 
 The time complexity is $O(n · k)$ and the space complexity is $O(k)$.
@@ -88,7 +92,7 @@ A more stable way to compute binomial coeﬃcients is using the recurrence relat
 
 ![Pascal's Triangle](/.attachments/pascal-triangle.png)
 
-We can use a matrix to mimic the Pascal triangle. Take the table shown below (credit to _The Algorithm Design Manual_),
+We can use a matrix to mimic the Pascal triangle[^4]. Take the table shown below (credit to _The Algorithm Design Manual_),
 
 | n / k | k = 0 | k = 1 | k = 2 | k = 3 | k = 4 | k = 5 |
 |------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
@@ -131,6 +135,45 @@ $$
 
 Take for example $\binom{4}{3}$, we would get evaluation from the value in co-ordinates $\binom{3}{2} + \binom{3}{1}$ (or (3, 2) and (3, 1): row 3 column **k = 2** and row 3 column **k = 1**). The value from these positions are 3 and 1, which evaluates to 4 for $\binom{4}{3}$.
 
+Let's write some code to generate Pascal's Triangle,
+
+**17.3: Generating Pascal Triangle for coefficients of a binomial.**
+```js
+const pascalTriangle = n => {
+    let bc = Array.from(Array(n + 1), () => new Array(n + 1).fill(0) );
+
+    // Initializing conditions
+    for (let i = 0; i <= n; i++ ) {
+        bc[i][0] = 1;
+        bc[i][i] = 1;
+    }
+
+    // Fill out recurrence relational values. Based on Pascal triangle starts at level 3 but 2 for array index (since array starts at 0)
+    for (let i = 2; i <= n; i++ ) {
+        for (let j = 1; j <= i; j++ ) {
+            bc[i][j] = bc[i - 1][j - 1] + bc[i - 1][j];
+        }
+    }
+
+    return bc;
+}
+
+pascalTriangle(5); // Triangle for polynomial of 5
+```
+
+After the triangle is built in a two-dimensional array, we can now get $\binom{n}{k}$, which is the number of combinations involved in $n$ choosing $k$. So, how many ways are there to choose 4 things from a set of 5 things? Let's do this using the matrix created,
+
+**17.4: Getting $\binom{n}{k}$ from Pascal Triangle matrix.**
+```js
+const binomialCoefficient = (n , k) => {
+    const pt = pascalTriangle(n);
+
+    return pt[n][k]; // n choose k
+}
+
+binomialCoefficient(5, 4); // 5
+```
+
 ## 17.3. Exercise
 
 **Problem:** A small frog wants to get from position 0 to $k$ $(1 \leq k \leq 10,000)$. The frog can jump over any one of n ﬁxed distances $s_0 , s_1 , \dots , s_{n − 1}$ $(1 \leq s_i \leq k)$. The goal is to count the number of diﬀerent ways in which the frog can jump to position $k$. To avoid overﬂow, it is suﬃcient to return the result modulo $q$, where $q$ is a given number.
@@ -147,7 +190,7 @@ The number of ways in which the frog can jump to position $j$ with a ﬁnal jump
 
 More precisely, $dp[j]$ is increased by the value of $dp[j − s_i]$ (for all $s_i \leq j$) modulo $q$.
 
-**17.3: Solution in time complexity $O(n · k)$ and space complexity $O(k)$.**
+**17.5: Solution in time complexity $O(n · k)$ and space complexity $O(k)$.**
 ```js
 const frog = (S, k, q) => {
     const n = S.length;
@@ -164,13 +207,24 @@ const frog = (S, k, q) => {
 
     return dp[k];
 }
+
+frog( [ 2, 5, 10 ], 33, 1 ); // ?
 ```
 
 The time complexity is $O(n · k)$ (all cells of array dp are visited for every jump) and the space complexity is $O(k)$.
 
 ## Observations
 
-...
+The table showing solution to the coin changing problem for the example of providing 6 with denominations of a set of {1, 3, 4} needs a little explanation for interpretation. Basically, the column is a value that needs to be delivered through the set of denominations. For example, 2 can be delivered with 2 **1** coins. Hence the cells for row **{1}**, **{1, 3}** and **{1, 3, 4}** under column **2** would show 2. The value of 6 can be delivered with 2 **3 coins**. Hence, the cells for row **{1, 3}** and **{1, 3, 4}** under column **6** would show 2. But since the set of **{1}** only contains 1 coins, 6 can only be delivered with 6 **1 coins**. (Maybe it would have been better to use 60 cents with a set of {**10 cent**, **30 cent**, **40 cent**} coins )
+
+| ${dp[i, j]}$ | 0   | 1   | 2   | 3   | 4   | 5   | 6   |
+|-------------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|  $\emptyset$ | 0   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   |
+|  {1}         | 0   | 1   | 2   | 3   | 4   | 5   | 6   |
+|  {1, 3}      | 0   | 1   | 2   | 1   | 2   | 3   | 2   |
+|  {1, 3, 4}   | 0   | 1   | 2   | 1   | 1   | 2   | 2   |
+
+Now, moving onto the two code snippets 17.1 and 17.2 that I find interesting, particularly the mathematics within the nested loops.
 
 ## Videos
 
@@ -185,3 +239,7 @@ The time complexity is $O(n · k)$ (all cells of array dp are visited for every 
 [^1]: Page 208. Chapter 14: Advanced Algorithms. Data Structures and Algorithms with JavaScript by Michael McMillan.
 
 [^2]: Chapter 10: Dynamic Programming. The Algorithm Design Manual by Steven Skiena.
+
+[^3]: Getting 6 = 4 + 1 + 1 comes from the use of [Greedy Algorithms](../greedy#161-the-coin-changing-problem).
+
+[^4]: Details on Pascal's Triangle can be found in this [wiki](https://en.wikipedia.org/wiki/Pascal%27s_triangle).
