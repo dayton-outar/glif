@@ -1,38 +1,44 @@
-// const dynamicCoinChanging = (C, k) => {
-//     const n = C.length;
-//     const dp = Array.from(Array(n + 1), () => new Array(k + 1).fill(0) );
-
-//     for ( let i = 1; i < dp[0].length; i++ ) {
-//         dp[0][i] = Number.MAX_SAFE_INTEGER; // MAX_SAFE_INTEGER represents infinity
-//     }
-
-//     for ( let i = 1; i < (n + 1); i++ ) {
-//         for ( let j = 1; j < C[i - 1]; j++ ) {
-//             dp[i][j] = dp[i - 1][j];
-//         }
-//         for ( let j = C[i - 1]; j < (k + 1); j++ ) {
-//             dp[i][j] = Math.min(dp[i][j - C[i - 1]] + 1, dp[i - 1][j]);
-//         }
-//     }
-
-//     return dp[n];
-// }
-
 const dynamicCoinChanging = (C, k) => {
     const n = C.length;
-    const dp = Array(k + 1).fill(Number.MAX_SAFE_INTEGER);
-    dp[0] = 0;
+    const dp = Array.from(Array(n + 1), () => new Array(k + 1).fill(0) );
 
-    for ( let i = 1; i < (n + 1); i++ ) {
-        for ( let j = C[i - 1]; j < (k + 1); j++ ) {
-            dp[j] = Math.min(dp[j - C[i - 1]] + 1, dp[j]);
-        }
+    for ( let i = 1; i < dp[0].length; i++ ) {
+        dp[0][i] = Number.MAX_SAFE_INTEGER; // MAX_SAFE_INTEGER represents infinity
     }
 
-    return dp;
+    for ( let i = 1; i < (n + 1); i++ ) {
+        console.log( `1. ${i} ----> `, dp );
+
+        for ( let j = 1; j < C[i - 1]; j++ ) {
+            dp[i][j] = dp[i - 1][j];
+        }
+
+        console.log( `2. ${i} ----> `, dp );
+        for ( let j = C[i - 1]; j < (k + 1); j++ ) {
+            dp[i][j] = Math.min(dp[i][j - C[i - 1]] + 1, dp[i - 1][j]);
+        }
+
+        console.log( `3. ${i} ----> `, dp );
+    }
+
+    return dp[n];
 }
 
-// console.log( dynamicCoinChanging( [1, 3, 4], 6 ) );
+// const dynamicCoinChanging = (C, k) => {
+//     const n = C.length;
+//     const dp = Array(k + 1).fill(Number.MAX_SAFE_INTEGER);
+//     dp[0] = 0;
+
+//     for ( let i = 1; i < (n + 1); i++ ) {
+//         for ( let j = C[i - 1]; j < (k + 1); j++ ) {
+//             dp[j] = Math.min(dp[j - C[i - 1]] + 1, dp[j]);
+//         }
+//     }
+
+//     return dp;
+// }
+
+console.log( dynamicCoinChanging( [1, 3, 4], 6 ) );
 
 const frog = (S, k, q) => {
     const n = S.length;
@@ -50,7 +56,7 @@ const frog = (S, k, q) => {
     return dp[k];
 }
 
-console.log( frog( [ 2, 5, 10 ], 33, 1 ) );
+// console.log( frog( [ 2, 5, 10 ], 33, 1 ) );
 
 const pascalTriangle = n => {
     let bc = Array.from(Array(n + 1), () => new Array(n + 1).fill(0) );
