@@ -148,7 +148,8 @@ const pascalTriangle = n => {
         bc[i][i] = 1;
     }
 
-    // Fill out recurrence relational values. Based on Pascal triangle starts at level 3 but 2 for array index (since array starts at 0)
+    // Fill out recurrence relational values. 
+    // Based on Pascal triangle starts at level 3 but 2 for array index (since array starts at 0)
     for (let i = 2; i <= n; i++ ) {
         for (let j = 1; j <= i; j++ ) {
             bc[i][j] = bc[i - 1][j - 1] + bc[i - 1][j];
