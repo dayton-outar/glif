@@ -19,8 +19,8 @@ A dynamic algorithm ﬁnds solutions to this problem for all amounts not exceedi
 
 - no coins are needed to pay a zero amount: $dp[i, 0] = 0$ (for all $i$);
 - if there are no denominations and the amount is positive, there is no solution, so for convenience the result can be inﬁnite in this case: $dp[0, j] = \infty$ (for all $j > 0$);
-- if the amount to be paid is smaller than the highest denomination c i , this denomination can be discarded: $dp[i, j] = dp[i − 1, j]$ (for all $i > 0$ and all $j$ such that $c_i > j$);
-- otherwise, we should consider two options and choose the one requiring fewer coins: either we use a coin of the highest denomination, and a smaller amount to be paid remains, or we don’t use coins of the highest denomination (and the denomination can thus be discarded): $dp[i, j] =\text{ min}(dp[i, j − ci ] + 1, dp[i − 1, j]$) (for all $i > 0$ and all $j$ such that $c_i \leq j$).
+- if the amount to be paid is smaller than the highest denomination $c_i$ , this denomination can be discarded: $dp[i, j] = dp[i − 1, j]$ (for all $i > 0$ and all $j$ such that $c_i > j$);
+- otherwise, we should consider two options and choose the one requiring fewer coins: either we use a coin of the highest denomination, and a smaller amount to be paid remains, or we don’t use coins of the highest denomination (and the denomination can thus be discarded): $dp[i, j] =\text{ min}(dp[i, j − c_i ] + 1, dp[i − 1, j]$) (for all $i > 0$ and all $j$ such that $c_i \leq j$).
 
 The following table shows all the solutions to sub-problems considered for the example data.
 
@@ -34,7 +34,7 @@ The following table shows all the solutions to sub-problems considered for the e
 
 ### Implementation
 
-Consider n denominations, $0 < c0 \leq c1 \leq \ldots \leq c_{n − 1}$. The algorithm processes the respective denominations and calculates the minimum number of coins needed to pay every amount from 0 to $k$. When considering each successive denomination, we use the previously calculated results for the smaller amounts.
+Consider n denominations, $0 < c_0 \leq c_1 \leq \ldots \leq c_{n − 1}$. The algorithm processes the respective denominations and calculates the minimum number of coins needed to pay every amount from 0 to $k$. When considering each successive denomination, we use the previously calculated results for the smaller amounts.
 
 **17.1: The dynamic algorithm for ﬁnding change.**
 ```js
@@ -177,7 +177,7 @@ binomialCoefficient(5, 4); // 5
 
 ## 17.3. Exercise
 
-**Problem:** A small frog wants to get from position 0 to $k$ $(1 \leq k \leq 10,000)$. The frog can jump over any one of n ﬁxed distances $s_0 , s_1 , \dots , s_{n − 1}$ $(1 \leq s_i \leq k)$. The goal is to count the number of diﬀerent ways in which the frog can jump to position $k$. To avoid overﬂow, it is suﬃcient to return the result modulo $q$, where $q$ is a given number.
+**Problem:** A small frog wants to get from position 0 to $k$ $(1 \leq k \leq 10,000)$. The frog can jump over any one of $n$ ﬁxed distances $s_0 , s_1 , \dots , s_{n − 1}$ $(1 \leq s_i \leq k)$. The goal is to count the number of diﬀerent ways in which the frog can jump to position $k$. To avoid overﬂow, it is suﬃcient to return the result modulo $q$, where $q$ is a given number.
 
 We assume that two patterns of jumps are diﬀerent if, in one pattern, the frog visits a position which is not visited in the other pattern.
 
@@ -209,7 +209,8 @@ const frog = (S, k, q) => {
     return dp[k];
 }
 
-frog( [ 2, 5, 10 ], 33, 1 ); // ?
+// Matrix generated for this is [ 1, 1, 1, 2, 3, 5, 1, 5 ]
+frog( [ 1, 3, 5 ], 7, 7 ); // 5
 ```
 
 The time complexity is $O(n · k)$ (all cells of array dp are visited for every jump) and the space complexity is $O(k)$.
@@ -225,7 +226,85 @@ The table showing solution to the coin changing problem for the example of provi
 |  {1, 3}      | 0   | 1   | 2   | 1   | 2   | 3   | 2   |
 |  {1, 3, 4}   | 0   | 1   | 2   | 1   | 1   | 2   | 2   |
 
-Now, moving onto the two code snippets 17.1 and 17.2 that I find interesting, particularly the mathematics within the nested loops.
+Now, moving onto the two code snippets 17.1 and 17.2 that I find interesting, particularly the mathematics within the nested loops. The mathematics is described in the algorithmic steps outlined in the introduction to section [17.1](#171-the-coin-changing-problem). So, in order to steps through the evaluation of the case of using denominations, {1, 3, 4}, to for a value up to 6, the table of values at each iteration will be shown.
+
+When the table is initialized, it starts by using the highest value possible as a precursor in support of finding minimum possible value in the next row as shown below,
+
+| ${dp[i, j]}$ | 0   | 1   | 2   | 3   | 4   | 5   | 6   |
+|-------------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|  $\emptyset$ | 0   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   |
+|  {1}         | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+|  {1, 3}      | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+|  {1, 3, 4}   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+
+This was achieved by the following snippet,
+
+```js
+for ( let i = 1; i < dp[0].length; i++ ) {
+    dp[0][i] = Number.MAX_SAFE_INTEGER; // MAX_SAFE_INTEGER represents infinity
+}
+```
+
+As we progress into the nested loop, we find that the algorithm transfers values from the row immediately above for up to the index (or column) just prior to the value of the denomination. Take for example, when the outer loop reaches second row, where `i` is 2, the denomination the first inner loop picks out of `C` is 3. The first inner loop that we refer to is shown below,
+
+```js
+for ( let j = 1; j < C[i - 1]; j++ ) {
+    dp[i][j] = dp[i - 1][j];
+}
+```
+
+So, at this point the table will look like this (remember by this point all the values for denomination 1 has been filled out by the next inner loop, which will be discussed after this),
+
+| ${dp[i, j]}$ | 0   | 1   | 2   | 3   | 4   | 5   | 6   |
+|-------------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|  $\emptyset$ | 0   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   |
+|  {1}         | 0   | 1   | 2   | 3   | 4   | 5   | 6   |
+|  {1, 3}      | 0   | 1   | 2   | 0   | 0   | 0   | 0   |
+|  {1, 3, 4}   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+
+At this point, columns 3 to 6 in the second row needs to be evaluated and filled out. This is where the second inner loop comes in,
+
+```js
+for ( let j = C[i - 1]; j < (k + 1); j++ ) {
+    dp[i][j] = Math.min(dp[i][j - C[i - 1]] + 1, dp[i - 1][j]);
+}
+```
+
+Now, we will step through for each column from column 3 to 6 from here on. So, stepping into column 3,
+
+| ${dp[i, j]}$ | 0   | 1   | 2   | 3   | 4   | 5   | 6   |
+|-------------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|  $\emptyset$ | 0   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   |
+|  {1}         | 0   | 1   | 2   | **3**   | 4   | 5   | 6   |
+|  {1, 3}      | **0**   | 1   | 2   | 0   | 0   | 0   | 0   |
+|  {1, 3, 4}   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+
+The first column or index of the second row is taken and added to 1, where **0** and 1 gives 1. When 1 and **3** (from the same column as column being evaluated, `j`, in row immediately above) is compared to choose the minimum value using `Math.min`, the value 1 is returned as the outcome. Hence,
+
+| ${dp[i, j]}$ | 0   | 1   | 2   | 3   | 4   | 5   | 6   |
+|-------------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|  $\emptyset$ | 0   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   |
+|  {1}         | 0   | 1   | 2   | 3   | **4**   | 5   | 6   |
+|  {1, 3}      | 0   | **1**   | 2   | 1   | 0   | 0   | 0   |
+|  {1, 3, 4}   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+
+Now, onto column 4 in second row. We take the second column or index and add it to 1, where **1** and 1 gives 2. When 2 and **4** (from column 4 in row immediately above current row) is compared to choose minimum value, the value 2 is returned as the outcome. Hence,
+
+| ${dp[i, j]}$ | 0   | 1   | 2   | 3   | 4   | 5   | 6   |
+|-------------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|  $\emptyset$ | 0   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   | $\infty$   |
+|  {1}         | 0   | 1   | 2   | 3   | **4**   | 5   | 6   |
+|  {1, 3}      | 0   | **1**   | 2   | 1   | 2   | 0   | 0   |
+|  {1, 3, 4}   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+
+And we follow this pattern as stated by the algorithm until the table (or matrix) is fully evaluated. So, this works but why does it work?
+
+...
+
+For the exercise, there is a frog jumping problem that involves an array that has a set number of lengths that the frog can jump (discrete values). The problem comes when the frog need to jump to certain positions. How many ways can the frog get to position $k$. Time for an example. So, we plugged in the parameters `[1, 3, 5]` as the number of discrete values representing the distance the frog can jump. We want the frog to reach position 7, so we plug in 7 and then _to avoid overflow_, we plug in 7. Hence, `frog( [ 1, 3, 5 ], 7, 7 )`.
+
+Before we delve into the guts of the solution, I want to expand on the need _to avoid overflow_.
+
 
 ## Videos
 
