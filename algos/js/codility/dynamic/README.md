@@ -34,7 +34,7 @@ The following table shows all the solutions to sub-problems considered for the e
 
 ### Implementation
 
-Consider n denominations, $0 < c_0 \leq c_1 \leq \ldots \leq c_{n − 1}$. The algorithm processes the respective denominations and calculates the minimum number of coins needed to pay every amount from 0 to $k$. When considering each successive denomination, we use the previously calculated results for the smaller amounts.
+Consider $n$ denominations, $0 < c_0 \leq c_1 \leq \ldots \leq c_{n − 1}$. The algorithm processes the respective denominations and calculates the minimum number of coins needed to pay every amount from 0 to $k$. When considering each successive denomination, we use the previously calculated results for the smaller amounts.
 
 **17.1: The dynamic algorithm for ﬁnding change.**
 ```js
@@ -301,7 +301,7 @@ And we follow this pattern as stated by the algorithm until the table (or matrix
 
 ...
 
-For the exercise, there is a frog jumping problem that involves an array that has a set number of lengths that the frog can jump (discrete values). The problem comes when the frog need to jump to certain positions. How many ways can the frog get to position $k$. Time for an example. So, we plugged in the parameters `[1, 3, 5]` as the number of discrete values representing the distance the frog can jump. We want the frog to reach position 7, so we plug in 7 and then _to avoid overflow_, we plug in 7. Hence, `frog( [ 1, 3, 5 ], 7, 7 )`.
+For the exercise, there is a frog jumping problem that involves an array that has a set number of lengths that the frog can jump (discrete values). The problem comes when the frog needs to jump to certain positions. How many ways can the frog get to position $k$. Time for an example. So, we plugged in the parameters `[1, 3, 5]` as the number of discrete values representing the distance the frog can jump. We want the frog to reach position 7, so we plug in 7 and then _to avoid overflow_, we plug in 7. Hence, `frog( [ 1, 3, 5 ], 7, 7 )`.
 
 Before we delve into the guts of the solution, I want to expand on the need _to avoid overflow_.
 
@@ -313,7 +313,6 @@ Before we delve into the guts of the solution, I want to expand on the need _to 
 ## References
 
 1. [Codility Training Media - Dynamic Programming](https://codility.com/media/train/15-DynamicProgramming.pdf)
-2. Chapter 14. Dynamic Programming. Introduction to Algorithms by Thomas H. Cormen, Charles E. Leiserson, Ronald Rivest and Clifford Stein
 2. Chapter 10: Dynamic Programming. The Algorithm Design Manual by Steven Skiena.
 
 [^1]: Page 208. Chapter 14: Advanced Algorithms. Data Structures and Algorithms with JavaScript by Michael McMillan.

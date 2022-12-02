@@ -10,7 +10,7 @@ const greedyCoinChanging = (M, k) => {
     return result;
 }
 
-console.log( greedyCoinChanging( [ 1, 3, 4 ], 6 ) );
+// console.log( greedyCoinChanging( [ 1, 3, 4 ], 6 ) );
 
 const greedyCanoeistA = (W, k) => {
     const n = W.length;
@@ -18,15 +18,18 @@ const greedyCanoeistA = (W, k) => {
     let heavy = [];
 
     for( let i = 0; i < (n - 1); i++ ) {
-        if ( W[i] + W[-1] <= k ) {
+        if ( W[i] + W[n - 1] <= k ) {
             light.push( W[i] );
         } else {
             heavy.push( W[i] );
         }
     }
 
-    heavy.push( W[-1] );
+    heavy.push( W[n - 1] );
     let canoes = 0;
+
+    console.log( 'heavy', heavy );
+    console.log( 'light', light );
 
     while( light.length || heavy.length ) {
         if ( light.length > 0 ) {
@@ -40,7 +43,7 @@ const greedyCanoeistA = (W, k) => {
             heavy.push( light.pop() );
         }
 
-        while ( heavy.length > 1 && heavy[-1] + heavy[0] <= k ) {
+        while ( heavy.length > 1 && heavy[heavy.length - 1] + heavy[0] <= k ) {
             light.push( heavy.unshift() )
         }
     }
@@ -48,7 +51,8 @@ const greedyCanoeistA = (W, k) => {
     return canoes;
 }
 
-console.log( greedyCanoeistA( [2, 4, 5, 2, 1, 5, 6, 7, 8, 9, 7], 5) );
+let people = [2, 4, 5, 2, 1, 3, 1, 2, 5, 2, 3];
+console.log( greedyCanoeistA( people, 5) );
 
 const greedyCanoeistB = (W, k) => {
     let canoes = 0;
@@ -66,4 +70,4 @@ const greedyCanoeistB = (W, k) => {
     return canoes;
 }
 
-console.log( greedyCanoeistA( [2, 4, 5, 2, 1, 5, 6, 7, 8, 9, 7], 5) );
+console.log( greedyCanoeistB( people, 5) );

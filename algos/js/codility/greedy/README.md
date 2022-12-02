@@ -59,14 +59,14 @@ const greedyCanoeistA = (W, k) => {
     let heavy = [];
 
     for( let i = 0; i < (n - 1); i++ ) {
-        if ( W[i] + W[-1] <= k ) {
+        if ( W[i] + W[n - 1] <= k ) {
             light.push( W[i] );
         } else {
             heavy.push( W[i] );
         }
     }
 
-    heavy.push( W[-1] );
+    heavy.push( W[n - 1] );
     let canoes = 0;
 
     while( light.length || heavy.length ) {
@@ -81,7 +81,7 @@ const greedyCanoeistA = (W, k) => {
             heavy.push( light.pop() );
         }
 
-        while ( heavy.length > 1 && heavy[-1] + heavy[0] <= k ) {
+        while ( heavy.length > 1 && heavy[heavy.length - 1] + heavy[0] <= k ) {
             light.push( heavy.unshift() )
         }
     }
@@ -89,7 +89,8 @@ const greedyCanoeistA = (W, k) => {
     return canoes;
 }
 
-greedyCanoeistA( [2, 4, 5, 2, 1, 5, 6, 7, 8, 9, 7], 5); // 11
+let people = [2, 4, 5, 2, 1, 3, 1, 2, 5, 2, 3];
+greedyCanoeistA( people, 5); // 6
 ```
 
 **Proof of correctness:** There exists an optimal solution in which the heaviest _heavy_ $h$ and the heaviest _light_ $l$ are seated together. If there were a better solution in which $h$ sat alone then $l$ could be seated with him/her anyway. If heavy $h$ were seated with some light $x \leq l$, then $x$ and $l$ could just be swapped. If $l$ has any companion $y$, $x$ and $y$ would ﬁt together, as $y \leq h$.
@@ -122,10 +123,10 @@ const greedyCanoeistB = (W, k) => {
     return canoes;
 }
 
-greedyCanoeistA( [2, 4, 5, 2, 1, 5, 6, 7, 8, 9, 7], 5); // 11
+greedyCanoeistB( [2, 4, 5, 2, 1, 3, 1, 2, 5, 2, 3], 5); // 9
 ```
 
-The time complexity is O(n), because with each step of the loop, at least one canoeist is seated.
+The time complexity is $O(n)$, because with each step of the loop, at least one canoeist is seated.
 
 **Proof of correctness:** Analogically to solution A. If _light_ $l$ were seated with some heavy $x < h$, then $x$ and $h$ could just be swapped.
 
