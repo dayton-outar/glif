@@ -52,7 +52,7 @@ const frog = (S, k, q) => {
     for ( let j = 1; j < (k + 1); j++ ) {
         for ( let i = 0; i < n; i++ ) {
             if ( S[i] <= j ) {
-                dp[j] = (dp[j] + dp[j - S[i]]);// % q;
+                dp[j] = (dp[j] + dp[j - S[i]]) % q;
             }
         }
     }

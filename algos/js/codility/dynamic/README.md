@@ -299,11 +299,15 @@ Now, onto column 4 in second row. We take the second column or index and add it 
 
 And we follow this pattern as stated by the algorithm until the table (or matrix) is fully evaluated. So, this works but why does it work?
 
-...
+The whole idea of how this works hinges on the final rule stated in section [17.1](#171-the-coin-changing-problem),
+
+> we should consider two options and _choose the one requiring fewer coins_: ***either we use a coin of the highest denomination, and a smaller amount to be paid remains, or we don’t use coins of the highest denomination***
 
 For the exercise, there is a frog jumping problem that involves an array that has a set number of lengths that the frog can jump (discrete values). The problem comes when the frog needs to jump to certain positions. How many ways can the frog get to position $k$. Time for an example. So, we plugged in the parameters `[1, 3, 5]` as the number of discrete values representing the distance the frog can jump. We want the frog to reach position 7, so we plug in 7 and then _to avoid overflow_, we plug in 7. Hence, `frog( [ 1, 3, 5 ], 7, 7 )`.
 
-Before we delve into the guts of the solution, I want to expand on the need _to avoid overflow_.
+Before we delve into the guts of the solution, I want to expand on the need _to avoid overflow_. When we remove the modulo from the function, `frog`, and put `dp[j] = (dp[j] + dp[j - S[i]]);` instead of `dp[j] = (dp[j] + dp[j - S[i]]) % q;`, the same parameters, `frog( [ 1, 3, 5 ], 7, 7 )`, returns 12 (from array of `[1, 1, 1, 2, 3, 5, 8, 12]`) instead of 5 (from array of `[1, 1, 1, 2, 3, 5, 1, 5]`).
+
+But can a frog with the ability to jump distances of `[1, 3, 5]` have 12 different ways to reach to position 7? Especially, when _two patterns of jumps are different if, in one pattern, the frog visits a position which is not visited in the other pattern_. The fact that the one pattern cannot be counted as another unique way because a position has been visited eliminates a permutation.
 
 
 ## Videos

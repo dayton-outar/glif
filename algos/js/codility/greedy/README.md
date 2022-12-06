@@ -42,14 +42,9 @@ If we construct an optimal solution by making consecutive choices, then such a p
 
 **Problem:** There are $n > 0$ canoeists weighing respectively $1 \leq w_0 \leq w_1 \leq \ldots \leq w_{n − 1} \leq 10^9$. The goal is to seat them in the minimum number of double canoes whose displacement (the maximum load) equals $k$. You may assume that $w_i \leq k$.
 
-**Solution A $O(n)$:** The task can be solved by using a greedy algorithm. The heaviest canoeist
-is called heavy. Other canoeists who can be seated with heavy in the canoe are called light.
-All the other remaining canoeists are also called heavy.
+**Solution A $O(n)$:** The task can be solved by using a greedy algorithm. The heaviest canoeist is called _heavy_. Other canoeists who can be seated with _heavy_ in the canoe are called _light_. All the other remaining canoeists are also called _heavy_.
 
-The idea is that, for the heaviest heavy, we should ﬁnd the heaviest light who can be
-seated with him/her. So, we seat together the heaviest heavy and the heaviest light. Let us
-note that the lighter the heaviest heavy is, the heavier light can be. Thus, the division between
-heavy and light will change over time — as the heaviest heavy gets closer to the pool of light.
+The idea is that, for the heaviest _heavy_, we should ﬁnd the heaviest _light_ who can be seated with him/her. So, we seat together the heaviest _heavy_ and the heaviest _light_. Let us note that the lighter the heaviest _heavy_ is, the heavier _light_ can be. Thus, the division between _heavy_ and _light_ will change over time — as the heaviest _heavy_ gets closer to the pool of _light_.
 
 **16.2: Canoeist in $O(n)$ solution.**
 ```js
@@ -93,17 +88,13 @@ let people = [2, 4, 5, 2, 1, 3, 1, 2, 5, 2, 3];
 greedyCanoeistA( people, 5); // 6
 ```
 
-**Proof of correctness:** There exists an optimal solution in which the heaviest _heavy_ $h$ and the heaviest _light_ $l$ are seated together. If there were a better solution in which $h$ sat alone then $l$ could be seated with him/her anyway. If heavy $h$ were seated with some light $x \leq l$, then $x$ and $l$ could just be swapped. If $l$ has any companion $y$, $x$ and $y$ would ﬁt together, as $y \leq h$.
+**Proof of correctness:** There exists an optimal solution in which the heaviest _heavy_ $h$ and the heaviest _light_ $l$ are seated together. If there were a better solution in which $h$ sat alone then $l$ could be seated with him/her anyway. If _heavy_ $h$ were seated with some _light_ $x \leq l$, then $x$ and $l$ could just be swapped. If $l$ has any companion $y$, $x$ and $y$ would ﬁt together, as $y \leq h$.
 
 The solution for the ﬁrst canoe is optimal, so the problem can be reduced to seat the remaining canoeists in the minimum number of canoes.
 
-The total time complexity of this solution is O(n). The outer while loop performs O(n) steps
-since in each step one or two canoeists are seated in a canoe. The inner while loop in each
-step changes a heavy into a light. As at the beginning there are O(n) heavy and with each
-step at the outer while loop only one light become a heavy, the overall total number of steps
-of the inner while loop has to be O(n).
+The total time complexity of this solution is $O(n)$. The outer `while` loop performs $O(n)$ steps since in each step one or two canoeists are seated in a canoe. The inner `while` loop in each step changes a _heavy_ into a _light_. As at the beginning there are $O(n)$ _heavy_ and with each step at the outer `while` loop only one _light_ become a _heavy_, the overall total number of steps of the inner `while` loop has to be $O(n)$.
 
-**Solution B $O(n)$:** The heaviest canoeist is seated with the lightest, as long as their weight is less than or equal to k. If not, the heaviest canoeist is seated alone in the canoe.
+**Solution B $O(n)$:** The heaviest canoeist is seated with the lightest, as long as their weight is less than or equal to $k$. If not, the heaviest canoeist is seated alone in the canoe.
 
 **16.3: Canoeist in $O(n)$ solution.**
 ```js
@@ -128,13 +119,13 @@ greedyCanoeistB( [2, 4, 5, 2, 1, 3, 1, 2, 5, 2, 3], 5); // 9
 
 The time complexity is $O(n)$, because with each step of the loop, at least one canoeist is seated.
 
-**Proof of correctness:** Analogically to solution A. If _light_ $l$ were seated with some heavy $x < h$, then $x$ and $h$ could just be swapped.
+**Proof of correctness:** Analogically to solution A. If _light_ $l$ were seated with some _heavy_ $x < h$, then $x$ and $h$ could just be swapped.
 
 If the heaviest canoeist is seated alone, it is not possible to seat anybody with him/her. If there exists a solution in which the heaviest canoeist $h$ is seated with some other $x$, we can swap $x$ with the lightest canoeist $l$, because $l$ can sit in place of $x$ since $x \geq l$. Also, $x$ can sit in place of $l$, since if $l$ has any companion $y$, we have $y \leq h$.
 
 ## Observations
 
-...
+The problem in the exercise is pretty straightforward: try to get as many canoeist to use the double-occupancy canoes. What I cannot understand is how is code snippet 16.2 is $O(n)$. This must be a mistake. The inner nested loop reshuffles the _heavy_ queue onto the _light_ queue based on the weight of the first and last items in the _heavy_ queue if their combined weight is less than the maximum load that the canoe can take. Surely, it must be a $log n$ operation to reshuffle. Personally, I think the time complexity for 16.2 should be $O(n\text{ }log\text{ }n)$.
 
 ## References
 
