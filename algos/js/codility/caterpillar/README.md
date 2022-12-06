@@ -79,7 +79,12 @@ The time complexity of the above algorithm is $O(n^2)$, because for every stick 
 
 ## Observations
 
-The triangle problem is not easy to grasp ...
+The triangle problem is not easy to grasp. The algorithm contains nested loops that is used to traverse the array with three pointers. Two pointers increment by 1 through the first 2 elements and comparing those two elements with the element in the third position until the third pointer exhausts the array. The third pointer starts again when the first two pointers increments by one. The use of the pointers can be seen in the condition `A[i] + A[j] > A[k]`. When the condition is met, it increments `k`.
+
+The most interesting line of code snippet 15.2 is the line with some basic math with the instructions, `result += k - j - 1;`. So, here's what I think.
+
+- 1 is subtracted from `j` to compensate for 1 added in initialization of the loop, `let j = i + 1`
+- ...
 
 ## References
 

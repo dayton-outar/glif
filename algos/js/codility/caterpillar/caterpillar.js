@@ -28,11 +28,13 @@ const triangles = A => {
 
     for ( let i = 0; i < n; i++ ) {
         k = i + 2;
-        for ( let j = i + 1; j < n; j++ ) {
+        for ( let j = i + 1; j < n; j++ ) {            
             while ( k < n && A[i] + A[j] > A[k] ) {
+                console.log( `i: ${i}; j: ${j}; k: ${k}`, A[i], A[j], A[k] );
                 k++;
             }
             result += k - j - 1;
+            console.log( `i: ${i}; j: ${j}; k: ${k}`, 'result', result );
         }
     }
 
