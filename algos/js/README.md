@@ -11,7 +11,7 @@ Significant lessons from Codility,
 
   Creating a hashtable to count occurrences of an element
 
-- [Prefix Sums](./codility/counting/README.md)
+- [Prefix Sums](./codility/counting/README.md) <sup>*</sup>
   
   Perfect for best performing algorithm to get sum of slices
 
@@ -31,7 +31,7 @@ Significant lessons from Codility,
 
   An old but crafty way of identifying all primes up to a certain number
 
-- [Euclidean Algorithm](./codility/euclidean/README.md)
+- [Euclidean Algorithm](./codility/euclidean/README.md) <sup>*</sup>
 
   Finding common divisor and common multiples
 
@@ -43,7 +43,7 @@ Significant lessons from Codility,
 
   Conducting a search by splitting in the middle each iteration
 
-- [Caterpillar Method](./codility/caterpillar/README.md)
+- [Caterpillar Method](./codility/caterpillar/README.md) <sup>*</sup>
 
   Finding aggregates by the use of more than one pointer in a loop
 
