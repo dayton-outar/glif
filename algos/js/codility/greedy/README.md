@@ -125,7 +125,7 @@ If the heaviest canoeist is seated alone, it is not possible to seat anybody wit
 
 ## Observations
 
-The problem in the exercise is pretty straightforward: try to get as many canoeist to use the double-occupancy canoes. What I cannot understand is how is code snippet 16.2 is $O(n)$. This must be a mistake. The inner nested loop reshuffles the _heavy_ queue onto the _light_ queue based on the weight of the first and last items in the _heavy_ queue if their combined weight is less than the maximum load that the canoe can take. Surely, it must be a $log n$ operation to reshuffle. Personally, I think the time complexity for 16.2 should be $O(n\text{ }log\text{ }n)$.
+The problem in the exercise is pretty straightforward: try to get as many canoeist to use the double-occupancy canoes. What I cannot understand is how is code snippet 16.2 is $O(n)$. This must be a mistake. The inner nested loop reshuffles the _heavy_ queue onto the _light_ queue based on the weight of the first and last items in the _heavy_ queue if their combined weight is less than the maximum load that the canoe can take. Surely, it must be a $O(log\text{ }n)$ operation to reshuffle. Personally, I think the time complexity for 16.2 should be $O(n\text{ }log\text{ }n)$.
 
 ## References
 

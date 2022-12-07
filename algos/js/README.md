@@ -6,6 +6,7 @@ Practiced from most of the problems on,
 2. [Leetcode](https://leetcode.com/)
 
 Significant lessons from Codility,
+
 - [Counting Elements](./codility/counting/README.md)
 
   Creating a hashtable to count occurrences of an element
@@ -39,12 +40,34 @@ Significant lessons from Codility,
   Finding numbers in the most efficient way in a fibonacci sequence
 
 - [Binary Search](./codility/binary-search/README.md)
+
+  Conducting a search by splitting in the middle each iteration
+
 - [Caterpillar Method](./codility/caterpillar/README.md)
 
   Finding aggregates by the use of more than one pointer in a loop
 
 - [Greedy Algorithms](./codility/greedy/README.md)
+
+  Finding the best locally optimal choice first
+
 - [Dynamic Programming](./codility/dynamic/README.md)
+
+  A trade-off for time rather than space using arrays and matrices rather than recursion to find optimal solution
+
+## Time Complexity Terms
+
+| Term             | Big O                     |
+|:-----------------|:-------------------------:|
+| Constant Time    | $O(1)$                    |
+| Logarithmic Time | $O(log\text{ }n)$         |
+| Square Root Time | $O(\sqrt n)$                        |
+| Linear Time      | $O(n)$                    |
+| Superlinear Time | $O(n\text{ }·\text{ }log\text{ }n)$ |
+| Quadratic Time   | $O(n^2)$                  |
+| Cubic Time       | $O(n^3)$                  |
+| Exponential Time | $O(c^n)$                  |
+| Factorial Time   | $O(n!)$                   |
 
 ## Most Challenging Problems
 
@@ -83,10 +106,6 @@ Significant lessons from Codility,
 33. [Tie Ropes](./codility/greedy/ropes.js)
 34. [Fib Frog](./codility/fibonacci/frog.js) <sup>*</sup>
 35. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
-36. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
-37. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
-38. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
-39. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
 
 
 ## Further Reading

@@ -26,15 +26,15 @@ const triangles = A => {
     const n = A.length;
     let result  = 0;
 
-    for ( let i = 0; i < n; i++ ) {
-        k = i + 2;
-        for ( let j = i + 1; j < n; j++ ) {            
-            while ( k < n && A[i] + A[j] > A[k] ) {
-                console.log( `i: ${i}; j: ${j}; k: ${k}`, A[i], A[j], A[k] );
-                k++;
+    for ( let x = 0; x < n; x++ ) {
+        z = x + 2;
+        for ( let y = x + 1; y < n; y++ ) {
+            console.log( `x: ${x}; y: ${y}; z: ${z}`, A[x], A[y], A[z] );
+            while ( z < n && A[x] + A[y] > A[z] ) {                
+                z++;
             }
-            result += k - j - 1;
-            console.log( `i: ${i}; j: ${j}; k: ${k}`, 'result', result );
+            result += z - y - 1;
+            console.log( 'result', result );
         }
     }
 

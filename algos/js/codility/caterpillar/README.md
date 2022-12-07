@@ -49,7 +49,7 @@ The above estimation of time complexity is based on amortized cost[^1].
 
 **Problem:** You are given $n$ sticks (of length ${1 \leq a_0 \leq a_1 \leq \dots \leq a_{n − 1} \leq 10^9}$). The goal is to count the number of triangles that can be constructed using these sticks. More precisely, we have to count the number of triplets at indices ${x < y < z}$, such that ${a_x + a_y > a_z}$.
 
-**Solution ${O(n^2)}$:** For every pair $x$, $y$ we can find the largest stick $z$ that can be used to construct the triangle. Every stick $k$, such that ${y < k \leq z}$, can also be used, because the condition ${a_x + a_y > a_k}$ will still be trye. We can add up all these triangles at once.
+**Solution ${O(n^2)}$:** For every pair $x$, $y$ we can find the largest stick $z$ that can be used to construct the triangle. Every stick $k$, such that ${y < k \leq z}$, can also be used, because the condition ${a_x + a_y > a_k}$ will still be true. We can add up all these triangles at once.
 
 If the value $z$ is found every time from the beginning then we get a $O(n^3)$ time complexity solution. However, we can instead use the caterpillar method. When increasing the value of $y$, we can increase (as far as possible) the value of $z$.
 
@@ -59,13 +59,13 @@ const triangles = A => {
     const n = A.length;
     let result  = 0;
 
-    for ( let i = 0; i < n; i++ ) {
-        k = i + 2;
-        for ( let j = i + 1; j < n; j++ ) {
-            while ( k < n && A[i] + A[j] > A[k] ) {
-                k++;
+    for ( let x = 0; x < n; x++ ) {
+        z = x + 2;
+        for ( let y = x + 1; y < n; y++ ) {
+            while ( z < n && A[x] + A[y] > A[z] ) {
+                z++;
             }
-            result += k - j - 1;
+            result += z - y - 1;
         }
     }
 
@@ -81,10 +81,7 @@ The time complexity of the above algorithm is $O(n^2)$, because for every stick 
 
 The triangle problem is not easy to grasp. The algorithm contains nested loops that is used to traverse the array with three pointers. Two pointers increment by 1 through the first 2 elements and comparing those two elements with the element in the third position until the third pointer exhausts the array. The third pointer starts again when the first two pointers increments by one. The use of the pointers can be seen in the condition `A[i] + A[j] > A[k]`. When the condition is met, it increments `k`.
 
-The most interesting line of code snippet 15.2 is the line with some basic math with the instructions, `result += k - j - 1;`. So, here's what I think.
-
-- 1 is subtracted from `j` to compensate for 1 added in initialization of the loop, `let j = i + 1`
-- ...
+The most interesting line of code snippet 15.2 is the line with some basic math with the instructions, `result += k - j - 1;`. So, here's what I think ...
 
 ## References
 
