@@ -61,13 +61,25 @@ Significant lessons from Codility,
 |:-----------------|:-------------------------:|
 | Constant Time    | $O(1)$                    |
 | Logarithmic Time | $O(log\text{ }n)$         |
-| Square Root Time | $O(\sqrt n)$                        |
+| Square Root Time | $O(\sqrt n)$              |
 | Linear Time      | $O(n)$                    |
 | Superlinear Time | $O(n\text{ }·\text{ }log\text{ }n)$ |
 | Quadratic Time   | $O(n^2)$                  |
 | Cubic Time       | $O(n^3)$                  |
 | Exponential Time | $O(c^n)$                  |
 | Factorial Time   | $O(n!)$                   |
+
+### Constant Time
+
+Computer instructions that run in 
+
+```js
+x = x + 1;
+```
+
+### Logarithmic Time
+
+
 
 ## Most Challenging Problems
 
