@@ -1,6 +1,6 @@
-# JS Data Structures and Algorithms
+# Data Structures and Algorithms in JavaScript
 
-Practiced from most of the problems on,
+Most of the problems found in this folder were sourced from,
 
 1. [Codility](https://app.codility.com/programmers/)
 2. [Leetcode](https://leetcode.com/)
@@ -55,31 +55,7 @@ Significant lessons from Codility,
 
   A trade-off for time rather than space using arrays and matrices rather than recursion to find optimal solution
 
-## Time Complexity Terms
-
-| Term             | Big O                     |
-|:-----------------|:-------------------------:|
-| Constant Time    | $O(1)$                    |
-| Logarithmic Time | $O(log\text{ }n)$         |
-| Square Root Time | $O(\sqrt n)$              |
-| Linear Time      | $O(n)$                    |
-| Superlinear Time | $O(n\text{ }·\text{ }log\text{ }n)$ |
-| Quadratic Time   | $O(n^2)$                  |
-| Cubic Time       | $O(n^3)$                  |
-| Exponential Time | $O(c^n)$                  |
-| Factorial Time   | $O(n!)$                   |
-
-### Constant Time
-
-Computer instructions that run in 
-
-```js
-x = x + 1;
-```
-
-### Logarithmic Time
-
-
+A few code snippets from _Data Structures and Algorithms with JavaScript by Michael McMillan_ are found [here](./structures/).
 
 ## Most Challenging Problems
 

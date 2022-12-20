@@ -64,10 +64,10 @@ function solution(A) { // O(N * log N) ... Score:
 
     return A.map(number=> {
         let nonDivisor = lenOfA
-        for(let i = 1; i*i <= number; i++) {
+        for(let i = 1; i * i <= number; i++) {
             if(number % i !== 0) continue;
             nonDivisor -= counters[i];
-            if(i*i !== number) nonDivisor -= counters[number/i]
+            if(i * i !== number) nonDivisor -= counters[number/i]
         }
         return nonDivisor
     })

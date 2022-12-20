@@ -1,3 +1,12 @@
+# Algorithms with C and C++
+
+Most of the code for algorithms can be found [here](./algorithms/). Data structures can be found [here](./data-structures/).
+
+Some additional material on [Concurrency](./concurrency/), [Functional Programming](./functional-programming/) and [Graphics](./graphics/) can be found in this folder.
+
+Also, documentation on building and using C (or C++) software libraries on UNIX system can be found [here](./SOFTWARE.LIBRARIES.md).
+
+## Notes on C++
 
 I noticed that C++ files had two (2) different type of extensions: `.cc` and `.cpp`. This got me curious to find out if there were any nuances between the two (2).
 
@@ -42,7 +51,6 @@ But at Microsoft I have almost never seen any C++ source files with a `.cc` exte
 1. [What is the C++ equivalent of python collections.Counter?](https://stackoverflow.com/questions/53055563/what-is-the-c-equivalent-of-python-collections-counter)
 2. [Natural Language Toolkit](https://www.nltk.org/)
 3. [Using C++ on Linux in VS Code](https://code.visualstudio.com/docs/cpp/config-linux)
-4. [Algorithm Repository](https://www.algorist.com/algorist.html)
 
 ## Tutorial Videos
 
