@@ -11,7 +11,7 @@ Significant lessons from Codility,
 
   Creating a hashtable to count occurrences of an element
 
-- [Prefix Sums](./codility/counting/README.md) <sup>*</sup>
+- [Prefix Sums](./codility/prefix-sums/README.md) <sup>*</sup>
   
   Perfect for best performing algorithm to get sum of slices
 
@@ -102,4 +102,3 @@ A few code snippets from _Data Structures and Algorithms with JavaScript by Mich
 2. Introducing Regular Expressions by Michael Fitzgerald
 3. [Performance of JavaScript .forEach, .map and .reduce vs for and for..of](https://leanylabs.com/blog/js-forEach-map-reduce-vs-for-for_of/)
 4. [Difference between ?:, ?! and ?=](https://stackoverflow.com/questions/10804732/difference-between-and)
-5. [How to Develop Algorithmic Thinking in Data Structures and Algorithms](https://www.enjoyalgorithms.com/blog/how-to-develop-algorithmic-thinking-in-data-structure-and-algorithms)

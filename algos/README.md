@@ -154,5 +154,6 @@ As mentioned at [this](https://stackoverflow.com/questions/16555978/example-of-a
 
 1. The Algorithm Design Manual by Steven Skiena
 2. [Algorithm Repository](https://www.algorist.com/algorist.html)
+3. [How to Develop Algorithmic Thinking in Data Structures and Algorithms](https://www.enjoyalgorithms.com/blog/how-to-develop-algorithmic-thinking-in-data-structure-and-algorithms)
 
 [^1]: Chapter 1 - The Role of Algorithms in Computing. Introduction to Algorithms, 4<sup>th</sup> Edition by Thomas Cormen
