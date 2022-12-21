@@ -116,4 +116,8 @@ This time, the fastest algorithm is the one with the simplest implementation, ho
 
 ## Observations
 
-I think the use of a running total and `Math.max`, to keep track of the maximum total is pretty crafty. Performant ideas like this is what studying algorithms is all about. So, arrived at a performant solution after a dramatic difference in running time. From $O(n^3)$ to $O(n)$. 
+I think the use of a running total and `Math.max`, to keep track of the maximum total is pretty crafty. Performant ideas like this is what studying algorithms is all about. So, arrived at a performant solution after a dramatic difference in running time. From $O(n^3)$ to $O(n)$.
+
+## References
+
+1. [Codility Training Media - Counting Elements](https://codility.com/media/train/7-MaxSlice.pdf)

@@ -65,17 +65,15 @@ const mushrooms = (A, k, m) => {
     let result = 0;
     const sums = prefixSums(A);
 
-    const min1 = Math.min(m , k) + 1;
-    for ( let i = 0; i < min1; i++ ) {
+    for ( let i = 0; i < (Math.min(m , k) + 1); i++ ) {
         let leftPos = k - i;
-        let rightPos = Math.min( n - 1, Math.max( k, ( (k + m) - 2 * i) ) );
+        let rightPos = Math.min( n - 1, Math.max( k, ( (k + m) - 2 * i ) ) );
         result = Math.max( result, countTotal( sums, leftPos, rightPos ) );
     }
 
-    const min2 = Math.min( m + 1, n - k );
-    for ( let i = 0; i < min2; i++ ) {
+    for ( let i = 0; i < Math.min( m + 1, n - k ); i++ ) {
         let rightPos = k + i;
-        let leftPos = Math.max( 0, Math.min( k, ( (k - m) - 2 * i ) ) );
+        let leftPos = Math.max( 0, Math.min( k, ( k - ( m - 2 * i ) ) ) );
         result = Math.max( result, countTotal( sums, leftPos, rightPos ) );
     }
 
@@ -91,4 +89,18 @@ The total time complexity of such a solution is $O(n + m)$.
 
 In the `mushrooms` function, there are two (2) loops. Both of which are getting the maximum sum of a slice of the array.
 
-In the loops, the idea is to calculate the right position and the left position to get the sum between those positions. The formulas to derive the positions are most interesting. For the first loop, the minimum number between the length of the array and the maximum of `k` and `(k + m) - 2 * i` is derived for the `rightPos`. The second loop uses an inverse approach to arrive at the left position and includes the formula `(k - m) - 2 * i)`. Why the need for these formulas? Why do they work?
+In the loops, the idea is to calculate the right position and the left position to get the sum between those positions. The formulas to derive the positions are most interesting. For the first loop, the minimum number between the length of the array and the maximum of `k` and `(k + m) - 2 * i` is derived for the `rightPos`. The second loop uses an inverted approach to arrive at the left position and includes the formula `k - (m - 2 * i)`. Why the need for these formulas? Why do they work?
+
+Let's begin analyzing the `mushroom` function by starting with the upper bound for both loops. For the first loop, the upper bound is calculated by getting the minimum value between, `m` (moves) and `k` (initial spot) and adding it to 1. Since the aim of the loop is to either iterate `m` times or `k` times, 1 is added to fulfill this requirement due to the loop condition, `i < [upper bound]` (we could avoid adding 1 by using `i <= [upper bound` instead).
+
+So, as stated in the solution approach, _we make moves in one direction [to] calculate the maximal opposite location of the mushroom picker_. So, the use of the `Math.min` for the upper bound is to maintain calculation within bounds of the array provided, that is the mushrooms at the various spots. Take for example, the array `[2, 3, 7, 5, 1, 3, 9]`, which is illustrated in the diagram above. If we started at position 4 (i.e. `k` is 4), and we have 6 moves (i.e. `m` is 6), if we started moving to the left (i.e. from position 4 to position 0), we only have 4 moves limited by virtue of the position and the array. Any more moves beyond 4 to the left would put the program out of bounds (we would have to find -1 and then -2 position). On the contrary if `m` was less than `k`, we could move within bounds and it would be better to use `m` to operate within the requirements of appropriately addressing the problem.
+
+When the computer moves into the body of the loops within `mushroom`, it does a simple calculation to arrive at the left-most position, `leftPos`, when moving to the left and a similar simple calculation to arrive at the right-most position, `rightPos` when moving to the left. It is just simply decrementing from the initial position to go as far left as possible and then incrementing to go as far right as possible. That's not hard to grasp.
+
+In the first loop, when moving to the left, the right-most position is calculate from the minimum between `n - 1` (the upper bound index of the array) and `Math.max( k, ( (k + m) - 2 * i ) )` (maximum between the initial spot, `k`, and `(k + m) - 2 * i`). So, `(k + m)` for initial spot of 4 and allowed moves of 6 will always be 10. With this case, each time the loop iterates, it subtracts `2 * i`. Given that the first loop will iterate either `k` or `m` times, `2 * i` can end up being either `2 * k` or `2 * m`.
+
+...
+
+## References
+
+1. [Codility Training Media - Prefix Sums](https://codility.com/media/train/3-PrefixSums.pdf)

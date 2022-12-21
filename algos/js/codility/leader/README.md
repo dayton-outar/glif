@@ -177,3 +177,7 @@ platinumLeader( [6, 8, 6, 4, 6, 8, 3, 3] ); // 3
 Notice that if the array $[6, 8, 6, 4, 6, 8, 6]$ is used where 6's show up more than half the size of the array, the result from `platinumLeader` identifies the number, 6, as the leader. The same function, `platinumLeader`, returns -1 for $[6, 8, 6, 4, 6, 8]$, which means no leader exists within this array. But to hack or crash this function we just need to submit a test case that would fail the test such as $[6, 8, 6, 4, 6, 8, 3, 3]$. The number 3 is not the leader of $[6, 8, 6, 4, 6, 8, 3, 3]$. There are no leaders in that array and this is the reason for the second loop.
 
 I believe that instead of using `size` variable, an array could have been used instead to achieve the same result. Since JavaScript arrays contain the `push` and `pop` method, that array could have been treated as a stack to get the same result.
+
+## References
+
+1. [Codility Training Media - Leader](https://codility.com/media/train/6-Leader.pdf)

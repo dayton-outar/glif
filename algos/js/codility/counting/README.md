@@ -120,3 +120,7 @@ Now, that we have a value that _restores balance_ we can apply a few conditions 
 2. Does this value exist in the first sequence? So, we use `(count[value] > 0)`
 
 Once both conditions are met, we now there exists a number in the first sequence that can be swapped into the second sequence to make both sequences have a sum that equal to each other.
+
+## References
+
+1. [Codility Training Media - Counting Elements](https://codility.com/media/train/2-CountingElements.pdf)
