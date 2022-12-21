@@ -43,7 +43,7 @@ Significant lessons from Codility,
 
   Conducting a search by splitting in the middle each iteration
 
-- [Caterpillar Method](./codility/caterpillar/README.md) <sup>*</sup>
+- [Caterpillar Method](./codility/caterpillar/README.md)
 
   Finding aggregates by the use of more than one pointer in a loop
 

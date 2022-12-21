@@ -27,13 +27,14 @@ const triangles = A => {
     let result  = 0;
 
     for ( let x = 0; x < n; x++ ) {
-        z = x + 2;
-        for ( let y = x + 1; y < n; y++ ) {
-            console.log( `x: ${x}; y: ${y}; z: ${z}`, A[x], A[y], A[z] );
-            while ( z < n && A[x] + A[y] > A[z] ) {                
+        let z = x + 2;
+        for ( let y = x + 1; y < n; y++ ) {            
+            while ( z < n && A[x] + A[y] > A[z] ) {
+                console.log( A[z] );
                 z++;
             }
-            result += z - y - 1;
+            console.log( `z: ${z} - ${y + 1} = ${z - ( y + 1 )} ... (x: ${x}; y: ${y})`);
+            result += z - ( y + 1 );
             console.log( 'result', result );
         }
     }

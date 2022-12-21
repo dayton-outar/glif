@@ -60,12 +60,12 @@ const triangles = A => {
     let result  = 0;
 
     for ( let x = 0; x < n; x++ ) {
-        z = x + 2;
+        let z = x + 2;
         for ( let y = x + 1; y < n; y++ ) {
             while ( z < n && A[x] + A[y] > A[z] ) {
                 z++;
             }
-            result += z - y - 1;
+            result += z - ( y + 1 );
         }
     }
 
@@ -79,9 +79,11 @@ The time complexity of the above algorithm is $O(n^2)$, because for every stick 
 
 ## Observations
 
-The triangle problem is not easy to grasp. The algorithm contains nested loops that is used to traverse the array with three pointers. Two pointers increment by 1 through the first 2 elements and comparing those two elements with the element in the third position until the third pointer exhausts the array. The third pointer starts again when the first two pointers increments by one. The use of the pointers can be seen in the condition `A[i] + A[j] > A[k]`. When the condition is met, it increments `k`.
+The triangle problem is not easy to grasp. The algorithm contains nested loops that is used to traverse the array with three pointers. Two pointers increment by 1 through the first 2 elements and comparing those two elements with the element in the third position until the third pointer exhausts the array. The third pointer starts again when the first two pointers increments by one. The use of the pointers can be seen in the condition `A[x] + A[y] > A[z]`. When the condition is met, it increments `k`.
 
-The most interesting line of code snippet 15.2 is the line with some basic math with the instructions, `result += k - j - 1;`. So, here's what I think ...
+The most interesting line of code in snippet 15.2 is the line with some basic math with the instructions, `result += z - ( y + 1 );`. So, here's what I think about this line of code. It's reconciling back the outcome due to incrementing `z` (as in `let z = x + 2;`) outside the loop to initiate the third pointer.
+
+I find it difficult to believe that code snippet 15.2 runs in $O(n^2)$ time.
 
 ## References
 
