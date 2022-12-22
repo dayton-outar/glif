@@ -4,7 +4,7 @@ This folder contains projects focused on learning data structures and algorithms
 
 > Informally, an ***algorithm*** is any well-defined computational procedure that takes some value, or set of values, as ***input*** and produces some value, or set of values, as ***output*** in a _finite amount of time_. An algorithm is thus a sequence of computational steps that transform the input into the output.[^1]
 
-
+The study of analysing the optimal _finite amount of time_ of an algorithm is referred to as _Asymptotic Time Complexity_.
 ## Asymptotic Time Complexity Terms
 
 The table below is ordered in descending order of highest performance.
@@ -149,6 +149,61 @@ This is the least performant time complexity that any program can arrive at.
 
 As mentioned at [this](https://stackoverflow.com/questions/16555978/example-of-a-factorial-time-algorithm-o-n) Stack Overflow entry, an example of an $O(n!)$ is to generate all the permutations of a list.
 
+## Critical Thinking for Algorithms
+
+The questionnaire below was sourced from _The Algorithm Design Manual_. I find that it can be very useful.
+
+1. Do I really understand the problem?
+
+   1. What exactly does the input consist of?
+   2. What exactly are the desired results or output?
+   3. Can I construct an input example small enough to solve by hand? What happens when I try to solve it?
+   4. How important is it to my application that I always ﬁnd the optimal answer? Might I settle for something close to the best answer?
+   5. How large is a typical instance of my problem? Will I be working on 10 items? 1,000 items? 1,000,000 items? More?
+   6. How important is speed in my application? Must the problem be solved within one second? One minute? One hour? One day?
+   7. How much time and eﬀort can I invest in implementation? Will I be limited to simple algorithms that can be coded up in a day, or do I have the freedom to experiment with several approaches and see which one is best?
+   8. Am I trying to solve a numerical problem? A graph problem? A geometric problem? A string problem? A set problem? Which formulation seems easiest?
+
+2. Can I ﬁnd a simple algorithm or heuristic for my problem?
+
+   1. Will brute force solve my problem correctly by searching through all subsets or arrangements and picking the best one?
+
+      1. If so, why am I sure that this algorithm always gives the correct answer?
+      2. How do I measure the quality of a solution once I construct it?
+      3. Does this simple, slow solution run in polynomial or exponential time? Is my problem small enough that a brute-force solution will suﬃce?
+      4. Am I certain that my problem is suﬃciently well deﬁned to actually have a correct solution?
+   2. Can I solve my problem by repeatedly trying some simple rule, like picking the biggest item ﬁrst? The smallest item ﬁrst? A random item ﬁrst?
+   
+      1. If so, on what types of inputs does this heuristic work well? Do these correspond to the data that might arise in my application?
+      2. On what inputs does this heuristic work badly? If no such examples can be found, can I show that it always works well?
+      3. How fast does my heuristic come up with an answer? Does it have a simple implementation?
+
+3. Is the problem published on the World Wide Web?
+
+   1. What is known about the problem? Is there an available implementation that I can use?
+   2. Are there relevant resources available? Did I do a proper Google search using the right keywords?
+
+4. Are there special cases of the problem that I know how to solve?
+
+   1. Can I solve the problem eﬃciently when I ignore some of the input parameters?
+   2. Does the problem become easier to solve when some of the input parameters are set to trivial values, such as 0 or 1?
+   3. How can I simplify the problem to the point where I can solve it eﬃciently? Why can’t this special-case algorithm be generalized to a wider class of inputs?
+   4. Is my problem a special case of a more general problem in the catalog?
+
+5. Which of the standard algorithm design paradigms are most relevant to my problem?
+
+   1. Is there a set of items that can be sorted by size or some key? Does this sorted order make it easier to ﬁnd the answer?
+   2. Is there a way to split the problem into two smaller problems, perhaps by doing a binary search? How about partitioning the elements into big and small, or left and right? Does this suggest a divide-and-conquer algorithm?
+   3. Does the set of input objects have a natural left-to-right order among its components, like the characters in a string, elements of a permutation, or the leaves of a rooted tree? Could I use dynamic programming to exploit this order?
+   4. Are there certain operations being done repeatedly, such as searching, or ﬁnding the largest/smallest element? Can I use a data structure to speed up these queries? Perhaps a dictionary/hash table or a heap/priority queue?
+   5. Can I use random sampling to select which object to pick next? What about constructing many random conﬁgurations and picking the best one? Can I use a heuristic search technique like simulated annealing to zoom in on a good solution?
+   6. Can I formulate my problem as a linear program? How about an integer program?
+   7. Does my problem resemble satisﬁability, the traveling salesman problem, or some other NP-complete problem? Might it be NP-complete and thus not have an eﬃcient algorithm?
+
+6. Am I still stumped?
+
+   1. Am I willing to spend money to hire an expert to tell me what to do?
+   2. Go back to the beginning and work through these questions again. Did any of my answers change during my latest trip through the list?
 
 ## References
 
