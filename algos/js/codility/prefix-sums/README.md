@@ -125,9 +125,9 @@ Evaluations of `leftPos` in the first loop is shown in the table below.
 
 | `leftPos` | `i` | `0` | `k` | `m` | `k - ( m - 2 * i )` | Note                                                            |
 |----------:|----:|----:|----:|----:|--------------------:|:----------------------------------------------------------------|
-| 6         |    0|**0**|    4|    6|                   -2| `Math.min` of 4 and -2 is -2 and `Math.max` of 0 and -2 is 0.    |
-| 6         |    1|**0**|    4|    6|                    0| `Math.min` of 4 and 0 is 0 and `Math.max` of 0 and 0 is 0. |
-| 6         |    2|    0|    4|    6|                **2**| `Math.min` of 4 and 2 is 2 and `Math.max` of 0 and 2 is 2. |
+| 0         |    0|**0**|    4|    6|                   -2| `Math.min` of 4 and -2 is -2 and `Math.max` of 0 and -2 is 0.    |
+| 0         |    1|**0**|    4|    6|                    0| `Math.min` of 4 and 0 is 0 and `Math.max` of 0 and 0 is 0. |
+| 2         |    2|    0|    4|    6|                **2**| `Math.min` of 4 and 2 is 2 and `Math.max` of 0 and 2 is 2. |
 
 ...
 
