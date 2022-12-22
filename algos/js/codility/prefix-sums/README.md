@@ -97,7 +97,37 @@ So, as stated in the solution approach, _we make moves in one direction [to] cal
 
 When the computer moves into the body of the loops within `mushroom`, it does a simple calculation to arrive at the left-most position, `leftPos`, when moving to the left and a similar simple calculation to arrive at the right-most position, `rightPos` when moving to the left. It is just simply decrementing from the initial position to go as far left as possible and then incrementing to go as far right as possible. That's not hard to grasp.
 
-In the first loop, when moving to the left, the right-most position is calculate from the minimum between `n - 1` (the upper bound index of the array) and `Math.max( k, ( (k + m) - 2 * i ) )` (maximum between the initial spot, `k`, and `(k + m) - 2 * i`). So, `(k + m)` for initial spot of 4 and allowed moves of 6 will always be 10. With this case, each time the loop iterates, it subtracts `2 * i`. Given that the first loop will iterate either `k` or `m` times, `2 * i` can end up being either `2 * k` or `2 * m`.
+In the first loop, when moving to the left, the right-most position is calculate from the minimum between `n - 1` (the upper bound index of the array) and `Math.max( k, ( (k + m) - 2 * i ) )` (maximum between the initial spot, `k`, and `(k + m) - 2 * i`). So, `(k + m)` for initial spot of 4 and allowed moves of 6 will always be 10. With this case, each time the loop iterates, it subtracts `2 * i`. Given that the first loop will iterate either `k` or `m` times, `2 * i` can end up being either `2 * k` or `2 * m`. So, based on the way the upper bound was deduced, the formula `(k + m) - 2 * i` could eventually arrive at `(k + m) - 2 * k` or `(k + m) - 2 * m` depending on whether `k` or `m` is the lesser value. To put this another way, let's say that `k` is the lesser value the formula could also be seen as `(k + m) - (k + k)` (or `m - k`) and the upper bound value will bring out the difference between `m` and `k` in this formula. This comes down to managing how far the right position can be set.
+
+Let's step through the case of passing an array of `[2, 3, 7, 5, 1, 3, 9]`, an initial position of `4` and allowed moves of `6`. While stepping through the focus will be on watching how the line of code below evaluates the right-most position.
+
+```js
+let rightPos = Math.min( n - 1, Math.max( k, ( (k + m) - 2 * i ) ) );
+```
+
+Evaluations of `rightPos` in the first loop is shown in the table below. Please note that the length, `n` of `[2, 3, 7, 5, 1, 3, 9]` is 7. `k` will remain 4 throughout the function as well as `m` (which is 6).
+
+| `rightPos` | `i` | `n - 1` | `k` | `m` | `(k + m) - 2 * i` | Note                                                            |
+|-----------:|----:|--------:|----:|----:|------------------:|:----------------------------------------------------------------|
+| 6          |    0|    **6**|    4|    6|                 10| `Math.max` of 4 and 10 is 10 and `Math.min` of 6 and 10 is 6. The array generated in `prefixSums` has 8 elements. 10 would be out of bounds    |
+| 6          |    1|    **6**|    4|    6|                  8| `Math.max` of 4 and 8 is 8 and `Math.min` of 6 and 8 is 6. |
+| 6          |    2|    **6**|    4|    6|                  6| `Math.max` of 4 and 6 is 6 and `Math.min` of 6 and 6 is 6. |
+| 4          |    3|        6|**4**|    6|                  4| `Math.max` of 4 and 4 is 4 and `Math.min` of 6 and 4 is 4. |
+| 4          |    4|        6|**4**|    6|                  2| `Math.max` of 4 and 2 is 4 and `Math.min` of 6 and 4 is 4. |
+
+Let's also evaluate the left-most position in the second loop,
+
+```js
+let leftPos = Math.max( 0, Math.min( k, ( k - ( m - 2 * i ) ) ) );
+```
+
+Evaluations of `leftPos` in the first loop is shown in the table below.
+
+| `leftPos` | `i` | `0` | `k` | `m` | `k - ( m - 2 * i )` | Note                                                            |
+|----------:|----:|----:|----:|----:|--------------------:|:----------------------------------------------------------------|
+| 6         |    0|**0**|    4|    6|                   -2| `Math.min` of 4 and -2 is -2 and `Math.max` of 0 and -2 is 0.    |
+| 6         |    1|**0**|    4|    6|                    0| `Math.min` of 4 and 0 is 0 and `Math.max` of 0 and 0 is 0. |
+| 6         |    2|    0|    4|    6|                **2**| `Math.min` of 4 and 2 is 2 and `Math.max` of 0 and 2 is 2. |
 
 ...
 
