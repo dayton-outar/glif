@@ -109,7 +109,7 @@ Evaluations of `rightPos` in the first loop is shown in the table below. Please 
 
 | `rightPos` | `i` | `n - 1` | `k` | `m` | `(k + m) - 2 * i` | Note                                                            |
 |-----------:|----:|--------:|----:|----:|------------------:|:----------------------------------------------------------------|
-| 6          |    0|    **6**|    4|    6|                 10| `Math.max` of 4 and 10 is 10 and `Math.min` of 6 and 10 is 6. The array generated in `prefixSums` has 8 elements. 10 would be out of bounds    |
+| 6          |    0|    **6**|    4|    6|                 10| `Math.max` of 4 and 10 is 10 and `Math.min` of 6 and 10 is 6.   |
 | 6          |    1|    **6**|    4|    6|                  8| `Math.max` of 4 and 8 is 8 and `Math.min` of 6 and 8 is 6. |
 | 6          |    2|    **6**|    4|    6|                  6| `Math.max` of 4 and 6 is 6 and `Math.min` of 6 and 6 is 6. |
 | 4          |    3|        6|**4**|    6|                  4| `Math.max` of 4 and 4 is 4 and `Math.min` of 6 and 4 is 4. |
