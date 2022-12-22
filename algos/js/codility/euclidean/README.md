@@ -111,4 +111,9 @@ We simply ﬁnd the $lcm$ $n$ times, and each step works in logarithmic time.
 
 1. [Codility Training Media - Euclidean Algorithm](https://codility.com/media/train/10-Gcd.pdf)
 
+## Videos
+
+1. [GCD - Euclidean Algorithm (Method 1)](https://youtu.be/yHwneN6zJmU) - [Neso Academy](https://www.youtube.com/@nesoacademy)
+2. [GCD - Euclidean Algorithm (Method 2)](https://youtu.be/svBx8u5bMEg) - [Neso Academy](https://www.youtube.com/@nesoacademy)
+
 [^1]: [Vertical bar](https://en.wikipedia.org/wiki/Vertical_bar) represent divisibility. So $b | a$ means _b divides a_.
