@@ -2,7 +2,7 @@
 
 The Euclidean algorithm is one of the oldest numerical algorithms still to be in common use. It solves the problem of computing the greatest common divisor (gcd) of two positive integers.
 
-## 12. Euclidean algorithm by subtraction
+## 12.1 Euclidean algorithm by subtraction
 
 The original version of Euclid’s algorithm is based on subtraction: we recursively subtract the smaller number from the larger.
 
