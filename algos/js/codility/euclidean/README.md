@@ -2,7 +2,7 @@
 
 The Euclidean algorithm is one of the oldest numerical algorithms still to be in common use. It solves the problem of computing the greatest common divisor (gcd) of two positive integers.
 
-## 12.1 Euclidean algorithm by subtraction
+## 12.1 Euclidean Algorithm by Subtraction
 
 The original version of Euclid’s algorithm is based on subtraction: we recursively subtract the smaller number from the larger.
 
@@ -13,7 +13,7 @@ const gcd = (a, b) => (a == b) ? a : ((a > b) ? gcd(a - b, b) : gcd(a, b - a));
 
 Let’s estimate this algorithm’s time complexity (based on $n = a + b$). The number of steps can be linear, for e.g. $gcd(x, 1)$, so the time complexity is $O(n)$. This is the worst-case complexity, because the value $x + y$ decreases with every step.
 
-## 12.2 Euclidean algorithm by division
+## 12.2 Euclidean Algorithm by Division
 
 Let’s start by understanding the algorithm and then go on to prove its correctness. For two given numbers $a$ and $b$, such that $a \geq b$:
 
@@ -49,7 +49,7 @@ $$
 
 Thus, the time complexity is logarithmic based on the sum of $a$ and $b$ — $O(log(a + b))$.
 
-## 12.3. Binary Euclidean algorithm
+## 12.3. Binary Euclidean Algorithm
 
 This algorithm ﬁnds the $gcd$ using only subtraction, binary representation, shifting and parity testing. We will use a _divide and conquer_ technique.
 
@@ -81,7 +81,7 @@ $$\large
 a_i · b_i \geq 2^{\lfloor{ {i - 1} \over 2 }\rfloor }
 $$
 
-## 12.4. Least common multiple
+## 12.4. Least Common Multiple
 
 The least common multiple $(lcm)$ of two integers $a$ and $b$ is the smallest positive integer that is divisible by both $a$ and $b$. There is the following relation:
 
@@ -105,7 +105,9 @@ We simply ﬁnd the $lcm$ $n$ times, and each step works in logarithmic time.
 
 ## Observations
 
-...
+This is basically a topic of great interest in algorithm design drawn from _Number Theory_. The lessons here are mostly mathematical and are mostly useful to apply to a problem that requires a _divide-and-conquer_ approach.
+
+Also good point to mention is the usefulness of the formula in [12.4](#124-least-common-multiple) to deduce the _Least Common Multiple_.
 
 ## References
 

@@ -31,7 +31,7 @@ Significant lessons from Codility,
 
   An old but crafty way of identifying all primes up to a certain number
 
-- [Euclidean Algorithm](./codility/euclidean/README.md) <sup>*</sup>
+- [Euclidean Algorithm](./codility/euclidean/README.md)
 
   Finding common divisor and common multiples
 
