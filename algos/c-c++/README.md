@@ -48,13 +48,16 @@ But at Microsoft I have almost never seen any C++ source files with a `.cc` exte
 
 ## References
 
-1. [What is the C++ equivalent of python collections.Counter?](https://stackoverflow.com/questions/53055563/what-is-the-c-equivalent-of-python-collections-counter)
-2. [Natural Language Toolkit](https://www.nltk.org/)
-3. [Using C++ on Linux in VS Code](https://code.visualstudio.com/docs/cpp/config-linux)
+1. Data Structures and Algorithms in C++ by Adam Drozdek
+2. [What is the C++ equivalent of python collections.Counter?](https://stackoverflow.com/questions/53055563/what-is-the-c-equivalent-of-python-collections-counter)
+3. [Natural Language Toolkit](https://www.nltk.org/)
+4. [Using C++ on Linux in VS Code](https://code.visualstudio.com/docs/cpp/config-linux)
 
-## Tutorial Videos
+## Videos
 
 1. [Debugging a C++ project in VS Code](https://youtu.be/G9gnSGKYIg4)
+2. [Heap Explained - Algorithms & Data Structures](https://youtu.be/rbXO3B5Ib1U)
+3. [Understanding Sorting Algorithms](https://youtu.be/l7-f9gS8VOs)
 ___
  <sup id="fn-1">1</sup> [What is the difference between .cc and .cpp file suffix?](https://stackoverflow.com/questions/18590135/what-is-the-difference-between-cc-and-cpp-file-suffix)
 
