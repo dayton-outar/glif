@@ -57,7 +57,7 @@ The following function calculate $gcd(a, b, res) = gcd(a, b, 1) · res$. So to c
 
 **12.3: Greatest common divisor using binary Euclidean algorithm.**
 ```js
-const gcd = = (a, b, res) => {
+const gcd = (a, b, res) => {
     if (a == b)
         return res * a;
     else if ((a % 2 == 0) && (b % 2 == 0))
@@ -118,4 +118,4 @@ Also good point to mention is the usefulness of the formula in [12.4](#124-least
 1. [GCD - Euclidean Algorithm (Method 1)](https://youtu.be/yHwneN6zJmU) - [Neso Academy](https://www.youtube.com/@nesoacademy)
 2. [GCD - Euclidean Algorithm (Method 2)](https://youtu.be/svBx8u5bMEg) - [Neso Academy](https://www.youtube.com/@nesoacademy)
 
-[^1]: [Vertical bar](https://en.wikipedia.org/wiki/Vertical_bar) represent divisibility. So $b | a$ means _b divides a_.
+[^1]: [Vertical bar](https://en.wikipedia.org/wiki/Vertical_bar) represent divisibility. So b|a means _b divides a_.
