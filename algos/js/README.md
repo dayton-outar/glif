@@ -11,7 +11,7 @@ Significant lessons from Codility,
 
   Creating a hashtable to count occurrences of an element
 
-- [Prefix Sums](./codility/prefix-sums/README.md) <sup>*</sup>
+- [Prefix Sums](./codility/prefix-sums/README.md)
   
   Perfect for best performing algorithm to get sum of slices
 

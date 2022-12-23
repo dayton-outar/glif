@@ -313,6 +313,7 @@ But can a frog with the ability to jump distances of `[1, 3, 5]` have 12 differe
 ## Videos
 
 1. [5 Simple Steps for Solving Dynamic Programming Problems](https://youtu.be/aPQY__2H3tE)
+2. [Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges](https://youtu.be/oBt53YbR9Kk)
 
 ## References
 
