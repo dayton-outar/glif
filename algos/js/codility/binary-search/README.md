@@ -105,7 +105,7 @@ The total time complexity of such a solution is ${O(n \times log(n))}$ due to th
 
 ## Observations
 
-The concept conveyed in this lesson is pretty clear. They have opted against the use of recursion because of inefficiency that it presents. So, the use of a loop is pretty crafty and the lesson on achieving a $O(log\text{ }n)$ by using the loop was insightful.
+The concept conveyed in this lesson is pretty clear. They have opted against the use of recursion because of the inefficiency that it presents. So, the use of a loop is pretty crafty and the lesson on achieving a $O(log\text{ }n)$ by using the loop was insightful.
 
 ## References
 
