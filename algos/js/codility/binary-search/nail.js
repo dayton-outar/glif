@@ -106,18 +106,24 @@ function solution(A, B, C) {
     while(min <= max) {
         let mid = parseInt((min + max) / 2);
         
+        // Resetting array filling all positions with 0
         for(i = 0; i < totalNails.length; i++) {
             totalNails[i] = 0;
         }
-        
+
+        // Set the index in the array to 1 for nail position. If nail is 4, index 4 is set to 1
+        // There exists a nail in the set between 0 and mid that can nail plan at x position
         for(i = 0; i < mid; i++) {
             totalNails[C[i]] = 1;
         }
         
+        // Increment value of current index based on number in previous index. Why?
+        // This approach is almost like something borrowed from dynamic programming
+        // Notice no comparison between the nails and planks were done like (A[i] <= C[j]) && (C[j] <= B[i])
         for(i = 1; i < totalNails.length; i++) {
-            totalNails[i] += totalNails[i-1];
+            totalNails[i] += totalNails[i - 1];
         }
-        
+        console.log( totalNails );
         let result = allNailed(A, B, totalNails);
         
         if(result) {
