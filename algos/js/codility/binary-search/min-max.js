@@ -46,22 +46,21 @@
 // M is an integer within the range [0..10,000];
 // each element of array A is an integer within the range [0..M].
 
-// Credit: https://app.codility.com/demo/results/trainingHA5ZGD-H6G/ Time Complexity: O(N*log(N+M))
+// Credit: https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23
+// https://app.codility.com/demo/results/trainingHA5ZGD-H6G/ Time Complexity: O(N*log(N+M))
 function solution(K, M, A) {
-    // write your code in JavaScript (Node.js 4.0.0)
-    var min = 0;
-    var max = 0;
-    var mid = 0;
-    var i = 0;
+    let min = 0;
+    let max = 0;
+    let mid = 0;
     
-    for(i=0; i<A.length; i++) {
+    for (let i = 0; i < A.length; i++) {
         max += A[i];
         min = Math.max(min, A[i]);
     }
     
-    if(K === 1) {
+    if (K === 1) {
         return max;
-    } else if(K >= A.length) {
+    } else if (K >= A.length) {
         return min;
     }
 
@@ -77,7 +76,7 @@ function solution(K, M, A) {
         
         var blocks = neededBlocks(A, mid);
         
-        console.log('min, max, mid, blocks, K:', min, max, mid, blocks, '<', K);
+        console.log(`min: ${min}, max: ${max}, mid: ${mid}, blocks: ${blocks} < K: ${K}`);
         
         if(blocks > K) {
             min = mid + 1;
@@ -90,19 +89,19 @@ function solution(K, M, A) {
 }
 
 function neededBlocks(arr, maxValue) {
-    var count = 1;
+    var countBlocks = 1;
     var sum = arr[0];
     
-    for(var j=1; j<arr.length; j++) {
+    for(var j = 1; j < arr.length; j++) {
         if(sum + arr[j] > maxValue) {
             sum = arr[j];
-            count++;
+            countBlocks++;
         } else {
             sum += arr[j];
         }
     }
     
-    return count;
+    return countBlocks;
 }
 
 console.log( solution(3, 5, [2, 1, 5, 1, 2, 2, 2]) );
