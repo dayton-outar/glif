@@ -94,6 +94,8 @@ A few code snippets from _Data Structures and Algorithms with JavaScript by Mich
 33. [Tie Ropes](./codility/greedy/ropes.js)
 34. [Fib Frog](./codility/fibonacci/frog.js) <sup>*</sup>
 35. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
+36. [Min-Max Division](./codility/binary-search/min-max.js) <sup>*</sup>
+37. [Nailing Planks](./codility/binary-search/nail.js) <sup>**</sup>
 
 
 ## Further Reading

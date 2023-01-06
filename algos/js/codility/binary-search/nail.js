@@ -116,7 +116,8 @@ function solution(A, B, C) {
         for(i = 0; i < mid; i++) {
             totalNails[C[i]] = 1;
         }
-        
+        console.log(`------: ${mid}`);
+        console.log(totalNails);
         // Increment value of current index based on number in previous index. Why?
         // This approach is almost like something borrowed from dynamic programming
         // Notice no comparison between the nails and planks were done like (A[i] <= C[j]) && (C[j] <= B[i])
@@ -148,6 +149,9 @@ function solution(A, B, C) {
 function allNailed(arrA, arrB, totalNails) {
     for(let i = 0; i < arrA.length; i++ ) {
 
+        // So, after passing in the array of totalNails, 
+        // which is basically a rolling/running total in each increasing element.
+        // Yet still I find this condition baffling.
         if(totalNails[arrA[i] - 1] === totalNails[arrB[i]]) {
             return false;
         }
