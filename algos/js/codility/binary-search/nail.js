@@ -151,8 +151,19 @@ function allNailed(arrA, arrB, totalNails) {
 
         // So, after passing in the array of totalNails, 
         // which is basically a rolling/running total in each increasing element.
-        // Yet still I find this condition baffling.
+        // ...
+        // arrA is the lower bound of the planks as stated by the problem.
+        // Since the array totalNails has all positions that nails can occupy over the planks (including 0),
+        // if a nail or more than one nails can occupy between position A and B, the running total should
+        // increase if nails are put anywhere between A and B.
+        // If we compare the running total from A and B, they would be the same if only one nail was placed at A
+        // between A and B. This would mean the plank is nailed down.
+        // If just outside the range of A and B, like A - 1, no nail was added between A - 1 and B, it means that
+        // no nail fills the positions between A and B.
+        // Hope this is clear.
+        // Again. This is a very crafty solution.
         if(totalNails[arrA[i] - 1] === totalNails[arrB[i]]) {
+            console.log(`----> ${arrA[i] - 1} ... ${[arrB[i]]}`)
             return false;
         }
 
