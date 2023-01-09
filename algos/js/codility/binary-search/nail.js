@@ -104,6 +104,7 @@ function solution(A, B, C) {
     }
     
     while(min <= max) {
+        console.log(`min: ${min} .... max: ${max}`);
         let mid = parseInt((min + max) / 2);
         
         // Resetting array filling all positions with 0
