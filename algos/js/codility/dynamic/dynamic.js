@@ -7,18 +7,16 @@ const dynamicCoinChanging = (C, k) => {
     }
 
     for ( let i = 1; i < (n + 1); i++ ) {
-        console.log( `1. ${i} ----> `, dp );
-        console.log( `C[i - 1] ----> ${C[i - 1]}` );
         
         for ( let j = 1; j < C[i - 1]; j++ ) {
+            console.log('initial');
             dp[i][j] = dp[i - 1][j];
-            console.log( `dp[i - 1][j] ----> ${dp[i - 1][j]}` )
         }
 
         console.log( `2. ${i} ----> `, dp );
+
         for ( let j = C[i - 1]; j < (k + 1); j++ ) {
-            console.log( `dp[i: ${i}][j: ${j} - C[i - 1]: ${j - C[i - 1]}] = ${dp[i][j - C[i - 1]]} ... dp[i - 1: ${i - 1}][j: ${j}] = ${dp[i - 1][j]}` );
-            console.log();
+            console.log(C[i - 1]);
             dp[i][j] = Math.min(dp[i][j - C[i - 1]] + 1, dp[i - 1][j]);
         }
 
@@ -42,7 +40,7 @@ const dynamicCoinChanging = (C, k) => {
 //     return dp;
 // }
 
-// console.log( dynamicCoinChanging( [1, 3, 4], 6 ) );
+console.log( dynamicCoinChanging( [1, 3, 4], 6 ) );
 
 const frog = (S, k, q) => {
     const n = S.length;
@@ -61,7 +59,7 @@ const frog = (S, k, q) => {
     return dp[k];
 }
 
-console.log( frog( [ 1, 3, 5 ], 7, 7 ) );
+// console.log( frog( [ 1, 3, 5 ], 7, 7 ) );
 
 const pascalTriangle = n => {
     let bc = Array.from(Array(n + 1), () => new Array(n + 1).fill(0) );

@@ -96,6 +96,8 @@ A few code snippets from _Data Structures and Algorithms with JavaScript by Mich
 35. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
 36. [Min-Max Division](./codility/binary-search/min-max.js) <sup>*</sup>
 37. [Nailing Planks](./codility/binary-search/nail.js) <sup>**</sup>
+38. [Number Solitaire](./codility/dynamic/solitaire.js) <sup>**</sup>
+39. [Minimum Absolute Sum](./codility/dynamic/min-abs.js) <sup>**</sup>
 
 
 ## Further Reading

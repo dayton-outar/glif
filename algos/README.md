@@ -149,6 +149,24 @@ This is the least performant time complexity that any program can arrive at.
 
 As mentioned at [this](https://stackoverflow.com/questions/16555978/example-of-a-factorial-time-algorithm-o-n) Stack Overflow entry, an example of an $O(n!)$ is to generate all the permutations of a list.
 
+## Basic Problem Solving Steps
+
+1. Understand the problem
+   1. Re-read the problem definition
+   2. Work through the example
+
+2. Visualize the solution
+
+3. Make the solution work (Correctness)
+   1. Implement it
+   2. Test it
+
+4. Make the solution efficient
+   1. Make less nested loops where possible
+   2. Increase loop steps where possible
+   3. Make use of caching or memoization where possible
+   4. Rethink approach to solution
+
 ## Critical Thinking for Algorithms
 
 The questionnaire below was sourced from _The Algorithm Design Manual_. I find that it can be very useful.
