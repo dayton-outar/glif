@@ -42,7 +42,7 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
     }
     
     A.sort(function(a, b) {
-        return Math.abs(a)-Math.abs(b);
+        return Math.abs(a) - Math.abs(b);
     });
     
     max = Math.abs(A[A.length - 1]);
@@ -62,23 +62,29 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
         dp[i] = -1;
     }
 
-    target = total / 2;
+    target = total / 2; // We want to choose some of the numbers (absolute values) to make their sum as large as possible without exceeding this target value
+
+    console.log( count );
+    console.log( dp );
+    console.log( '----' );
     
     for(let i = 0; i < count.length; i++) {
         if(count[i] > 0) {
             let step = i;
             for(let j = 0; j < dp.length; j++) {
                 if(dp[j] >= 0) {
+                    console.log('>=');
                     dp[j] = count[i];
                 } else if(j >= step && dp[j - step] > 0) {
+                    console.log('step');
                     dp[j] = dp[j - step] - 1;
                 }
-                
+                console.log( dp, j, i );
                 if(dp[j] >= 0) {
                     if(j === target) {
                         return 0;
                     } else {
-                        minDiff = Math.min(minDiff, Math.abs(total - 2*j));
+                        minDiff = Math.min(minDiff, Math.abs( total - 2 * j ));
                     }
                 }
             }
@@ -88,4 +94,38 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
     return minDiff;
 }
 
-console.log( solution([ 1, 5, 2, -2 ]) );
+// console.log( solution([ 1, 5, 2, -2 ]) );
+
+const slowSolution = (A) => {
+    const N = A.length;
+    let M = 0;
+
+    for(let i = 0; i < A.length; i++) {
+        A[i] = Math.abs(A[i]);
+        M = Math.max(A[i], M);
+    }
+
+    S = A.reduce( (p, c) => p + c );
+    let dp = Array( S + 1).fill(0);
+    dp[0] = 1;
+
+    for(let j = 0; j < N; j++ ) {
+        for(let i = S; i > -1; i-- ) {
+            if (dp[i] == 1 && (i + A[j] <= S) ) {
+                dp[i + A[j]] = 1;
+            }
+        }
+    }
+
+    result = S;
+
+    for(let i = 0; i < Math.floor( S / 2 ) + 1 ; i++) {
+        if (dp[i] == 1) {
+            result = Math.min(result, S - 2 * i);
+        }
+    }
+
+    return result;
+}
+
+console.log( slowSolution( [1, 5, 2, -2] ) );
