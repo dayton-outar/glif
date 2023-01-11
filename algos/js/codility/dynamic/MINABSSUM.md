@@ -43,7 +43,7 @@ Assume the sum of absolute values of all the numbers is $S$. ***We want to choos
 
 ### Slow solution $O(N^2 \cdot M)$
 
-Let $dp_i$ equal 1 if it is possible to achieve the sum of $i$ using elements of $A$, and $0$ otherwise. Initially $dp_i = 0$ for all of i (except $dp_0 = 1$). For every successive element in $A$ we update the array taking this element into account. We simply go through all the cells, starting from the top, and if $dp_i = 1$ then we also set $dp_i + A_j$ to 1. The direction in which array $dp$ is processed is important, since each element of $A$ can be used only once. After computing the array dp, $P$ is the largest index such that $P \leq \frac{S}{2}$ and $dp_P = 1$.
+Let $dp_i$ equal 1 if it is possible to achieve the sum of $i$ using elements of $A$, and $0$ otherwise. Initially $dp_i = 0$ for all of i (except $dp_0 = 1$). For every successive element in $A$ we update the array taking this element into account. We simply go through all the cells, starting from the top, and if $dp_i = 1$ then we also set $dp_{i + A_j}$ to 1. The direction in which array $dp$ is processed is important, since each element of $A$ can be used only once. After computing the array dp, $P$ is the largest index such that $P \leq \frac{S}{2}$ and $dp_P = 1$.
 
 **1: Slow solution**
 ```js
