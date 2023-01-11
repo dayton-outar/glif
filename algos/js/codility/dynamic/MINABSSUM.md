@@ -39,7 +39,7 @@ Write an efficient algorithm for the following assumptions:
 
 Since we can arbitrarily choose to take the element or its negative, we can simplify the problem and replace each number with its absolute value. Then the problem becomes dividing the numbers into two groups and making the difference between the sums of the two groups as small as possible. It is a classic dynamic programming problem.
 
-Assume the sum of absolute values of all the numbers is $S$. ***We want to choose some of the numbers (absolute values) to make their sum as large as possible without exceeding $\frac{S}{2}$***. Why? Let $P$ be the sum of the first group, $Q$ be the sum of the other group and $P < Q$. We have $P \leq \frac{S}{2} \leq Q$ and $Q + P = S$. The larger is $P$, the smaller is Q and the difference $Q − P$. Hence, the largest possible $P \leq \frac{S}{2}$ gives the optimal result. Let M be the maximal element in the given array A. We create an array $dp$ of size $S$.
+Assume the sum of absolute values of all the numbers is $S$. ***We want to choose some of the numbers (absolute values) to make their sum as large as possible without exceeding*** $\frac{S}{2}$. Why? Let $P$ be the sum of the first group, $Q$ be the sum of the other group and $P < Q$. We have $P \leq \frac{S}{2} \leq Q$ and $Q + P = S$. The larger is $P$, the smaller is Q and the difference $Q − P$. Hence, the largest possible $P \leq \frac{S}{2}$ gives the optimal result. Let M be the maximal element in the given array A. We create an array $dp$ of size $S$.
 
 ### Slow solution $O(N^2 \cdot M)$
 
