@@ -91,7 +91,7 @@ Notice that the range of numbers is quite small (maximum 100). Hence, there must
 
 Initially, $dp_j = −1$ for all of $j$ (except $dp_0 = 0$). Then we scan through all the values appearing in $A$; we consider all $a$ such that $count_a > 0$.
 
-For every such a we update $dp$ that $dp_j$ denotes how many values $a$ remain (maximally) after achieving sum $j$. Note that if the previous value at $dp_j ­\geq 0$ then we can set $dp_j = count_a$ as no value $a$ is needed to obtain the sum $j$. Otherwise we must obtain sum $j − a$ first and then use a number $a$ to get sum $j$. In such a situation $dp_j = dp_{j − a} − 1$.
+For every such $a$ we update $dp$ that $dp_j$ denotes how many values $a$ remain (maximally) after achieving sum $j$. Note that if the previous value at $dp_j ­\geq 0$ then we can set $dp_j = count_a$ as no value $a$ is needed to obtain the sum $j$. Otherwise we must obtain sum $j − a$ first and then use a number $a$ to get sum $j$. In such a situation $dp_j = dp_{j − a} − 1$.
 
 Using this algorithm, we can mark all the sum values and choose the best one (closest to half of $S$).
 
