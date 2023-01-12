@@ -87,7 +87,8 @@ The time complexity of the above solution is $O(N^2 · M)$, since $S = O(N · M)
 
 Notice that the range of numbers is quite small (maximum 100). Hence, there must be a lot of duplicated numbers. Let $count_i$ denote the number of occurrences of the value $i$. We can improve the previous solution by processing all occurrences of the same value at once. First we calculate values $count_i$. Then we create array $dp$ such that:
 - $dp_j = −1$ if we cannot get the sum $j$,
-- $dp_j \leq 0$ if we can get sum $j$.
+- $dp_j \geq 0$ if we can get sum $j$.
+
 Initially, $dp_j = −1$ for all of $j$ (except $dp_0 = 0$). Then we scan through all the values appearing in $A$; we consider all $a$ such that $count_a > 0$.
 
 For every such a we update $dp$ that $dp_j$ denotes how many values $a$ remain (maximally) after achieving sum $j$. Note that if the previous value at $dp_j ­\geq 0$ then we can set $dp_j = count_a$ as no value $a$ is needed to obtain the sum $j$. Otherwise we must obtain sum $j − a$ first and then use a number $a$ to get sum $j$. In such a situation $dp_j = dp_{j − a} − 1$.
@@ -163,3 +164,7 @@ The time complexity of the above solution is $O(N · M^2)$, where $M$ is the max
 ## Observations
 
 I have an issue that the problem did not explicitly state that the minimum value should be an absolute value (value greater than or equal to 0).
+
+As we move into the solution, the explanation for using half of the total sum of the absolute values help to clear up the use of `target = total / 2` in the **Golden solution**. My difficulty thereafter in accepting and fully grasping the solution was to visualize the use of $dp$ array (use of tabulation).
+
+So, $dp$ is built out in such a way that it is a hash for all numbers up to the sum of the absolute values of the provided array.
