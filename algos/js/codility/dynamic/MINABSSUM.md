@@ -43,7 +43,7 @@ Assume the sum of absolute values of all the numbers is $S$. ***We want to choos
 
 ### Slow solution $O(N^2 \cdot M)$
 
-Let $dp_i$ equal 1 if it is possible to achieve the sum of $i$ using elements of $A$, and $0$ otherwise. Initially $dp_i = 0$ for all of i (except $dp_0 = 1$). For every successive element in $A$ we update the array taking this element into account. We simply go through all the cells, starting from the top, and if $dp_i = 1$ then we also set $dp_{i + A_j}$ to 1. The direction in which array $dp$ is processed is important, since each element of $A$ can be used only once. After computing the array dp, $P$ is the largest index such that $P \leq \frac{S}{2}$ and $dp_P = 1$.
+Let $dp_i$ equal 1 if it is possible to achieve the sum of $i$ using elements of $A$, and $0$ otherwise. Initially $dp_i = 0$ for all of i (except $dp_0 = 1$). For every successive element in $A$ we update the array taking this element into account. We simply go through all the cells, starting from the top, and if $dp_i = 1$ then we also set $dp_{i + A_j}$ to 1. The direction in which array $dp$ is processed is important, since each element of $A$ can be used only once. After computing the array $dp$, $P$ is the largest index such that $P \leq \frac{S}{2}$ and $dp_P = 1$.
 
 **1: Slow solution**
 ```js
@@ -86,6 +86,7 @@ The time complexity of the above solution is $O(N^2 · M)$, since $S = O(N · M)
 ### Golden solution $O(N \cdot M^2)$
 
 Notice that the range of numbers is quite small (maximum 100). Hence, there must be a lot of duplicated numbers. Let $count_i$ denote the number of occurrences of the value $i$. We can improve the previous solution by processing all occurrences of the same value at once. First we calculate values $count_i$. Then we create array $dp$ such that:
+
 - $dp_j = −1$ if we cannot get the sum $j$,
 - $dp_j \geq 0$ if we can get sum $j$.
 
@@ -163,8 +164,8 @@ The time complexity of the above solution is $O(N · M^2)$, where $M$ is the max
 
 ## Observations
 
-I have an issue that the problem did not explicitly state that the minimum value should be an absolute value (value greater than or equal to 0).
+I have an issue that the problem did not explicitly state that the minimum value should be an absolute value (value greater than or equal to 0). Nonetheless, provided above are two solutions. My frustration with the solution explanation is that it explains what the algorithm is doing but it does not state the reason for what it's doing.
 
 As we move into the solution, the explanation for using half of the total sum of the absolute values help to clear up the use of `target = total / 2` in the **Golden solution**. My difficulty thereafter in accepting and fully grasping the solution was to visualize the use of $dp$ array (use of tabulation).
 
-So, $dp$ is built out in such a way that it is a hash for all numbers up to the sum of the absolute values of the provided array.
+So, $dp$ is built out in such a way that it is a hash for all numbers up to the sum of the absolute values of the provided array. Tabulation was used in both the **Slow solution** and the **Golden solution**. So for the **Slow solution**, why is $dp$ updated based on the _sum of_ $i$ _using elements of_ $A$? You can see that condition `(i + A[j] <= S)` in the nested loop used on the basis of this statement. But why? And if so, why is $dp_0$ initiated as 1? Why does the nested loop decrement instead of increment?

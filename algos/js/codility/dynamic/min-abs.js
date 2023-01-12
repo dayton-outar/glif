@@ -113,7 +113,7 @@ const slowSolution = (A) => {
 
     for(let j = 0; j < N; j++ ) {
         for(let i = S; i > -1; i-- ) {
-            console.log(i, j, A[j]);
+            console.log(i, A[j]);
             if (dp[i] == 1 && (i + A[j] <= S) ) { // Why?
                 dp[i + A[j]] = 1;
                 console.log( dp );
