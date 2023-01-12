@@ -19,39 +19,39 @@ Significant lessons from Codility,
 
   Ways to identify an element that occurs more than once
 
-- [Maximum Slice](./codility/maximum-slice/README.md)
+- [Maximum Slice](./codility/maximum-slice/)
 
   Maintaining track of the maximum running total
 
-- [Prime and composite numbers](./codility/prime/README.md)
+- [Prime and composite numbers](./codility/prime/)
 
   Using prime and composite numbers to solve problems
 
-- [Sieve of Erastosthenes](./codility/sieve/README.md)
+- [Sieve of Erastosthenes](./codility/sieve/)
 
   An old but crafty way of identifying all primes up to a certain number
 
-- [Euclidean Algorithm](./codility/euclidean/README.md)
+- [Euclidean Algorithm](./codility/euclidean/)
 
   Finding common divisor and common multiples
 
-- [Fibonacci Numbers](./codility/fibonacci/README.md)
+- [Fibonacci Numbers](./codility/fibonacci/)
 
   Finding numbers in the most efficient way in a fibonacci sequence
 
-- [Binary Search](./codility/binary-search/README.md)
+- [Binary Search](./codility/binary-search/)
 
   Conducting a search by splitting in the middle each iteration
 
-- [Caterpillar Method](./codility/caterpillar/README.md)
+- [Caterpillar Method](./codility/caterpillar/)
 
   Finding aggregates by the use of more than one pointer in a loop
 
-- [Greedy Algorithms](./codility/greedy/README.md)
+- [Greedy Algorithms](./codility/greedy/)
 
   Finding the best locally optimal choice first
 
-- [Dynamic Programming](./codility/dynamic/README.md)
+- [Dynamic Programming](./codility/dynamic/)
 
   A trade-off for time rather than space using arrays and matrices rather than recursion to find optimal solution
 
