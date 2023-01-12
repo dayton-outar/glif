@@ -7,15 +7,15 @@ Most of the problems found in this folder were sourced from,
 
 Significant lessons from Codility,
 
-- [Counting Elements](./codility/counting/README.md)
+- [Counting Elements](./codility/counting/)
 
   Creating a hashtable to count occurrences of an element
 
-- [Prefix Sums](./codility/prefix-sums/README.md)
+- [Prefix Sums](./codility/prefix-sums/)
   
   Perfect for best performing algorithm to get sum of slices
 
-- [Leader](./codility/leader/README.md)
+- [Leader](./codility/leader/)
 
   Ways to identify an element that occurs more than once
 
@@ -97,12 +97,13 @@ A few code snippets from _Data Structures and Algorithms with JavaScript by Mich
 36. [Min-Max Division](./codility/binary-search/min-max.js) <sup>*</sup>
 37. [Nailing Planks](./codility/binary-search/nail.js) <sup>**</sup>
 38. [Number Solitaire](./codility/dynamic/solitaire.js) <sup>**</sup>
-39. [Minimum Absolute Sum](./codility/dynamic/min-abs.js) <sup>**</sup>
+39. [Minimum Absolute Sum](./codility/dynamic/MINABSSUM.md) <sup>**</sup>
 
 
 ## Further Reading
 
 1. Data Structures and Algorithms with JavaScript by Michael McMillan
-2. Introducing Regular Expressions by Michael Fitzgerald
-3. [Performance of JavaScript .forEach, .map and .reduce vs for and for..of](https://leanylabs.com/blog/js-forEach-map-reduce-vs-for-for_of/)
-4. [Difference between ?:, ?! and ?=](https://stackoverflow.com/questions/10804732/difference-between-and)
+2. JavaScript Data Structures and Algorithms by Sammie Bae
+3. Introducing Regular Expressions by Michael Fitzgerald
+4. [Performance of JavaScript .forEach, .map and .reduce vs for and for..of](https://leanylabs.com/blog/js-forEach-map-reduce-vs-for-for_of/)
+5. [Difference between ?:, ?! and ?=](https://stackoverflow.com/questions/10804732/difference-between-and)
