@@ -169,3 +169,29 @@ I have an issue that the problem did not explicitly state that the minimum value
 As we move into the solution, the explanation for using half of the total sum of the absolute values help to clear up the use of `target = total / 2` in the **Golden solution**. My difficulty thereafter in accepting and fully grasping the solution was to visualize the use of $dp$ array (use of tabulation).
 
 So, $dp$ is built out in such a way that it is a hash for all numbers up to the sum of the absolute values of the provided array. Tabulation was used in both the **Slow solution** and the **Golden solution**. So for the **Slow solution**, why is $dp$ updated based on the _sum of_ $i$ _using elements of_ $A$? You can see that condition `(i + A[j] <= S)` in the nested loop used on the basis of this statement. But why? And if so, why is $dp_0$ initiated as 1? Why does the nested loop decrement instead of increment?
+
+When we keep watch of `i`, `A[j]` and `dp` in the nested loop of the `slowSolution`, we can see that `dp` is filled with a 1 once groups of the number in the provided array can sum up to a value between 1 and `S`. For example, when `[ 1 ]` (out of the `[ 1, 5, 2, -2 ]` array) is considered in the nested loop, it can only sum up to 1 while `i` is equal to 0. When `[1, 5]` (out of the `[ 1, 5, 2, -2 ]` array) is considered in the nested loop, it can sum up to 6 while `i` is equal to 1, hence that index is set to 1 in `dp`. When `i` is decremented to 0, using the same `[1, 5]`, it can sum up to 5, hence that index is also set to 1 in `dp`. When `i` is decremented to 6, 5, 1 and 0 while using `[1, 5, 2]`, indices 8 (6 + _2_), 7 (5 + _2_), 3 (1 + _2_) and 2 (0 + _2_) are set to 1 in `dp`. The pattern of filling out `dp`, suggests accounting for all possible sums from progressive groups of array `[1, 5, 2, -2]` as `[ 1 ]`, `[1, 5]`, `[1, 5, 2]` and `[1, 5, 2, 2]` (since absolute values are considered 2 is used instead of -2).
+
+For the case of `[1, 5, 2, -2]` using `slowSolution`, the `dp` array has all indices filled with 1 when it completes the nested loop. So, upon approaching the last loop,
+
+```js
+for(let i = 0; i < Math.floor( S / 2 ) + 1 ; i++) {
+    if (dp[i] == 1) {
+        result = Math.min(result, S - 2 * i);
+    }
+}
+```
+
+Given that `S` is equal to 10, the values for `result` would evolve as shown in the table below,
+
+| `i` | `result` |
+|----:|---------:|
+| 0   | 10       |
+| 1   | 8        |
+| 2   | 6        |
+| 3   | 4        |
+| 4   | 2        |
+| 5   | 0        |
+
+BRB ...
+

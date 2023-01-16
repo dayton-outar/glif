@@ -109,8 +109,6 @@ const slowSolution = (A) => {
     let dp = Array( S + 1).fill(0);
     dp[0] = 1;
 
-    console.log(dp);
-
     for(let j = 0; j < N; j++ ) {
         for(let i = S; i > -1; i-- ) {
             console.log(i, A[j]);
@@ -126,10 +124,11 @@ const slowSolution = (A) => {
     for(let i = 0; i < Math.floor( S / 2 ) + 1 ; i++) {
         if (dp[i] == 1) {
             result = Math.min(result, S - 2 * i);
+            console.log(i, 'result', result);
         }
     }
 
     return result;
 }
 
-console.log( 'result', slowSolution( [1, 5, 2, -2] ) );
+console.log( 'result', solution( [1, 5, 2, -2] ) );
