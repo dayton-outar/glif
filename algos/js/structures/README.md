@@ -263,7 +263,7 @@ There are 3 main ways to do _depth-first_ traversal.
 
 This method essentially visits each node level by level instead of going deep into the left or right. This approach is also called _level-order_ traversal.
 
-![Level-order traversal](level-order-traversal.png)
+![Level-order traversal](/.attachments/level-order-traversal.png)
 
 
 ## References
