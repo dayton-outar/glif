@@ -222,8 +222,39 @@ function countSort(array) {
 countSort([6, 1, 23, 2, 3, 2, 1, 2, 2, 3, 3, 1, 123, 123, 4, 23]);
 ```
 
+## Traversal
+
+There are 2 main methods of traversing a graph (or a tree, which is a type of graph): _Depth-first_ and _Breadth-first_.[^1]
+
+### Reasons for Depth-First
+
+- When you want to find the longest path between two nodes in a graph.
+- When you want to detect a cycle in a graph.
+- When the tree is very wide (has a lot of branches). BFS would use more memory.
+- When you want to visit child nodes before sibling nodes.
+- When solving a maze/puzzle problem, a DFS allows you to traverse through all possible paths. This is very useful for creating a decision tree.
+
+There are 3 main ways to do _depth-first_ traversal.
+
+1. Pre-order
+
+   Visits nodes in the following order: root (the current node), left, right.
+
+   ![Pre-order traversal](/.attachments/pre-order-traversal.png)
+
+2. In-order
+3. Post-order
+
+### Reasons for Breadth-First
+
+- When you want to find the shortest path between two nodes in a graph.
+- When you have knowledge that a solution is not far from the root of a tree.
+- When you want to prioritize searching vertices that are close to the start node.
+- When you want to visit sibling nodes before child nodes.
 
 
 ## References
 
 1. [Time Complexities of all Sorting Algorithms](https://www.geeksforgeeks.org/time-complexities-of-all-sorting-algorithms/)
+
+[^1]: [When to Use Depth-First Search (DFS) vs Breadth-First Search (BFS)](https://medium.com/@alexzelinsky124/when-to-use-depth-first-search-dfs-vs-breadth-first-search-8ad4c514e033)

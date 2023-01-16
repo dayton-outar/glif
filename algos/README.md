@@ -5,6 +5,36 @@ This folder contains projects focused on learning data structures and algorithms
 > Informally, an ***algorithm*** is any well-defined computational procedure that takes some value, or set of values, as ***input*** and produces some value, or set of values, as ***output*** in a _finite amount of time_. An algorithm is thus a sequence of computational steps that transform the input into the output.[^1]
 
 The study of analysing the optimal _finite amount of time_ of an algorithm is referred to as _Asymptotic Time Complexity_.
+
+## Approaches
+
+There are several approaches that can be used in solving problems when designing algorithms. Some of these approaches includes,
+
+1. Brute Force
+2. Divide and Conquer
+3. [Greedy Algorithms](./js/codility/greedy/)
+4. [Dynamic Programming](./js/codility/dynamic/)
+
+### Brute Force
+
+A brute force approach is an approach that finds all the possible solutions to find a satisfactory solution to a given problem. The focus here is in getting the correct answer to the problem and not necessarily the most efficient.
+
+### Divide and Conquer
+
+For divide-and-conquer, you solve a given problem (instance) recursively. If the problem is small enough&mdash;the ***base case***&mdash;you just solve it directly without recursing. Otherwise&mdash;the ***recursive case***&mdash;you perform three characteristic steps:
+
+- **Divide** the problem into one or more subproblems that are smaller instances of the same problem.
+- **Conquer** the subproblems by solving them recursively.
+- **Combine** the subproblem solutions to form a solution to the original problem.
+
+A divide-and-conquer algorithm breaks down a large problem into smaller sub-problems, which themselves may be broken down into even smaller subproblems, and so forth. The recursion ***bottoms out*** when it reaches a base case and the sub-problem is small enough to solve directly without further recursing.[^2]
+
+Some divide-and-conquer algorithms include,
+
+- [Binary Search](./js/codility/binary-search/)
+- [Quick Sort](./js/structures/README.md#quick-sort)
+- [Merge Sort](./js/structures/README.md#merge-sort)
+
 ## Asymptotic Time Complexity Terms
 
 The table below is ordered in descending order of highest performance.
@@ -230,3 +260,4 @@ The questionnaire below was sourced from _The Algorithm Design Manual_. I find t
 3. [How to Develop Algorithmic Thinking in Data Structures and Algorithms](https://www.enjoyalgorithms.com/blog/how-to-develop-algorithmic-thinking-in-data-structure-and-algorithms)
 
 [^1]: Chapter 1 - The Role of Algorithms in Computing. Introduction to Algorithms, 4<sup>th</sup> Edition by Thomas Cormen
+[^2]: Chapter 4 - Divide-and-Conquer. Introduction to Algorithms, 4<sup>th</sup> Edition by Thomas Cormen
