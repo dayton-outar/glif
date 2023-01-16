@@ -12,7 +12,7 @@
 | [Insertion Sort](https://youtu.be/OGzPmgsI-pQ)   | $Ω(n)$	         | $θ(n^2)$     | $O(n^2)$        |	$O(1)$     |
 | [Heap Sort](https://youtu.be/MtQL_ll5KhQ)	      | $Ω(n \cdot log(n))$	| $θ(n \cdot log(n))$| $O(n  \cdot log(n))$   |	$O(1)$     |
 | [Quick Sort](https://youtu.be/PgBzjlCcFvc)       | $Ω(n \cdot log(n))$	| $θ(n \cdot log(n))$| $O(n^2)$        |	$O(n)$     |
-| [Merge Sort](https://youtu.be/JSceec-wEyw)       | $Ω(n \cdot log(n))$	| $θ(n \cdot log(n))$| $O(n log(n))$   |	$O(n)$     |
+| [Merge Sort](https://youtu.be/JSceec-wEyw)       | $Ω(n \cdot log(n))$	| $θ(n \cdot log(n))$| $O(n \cdot log(n))$   |	$O(n)$     |
 | [Bucket Sort](https://youtu.be/VuXbEb5ywrU)      | $Ω(n +k)$       | $θ(n +k)$    | $O(n^2)$        |	$O(n)$     |
 | [Radix Sort](https://youtu.be/nu4gDuFabIM)       | $Ω(n \cdot k)$  |$θ(n \cdot k)$| $O(n \cdot k)$  |	$O(n + k)$ |
 | [Counting Sort](https://youtu.be/7zuGmKfUt7s)    | $Ω(n + k)$	   | $θ(n +k)$    | $O(n +k)$       |	$O(k)$     |
