@@ -37,7 +37,7 @@ Some divide-and-conquer algorithms include,
 - [Quick Sort](./js/structures/README.md#quick-sort)
 - [Merge Sort](./js/structures/README.md#merge-sort)
 
-## Asymptotic Time Complexity Terms
+## Asymptotic Time Complexities
 
 The table below is ordered in descending order of highest performance.
 
