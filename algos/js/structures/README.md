@@ -1,6 +1,31 @@
 
 # Fundamental Structures and Algorithms
 
+## Data Structures
+
+Some fundamental data structures that are used for solving problems includes,
+
+1. Arrays
+2. Hashtables
+3. Stack
+4. Queue
+5. Linked Lists
+6. Graphs
+7. Trees
+8. Heaps
+
+### Graphs
+
+There are various ways to represent undirected graphs as a data structure class. Two of the most common ways to do this are by using an _adjacency matrix_ or an _adjacency list_.
+
+![Graph, adjacency list and adjacency matrix](/.attachments/adjacency-matrix.png)
+
+### Heaps
+
+A _heap_ is a type of tree-like data structure in which the parent is bigger than its children (if max-heap) or smaller than its children (if min-heap). This property of the heap makes it useful for sorting data.
+
+
+
 ## Sorting Algorithms' Time Complexities
 
 | Algorithm                                        | Best Time       | Average Time | Worst Time      | Worst Space |
