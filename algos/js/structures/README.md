@@ -243,7 +243,16 @@ There are 3 main ways to do _depth-first_ traversal.
    ![Pre-order traversal](/.attachments/pre-order-traversal.png)
 
 2. In-order
+
+   Visits nodes in the following order: left, root (current node), right.
+
+   ![In-order traversal](/.attachments/in-order-traversal.png)
+
 3. Post-order
+
+   Visits nodes in the following order: left, right, root (the current node).
+
+   ![Post-order traversal](/.attachments/post-order-traversal.png)
 
 ### Reasons for Breadth-First
 
@@ -251,6 +260,10 @@ There are 3 main ways to do _depth-first_ traversal.
 - When you have knowledge that a solution is not far from the root of a tree.
 - When you want to prioritize searching vertices that are close to the start node.
 - When you want to visit sibling nodes before child nodes.
+
+This method essentially visits each node level by level instead of going deep into the left or right. This approach is also called _level-order_ traversal.
+
+![Level-order traversal](level-order-traversal.png)
 
 
 ## References
