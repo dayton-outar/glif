@@ -24,7 +24,7 @@ There are various ways to represent undirected graphs as a data structure class.
 
 A _heap_ is a type of tree-like data structure in which the parent is bigger than its children (if max-heap) or smaller than its children (if min-heap). This property of the heap makes it useful for sorting data.
 
-
+BRB ...
 
 ## Sorting Algorithms' Time Complexities
 
@@ -247,7 +247,7 @@ function countSort(array) {
 countSort([6, 1, 23, 2, 3, 2, 1, 2, 2, 3, 3, 1, 123, 123, 4, 23]);
 ```
 
-## Traversal
+## Graph Traversal
 
 There are 2 main methods of traversing a graph (or a tree, which is a type of graph): _Depth-first_ and _Breadth-first_.[^1]
 

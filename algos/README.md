@@ -29,6 +29,8 @@ For divide-and-conquer, you solve a given problem (instance) recursively. If the
 
 A divide-and-conquer algorithm breaks down a large problem into smaller sub-problems, which themselves may be broken down into even smaller subproblems, and so forth. The recursion ***bottoms out*** when it reaches a base case and the sub-problem is small enough to solve directly without further recursing.[^2]
 
+Whereas dynamic programming typically removes one element from the problem, solves the smaller problem, and then adds back the element to the solution of this smaller problem in the proper way. Divide and conquer instead splits the problem into (say) halves, solves each half, then stitches the pieces back together to form a full solution.[^3]
+
 Some divide-and-conquer algorithms include,
 
 - [Binary Search](./js/codility/binary-search/)
@@ -261,3 +263,4 @@ The questionnaire below was sourced from _The Algorithm Design Manual_. I find t
 
 [^1]: Chapter 1 - The Role of Algorithms in Computing. Introduction to Algorithms, 4<sup>th</sup> Edition by Thomas Cormen
 [^2]: Chapter 4 - Divide-and-Conquer. Introduction to Algorithms, 4<sup>th</sup> Edition by Thomas Cormen
+[^3]: Chapter 5 - Divide and Conquer. The Algorithm Design Manual by Steven Skiena
