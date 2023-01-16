@@ -1,5 +1,7 @@
 # Data Structures and Algorithms in JavaScript
 
+A few code snippets from _Data Structures and Algorithms with JavaScript by Michael McMillan_ and _JavaScript Data Structures and Algorithms by Sammie Bae_ are found [here](./structures/).
+
 Most of the problems found in this folder were sourced from,
 
 1. [Codility](https://app.codility.com/programmers/)
@@ -54,8 +56,6 @@ Significant lessons from Codility,
 - [Dynamic Programming](./codility/dynamic/)
 
   A trade-off for time rather than space using arrays and matrices rather than recursion to find optimal solution
-
-A few code snippets from _Data Structures and Algorithms with JavaScript by Michael McMillan_ are found [here](./structures/).
 
 ## Most Challenging Problems
 
