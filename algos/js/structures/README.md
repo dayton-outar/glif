@@ -336,5 +336,7 @@ This method essentially visits each node level by level instead of going deep in
 
 1. [Binary Heap | GeeksforGeeks](https://youtu.be/uZj0hetLFHU)
 2. [Bubble Up and Bubble Down Heap Insertion](https://youtu.be/PkCBI4BKeb8)
+3. [Binary Tree Algorithms for Technical Interviews - Full Course](https://youtu.be/fAAZixBzIAI)
+4. [Graph Algorithms for Technical Interviews - Full Course](https://youtu.be/tWVWeAqZ0WU)
 
 [^1]: [When to Use Depth-First Search (DFS) vs Breadth-First Search (BFS)](https://medium.com/@alexzelinsky124/when-to-use-depth-first-search-dfs-vs-breadth-first-search-8ad4c514e033)

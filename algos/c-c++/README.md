@@ -58,6 +58,7 @@ But at Microsoft I have almost never seen any C++ source files with a `.cc` exte
 1. [Debugging a C++ project in VS Code](https://youtu.be/G9gnSGKYIg4)
 2. [Heap Explained - Algorithms & Data Structures](https://youtu.be/rbXO3B5Ib1U)
 3. [Understanding Sorting Algorithms](https://youtu.be/l7-f9gS8VOs)
+4. [Solve Coding Interview Backtracking Problems - Crash Course](https://youtu.be/A80YzvNwqXA)
 ___
  <sup id="fn-1">1</sup> [What is the difference between .cc and .cpp file suffix?](https://stackoverflow.com/questions/18590135/what-is-the-difference-between-cc-and-cpp-file-suffix)
 
