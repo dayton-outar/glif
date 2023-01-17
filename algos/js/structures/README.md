@@ -24,7 +24,40 @@ There are various ways to represent undirected graphs as a data structure class.
 
 A _heap_ is a type of tree-like data structure in which the parent is bigger than its children (if max-heap) or smaller than its children (if min-heap). This property of the heap makes it useful for sorting data.
 
-BRB ...
+Heaps, unlike other tree data structures, use an array to store data instead of having pointers to their children. A heap node’s children’s positions (indices) in the array can be calculated easily. This is because the parent-child relationship is easily defined with a heap.
+
+There are many types of heaps that have different numbers of children. Let's consider binary heaps for this explanation. Since a heap uses an array to store the data, the indices of the array define the order/height of each element. A binary heap can be built by placing the first array element as the root and then filling each left and right element in order.
+
+For example, for the heap shown below,
+
+![Heap indices](/.attachments/heap-indices.png)
+
+would look like this: [2, 4, 23, 12, 13].
+
+There are two types of binary heaps: max-heap and min-heap. In _max-heap_, the root node has the highest value, and each node’s value is greater than its children. In _min-heap_, the root node has the lowest value, and each node’s value is smaller than its children.
+
+Heaps can store any values of any type: strings, integer, and even custom classes.
+
+A ***max-heap*** is a heap where the parent is always greater than any of its children.
+
+![Max-heap](/.attachments/max-heap.png)
+
+A ***min-heap*** is a heap where the parent is always smaller than any of its children
+
+![Min-heap](/.attachments/min-heap.png)
+
+For a binary heap, an array is used to represent the heap by using the following indices, where N is the index of the node:
+
+| Node          | Index              |
+|:--------------|-------------------:|
+| (itself)      | $N$                |
+| Parent        | $(N - 1) / 2$      |
+| Left Child    | $(N \times 2) + 1$ |
+| Right Child   | $(N \times 2) + 2$ |
+
+See below illustration of formulas used in reference to node relations,
+
+![Heap relationship](/.attachments/heap-relationship.png)
 
 ## Sorting Algorithms' Time Complexities
 
@@ -39,7 +72,7 @@ BRB ...
 | [Bucket Sort](https://youtu.be/VuXbEb5ywrU)      | $Ω(n +k)$       | $θ(n +k)$    | $O(n^2)$        |	$O(n)$     |
 | [Radix Sort](https://youtu.be/nu4gDuFabIM)       | $Ω(n \cdot k)$  |$θ(n \cdot k)$| $O(n \cdot k)$  |	$O(n + k)$ |
 | [Counting Sort](https://youtu.be/7zuGmKfUt7s)    | $Ω(n + k)$	   | $θ(n +k)$    | $O(n +k)$       |	$O(k)$     |
-| [Shell Sort](https://youtu.be/SHcPqUe2GZM)       | $Ω(n log(n))$	| $θ(n log(n))$| $O(n^2)$        |	$O(1)$     |
+| [Shell Sort](https://youtu.be/SHcPqUe2GZM)       | $Ω(n \cdot log(n))$	| $θ(n \cdot log(n))$| $O(n^2)$        |	$O(1)$     |
 
 `swap` is a common function used in sorting. It simply switches two array element values.
 
@@ -49,6 +82,9 @@ function swap(array, index1, index2) {
     array[index1] = array[index2];
     array[index2] = temp;
 }
+
+let arr = [3, 7, 6];
+swap(arr, 0, 2); // arr: [6, 7, 3]
 ```
 
 ### Selection Sort
@@ -132,7 +168,7 @@ insertionSort([6, 1, 23, 4, 2, 3]); // [1, 2, 3, 4, 6, 23]
 
 ### Quick Sort
 
-Quicksort works by obtaining a pivot and partitioning the array around it (bigger elements on one side and smaller elements on the other side) until everything is sorted. The ideal pivot is the median of the array since it will partition the array evenly but getting the median of an unsorted array linear time to compute. Hence, a pivot is typically obtained by taking the median value of the first, middle, and last elements in the partition. This sort is a recursive one and uses the divide-and-conquer methodology to break the quadratic complexity barrier and get the time complexity down to $O(n \cdot log_2 n)$. However, with a pivot that partitions everything on one side, the time complexity is worse case: $O(n^2)$.
+Quick sort works by obtaining a pivot and partitioning the array around it (bigger elements on one side and smaller elements on the other side) until everything is sorted. The ideal pivot is the median of the array since it will partition the array evenly but getting the median of an unsorted array linear time to compute. Hence, a pivot is typically obtained by taking the median value of the first, middle, and last elements in the partition. This sort is a recursive one and uses the divide-and-conquer methodology to break the quadratic complexity barrier and get the time complexity down to $O(n \cdot log_2 n)$. However, with a pivot that partitions everything on one side, the time complexity is worse case: $O(n^2)$.
 
 ```js
 function quickSort(items) {
@@ -180,7 +216,7 @@ quickSort([6, 1, 23, 4, 2, 3]); // [1, 2, 3, 4, 6, 23]
 
 ### Merge Sort
 
-Mergesort works by dividing the array into subarrays until each array has one element. Then, each subarray is concatenated (merged) in a sorted order.
+Merge sort works by dividing the array into subarrays until each array has one element. Then, each subarray is concatenated (merged) in a sorted order.
 
 The `merge` function should add all the elements from both arrays in sorted order in a “result array.” To do this, the index of each array can be created to keep track of elements already compared. Once one array exhausts all its elements, the rest can be appended to the result array.
 
@@ -294,5 +330,11 @@ This method essentially visits each node level by level instead of going deep in
 ## References
 
 1. [Time Complexities of all Sorting Algorithms](https://www.geeksforgeeks.org/time-complexities-of-all-sorting-algorithms/)
+2. JavaScript Data Structures and Algorithms by Sammie Bae
+
+## Videos
+
+1. [Binary Heap | GeeksforGeeks](https://youtu.be/uZj0hetLFHU)
+2. [Bubble Up and Bubble Down Heap Insertion](https://youtu.be/PkCBI4BKeb8)
 
 [^1]: [When to Use Depth-First Search (DFS) vs Breadth-First Search (BFS)](https://medium.com/@alexzelinsky124/when-to-use-depth-first-search-dfs-vs-breadth-first-search-8ad4c514e033)

@@ -21,7 +21,7 @@ function countSort(array) {
     return countArr;
 }
 
-console.log( countSort([6, 1, 23, 2, 3, 2, 1, 2, 2, 3, 3, 1, 123, 123, 4, 23]) );
+// console.log( countSort([6, 1, 23, 2, 3, 2, 1, 2, 2, 3, 3, 1, 123, 123, 4, 23]) );
 
 // Credit: GeeksForGeeks
 // Javascript implementation of Counting Sort
@@ -59,4 +59,15 @@ function sort(arr)
      return arr;
 }
 
-console.log( sort([ 'g', 'e', 'e', 'k', 's', 'f', 'o', 'r', 'g', 'e', 'e', 'k', 's' ]) );
+// console.log( sort([ 'g', 'e', 'e', 'k', 's', 'f', 'o', 'r', 'g', 'e', 'e', 'k', 's' ]) );
+
+function swap(array, index1, index2) {
+    var temp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = temp;
+}
+
+let arr = [3, 7, 6];
+console.log( arr );
+swap(arr, 0, 2);
+console.log( arr );
