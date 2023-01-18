@@ -68,4 +68,6 @@ If I were to breakdown my solution into Jon's solution it would go as follows,
 
 I think the time complexity of both solutions is $O(N)$ since both make use of a loop that iterates through the entire string.[^1]
 
+The crafty use of regular expressions is noteworthy. The expression, `/^0+|1+|0+$/`, excludes the 0's that start or end the binary string (the `^0+` excludes 0's at the beginning and `0+$` excludes 0's at the end) and treats 1's as delimiters, since the expression is used in the `split` function. So, splitting 00011010000111000 would only pass an array containing two (2) elements to the `map` function: `['0', '0000']`. This can be demonstrated when the expression is entered in [regexr.com](https://regexr.com/) and the mentioned binary string is tested. When testing the binary string, make sure that the global flag is on.
+
 [^1]: [The time complexity of the map function](https://stackoverflow.com/questions/50244343/the-time-complexity-of-the-map-function#:~:text=Array.,complexity%20of%20O(n).). StackOverflow.
