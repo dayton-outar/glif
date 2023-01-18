@@ -88,6 +88,10 @@ const fastSolution = (A, B, m) => {
 
     return false;
 }
+
+fastSolution([0, 1, 1, 4, 5, 3, 2, 1], [5, 4, 3, 2, 1, 2, 1, 1, 3, 3], 5); // true
+fastSolution([4, 4, 4, 4, 4], [5, 5, 5, 5], 5); // false
+fastSolution([3, 2, 2], [3, 1, 1], 3); // true
 ```
 
 ## Observations
