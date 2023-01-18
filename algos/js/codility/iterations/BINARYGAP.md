@@ -56,6 +56,8 @@ solution(1041); // 5
 solution(32); // 3
 ```
 
+## Observations
+
 I was impressed by the brevity of the code. It was here I began to see that some lines of code could be translated for one line of code.
 
 If I were to breakdown my solution into Jon's solution it would go as follows,
