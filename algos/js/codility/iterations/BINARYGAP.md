@@ -64,7 +64,7 @@ If I were to breakdown my solution into Jon's solution it would go as follows,
 |:--------------------------------------------------------------------------|:----------------------|
 | <code>if (longest < len) {<br />&nbsp;&nbsp;longest = len;<br />}</code>  | `Math.max`            |
 | <code>const bin = N.toString(2);</code>                                   | `...i.toString(2)`    |
-| <code>let ix = bin.indexOf('1');<br />...<br />while(ix > -1) {<br />&nbsp;&nbsp;let nx = bin.indexOf('1', (ix + 1));<br />&nbsp;&nbsp;let len = (nx - ix) - 1;<br />&nbsp;&nbsp;ix = nx;<br />}</code> | <code>.split(/^0+|1+|0+$/).map(s => s.length)</code> |
+| <code>let ix = bin.indexOf('1');<br />...<br />while(ix > -1) {<br />&nbsp;&nbsp;let nx = bin.indexOf('1', (ix + 1));<br />&nbsp;&nbsp;let len = (nx - ix) - 1;<br />&nbsp;&nbsp;ix = nx;<br />}</code> | <code>.split....map(s => s.length)</code> |
 
 I think the time complexity of both solutions is $O(N)$ since both make use of a loop that iterates through the entire string.[^1]
 
