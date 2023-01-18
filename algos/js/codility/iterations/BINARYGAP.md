@@ -8,7 +8,9 @@ For example, number 9 has binary representation 1001 and contains a binary gap o
 
 Write a function:
 
+```js
 function solution(N);
+```
 
 that, given a positive integer N, returns the length of its longest binary gap. The function should return 0 if N doesn't contain a binary gap.
 
@@ -16,7 +18,7 @@ For example, given N = 1041 the function should return 5, because N has binary r
 
 Write an **efficient** algorithm for the following assumptions:
 
-N is an integer within the range [1..2,147,483,647].
+- N is an integer within the range [1..2,147,483,647].
 
 ## Solutions
 
