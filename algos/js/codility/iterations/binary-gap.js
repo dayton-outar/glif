@@ -34,7 +34,7 @@ function solution(N) {
 // Credit: Jon Randy ... https://dev.to/_algowhacks/solving-for-binary-gap-using-javascript-a1p
 const solution2 = i => Math.max(...i.toString(2).split(/^0+|1+|0+$/).map(s => s.length))
 
-const num = 7;
+const num = 34;
 
 console.log(solution(num));
 

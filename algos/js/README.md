@@ -59,13 +59,12 @@ Significant lessons from Codility,
 
 ## Most Challenging Problems
 
-1. [Binary Gap](./codility/iterations/binary-gap.js)
-2. [Cyclic Rotation](./codility/arrays/rotate.js)
-3. [Odd Occurences](./codility/arrays/pairs.js)
-4. [Perm Missing Elem](./codility/time-complexity/missing.js)
-5. [Tape Equilibrium](./codility/time-complexity/tape.js)
-6. [Swap Elements](./codility/counting/counting.js)
-7. [Frog River One](./codility/counting/frog.js)
+1. [Cyclic Rotation](./codility/arrays/rotate.js)
+2. [Odd Occurences](./codility/arrays/pairs.js)
+3. [Perm Missing Elem](./codility/time-complexity/missing.js)
+4. [Tape Equilibrium](./codility/time-complexity/tape.js)
+5. [Swap Elements](./codility/counting/counting.js)
+6. [Frog River One](./codility/counting/frog.js)
 8. [Max Counters](./codility/counting/permutation.js)
 9. [Missing Integer](./codility/counting/missing.js)
 10. [Passing Cars](./codility/prefix-sums/passingcars.js) <sup>*</sup>
