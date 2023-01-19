@@ -132,7 +132,7 @@ function solution(A) {
         dp[i] = -1;
     }
 
-    target = total / 2; // 
+    target = total / 2;
     
     for(let i = 0; i < count.length; i++) {
         if(count[i] > 0) {
@@ -193,5 +193,9 @@ Given that `S` is equal to 10, the values for `result` would evolve as shown in 
 | 4   | 2        |
 | 5   | 0        |
 
-BRB ...
+Now onto the details of the **Golden solution**.
+
+The code snippet for the **Golden solution** makes use of sorting, [counting elements](../counting/) and the use of tabulation. Since, indices of the `count` array is being used as a key for the value of the elements in the array passed to the function, absolute values are used and so ignoring the sign (negative) of the number. So, for the case of the array, `[1, 5, 2, -2]`, the `count` should arrive at `[0, 1, 2, 0, 0, 1]` (which states one 1, two 2's and a 5).
+
+When initializing the `dp` array, it is already assumed that any array will have a sub-array that is an empty set. The sum of an empty set of an array is 0. Therefore, `dp[0]` is 0, which raises the possibility that a sum of 0 can be derived.
 

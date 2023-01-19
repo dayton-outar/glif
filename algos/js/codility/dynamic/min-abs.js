@@ -79,9 +79,13 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
                     console.log('step');
                     dp[j] = dp[j - step] - 1;
                 }
-                console.log( dp, j, i );
+
+                console.log( j, i );
+                console.log( dp );                
+                
                 if(dp[j] >= 0) {
                     if(j === target) {
+                        console.log('j', j, target);
                         return 0;
                     } else {
                         minDiff = Math.min(minDiff, Math.abs( total - 2 * j ));
@@ -94,7 +98,7 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
     return minDiff;
 }
 
-// console.log( solution([ 1, 5, 2, -2 ]) );
+console.log( solution([ 1, 5, 2, -2 ]) );
 
 const slowSolution = (A) => {
     const N = A.length;
@@ -131,4 +135,4 @@ const slowSolution = (A) => {
     return result;
 }
 
-console.log( 'result', solution( [1, 5, 2, -2] ) );
+// console.log( 'result', solution( [1, 5, 2, -2] ) );
