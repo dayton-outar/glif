@@ -209,6 +209,6 @@ if(dp[j] >= 0) {
 }
 ```
 
-The aim of the first condition _denotes how many values_ $a$ _remain (maximally) after achieving sum_ $j$. Once $dp_j \geq 0$, sum $j$ is achieved. Ultimately, _if the previous value at_ $dp_j ­\geq 0$ _then we can set_ $dp_j = count_a$ ***as no value*** $a$ ***is needed to obtain the sum*** $j$
+The aim of the first condition _denotes how many values_ $a$ _remain (maximally) after achieving sum_ $j$. Once $dp_j \geq 0$, sum $j$ is achieved. Ultimately, _if the previous value at_ $dp_j ­\geq 0$ _then we can set_ $dp_j = count_a$ ***as no value*** $a$ ***is needed to obtain the sum*** $j$.
 
-Let's resume looking at the case of array, `[1, 5, 2, -2]` passed to the **Golden solution**.
+Let's resume looking at the case of array, `[1, 5, 2, -2]` passed to the **Golden solution** to understand the consequences of the first condition.
