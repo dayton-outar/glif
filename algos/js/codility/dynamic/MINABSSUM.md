@@ -211,4 +211,46 @@ if(dp[j] >= 0) {
 
 The aim of the first condition _denotes how many values_ $a$ _remain (maximally) after achieving sum_ $j$. Once $dp_j \geq 0$, sum $j$ is achieved. Ultimately, _if the previous value at_ $dp_j ­\geq 0$ _then we can set_ $dp_j = count_a$ ***as no value*** $a$ ***is needed to obtain the sum*** $j$.
 
-Let's resume looking at the case of array, `[1, 5, 2, -2]` passed to the **Golden solution** to understand the consequences of the first condition.
+Let's resume looking at the case of array, `[1, 5, 2, -2]` passed to the **Golden solution** to understand the consequences of the first condition and the meaning of the highlighted statements in the last paragraph. So, as mentioned before, the `count` upon entering the nested loop would look like this ($i$ is the column header values),
+
+| 0 | 1 | 2 | 3 | 4 | 5 |
+|--:|--:|--:|--:|--:|--:|
+| 0 | 1 | 2 | 0 | 0 | 1 |
+
+whereas the `dp` would look like this ($j$ is the column header values),
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
+| 0 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1  |
+
+Since, this is a divide-and-conquer approach, the array, `[1, 5, 2, -2]`, is first divided down to the base case of having an empty set passed in `[]`. The outer loop has within it a condition to by-pass all elements within `count` that are zero and, so, when the process enters the inner loop for the first time for this case `i` would be equal to 1 and `count[1]` would be 1. When `j` is 0, `dp[0]` meets the criteria to enter first condition. Following the highlighted statement, no value 1 is needed to obtain the sum 0, so then $dp_0$ is assigned to the total number of 1's passed in the array (`dp[0] = count[1]`). This causes `dp` to update to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
+| 1 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1  |
+
+As we progress to another iteration within the nested loop, `dp[1]` does not meet the first condition but the second condition is met. The second condition is basically asking if a number exist to arrive at the sum $j$. There's a possibility of getting `[ 1 ]` from `[1, 5, 2 -2]` to get the sum 1. Given that `step` has been assigned to `i` before entering the inner loop, we must obtain `j - i` (in solution explanation it said $j - a$). So, when `j` is 1 and `i` is 1, we are updating `dp[1]` to arrive at sum 1 by _obtaining 1 from the_ `count` value that was temporarily stored at `dp[0]`. We decrement to demonstrate that a 1 has been used to arrive at the sum $j$ (which is 1 in this case). So, after completing the second iteration, `dp` looks like this,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
+| 1 | 0 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1  |
+
+Upon the third iteration of the nested loop where `i` is 1, `j` is now 2 and `dp[2]` does not meet the first condition nor the second condition. Any sum above 1 cannot be derived from `[ 1 ]`. So, both conditions will not be met until `j` iterates pass 10 when `i` is 1.
+
+When the outer loop enters its third iteration and `i` is now set to 2, `j` reset to 0 in the inner (nested) loop. The first condition is met when `dp[0]` is equal to 1. So, _no value 2 is needed to obtain the sum 0_, so then $dp_0$ is assigned to the total number of 2's passed in the array. This causes `dp` to update to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
+| 2 | 0 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1  |
+
+When `j` iterates to 1 given that `i` is 2, the first condition is met once again because _no value 2 is needed to obtain the sum 1_, so then $dp_1$ is assigned to the total number of 2's passed in the array. This causes `dp` to update to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
+| 2 | 2 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1  |
+
+When `j` iterates to 2 given that `i` is 2, the first condition is not met but the second condition is met. How can a sum of 2 be met from two 2's? (We take one). Hence, `dp` now looks like this,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
+| 2 | 2 | 1 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1  |

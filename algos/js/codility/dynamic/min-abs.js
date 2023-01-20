@@ -71,7 +71,7 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
         if(count[i] > 0) {
             let step = i;
             for(let j = 0; j < dp.length; j++) {
-                console.log( j, i );
+                console.log( 'j = ', j, 'i = ', i );
                 console.log('before', dp );
 
                 if(dp[j] >= 0) {
@@ -86,7 +86,7 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
                 
                 if(dp[j] >= 0) {
                     if(j === target) {
-                        console.log('j', j, target);
+                        console.log('j = target -->', j, target);
                         return 0;
                     } else {
                         minDiff = Math.min(minDiff, Math.abs( total - 2 * j ));
