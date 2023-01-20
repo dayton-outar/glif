@@ -1,11 +1,11 @@
 # Data Structures and Algorithms in JavaScript
 
-A few code snippets from _Data Structures and Algorithms with JavaScript by Michael McMillan_ and _JavaScript Data Structures and Algorithms by Sammie Bae_ are found [here](./structures/).
-
 Most of the problems found in this folder were sourced from,
 
 1. [Codility](https://app.codility.com/programmers/)
 2. [Leetcode](https://leetcode.com/)
+
+[Fundamentals](./structures/) also form a part of the lessons within this folder.
 
 Significant lessons from Codility,
 
