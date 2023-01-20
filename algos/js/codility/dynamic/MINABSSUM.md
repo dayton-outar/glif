@@ -199,3 +199,16 @@ The code snippet for the **Golden solution** makes use of sorting, [counting ele
 
 When initializing the `dp` array, it is already assumed that any array will have a sub-array that is an empty set. The sum of an empty set of an array is 0. Therefore, `dp[0]` is 0, which raises the possibility that a sum of 0 can be derived.
 
+First, we focus on the first two conditions within the nested loop shown below,
+
+```js
+if(dp[j] >= 0) {
+    dp[j] = count[i];
+} else if(j >= step && dp[j - step] > 0) {
+    dp[j] = dp[j - step] - 1;
+}
+```
+
+The aim of the first condition _denotes how many values_ $a$ _remain (maximally) after achieving sum_ $j$. Once $dp_j \geq 0$, sum $j$ is achieved. Ultimately, _if the previous value at_ $dp_j ­\geq 0$ _then we can set_ $dp_j = count_a$ ***as no value*** $a$ ***is needed to obtain the sum*** $j$
+
+Let's resume looking at the case of array, `[1, 5, 2, -2]` passed to the **Golden solution**.

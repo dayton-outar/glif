@@ -65,13 +65,15 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
     target = total / 2; // We want to choose some of the numbers (absolute values) to make their sum as large as possible without exceeding this target value
 
     console.log( count );
-    console.log( dp );
     console.log( '----' );
     
     for(let i = 0; i < count.length; i++) {
         if(count[i] > 0) {
             let step = i;
             for(let j = 0; j < dp.length; j++) {
+                console.log( j, i );
+                console.log('before', dp );
+
                 if(dp[j] >= 0) {
                     console.log('>=');
                     dp[j] = count[i];
@@ -79,9 +81,8 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
                     console.log('step');
                     dp[j] = dp[j - step] - 1;
                 }
-
-                console.log( j, i );
-                console.log( dp );                
+                
+                console.log( 'after', dp );             
                 
                 if(dp[j] >= 0) {
                     if(j === target) {
