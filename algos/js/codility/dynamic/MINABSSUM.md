@@ -211,7 +211,7 @@ if(dp[j] >= 0) {
 
 The aim of the first condition _denotes how many values_ $a$ _remain (maximally) after achieving sum_ $j$. Once $dp_j \geq 0$, sum $j$ is achieved. Ultimately, _if the previous value at_ $dp_j ­\geq 0$ _then we can set_ $dp_j = count_a$ ***as no value*** $a$ ***is needed to obtain the sum*** $j$.
 
-Let's resume looking at the case of array, `[1, 5, 2, -2]` passed to the **Golden solution** to understand the consequences of the first condition and the meaning of the highlighted statements in the last paragraph. So, as mentioned before, the `count` upon entering the nested loop would look like this ($i$ is the column header values),
+Let's resume looking at the case of array, `[1, 5, 2, -2]` passed to the **Golden solution** to understand the consequences of the first condition and the meaning of the highlighted statements in the last paragraph. So, as mentioned before, the `count` upon entering the nested loop would look like this ( $i$ is the column header values),
 
 | 0 | 1 | 2 | 3 | 4 | 5 |
 |--:|--:|--:|--:|--:|--:|
@@ -254,3 +254,31 @@ When `j` iterates to 2 given that `i` is 2, the first condition is not met but t
 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
 | 2 | 2 | 1 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |-1  |
+
+Let's do a couple more iterations for this case when `i` is 2. When `j` is 3, the second condition is met so the value at `dj[1]` is taken and subtracted by 1 and the result assigned to `dj[3]`. So, `dp` now looks like this,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
+| 2 | 2 | 1 | 1 |-1 |-1 |-1 |-1 |-1 |-1 |-1  |
+
+When `j` is 4 while `i` is 2, the second condition is met so the value at `dj[2]` is taken and subtracted by 1 and the result assigned to `dj[4]`. So, `dp` now looks like this,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
+| 2 | 2 | 1 | 1 | 0 |-1 |-1 |-1 |-1 |-1 |-1  |
+
+When `j` is 5 while `i` is 2, the second condition is met so the value at `dj[3]` is taken and subtracted by 1 and the result assigned to `dj[5]`. So, `dp` now looks like this,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
+| 2 | 2 | 1 | 1 | 0 | 0 |-1 |-1 |-1 |-1 |-1  |
+
+At this point within the inner loop, `j` is equal to the `target` (which is the largest possible _sum_ without exceeding $S \over 2$). So, the entire process terminates at the instructions shown below,
+
+```js
+if(j === target) {
+    return 0;
+} else {
+    minDiff = Math.min(minDiff, Math.abs( total - 2 * j ));
+}
+```
