@@ -87,7 +87,7 @@ Significant lessons from Codility,
 26. [Min-Max Division](./codility/binary-search/min-max.js) <sup>*</sup>
 27. [Nailing Planks](./codility/binary-search/nail.js) <sup>**</sup>
 28. [Number Solitaire](./codility/dynamic/solitaire.js) <sup>**</sup>
-29. [Minimum Absolute Sum](./codility/dynamic/MINABSSUM.md) <sup>**</sup>
+29. [Minimum Absolute Sum](./codility/dynamic/MINABSSUM.md) &#x2713;
 
 
 ## Further Reading
