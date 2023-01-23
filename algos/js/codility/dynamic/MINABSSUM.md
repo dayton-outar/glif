@@ -273,7 +273,7 @@ When `j` is 5 while `i` is 2, the second condition is met so the value at `dj[3]
 |--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
 | 2 | 2 | 1 | 1 | 0 | 0 |-1 |-1 |-1 |-1 |-1  |
 
-At this point within the inner loop, `j` is equal to the `target` (which is the largest possible _sum_ without exceeding $S \over 2$). So, the entire process terminates at the instructions shown below,
+At this point within the inner loop, `j` is equal to the `target` (which is the largest possible _sum_ without exceeding $S \over 2$). So, the entire process terminates through the first condition at the instructions shown below,
 
 ```js
 if(j === target) {
@@ -282,3 +282,89 @@ if(j === target) {
     minDiff = Math.min(minDiff, Math.abs( total - 2 * j ));
 }
 ```
+
+We can test this process in such a way that the execution path goes through the second condition of the instructions shown above. In the first case with array, `[1, 5, 2, -2]`, the absolute sum is an even number. What if the sum is an odd number? `j` will never equal to `target`. Let's try another case with the array, `[1, 3, 3]`. Here the `total` is 7 and `count` is `[0, 1, 0, 2]` (one 1 and two 3's).
+
+When `j` is 0 and `i` is 1, `dp` is updated to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|--:|--:|--:|--:|--:|--:|--:|--:|
+| 1 |-1 |-1 |-1 |-1 |-1 |-1 |-1 |
+
+and the `minDiff` is updated to 7.
+
+When `j` is 1 and `i` is 1, `dp` is updated to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|--:|--:|--:|--:|--:|--:|--:|--:|
+| 1 | 0 |-1 |-1 |-1 |-1 |-1 |-1 |
+
+and the `minDiff` is updated to 5.
+
+Neither `dp` nor `minDiff` is changed until `i` is iterated to 3.
+
+When `j` is 0 and `i` is 3, `dp` is updated to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|--:|--:|--:|--:|--:|--:|--:|--:|
+| 2 | 0 |-1 |-1 |-1 |-1 |-1 |-1 |
+
+the `minDiff` remains at 5.
+
+When `j` is 1 and `i` is 3, `dp` is updated to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|--:|--:|--:|--:|--:|--:|--:|--:|
+| 2 | 2 |-1 |-1 |-1 |-1 |-1 |-1 |
+
+the `minDiff` remains at 5.
+
+When `j` is 2 and `i` is 3, `dp` remains,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|--:|--:|--:|--:|--:|--:|--:|--:|
+| 2 | 2 |-1 |-1 |-1 |-1 |-1 |-1 |
+
+the `minDiff` remains at 5.
+
+When `j` is 3 and `i` is 3, `dp` is updated to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|--:|--:|--:|--:|--:|--:|--:|--:|
+| 2 | 2 |-1 | 1 |-1 |-1 |-1 |-1 |
+
+the `minDiff` remains at 1.
+
+When `j` is 4 and `i` is 3, `dp` is updated to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|--:|--:|--:|--:|--:|--:|--:|--:|
+| 2 | 2 |-1 | 1 | 1 |-1 |-1 |-1 |
+
+the `minDiff` remains at 1.
+
+When `j` is 5 and `i` is 3, `dp` is updated to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|--:|--:|--:|--:|--:|--:|--:|--:|
+| 2 | 2 |-1 | 1 | 1 |-1 |-1 |-1 |
+
+the `minDiff` remains at 1.
+
+When `j` is 6 and `i` is 3, `dp` is updated to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|--:|--:|--:|--:|--:|--:|--:|--:|
+| 2 | 2 |-1 | 1 | 1 |-1 | 0 |-1 |
+
+the `minDiff` remains at 1.
+
+When `j` is 7 and `i` is 3, `dp` is updated to,
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|--:|--:|--:|--:|--:|--:|--:|--:|
+| 2 | 2 |-1 | 1 | 1 |-1 | 0 | 0 |
+
+the `minDiff` remains at 1.
+
+So, because `j` is never eual to `target`, the process returns the last value of `minDiff`.

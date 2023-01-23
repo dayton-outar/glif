@@ -72,8 +72,6 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
             let step = i;
             for(let j = 0; j < dp.length; j++) {
                 console.log( 'j = ', j, 'i = ', i );
-                console.log('before', dp );
-
                 if(dp[j] >= 0) {
                     console.log('>=');
                     dp[j] = count[i];
@@ -82,7 +80,7 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
                     dp[j] = dp[j - step] - 1;
                 }
                 
-                console.log( 'after', dp );             
+                console.log( dp );             
                 
                 if(dp[j] >= 0) {
                     if(j === target) {
@@ -92,6 +90,8 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
                         minDiff = Math.min(minDiff, Math.abs( total - 2 * j ));
                     }
                 }
+
+                console.log('min diff:', minDiff);
             }
         }
     }
@@ -99,7 +99,9 @@ function solution(A) { // Score: 100% ... Time Complexity: O(N * max(abs(A))**2)
     return minDiff;
 }
 
-console.log( solution([ 1, 5, 2, -2 ]) );
+// console.log( solution([ 1, 5, 2, -2 ]) );
+
+console.log( solution([1, 3, 3]) );
 
 const slowSolution = (A) => {
     const N = A.length;
