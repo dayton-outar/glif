@@ -217,7 +217,7 @@ Let's resume looking at the case of array, `[1, 5, 2, -2]` passed to the **Golde
 |--:|--:|--:|--:|--:|--:|
 | 0 | 1 | 2 | 0 | 0 | 1 |
 
-whereas the `dp` would look like this ($j$ is the column header values),
+whereas the `dp` would look like this ( $j$ is the column header values),
 
 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---:|
