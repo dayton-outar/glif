@@ -39,3 +39,31 @@ function solution(A) { // Credit: https://gist.github.com/adicuco/d89e429d0acd06
     
     return missing;
 }
+
+// Another way ... review and attempting again after long time without looking at above solutions
+const countNumbers = A => {
+    let max = -Infinity
+    for( let i = 0; i < A.length; i++ ) {
+        max = Math.max(A[i], max);
+    }
+
+    if (max <= 0) return [ 0, 0];
+
+    let numbers = Array(max + 1).fill(0);
+
+    for( let i = 0; i < A.length; i++ ) {
+        numbers[A[i]]++;
+    }
+
+    return numbers;
+}
+
+const solution = A => {
+    let numbers = countNumbers(A);
+
+    for( let i = 1; i < numbers.length; i++ ) {
+        if (numbers[i] == 0) return i;
+    }
+
+    return numbers.length;
+}

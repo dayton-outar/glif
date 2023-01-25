@@ -96,3 +96,31 @@ function solution2(N, A) { // Credit: https://gist.github.com/jeanlescure/98542e
 
     return counters;
 }
+
+// I did it again without looking back at solutions
+const solution3 = (N, A) => {
+    let counters = Array(N).fill(0);
+    let maxCounter = 0;
+    let lastMax = 0;
+
+    for( let i = 0; i < A.length; i++ ) {
+        if (A[i] >= 1 && A[i] <= N) {
+            counters[A[i] - 1] = Math.max(counters[A[i] - 1], lastMax);
+            counters[A[i] - 1]++;
+            maxCounter = Math.max(maxCounter, counters[A[i] - 1]);
+        }
+
+        if (A[i] > N) {
+            lastMax = maxCounter;
+        }
+
+    }
+
+    for( let i = 0; i < counters.length; i++ ) {
+        counters[i] = Math.max(counters[i], lastMax);
+    }
+
+    return counters;
+}
+
+console.log( solution( 5, [3, 4, 4, 6, 1, 4, 4] ) );

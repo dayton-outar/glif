@@ -63,10 +63,10 @@ function solution(A) { // Double with 2 elements failed ... Corrected loop limit
 
 // Credit: https://gist.github.com/jeanlescure/797eef515cfa4a05830b
 function solution2(A) {
-    var sumRight = A.reduce((pv, cv, idx) => (idx > 0) ? (pv + cv) : (0), 0);
-    var sumLeft = 0;
+    let sumRight = A.reduce((pv, cv, idx) => (idx > 0) ? (pv + cv) : (0), 0); // Ignoring the first index
+    let sumLeft = 0;
     var substractions = [];
-    var maxI = A.length - 1;
+    let maxI = A.length - 1;
     
     for(var i = 0; i < maxI; i += 1){
         sumLeft += A[i];
@@ -74,5 +74,9 @@ function solution2(A) {
         if (i + 1 <= maxI) sumRight -= A[i + 1];
     }
     
+    // console.log( substractions );
+
     return substractions.reduce((pv, cv, idx) => (idx > 0) ? ((pv < cv)? pv : cv) : (cv), 0);
 }
+
+console.log( solution2( [3, 1, 2, 4, 3] ) );
