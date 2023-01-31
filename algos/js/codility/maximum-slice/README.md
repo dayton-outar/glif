@@ -64,7 +64,7 @@ const quadraticMaxSlice = (A, pref) => {
 }
 
 let elements = [5, -7, 3, 5, -2, 4, -1];
-quadraticMaxSlice( elements, prefixSums( elements ); // 10
+quadraticMaxSlice( elements, prefixSums( elements ) ); // 10
 ```
 
 We can also solve this problem without using preﬁx sums, within the same time complexity. Assume that we know the sum of slice $(p, q)$, so $s = a_p + a_{p + 1} + \ldots + a_q$. The sum of the slice with one more element $(p, q + 1)$ equals $s + a_{q + 1}$. Following this observation, there is no need to compute the sum each time from the beginning; we can use the previously calculated sum.
