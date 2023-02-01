@@ -59,7 +59,6 @@ Significant lessons from Codility,
 
 ## Most Challenging Problems
 
-1. [Passing Cars](./codility/prefix-sums/passingcars.js) <sup>*</sup>
 2. [Min Avg Two Slice](./codility/prefix-sums/genomic.js) <sup>*</sup>
 3. [Triangle](./codility/sorting/triangluar.js)
 4. [Number of Disc Intersections](./codility/sorting/disc.js) <sup>*</sup>

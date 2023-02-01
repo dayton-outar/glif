@@ -53,3 +53,39 @@ function solution(A) { // Credit: https://danwritescode.com/passing-cars-codilit
 }
 
 // Could not understand the question. Just went straight for a solution: https://youtu.be/HAfrXIE5QDY
+
+// Another attempt a few weeks later
+const prefixSum = A => {
+  let P = Array(A.length + 1).fill(0);
+
+  for( let i = 1; i < ( A.length + 1); i++ ) {
+      P[i] = P[i - 1] + A[i - 1];
+  }
+
+  return P;
+}
+
+const countTotal = (P, x, y) => P[y + 1] - P[x];
+
+const solution2 = A => {
+  let prefixes = prefixSum( A );
+  let sumPairs = 0;
+
+  for( let i = 0; i < A.length; i++ ) {
+      if (A[i] == 0) {
+          sumPairs += countTotal(prefixes, i, (A.length - 1 ) )
+      }
+  }
+
+  if (sumPairs > 1000000000) {
+      sumPairs = -1;
+  }
+
+  return sumPairs;
+}
+
+// let prefixes = prefixSum( [0, 1, 0, 1, 1] );
+// console.log( prefixes );
+// console.log( countTotal(prefixes, 2, 4) );
+
+console.log( solution2( [0, 1, 0, 1, 1] ) );
