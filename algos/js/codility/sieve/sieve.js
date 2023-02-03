@@ -37,8 +37,9 @@ const arrayF = n => {
 
 console.log( arrayF(20) );
 
-const factorization = (x, F) => {
+const factorization = x => {
     let primeFactors = [];
+    let F = arrayF(x);
 
     while ( F[x] > 0 ) {
         primeFactors.push(F[x]);
@@ -49,4 +50,4 @@ const factorization = (x, F) => {
     return primeFactors;
 }
 
-console.log( factorization(20, arrayF(20)) );
+console.log( factorization(20) );

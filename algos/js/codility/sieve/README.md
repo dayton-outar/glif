@@ -81,8 +81,9 @@ With this approach we can factorize numbers very quickly. If we know that one of
 
 **11.3: Factorization of $x — O(log\text{ }x)$.**
 ```js
-const factorization = (x, F) => {
+const factorization = x => {
     let primeFactors = [];
+    let F = arrayF(x);
 
     while ( F[x] > 0 ) {
         primeFactors.push(F[x]);
@@ -93,7 +94,7 @@ const factorization = (x, F) => {
     return primeFactors;
 }
 
-factorization(20, arrayF(20)); // [ 2, 2, 5 ]
+factorization(20); // [ 2, 2, 5 ]
 ```
 
 Number $x$ cannot have more than log x prime factors, because every prime factor is $\geq 2$. Factorization by the above method works in $O(log\text{ }x)$ time complexity. Note that consecutive factors will be presented in non-decreasing order.
