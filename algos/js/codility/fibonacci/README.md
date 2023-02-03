@@ -59,7 +59,7 @@ $$
 Even faster solution is possible by using the following formula:[^2]
 
 $$\large
-Fib_n = {({1 + \sqrt 5 \over 2})^n} - {({1 - \sqrt 5 \over 2})^n} \over \sqrt 5
+Fib_n = { {({1 + \sqrt 5 \over 2})^n} - {({1 - \sqrt 5 \over 2})^n} \over \sqrt 5 }
 $$
 
 ## 13.2 Exercise
