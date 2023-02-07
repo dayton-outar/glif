@@ -183,7 +183,7 @@ Write an efficient algorithm for the following assumptions:
 - $N$ is an integer within the range [2..100,000];
 - each element of array A is an integer within the range [−10,000..10,000].
 
-**Solutions:**
+**Solution:**
 
 According to Dan Avramescu,
 
