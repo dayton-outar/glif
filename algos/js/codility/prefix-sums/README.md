@@ -132,9 +132,9 @@ Evaluations of `leftPos` in the first loop is shown in the table below.
 ### Minimum Average of Two Slices
 
 **Problem:**
-A non-empty array A consisting of N integers is given. A pair of integers $(P, Q)$, such that $0 ≤ P < Q < N$, is called a _slice_ of array A (notice that the slice contains at least two elements). The _average_ of a slice $(P, Q)$ is the sum of $A[P] + A[P + 1] + ... + A[Q]$ divided by the length of the slice. To be precise, the average equals $(A[P] + A[P + 1] + ... + A[Q]) / (Q − P + 1)$.
+A non-empty array $A$ consisting of $N$ integers is given. A pair of integers $(P, Q)$, such that $0 ≤ P < Q < N$, is called a _slice_ of array $A$ (notice that the slice contains at least two elements). The _average_ of a slice $(P, Q)$ is the sum of $A[P] + A[P + 1] + ... + A[Q]$ divided by the length of the slice. To be precise, the average equals $(A[P] + A[P + 1] + ... + A[Q]) / (Q − P + 1)$.
 
-For example, array A such that:
+For example, array $A$ such that:
 
 ```js
     A[0] = 4
@@ -162,7 +162,7 @@ const solution = A => {
 }
 ```
 
-that, given a non-empty array A consisting of N integers, returns the starting position of the slice with the minimal average. If there is more than one slice with a minimal average, you should return the smallest starting position of such a slice.
+that, given a non-empty array $A$ consisting of $N$ integers, returns the starting position of the slice with the minimal average. If there is more than one slice with a minimal average, you should return the smallest starting position of such a slice.
 
 For example, given array A such that:
 
@@ -180,7 +180,7 @@ the function should return 1, as explained above.
 
 Write an efficient algorithm for the following assumptions:
 
-- N is an integer within the range [2..100,000];
+- $N$ is an integer within the range [2..100,000];
 - each element of array A is an integer within the range [−10,000..10,000].
 
 **Solutions:**
