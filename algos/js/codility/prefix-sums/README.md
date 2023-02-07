@@ -189,7 +189,7 @@ According to Dan Avramescu,
 
 > The Min Average Slice problem gives more of a mathematical challenge than a coding one.
 >
-> The trick here is to figure out that you only need to find the minimum average of slices which are 2 or 3 in length. That is because a slice of 4 or larger is basically a sum of slices with the length of 2 or 3. A composed slice will never have an average sum lower than its components.
+> The trick here is to figure out that you only need to find the minimum average of slices which are 2 or 3 in length. That is because ***a slice of 4 or larger is basically a sum of slices with the length of 2 or 3. A composed slice will never have an average sum lower than its components.***
 
 ```js
 // Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/MinAvgTwoSlice.md
