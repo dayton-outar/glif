@@ -87,19 +87,22 @@ function solution(A) { // Credit: https://github.com/yaseenshaik/codility-soluti
  
     var currentSum = A[0] + A[1];
     var minAvgSlice = currentSum / 2;
+
     for (var i = 2; i < A.length; i++) {
        currentSum += A[i];
        var newAvg = currentSum / 3;
+
        if (newAvg < minAvgSlice) {
           minAvgSlice = newAvg;
-          start = i-2;
+          start = i - 2;
        }
  
        currentSum -= A[i-2];
        newAvg = currentSum / 2;
+
        if (newAvg < minAvgSlice) {
           minAvgSlice = newAvg;
-          start = i-1;
+          start = i - 1;
        }
     }
  
@@ -109,7 +112,8 @@ function solution(A) { // Credit: https://github.com/yaseenshaik/codility-soluti
 
 // Credit: https://danwritescode.com/min-average-slice-codility-100-correct-javascript-solution/
 // The Min Average Slice problem gives more of a mathematical challenge than a coding one.
-// The trick here is to figure out that you only need to find the minimum average of slices which are 2 or 3 in length. That is because a slice of 4 or larger is basically a sum of slices with the length of 2 or 3 . A composed slice will never have an average sum lower than its components.
+// The trick here is to figure out that you only need to find the minimum average of slices which are 2 or 3 in length. 
+// That is because a slice of 4 or larger is basically a sum of slices with the length of 2 or 3 . A composed slice will never have an average sum lower than its components.
 // Thus the solution is an efficient algorithm with O(N) complexity as shown below (solution in Javascript):
 
 function solution(A) {
