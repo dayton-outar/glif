@@ -60,6 +60,7 @@ Significant lessons from Codility,
 ## Most Challenging Problems
 
 1. [Min Avg Two Slice](./codility/prefix-sums#minimum-average-of-two-slices) &#x2713;
+2. [Mushroom Picker](./codility/prefix-sums#51-exercise) &#x2713; :microscope:
 3. [Triangle](./codility/sorting/triangluar.js)
 4. [Number of Disc Intersections](./codility/sorting/disc.js) <sup>*</sup>
 5. [Fish](./codility/stacks-queues/fish.js)
