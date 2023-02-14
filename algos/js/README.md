@@ -60,34 +60,35 @@ Significant lessons from Codility,
 ## Most Challenging Problems
 
 1. [Min Avg Two Slice](./codility/prefix-sums#minimum-average-of-two-slices) &#x2713;
-2. [Mushroom Picker](./codility/prefix-sums#51-exercise) &#x2713; :microscope:
-3. [Triangle](./codility/sorting/triangluar.js)
-4. [Number of Disc Intersections](./codility/sorting/disc.js) <sup>*</sup>
-5. [Fish](./codility/stacks-queues/fish.js)
-6. [Stone Wall](./codility/stacks-queues/stone-wall.js) <sup><a href="http://straightdeveloper.com/how-to-get-100-score-on-the-stonewall-exercise-on-codility/">ref</a></sup>
-7. [Equi Leader](./codility/leader/equi.js) <sup>*</sup>
-8. [Max Profit](./codility/maximum-slice/profit.js) <sup>*</sup>
-9. [Max Slice Sum](./codility/maximum-slice/num.js) <sup>*</sup>
-10. [Max Double Slice Sum](./codility/maximum-slice/sum.js) <sup>**</sup>
-11. [Count Factors](./codility/prime/factor.js) <sup>*</sup>
-12. [Minimum Perimeter Rectangle](./codility/prime/perimeter.js) <sup>*</sup>
-13. [Flags](./codility/prime/flags.js) <sup>**</sup>
-14. [Peaks](./codility/prime/peak.js) <sup>**</sup>
-15. [Count Nondivisible](./codility/sieve/non-divisible.js) <sup><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">**</a></sup>
-16. [Count Semiprimes](./codility/sieve/semi-primes.js) <sup><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">**</a></sup>
-17. [Chocolates by Numbers](./codility/euclidean/chocolates.js) <sup><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">**</a></sup>
-18. [Common Prime Divisors](./codility/euclidean/prime-divisors.js) <sup><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">**</a></sup>
-19. [Count Distinct Slices](./codility/caterpillar/slices.js) <sup>*</sup>
-20. [Count Triangle](./codility/caterpillar/triangle.js) <sup>*</sup>
-21. [Min Absolute Sum of Two](./codility/caterpillar/two.js) <sup>*</sup>
-22. [Max Non-overlapping Segments](./codility/greedy/segments.js) <sup>*</sup>
-23. [Tie Ropes](./codility/greedy/ropes.js)
-24. [Fib Frog](./codility/fibonacci/frog.js) <sup>*</sup>
-25. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
-26. [Min-Max Division](./codility/binary-search/min-max.js) <sup>*</sup>
-27. [Nailing Planks](./codility/binary-search/nail.js) <sup>**</sup>
-28. [Number Solitaire](./codility/dynamic/solitaire.js) <sup>**</sup>
-29. [Minimum Absolute Sum](./codility/dynamic/MINABSSUM.md) &#x2713;
+2. [Genomic Range Query](./codility/prefix-sums/GENOMIC.md) &#x2713;
+3. [Mushroom Picker](./codility/prefix-sums#51-exercise) &#x2713; :microscope:
+4. [Triangle](./codility/sorting/triangluar.js)
+5. [Number of Disc Intersections](./codility/sorting/disc.js) <sup>*</sup>
+6. [Fish](./codility/stacks-queues/fish.js)
+7. [Stone Wall](./codility/stacks-queues/stone-wall.js) <sup><a href="http://straightdeveloper.com/how-to-get-100-score-on-the-stonewall-exercise-on-codility/">ref</a></sup>
+8. [Equi Leader](./codility/leader/equi.js) <sup>*</sup>
+9. [Max Profit](./codility/maximum-slice/profit.js) <sup>*</sup>
+10. [Max Slice Sum](./codility/maximum-slice/num.js) <sup>*</sup>
+11. [Max Double Slice Sum](./codility/maximum-slice/sum.js) <sup>**</sup>
+12. [Count Factors](./codility/prime/factor.js) <sup>*</sup>
+13. [Minimum Perimeter Rectangle](./codility/prime/perimeter.js) <sup>*</sup>
+14. [Flags](./codility/prime/flags.js) <sup>**</sup>
+15. [Peaks](./codility/prime/peak.js) <sup>**</sup>
+16. [Count Nondivisible](./codility/sieve/non-divisible.js) <sup><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">**</a></sup>
+17. [Count Semiprimes](./codility/sieve/semi-primes.js) <sup><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">**</a></sup>
+18. [Chocolates by Numbers](./codility/euclidean/chocolates.js) <sup><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">**</a></sup>
+19. [Common Prime Divisors](./codility/euclidean/prime-divisors.js) <sup><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">**</a></sup>
+20. [Count Distinct Slices](./codility/caterpillar/slices.js) <sup>*</sup>
+21. [Count Triangle](./codility/caterpillar/triangle.js) <sup>*</sup>
+22. [Min Absolute Sum of Two](./codility/caterpillar/two.js) <sup>*</sup>
+23. [Max Non-overlapping Segments](./codility/greedy/segments.js) <sup>*</sup>
+24. [Tie Ropes](./codility/greedy/ropes.js)
+25. [Fib Frog](./codility/fibonacci/frog.js) <sup>*</sup>
+26. [Ladder](./codility/fibonacci/ladder.js) <sup>*</sup>
+27. [Min-Max Division](./codility/binary-search/min-max.js) <sup>*</sup>
+28. [Nailing Planks](./codility/binary-search/nail.js) <sup>**</sup>
+29. [Number Solitaire](./codility/dynamic/solitaire.js) <sup>**</sup>
+30. [Minimum Absolute Sum](./codility/dynamic/MINABSSUM.md) &#x2713;
 
 
 ## Further Reading

@@ -93,8 +93,8 @@ function solution3(S, P, Q) { // Score: 62 %
 }
 
 // Score: 100%
-function solution(S, P, Q) { // Credit: https://danwritescode.com/genomic-range-query-codility-100-correct-javascript-solution/
-    // write your code in JavaScript (Node.js 14)
+// Credit: https://danwritescode.com/genomic-range-query-codility-100-correct-javascript-solution/
+function solution(S, P, Q) {
     let impact = [];
     for (let i = 0; i < P.length; i++) {
         let x = 4;
