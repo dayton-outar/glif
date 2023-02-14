@@ -73,6 +73,6 @@ function solution(S, P, Q) {
 }
 ```
 
-A brute force solution would give us an algorithm that is $O(n * k)$, where $n$ is the length of the string S and $k$ is the number of elements in the slices determined by P and Q. But a nested loop is not needed, if we just identify the letter in the string for each slice that has the lowest value. Take note of the code snippet above. A search is done to find the lowest value first and progressively move up to the highest value.
+A brute force solution would give us an algorithm that is $O(n * k)$, where $n$ is the length of the string S and $k$ is the number of elements in the slices determined by P and Q. But is a nested loop needed? If we just identify the letter in the string for each slice that has the lowest value. Take note of the code snippet above. A search is done to find the lowest value first and progressively move up to the highest value.
 
 I find it interesting that Codility, returns a _detected time complexity_ for this solution as $O(n + k)$. I would expect that a loop is done in the Javascript string function, `indexOf` (See [here](https://learnersbucket.com/examples/algorithms/javascript-string-contains-substring/#:~:text=We%20are%20checking%20the%20substring,complexity%20is%20O(1).)). Would love if Codility can explain how they arrived at this deteceted time complexity.
