@@ -61,8 +61,8 @@ Significant lessons from Codility,
 
 1. [Min Avg Two Slice](./codility/prefix-sums#minimum-average-of-two-slices) &#x2713;
 2. [Genomic Range Query](./codility/prefix-sums/GENOMIC.md) &#x2713;
-3. [Mushroom Picker](./codility/prefix-sums#51-exercise) &#x2713; :microscope:
-4. [Triangle](./codility/sorting/triangluar.js)
+3. [Mushroom Picker](./codility/prefix-sums#51-exercise) &#x2713; :thinking:
+4. [Triangle](./codility/sorting/TRIANGLE.md)
 5. [Number of Disc Intersections](./codility/sorting/disc.js) <sup>*</sup>
 6. [Fish](./codility/stacks-queues/fish.js)
 7. [Stone Wall](./codility/stacks-queues/stone-wall.js) <sup><a href="http://straightdeveloper.com/how-to-get-100-score-on-the-stonewall-exercise-on-codility/">ref</a></sup>
@@ -88,7 +88,7 @@ Significant lessons from Codility,
 27. [Min-Max Division](./codility/binary-search/min-max.js) <sup>*</sup>
 28. [Nailing Planks](./codility/binary-search/nail.js) <sup>**</sup>
 29. [Number Solitaire](./codility/dynamic/solitaire.js) <sup>**</sup>
-30. [Minimum Absolute Sum](./codility/dynamic/MINABSSUM.md) &#x2713;
+30. [Minimum Absolute Sum](./codility/dynamic/MINABSSUM.md) &#x2713; :thinking:
 
 
 ## Further Reading

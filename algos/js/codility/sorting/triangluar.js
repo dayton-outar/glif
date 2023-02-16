@@ -30,7 +30,9 @@
 // N is an integer within the range [0..100,000];
 // each element of array A is an integer within the range [−2,147,483,648..2,147,483,647].
 
-function solution(A) { // Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/Triangle.md
+// Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/Triangle.md
+
+function solution(A) {
     A.sort((a, b) => (a - b));
 
     for (var i = 0; i < A.length - 2; i++) {
