@@ -1,6 +1,9 @@
 # Algorithms
 
-This folder contains projects focused on learning data structures and algorithms. The languages of preference were [C (also includes some C++)](./c-c%2B%2B/) and [JavaScript](./js/).
+This folder contains projects focused on learning data structures and algorithms. The languages of preference were,
+
+- [C (also includes some C++)](./c-c%2B%2B/)
+- [JavaScript](./js/).
 
 > Informally, an ***algorithm*** is any well-defined computational procedure that takes some value, or set of values, as ***input*** and produces some value, or set of values, as ***output*** in a _finite amount of time_. An algorithm is thus a sequence of computational steps that transform the input into the output.[^1]
 
