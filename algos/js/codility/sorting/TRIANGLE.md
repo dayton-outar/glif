@@ -77,4 +77,4 @@ Now, why would we sort the array in the first line of the `solution` function?
 
 The aim of the solution is to find the first triplet to declare that a triplet has been found. It does not require all triplets to be found, hence the reason for the return when the condition is met.
 
-So, why was sorting the array by values important first, especially that there was a condition placed on the indices of the array such that $0 ≤ P < Q < R < N$?
+So, why was sorting the array by values important first, especially that there was a condition placed on the indices of the array such that $0 ≤ P < Q < R < N$? Putting the values of the array in ascending order allows ease of finding three values that meet the condition for a _triangular_.
