@@ -29,7 +29,9 @@
 // N is an integer within the range [0..100,000];
 // each element of array A is an integer within the range [0..2,147,483,647].
 
-function sortAsc(a, b) { // Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/NumberOfDiscIntersections.md
+// Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/NumberOfDiscIntersections.md
+
+function sortAsc(a, b) {
     return (a - b)
 }
 
@@ -44,16 +46,19 @@ function solution(A) { // Score: 100%
         upper[i] = i + A[i];
     }
 
-    lower.sort(sortAsc)
-    upper.sort(sortAsc)
-
+    lower.sort(sortAsc);
+    upper.sort(sortAsc);
+    
     for (var i = 0; i < A.length; i++) {
         while (j < A.length && upper[i] >= lower[j]) {
             counter += j - i;
             j++;
         }
+        console.log(i, j, counter);
         if (counter > 10000000) return -1;
     }
 
     return counter;
 }
+
+console.log( solution([1, 5, 2, 1, 4, 0]) );

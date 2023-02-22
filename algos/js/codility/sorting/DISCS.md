@@ -40,3 +40,54 @@ Write an **efficient** algorithm for the following assumptions:
 
 ## Solution
 
+Credit should be given to Yaseen Shaik (See [here](https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/Triangle.md)) for providing this solution.
+
+```js
+function sortAsc(a, b) {
+    return (a - b)
+}
+
+function solution(A) {
+    var counter = 0,
+        j = 0;
+    var lower = [];
+    var upper = []
+
+    for (var i = 0; i < A.length; i++) {
+        lower[i] = i - A[i];
+        upper[i] = i + A[i];
+    }
+
+    lower.sort(sortAsc)
+    upper.sort(sortAsc)
+
+    for (var i = 0; i < A.length; i++) {
+        while (j < A.length && upper[i] >= lower[j]) {
+            counter += j - i;
+            j++;
+        }
+        
+        if (counter > 10000000) return -1;
+    }
+
+    return counter;
+}
+
+console.log( solution([1, 5, 2, 1, 4, 0]) );
+```
+
+So, the idea in this solution is to find the lower bound and the upper bound of the discs on the x-axis based on the radius. Since `i` is the center of the discs, the lower bound is `i - A[i]` and the upper bound is `i + A[i]`. So, for the case of the array, `[1, 5, 2, 1, 4, 0]`, the lower and upper bound values are,
+
+| array | values |
+| :---- | :----- |
+| lower | `[-4, -1, 0, 0, 2, 5]` |
+| upper | `[1, 4, 4, 5, 6, 8]` |
+
+The deciding factor of this algorithm is the condition, `upper[i] >= lower[j]`, and the assignment to `counter`, where `counter += j - i`. The nested loop does not have the effect of $O(n^2)$ because the loop variable, `j`, is not re-initialized in the outer loop.
+
+The detected time complexity for this solution is $O(n \cdot \text{log n})$.
+
+## Videos
+
+1. [Number Of Disc Intersections (Codility) Solution](https://youtu.be/HV8tzIiidSw)
+2. [Disc Intersections Codility Test Solution Explained - Full Tutorial Explanation - in Python!](https://youtu.be/NYjnoZulqrQ)
