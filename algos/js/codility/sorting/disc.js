@@ -52,9 +52,10 @@ function solution(A) { // Score: 100%
     for (var i = 0; i < A.length; i++) {
         while (j < A.length && upper[i] >= lower[j]) {
             counter += j - i;
+            console.log(i, j, counter);
             j++;
         }
-        console.log(i, j, counter);
+        
         if (counter > 10000000) return -1;
     }
 

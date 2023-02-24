@@ -74,10 +74,10 @@ Significant lessons from Codility,
 13. [Minimum Perimeter Rectangle](./codility/prime/perimeter.js) <sup>*</sup>
 14. [Flags](./codility/prime/flags.js) <sup>**</sup>
 15. [Peaks](./codility/prime/peak.js) <sup>**</sup>
-16. [Count Nondivisible](./codility/sieve/non-divisible.js) <sup><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">**</a></sup>
-17. [Count Semiprimes](./codility/sieve/semi-primes.js) <sup><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">**</a></sup>
-18. [Chocolates by Numbers](./codility/euclidean/chocolates.js) <sup><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">**</a></sup>
-19. [Common Prime Divisors](./codility/euclidean/prime-divisors.js) <sup><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">**</a></sup>
+16. [Count Nondivisible](./codility/sieve/non-divisible.js) <sup>*</sup>
+17. [Count Semiprimes](./codility/sieve/semi-primes.js) <sup>*</sup>
+18. [Chocolates by Numbers](./codility/euclidean/chocolates.js) <sup>*</sup>
+19. [Common Prime Divisors](./codility/euclidean/prime-divisors.js) <sup>*</sup>
 20. [Count Distinct Slices](./codility/caterpillar/slices.js) <sup>*</sup>
 21. [Count Triangle](./codility/caterpillar/triangle.js) <sup>*</sup>
 22. [Min Absolute Sum of Two](./codility/caterpillar/two.js) <sup>*</sup>

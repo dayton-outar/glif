@@ -112,6 +112,7 @@ Also good point to mention is the usefulness of the formula in [12.4](#124-least
 ## References
 
 1. [Codility Training Media - Euclidean Algorithm](https://codility.com/media/train/10-Gcd.pdf)
+2. [Euclidean Algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm)
 
 ## Videos
 
