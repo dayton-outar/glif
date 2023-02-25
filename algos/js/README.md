@@ -76,15 +76,15 @@ Significant lessons from Codility,
 15. [Peaks](./codility/prime/PEAKS.md) :face_in_clouds:
 16. [Count Semiprimes](./codility/sieve/COUNTSEMIPRIMES.md) :thinking:
 17. [Count Nondivisible](./codility/sieve/COUNTNONDIVISIBLE.md) :thinking:
-18. [Chocolates by Numbers](./codility/euclidean/chocolates.js) :thinking:
-19. [Common Prime Divisors](./codility/euclidean/prime-divisors.js) :thinking:
-20. [Count Distinct Slices](./codility/caterpillar/slices.js) :thinking:
-21. [Count Triangle](./codility/caterpillar/triangle.js) :thinking:
-22. [Min Absolute Sum of Two](./codility/caterpillar/two.js) :thinking:
-23. [Max Non-overlapping Segments](./codility/greedy/segments.js) :thinking:
-24. [Tie Ropes](./codility/greedy/ropes.js)
-25. [Fib Frog](./codility/fibonacci/frog.js) :thinking:
-26. [Ladder](./codility/fibonacci/ladder.js) :thinking:
+18. [Chocolates by Numbers](./codility/euclidean/CHOCOLATE.md) :thinking:
+19. [Common Prime Divisors](./codility/euclidean/COMMONPRIME.md) :thinking:
+20. [Fib Frog](./codility/fibonacci/FIBFROG.md) :thinking:
+21. [Ladder](./codility/fibonacci/ladder.js) :thinking:
+22. [Count Distinct Slices](./codility/caterpillar/slices.js) :thinking:
+23. [Count Triangle](./codility/caterpillar/triangle.js) :thinking:
+24. [Min Absolute Sum of Two](./codility/caterpillar/two.js) :thinking:
+25. [Max Non-overlapping Segments](./codility/greedy/segments.js) :thinking:
+26. [Tie Ropes](./codility/greedy/ropes.js)
 27. [Min-Max Division](./codility/binary-search/min-max.js) :thinking:
 28. [Nailing Planks](./codility/binary-search/nail.js) :face_in_clouds:
 29. [Number Solitaire](./codility/dynamic/solitaire.js) :face_in_clouds:
