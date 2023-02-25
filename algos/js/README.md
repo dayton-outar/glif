@@ -69,11 +69,11 @@ Significant lessons from Codility,
 8. [Equi Leader](./codility/leader/EQUILEADER.md) :thinking:
 9. [Max Profit](./codility/maximum-slice/MAXPROFIT.md) :thinking:
 10. [Max Slice Sum](./codility/maximum-slice/MAXSLICESUM.md) :thinking:
-11. [Max Double Slice Sum](./codility/maximum-slice/MAXDOUBLESLICE.md) <sup>**</sup>
-12. [Count Factors](./codility/prime/factor.js) <sup>*</sup>
-13. [Minimum Perimeter Rectangle](./codility/prime/perimeter.js) <sup>*</sup>
-14. [Flags](./codility/prime/flags.js) <sup>**</sup>
-15. [Peaks](./codility/prime/peak.js) <sup>**</sup>
+11. [Max Double Slice Sum](./codility/maximum-slice/MAXDOUBLESLICE.md) :face_in_clouds:
+12. [Count Factors](./codility/prime/factor.js) :thinking:
+13. [Minimum Perimeter Rectangle](./codility/prime/perimeter.js) :thinking:
+14. [Flags](./codility/prime/flags.js) :face_in_clouds:
+15. [Peaks](./codility/prime/peak.js) :face_in_clouds:
 16. [Count Nondivisible](./codility/sieve/non-divisible.js) :thinking:
 17. [Count Semiprimes](./codility/sieve/semi-primes.js) :thinking:
 18. [Chocolates by Numbers](./codility/euclidean/chocolates.js) :thinking:
@@ -86,8 +86,8 @@ Significant lessons from Codility,
 25. [Fib Frog](./codility/fibonacci/frog.js) :thinking:
 26. [Ladder](./codility/fibonacci/ladder.js) :thinking:
 27. [Min-Max Division](./codility/binary-search/min-max.js) :thinking:
-28. [Nailing Planks](./codility/binary-search/nail.js) <sup>**</sup>
-29. [Number Solitaire](./codility/dynamic/solitaire.js) <sup>**</sup>
+28. [Nailing Planks](./codility/binary-search/nail.js) :face_in_clouds:
+29. [Number Solitaire](./codility/dynamic/solitaire.js) :face_in_clouds:
 30. [Minimum Absolute Sum](./codility/dynamic/MINABSSUM.md) &#x2713; :thinking:
 
 
