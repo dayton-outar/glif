@@ -70,12 +70,12 @@ Significant lessons from Codility,
 9. [Max Profit](./codility/maximum-slice/MAXPROFIT.md) :thinking:
 10. [Max Slice Sum](./codility/maximum-slice/MAXSLICESUM.md) :thinking:
 11. [Max Double Slice Sum](./codility/maximum-slice/MAXDOUBLESLICE.md) :face_in_clouds:
-12. [Count Factors](./codility/prime/factor.js) :thinking:
-13. [Minimum Perimeter Rectangle](./codility/prime/perimeter.js) :thinking:
-14. [Flags](./codility/prime/flags.js) :face_in_clouds:
-15. [Peaks](./codility/prime/peak.js) :face_in_clouds:
-16. [Count Nondivisible](./codility/sieve/non-divisible.js) :thinking:
-17. [Count Semiprimes](./codility/sieve/semi-primes.js) :thinking:
+12. [Count Factors](./codility/prime/COUNTFACTORS.md) :thinking:
+13. [Minimum Perimeter Rectangle](./codility/prime/MINPERIMETERRECTANGLE.md) :thinking:
+14. [Flags](./codility/prime/FLAGS.md) :face_in_clouds:
+15. [Peaks](./codility/prime/PEAKS.md) :face_in_clouds:
+16. [Count Semiprimes](./codility/sieve/COUNTSEMIPRIMES.md) :thinking:
+17. [Count Nondivisible](./codility/sieve/COUNTNONDIVISIBLE.md) :thinking:
 18. [Chocolates by Numbers](./codility/euclidean/chocolates.js) :thinking:
 19. [Common Prime Divisors](./codility/euclidean/prime-divisors.js) :thinking:
 20. [Count Distinct Slices](./codility/caterpillar/slices.js) :thinking:
