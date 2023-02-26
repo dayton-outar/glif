@@ -79,15 +79,15 @@ Significant lessons from Codility,
 18. [Chocolates by Numbers](./codility/euclidean/CHOCOLATE.md) :thinking:
 19. [Common Prime Divisors](./codility/euclidean/COMMONPRIME.md) :thinking:
 20. [Fib Frog](./codility/fibonacci/FIBFROG.md) :thinking:
-21. [Ladder](./codility/fibonacci/ladder.js) :thinking:
-22. [Count Distinct Slices](./codility/caterpillar/slices.js) :thinking:
-23. [Count Triangle](./codility/caterpillar/triangle.js) :thinking:
-24. [Min Absolute Sum of Two](./codility/caterpillar/two.js) :thinking:
-25. [Max Non-overlapping Segments](./codility/greedy/segments.js) :thinking:
-26. [Tie Ropes](./codility/greedy/ropes.js)
-27. [Min-Max Division](./codility/binary-search/min-max.js) :thinking:
-28. [Nailing Planks](./codility/binary-search/nail.js) :face_in_clouds:
-29. [Number Solitaire](./codility/dynamic/solitaire.js) :face_in_clouds:
+21. [Ladder](./codility/fibonacci/LADDER.md) :thinking:
+22. [Min-Max Division](./codility/binary-search/MINMAXDIVISION.md) :thinking:
+23. [Nailing Planks](./codility/binary-search/NAILINGPLANKS.md) :face_in_clouds:
+24. [Count Distinct Slices](./codility/caterpillar/COUNTDISTINCT.md) :thinking:
+25. [Count Triangle](./codility/caterpillar/COUNTRIANGLES.md) :thinking:
+26. [Min Absolute Sum of Two](./codility/caterpillar/MINABSSUM.md) :thinking:
+27. [Max Non-overlapping Segments](./codility/greedy/MAXNONOVERLAPPING.md) :thinking:
+28. [Tie Ropes](./codility/greedy/TIEROPES.md)
+29. [Number Solitaire](./codility/dynamic/SOLITAIRE.md) :face_in_clouds:
 30. [Minimum Absolute Sum](./codility/dynamic/MINABSSUM.md) &#x2713; :thinking:
 
 
