@@ -5,8 +5,10 @@
 The Fibonacci sequence is defined using the following recursive formula:
 
 $$
-    F(0) = 0 \newline
-    F(1) = 1 \newline
+    F(0) = 0 \\
+
+    F(1) = 1 \\
+
     F(M) = F(M - 1) + F(M - 2)\text{ if }M >= 2
 $$
 
