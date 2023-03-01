@@ -36,7 +36,7 @@
 // each element of array B is an integer that can have one of the following values: 0, 1;
 // the elements of A are all distinct.
 
-function solution(A, B) { // Took 75 minutes ... Score: 62%
+function solutionM(A, B) { // Took 75 minutes ... Score: 62%
     // write your code in JavaScript (Node.js 14)
     let stack = [];
 
@@ -76,35 +76,35 @@ function solution(A, B) { // Took 75 minutes ... Score: 62%
     return stack.length;
 }
 
-console.log( solution( [4, 3, 2, 1, 5], [0, 1, 0, 0, 0] ) );
-
-//console.log( solution( [2, 3, 1, 4, 5], [1, 1, 1, 0, 0] ) );
-
 function solution(A, B) {
-    var downStream = []
-    var upStream = []
-    var direction
+    let downStream = [];
+    let upStream = [];
+    let direction;
     
-    for (var i = 0; i < A.length; i++) {
-        direction = B[i]
+    for (let i = 0; i < A.length; i++) {
+        direction = B[i];
         
         if (direction === 0) {
             while (downStream.length > 0) {
-                var d = downStream.pop()
+                let d = downStream.pop();
                 
                 if (d > A[i]) {
-                    downStream.push(d)
-                    break
+                    downStream.push(d);
+                    break;
                 }
             }
         
             if (downStream.length === 0) {
-                upStream.push(A[i])
+                upStream.push(A[i]);
             }
         } else {
-            downStream.push(A[i])
+            downStream.push(A[i]);
         }
     }
     
-    return downStream.length + upStream.length    
+    return downStream.length + upStream.length;
 }
+
+console.log( solution( [4, 3, 2, 1, 5], [0, 1, 0, 0, 0] ) );
+
+//console.log( solution( [2, 3, 1, 4, 5], [1, 1, 1, 0, 0] ) );

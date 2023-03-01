@@ -76,7 +76,9 @@ function solution(A) {
 console.log( solution([1, 5, 2, 1, 4, 0]) );
 ```
 
-So, the idea in this solution is to find the lower bound and the upper bound of the discs on the x-axis based on the radius. Since `i` is the center of the discs, the lower bound is `i - A[i]` and the upper bound is `i + A[i]`. So, for the case of the array, `[1, 5, 2, 1, 4, 0]`, the lower and upper bound values are,
+So, the idea in this solution is to find the lower bound and the upper bound of the discs on the x-axis based on the radius. (The idea is more than this. The videos referenced below shed some light. I have yet to understand the reason for the use of `counter += j - i`. Hopefully, I can return to explain this in more detail)
+
+Since `i` is the center of the discs, the lower bound is `i - A[i]` and the upper bound is `i + A[i]`. So, for the case of the array, `[1, 5, 2, 1, 4, 0]`, the lower and upper bound values are,
 
 | array | values |
 | :---- | :----- |
