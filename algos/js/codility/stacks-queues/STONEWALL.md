@@ -8,7 +8,9 @@ The wall should be built of cuboid stone blocks (that is, all sides of such bloc
 
 Write a function:
 
-function solution(H);
+```js
+  function solution(H);
+```
 
 that, given an array H of N positive integers specifying the height of the wall, returns the minimum number of blocks needed to build it.
 
@@ -24,7 +26,7 @@ the function should return 7. The figure shows one possible arrangement of seven
 
 ![Stone Wall](/.attachments/stone-wall.png)
 
-Write an efficient algorithm for the following assumptions:
+Write an **efficient** algorithm for the following assumptions:
 
 - N is an integer within the range [1..100,000];
 - each element of array H is an integer within the range [1..1,000,000,000].
