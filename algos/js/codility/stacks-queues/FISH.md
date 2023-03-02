@@ -87,3 +87,7 @@ console.log( solution( [4, 3, 2, 1, 5], [0, 1, 0, 0, 0] ) );
 I find it interesting that this solution has a loop within a loop, yet the detected time complexity on Codility is $O(n)$.
 
 The main idea behind this solution is that all downstream items are pushed onto a stack until an upstream item is found and when that upstream item is found it pops every item in the downstream stack that fails to meet the condition of being bigger than the item going upstream. If the downstream stack is emptied, the upstream stack is filled up. Pretty simple.
+
+## Videos
+
+1. [Codility FISH in Python and C++ Codility Solutions Lesson 7](https://youtu.be/TzK5WOjUYgU)
