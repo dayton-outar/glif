@@ -61,8 +61,8 @@ function solution(A) { // Credit: https://github.com/yaseenshaik/codility-soluti
     var E = [];
     var N = [];
 
-    var ec = 0;
-    var nc = 0;
+    var ec = 0; // candidate
+    var nc = 0; // not candidate
     for (var i = 0; i < A.length; i++) {
         if (A[i] == cand) {
             ec++;
@@ -73,6 +73,8 @@ function solution(A) { // Credit: https://github.com/yaseenshaik/codility-soluti
         N[i] = nc;
     }
 
+    console.log( E, N, ec, nc );
+
     for (var i = 0; i < A.length; i++) {
         if (E[i] > N[i] && ((nc - N[i]) < (ec - E[i]))) {
             ret++;
@@ -81,3 +83,5 @@ function solution(A) { // Credit: https://github.com/yaseenshaik/codility-soluti
 
     return ret;
 }
+
+console.log( solution( [4, 3, 4, 4, 4, 2] ) );
