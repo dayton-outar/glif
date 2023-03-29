@@ -66,7 +66,7 @@ Significant lessons from Codility,
 5. [Number of Disc Intersections](./codility/sorting/DISCS.md) :thinking:
 6. [Fish](./codility/stacks-queues/FISH.md) &#x2713;
 7. [Stone Wall](./codility/stacks-queues/STONEWALL.md) :face_in_clouds:
-8. [Equi Leader](./codility/leader/EQUILEADER.md) :thinking:
+8. [Equi Leader](./codility/leader/EQUILEADER.md) &#x2713; :thinking:
 9. [Max Profit](./codility/maximum-slice/MAXPROFIT.md) :thinking:
 10. [Max Slice Sum](./codility/maximum-slice/MAXSLICESUM.md) :thinking:
 11. [Max Double Slice Sum](./codility/maximum-slice/MAXDOUBLESLICE.md) :face_in_clouds:

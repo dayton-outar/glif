@@ -121,3 +121,7 @@ Take note of array `N` and see that the it counts the presence of non-leader ele
 As we move into the final loop and the penultimate logic combination of this solution, we can take note of the values of the arrays, `E` and `N` and the counters used for these arrays, `ec` and `nc`. For the case of the array, `[4, 3, 4, 4, 4, 2]`, the value of `ec` came out of the second loop as 4 and the value of `nc` came out as 2.
 
 So, let's look at the condition in the final loop that counts the _equi leaders_. The first part of the conjunction logic is `E[i] > N[i]`, which is basically checking to see if the number of elements up to the position `i` that is a leader candidate is greater than those elements that are not a leader candidate. Because, the only way an element is a leader is if the number of occurrences in that sequence is more than the occurrences of non-leader elements.
+
+The last part of the conjunction is `((nc - N[i]) < (ec - E[i]))`. Since the array would be split into 2 sequences at anytime, this part of the logic basically calculates the ratio of leader elements to non-leader elements in the second sequences (because as the final loop iterates, it is checking the all the possible sequences that keeps the order of array `A`).
+
+As the condition containing both conjunctions are met, the counter `ret` increments and the end result, coming out of the final loop, is the _number of equi leaders_.
