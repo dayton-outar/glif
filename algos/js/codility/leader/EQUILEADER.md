@@ -124,4 +124,4 @@ So, let's look at the condition in the final loop that counts the _equi leaders_
 
 The last part of the conjunction is `((nc - N[i]) < (ec - E[i]))`. Since the array would be split into 2 sequences at anytime, this part of the logic basically calculates the ratio of leader elements to non-leader elements in the second sequences (because as the final loop iterates, it is checking the all the possible sequences that keeps the order of array `A`).
 
-As the condition containing both conjunctions are met, the counter `ret` increments and the end result, coming out of the final loop, is the _number of equi leaders_.
+As the condition containing both conjunctions are met, the counter `ret` increments and the end result, coming out of the final loop, is the _number of equi leaders_. The detected time complexity is $O(n)$.
