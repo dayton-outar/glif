@@ -23,7 +23,7 @@ Write a function,
     function solution(A);
 ```
 
-that, given an array $A$ consisting of $N$ integers containing daily prices of a stock share for a period of N consecutive days, returns the maximum possible profit from one transaction during this period. The function should return 0 if it was impossible to gain any profit.
+that, given an array $A$ consisting of $N$ integers containing daily prices of a stock share for a period of $N$ consecutive days, returns the maximum possible profit from one transaction during this period. The function should return 0 if it was impossible to gain any profit.
 
 For example, given array $A$ consisting of six elements such that:
 
