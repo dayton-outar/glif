@@ -51,3 +51,4 @@ This was initially intended to be a AI project but has become a mish-mash of gra
 30. [Full Page Scrolling Effects | Pure CSS Scroll Effects](https://youtu.be/vHr3Li0-SP0)
 31. [Android Development for Beginners](https://youtu.be/fis26HvvDII)
 32. [Android Development for Beginners - Part 2](https://youtu.be/RcSHAkpwXAQ)
+33. [25 VS Code Productivity Tips and Speed Hacks](https://youtu.be/ifTF3ags0XI)
