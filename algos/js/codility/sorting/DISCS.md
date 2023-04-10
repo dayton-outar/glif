@@ -82,10 +82,29 @@ Since `i` is the center of the discs, the lower bound is `i - A[i]` and the uppe
 
 | array | values |
 | :---- | :----- |
+| lower | `[-1, -4, 0, 2, 0, 5]` |
+| upper | `[1, 6, 4, 4, 8, 5]` |
+
+After sorting these values are now in the order shown in the table below,
+
+| array | values |
+| :---- | :----- |
 | lower | `[-4, -1, 0, 0, 2, 5]` |
 | upper | `[1, 4, 4, 5, 6, 8]` |
 
 The deciding factor of this algorithm is the condition, `upper[i] >= lower[j]`, and the assignment to `counter`, where `counter += j - i`. The nested loop does not have the effect of $O(n^2)$ because the loop variable, `j`, is not re-initialized in the outer loop.
+
+Basically, this approach involves counting the number of discs that are open and taking note of the discs that are being opened while others are still open. When we take note of discs that are open while other dscs are open, this is called an intersection. Here's an idea of how the logic works,
+
+1. We start with the lower bounds and a disc will be opened at position, -4.
+2. Then we move to open another disc at -1 since it has value that is lesser than the lowest upper bound values. Since 1 disc is already opened at this time, we now have 1 intersection and 2 open discs.
+3. We open a disc at 0 since it's value is still less than 1 in the upper bound. Since 2 discs are opened at this time, we now have (1 + 2) 3 intersections and 3 open discs.
+4. We open another disc at 0, which is still less than 1 in the upper bound. Since 3 discs are opened at this time, we now have (3 + 3) 6 intersections and 4 opened discs.
+5. Now, the next value in the lower bounds, which is 2, is greater than the next (and first) value in the upper bounds. So, we have to use that value in the upper bounds to close a disc. When closing this disc, the opened discs are now reduced to 3.
+6. Now, we move to compare the value 2 in the lower bounds as mentioned in the above step to the next value in upper bounds, which is now 4. Since 2 is less than 4, we can open another disc. At this point (just before opening the disc), we have 3 opened discs and, thus, we have (6 + 3) 9 intersections and, now, 4 opened discs.
+7. So, the lower bounds have one last value, which is 5. Can we open that disc that start at 5 given that the next value in upper bounds is 4? No. So, we have to close a disc, leaving 3 opened discs.
+8. Can we now open disc at 5 given that the next value is another 4? No. So, we close another disc, leaving 2 opened discs.
+9. Can we now open disc at 5 given that the next value is 5? Yes. So, given we have 2 opened discs, we now have (9 + 2) 11 intersections and 3 opened discs.
 
 The detected time complexity for this solution is $O(n \cdot \text{log n})$.
 

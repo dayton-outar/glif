@@ -63,7 +63,7 @@ Significant lessons from Codility,
 2. [Genomic Range Query](./codility/prefix-sums/GENOMIC.md) &#x2713;
 3. [Mushroom Picker](./codility/prefix-sums#51-exercise) &#x2713; :thinking:
 4. [Triangle](./codility/sorting/TRIANGLE.md) &#x2713;
-5. [Number of Disc Intersections](./codility/sorting/DISCS.md) :thinking:
+5. [Number of Disc Intersections](./codility/sorting/DISCS.md) &#x2713; :thinking:
 6. [Fish](./codility/stacks-queues/FISH.md) &#x2713;
 7. [Stone Wall](./codility/stacks-queues/STONEWALL.md) :face_in_clouds:
 8. [Equi Leader](./codility/leader/EQUILEADER.md) &#x2713; :thinking:
