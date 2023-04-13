@@ -40,7 +40,7 @@ function solution(A) { // Credit: https://github.com/yaseenshaik/codility-soluti
     for (var i = 1; i < A.length; i++) {
         meh = Math.max(0, meh + A[i] - A[i - 1]);
         msf = Math.max(msf, meh);
-        //console.log(i, A[i], A[i - 1], meh, msf);
+        console.log(i, A[i], A[i - 1], A[i] - A[i - 1], meh, msf);
     }
     return msf > 0 ? msf : 0;
 }
