@@ -68,4 +68,4 @@ The first 5 lines in this function are pretty easy to grasp. Since, we need an a
 
 Lines 7 and 8 are where the real genius of this algorithm lies. ...
 
-The expected worst-case time complexity is $O(N)$ and the expected worst-case space complexity is $O(1)$ (no recursion was used).
+The expected worst-case time complexity is $O(n)$ and the expected worst-case space complexity is $O(1)$ (no recursion was used).
