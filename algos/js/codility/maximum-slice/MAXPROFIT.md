@@ -64,4 +64,8 @@ function solution(A) {
 
 Let's examine this in detail.
 
+The first 5 lines in this function are pretty easy to grasp. Since, we need an array of more than 1 element to calculate any profit, any array that has number of elements below 2 would be 0.
+
+Lines 7 and 8 are where the real genius of this algorithm lies. ...
+
 The expected worst-case time complexity is $O(N)$ and the expected worst-case space complexity is $O(1)$ (no recursion was used).
