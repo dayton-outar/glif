@@ -68,4 +68,20 @@ The first 5 lines in this function are pretty easy to grasp. Since, we need an a
 
 Lines 7 and 8 are where the real genius of this algorithm lies. ...
 
+| `A[i]` | `A[i - 1]` | `A[i] - A[i - 1]` |
+| ------:| ----------:| -----------------:|
+| 21011  | 23171      | -2160             |
+| 21123  | 21011      | 112               |
+| 21366  | 21123      | 243               |
+| 21013  | 21366      | -353              |
+| 21367  | 21013      | 354               |
+
+According to the problem, if we bought stock on day $1$ and sold on day $5$, then we would have made the maximum profit over the time.
+
+| `A[i]` | `A[i - 1]` | `A[i] - A[i - 1]` |
+| ------:| ----------:| -----------------:|
+| 21367  | 21011      | 356               |
+
+It's basically asking for the highest number after the lowest number is found.
+
 The expected worst-case time complexity is $O(n)$ and the expected worst-case space complexity is $O(1)$ (no recursion was used).
