@@ -64,7 +64,7 @@ function solution(A) {
 
 Let's examine this in detail.
 
-The first 5 lines in this function are pretty easy to grasp. Since, we need an array of more than 1 element to calculate any profit, any array that has number of elements below 2 would be 0.
+The first 5 lines in this function are pretty easy to grasp. Since, we need an array of more than 1 element to calculate any profit, an array that has number of elements below 2 would be 0.
 
 Lines 7 and 8 are where the real genius of this algorithm lies but the core of the genius is line 7,
 
