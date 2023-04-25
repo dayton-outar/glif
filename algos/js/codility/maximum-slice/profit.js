@@ -45,4 +45,4 @@ function solution(A) { // Credit: https://github.com/yaseenshaik/codility-soluti
     return msf > 0 ? msf : 0;
 }
 
-console.log( solution( [23171, 21011, 21123, 21366, 21013, 21367] ) );
+console.log( solution( [23171, 21011, 21123, 21366, 20009, 21367] ) );

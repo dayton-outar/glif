@@ -88,8 +88,22 @@ According to the problem, if we bought stock on day $1$ and sold on day $5$, the
 | ------:| ----------:| -----------------:|
 | 21367  | 21011      | 356               |
 
-It's basically asking for the highest number after the lowest number is found.
+It's so coincidental that this figure happen to be the _maximum sum of the difference_ as we progressed sequentially through the elements of the provided array.
 
-...
+Let's suppose, though, that on day $4$, the stock price was $20009$ instead of $21013$, then what would have been the _maximum sum of the difference_ when we progressed through all the elements sequentially?
+
+| `A[i]` | `A[i - 1]` | `A[i] - A[i - 1]` | `meh` |
+| ------:| ----------:| -----------------:| -----:|
+| 21011  | 23171      | -2160             | 0     |
+| 21123  | 21011      | 112               | 112   |
+| 21366  | 21123      | 243               | 355   |
+| 20009  | 21366      | -1357             | 0     |
+| 21367  | 20009      | 1358              | 1358  |
+
+The algorithm still works! Day $4$ has the lowest stock price and the following day the stock price jumped to the second highest price in the provided array. It's basically asking for the highest number after the lowest number is found.
+
+When you think about it, the _maximum profit_ is actually the _maximum sum of the difference_ between two numbers.
+
+So, the big question is why does this work? Maybe a few more cases are needed to better understand the magic of this algorithm.
 
 The expected worst-case time complexity is $O(n)$ and the expected worst-case space complexity is $O(1)$ (no recursion was used).
