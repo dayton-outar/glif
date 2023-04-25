@@ -106,4 +106,16 @@ When you think about it, the _maximum profit_ is actually the _maximum sum of th
 
 So, the big question is why does this work? Maybe a few more cases are needed to better understand the magic of this algorithm.
 
+Let's replace day $0$, with $20009$ and see the outcome,
+
+| `A[i]` | `A[i - 1]` | `A[i] - A[i - 1]` | `meh` |
+| ------:| ----------:| -----------------:| -----:|
+| 21011  | 20009      | 1002              | 1002  |
+| 21123  | 21011      | 112               | 1114  |
+| 21366  | 21123      | 243               | 1357  |
+| 21013  | 21366      | -353              | 1004  |
+| 21367  | 21013      | 354               | 1358  |
+
+Look at that! Look at how the sum of the differences have brought the outcome to arrive at the _maximum profit_.
+
 The expected worst-case time complexity is $O(n)$ and the expected worst-case space complexity is $O(1)$ (no recursion was used).
