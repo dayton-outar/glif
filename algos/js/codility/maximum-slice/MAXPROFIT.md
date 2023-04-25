@@ -66,15 +66,21 @@ Let's examine this in detail.
 
 The first 5 lines in this function are pretty easy to grasp. Since, we need an array of more than 1 element to calculate any profit, any array that has number of elements below 2 would be 0.
 
-Lines 7 and 8 are where the real genius of this algorithm lies. ...
+Lines 7 and 8 are where the real genius of this algorithm lies but the core of the genius is line 7,
 
-| `A[i]` | `A[i - 1]` | `A[i] - A[i - 1]` |
-| ------:| ----------:| -----------------:|
-| 21011  | 23171      | -2160             |
-| 21123  | 21011      | 112               |
-| 21366  | 21123      | 243               |
-| 21013  | 21366      | -353              |
-| 21367  | 21013      | 354               |
+```js
+meh = Math.max(0, meh + A[i] - A[i - 1]);
+```
+
+So, basically $0$ is the baseline maximum for `meh` and no negative number will be stored in `meh`. Line 7 stores the _maxiumum sum of the difference_ as we progress through the provided array. The table below illustrates this progression.
+
+| `A[i]` | `A[i - 1]` | `A[i] - A[i - 1]` | `meh` |
+| ------:| ----------:| -----------------:| -----:|
+| 21011  | 23171      | -2160             | 0     |
+| 21123  | 21011      | 112               | 112   |
+| 21366  | 21123      | 243               | 355   |
+| 21013  | 21366      | -353              | 2     |
+| 21367  | 21013      | 354               | 356   |
 
 According to the problem, if we bought stock on day $1$ and sold on day $5$, then we would have made the maximum profit over the time.
 
@@ -83,5 +89,7 @@ According to the problem, if we bought stock on day $1$ and sold on day $5$, the
 | 21367  | 21011      | 356               |
 
 It's basically asking for the highest number after the lowest number is found.
+
+...
 
 The expected worst-case time complexity is $O(n)$ and the expected worst-case space complexity is $O(1)$ (no recursion was used).
