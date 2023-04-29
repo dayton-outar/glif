@@ -2,7 +2,7 @@
 
 ## Problem
 
-A non-empty array A consisting of N integers is given. A pair of integers (P, Q), such that $0 ≤ P ≤ Q < N$, is called a slice of array A. The sum of a slice (P, Q) is the total of $A[P] + A[P+1] + ... + A[Q]$.
+A non-empty array $A$ consisting of $N$ integers is given. A pair of integers $(P, Q)$, such that $0 ≤ P ≤ Q < N$, is called a slice of array $A$. The sum of a slice $(P, Q)$ is the total of $A[P] + A[P+1] + ... + A[Q]$.
 
 Write a function:
 
@@ -10,7 +10,7 @@ Write a function:
     function solution(A);
 ```
 
-that, given an array A consisting of N integers, returns the maximum sum of any slice of A.
+that, given an array $A$ consisting of $N$ integers, returns the maximum sum of any slice of $A$.
 
 For example, given array A such that:
 
@@ -33,3 +33,23 @@ Write an efficient algorithm for the following assumptions:
 - the result will be an integer within the range [−2,147,483,648..2,147,483,647].
 
 ## Solution
+
+Credit to Yaseen Shaik for the solution below.
+
+```js
+function solution3(A) {
+    var meh = -Infinity;
+    var msf = -Infinity;
+
+    for (var ind in A) {
+    	var i = A[ind]
+        meh = Math.max(i, meh + i);
+        msf = Math.max(msf, meh);
+    }
+    return parseInt(msf, 10);
+}
+```
+
+The solution here is pretty much a similar approach to that taken in [Max Profit](MAXPROFIT.md). The major difference is whereas in the _Max Profit_ solution, the difference between elements is used in the running max, `meh`, in this solution the value of the element is used in the runnnig max.
+
+...

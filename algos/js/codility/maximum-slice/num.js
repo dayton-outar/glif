@@ -56,8 +56,8 @@ function solution2(A) { // My second solution ... 2 minutes ... Score: 53%
 }
 
 function solution3(A) { // Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/MaxSliceSum.md
-    var meh = -2147483648; // Max End Here
-    var msf = -2147483648; // Max So Far
+    var meh = -Infinity; // Max End Here
+    var msf = -Infinity; // Max So Far
     for (var ind in A) {
     	var i = A[ind]
         meh = Math.max(i, meh + i);
