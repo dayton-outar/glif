@@ -66,4 +66,4 @@ function solution3(A) { // Credit: https://github.com/yaseenshaik/codility-solut
     return parseInt(msf, 10);
 }
 
-console.log( solution3( [-2, 1] ) );
+console.log( solution3( [3, 2, -6, 4, 0] ) );

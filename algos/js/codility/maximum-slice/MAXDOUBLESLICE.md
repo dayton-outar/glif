@@ -4,11 +4,11 @@
 
 A non-empty array A consisting of N integers is given.
 
-A triplet (X, Y, Z), such that $0 ≤ X < Y < Z < N$, is called a double slice.
+A triplet $(X, Y, Z)$, such that $0 ≤ X < Y < Z < N$, is called a double slice.
 
-The sum of double slice (X, Y, Z) is the total of $A[X + 1] + A[X + 2] + ... + A[Y − 1] + A[Y + 1] + A[Y + 2] + ... + A[Z − 1]$.
+The sum of double slice $(X, Y, Z)$ is the total of $A[X + 1] + A[X + 2] + ... + A[Y − 1] + A[Y + 1] + A[Y + 2] + ... + A[Z − 1]$.
 
-For example, array A such that:
+For example, array $A$ such that:
 
 ```js
     A[0] = 3
@@ -35,7 +35,7 @@ Write a function:
     function solution(A);
 ```
 
-that, given a non-empty array A consisting of N integers, returns the maximal sum of any double slice.
+that, given a non-empty array $A$ consisting of $N$ integers, returns the maximal sum of any double slice.
 
 For example, given:
 
@@ -58,3 +58,25 @@ Write an efficient algorithm for the following assumptions:
 - each element of array A is an integer within the range [−10,000..10,000].
 
 ## Solution
+
+Credit to Yaseen Shaik for the solution below.
+
+```js
+function solution(A) {
+    var sumsL = A.map(i => 0);
+    var sumsR = A.map(i => 0);
+
+    for (var iL = 1, iR = A.length - 2; iR >= 2; iL++, iR--) {
+        sumsL[iL] = Math.max(0, sumsL[iL-1] + A[iL]);
+        sumsR[iR] = Math.max(0, sumsR[iR+1] + A[iR]);
+    }
+
+    var max = sumsL[0] + sumsR[2];
+
+    for (var i = 2; i < A.length-1; i++) {
+        max = Math.max(max, sumsL[i-1] + sumsR[i+1]);
+    }
+
+    return max;
+}
+```

@@ -52,9 +52,9 @@ function solution(A) {
     if (A.length < 2) {
         return 0;
     }
-    var msf = 0;
-    var meh = 0;
-    for (var i = 1; i < A.length; i++) {
+    let msf = 0;
+    let meh = 0;
+    for (let i = 1; i < A.length; i++) {
         meh = Math.max(0, meh + A[i] - A[i - 1]);
         msf = Math.max(msf, meh);
     }

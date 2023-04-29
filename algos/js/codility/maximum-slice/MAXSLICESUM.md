@@ -37,17 +37,18 @@ Write an efficient algorithm for the following assumptions:
 Credit to Yaseen Shaik for the solution below.
 
 ```js
-function solution3(A) {
-    var meh = -Infinity;
-    var msf = -Infinity;
+function solution(A) {
+    let meh = -Infinity;
+    let msf = -Infinity;
 
-    for (var ind in A) {
-    	var i = A[ind]
-        meh = Math.max(i, meh + i);
+    for (let i = 0; i < A.length; i++) {
+        meh = Math.max(A[i], meh + A[i]);
         msf = Math.max(msf, meh);
     }
     return parseInt(msf, 10);
 }
+
+console.log( solution([3, 2, -6, 4, 0]) ); // 5
 ```
 
 The solution here is pretty much a similar approach to that taken in [Max Profit](MAXPROFIT.md). The major difference is whereas in the _Max Profit_ solution, the difference between elements is used in the running max, `meh`, in this solution the value of the element is used in the runnnig max.
