@@ -67,16 +67,20 @@ function solution(A) {
     let sumsR = A.map(i => 0);
 
     for (let iL = 1, iR = A.length - 2; iR >= 2; iL++, iR--) {
-        sumsL[iL] = Math.max(0, sumsL[iL-1] + A[iL]);
-        sumsR[iR] = Math.max(0, sumsR[iR+1] + A[iR]);
+        sumsL[iL] = Math.max(0, sumsL[iL - 1] + A[iL]);
+        sumsR[iR] = Math.max(0, sumsR[iR + 1] + A[iR]);
     }
 
     let max = sumsL[0] + sumsR[2];
 
-    for (let i = 2; i < A.length-1; i++) {
-        max = Math.max(max, sumsL[i-1] + sumsR[i+1]);
+    for (let i = 2; i < A.length - 1; i++) {
+        max = Math.max(max, sumsL[i - 1] + sumsR[i + 1]);
     }
 
     return max;
 }
 ```
+
+It's important to understand the problem before moving into the solution. Let's use the case provided in the problem to better understand what is required.
+
+When the double slice (0, 3, 6) is used, the sum that is required is the sum gained by adding up all the numbers between 0, 3 and 6 but not using the numbers at 0, 3 and 6, where 0 is the lower bound and 6 is the upper bound. So, values of elements between 0 and 3 are `A[1] = 2` and `A[2] = 6`. Values between 3 and 6 are `A[4] = 4` and `A[5] = 5`.

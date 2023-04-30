@@ -82,14 +82,19 @@ function solution(A) { // Credit: https://github.com/yaseenshaik/codility-soluti
     let sumsR = A.map(i => 0);
 
     for (let iL = 1, iR = A.length - 2; iR >= 2; iL++, iR--) {
-        sumsL[iL] = Math.max(0, sumsL[iL-1] + A[iL]);
-        sumsR[iR] = Math.max(0, sumsR[iR+1] + A[iR]);
+        sumsL[iL] = Math.max(0, sumsL[iL - 1] + A[iL]);
+        sumsR[iR] = Math.max(0, sumsR[iR + 1] + A[iR]);
     }
+
+    console.log(sumsL);
+    console.log(sumsR);
 
     let max = sumsL[0] + sumsR[2];
 
-    for (let i = 2; i < A.length-1; i++) {
-        max = Math.max(max, sumsL[i-1] + sumsR[i+1]);
+    console.log('max', max);
+
+    for (let i = 2; i < A.length - 1; i++) {
+        max = Math.max(max, sumsL[i - 1] + sumsR[i + 1]);
     }
 
     return max;
