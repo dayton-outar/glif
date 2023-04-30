@@ -84,6 +84,7 @@ function solution(A) { // Credit: https://github.com/yaseenshaik/codility-soluti
     for (let iL = 1, iR = A.length - 2; iR >= 2; iL++, iR--) {
         sumsL[iL] = Math.max(0, sumsL[iL - 1] + A[iL]);
         sumsR[iR] = Math.max(0, sumsR[iR + 1] + A[iR]);
+        console.log(iR, A[iR]);
     }
 
     console.log(sumsL);
