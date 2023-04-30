@@ -63,7 +63,10 @@ function solution3(A) { // Credit: https://github.com/yaseenshaik/codility-solut
         meh = Math.max(i, meh + i);
         msf = Math.max(msf, meh);
     }
+
     return parseInt(msf, 10);
 }
 
 console.log( solution3( [3, 2, -6, 4, 0] ) );
+
+console.log( solution3( [ 1, 2, -1, 2, 2, 3, -2, 1] ) );

@@ -53,4 +53,17 @@ console.log( solution([3, 2, -6, 4, 0]) ); // 5
 
 The solution here is pretty much a similar approach to that taken in [Max Profit](MAXPROFIT.md). The major difference is whereas in the _Max Profit_ solution, the difference between elements is used in the running max, `meh`, in this solution the value of the element is used in the runnnig max.
 
-...
+Let's take a look at another case, to appreciate the magic of this algorithm. In the case of the array that includes, `[ 1, 2, -1, 2, 2, 3, -2, 1]`, we can track `meh` in the following table,
+
+| `A[i]` | `meh` |
+| ------:| -----:|
+| 1      | 1     |
+| 2      | 3     |
+| -1     | 2     |
+| 2      | 4     |
+| 2      | 6     |
+| 3      | 9     |
+| -2     | 7     |
+| 1      | 8     |
+
+So, notice that in this case the maximum sum is at index 5 (the 6<sup>th</sup> element) of the array. At this point in the loop, the `msf` variable becomes useful. So, value returned as the solution for this case is 9.
