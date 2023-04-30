@@ -91,10 +91,10 @@ function solution(A) { // Credit: https://github.com/yaseenshaik/codility-soluti
 
     let max = sumsL[0] + sumsR[2];
 
-    console.log('max', max);
-
     for (let i = 2; i < A.length - 1; i++) {
         max = Math.max(max, sumsL[i - 1] + sumsR[i + 1]);
+        console.log('i', i - 1, i + 1);
+        console.log('sum = ', sumsL[i - 1], ' + ', sumsR[i + 1], ' = ', sumsL[i - 1] + sumsR[i + 1]);
     }
 
     return max;

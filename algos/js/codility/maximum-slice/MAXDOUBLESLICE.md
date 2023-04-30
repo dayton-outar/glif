@@ -87,4 +87,11 @@ It's important to understand the problem before moving into the solution. Let's 
 
 When the double slice (0, 3, 6) is used, the sum that is required is the sum gained by adding up all the numbers between 0, 3 and 6 but not using the numbers at 0, 3 and 6, where 0 is the lower bound and 6 is the upper bound. So, values of elements between 0 and 3 are `A[1] = 2` and `A[2] = 6`. Values between 3 and 6 are `A[4] = 4` and `A[5] = 5`.
 
-The array, `sumsL`, is basically a running balance starting from the left and running to the right. While `sumsR`, is the running balance starting from the right and running to the left.
+The array, `sumsL`, is basically a running balance starting from the left and running to the right. While `sumsR`, is the running balance starting from the right and running to the left. Take note that the running balance was done by initially excluding the elements at both extreme ends. Take for example the case in the problem, the table below shows the values in the mentioned arrays,
+
+|         |                                |
+|:------- |:------------------------------ |
+| `sumsL` | `[ 0, 2, 8, 7, 11, 16, 0, 0 ]` |
+| `sumsR` | `[ 0, 0, 14, 8, 9, 5, 0, 0 ]`  |
+
+So, how does the use of these sums solve the problem of finding the maximal sum of any double slice?
