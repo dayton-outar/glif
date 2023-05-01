@@ -96,20 +96,20 @@ The array, `sumsL`, is basically a running balance starting from the left and ru
 
 So, how does the use of these sums solve the problem of finding the maximal sum of any double slice?
 
-Summing from left to right takes care of keeping track of the first slice as it expands from index 1 to the second to last index. So, the values of `sumsL` are done in sequence of the following slices adding up the max values in between index of the slices,
+Summing from left to right takes care of keeping track of the first slice as it expands from index 1 to the second to last index. So, the values of `sumsL` are done in sequence of the following slices adding up the _max values_ in between index of the slices,
 
- - (0, 1] = 2
- - (0, 2] = 8
- - (0, 3] = 7
- - (0, 4] = 11
- - (0, 5] = 16
+ - (0, 2) = 2
+ - (0, 3) = 8
+ - (0, 4) = 7
+ - (0, 5) = 11
+ - (0, 6) = 16
 
-In likewise manner, we can track the slices and values of the slices of `sumsR` as follows,
+In likewise manner, we can track the slices and _max values_ of the slices of `sumsR` as follows,
 
- - (7, 6] = 0
- - (7, 5] = 5
- - (7, 4] = 9
- - (7, 3] = 8
- - (7, 2] = 14
+ - (5, 7) = 0
+ - (4, 7) = 5
+ - (3, 7) = 9
+ - (2, 7) = 8
+ - (1, 7) = 14
 
  ...
