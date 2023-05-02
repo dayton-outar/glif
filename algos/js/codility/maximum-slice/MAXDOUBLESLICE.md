@@ -112,4 +112,12 @@ In likewise manner, we can track the slices and _max values_ of the slices of `s
  - (2, 7) = 8
  - (1, 7) = 14
 
- ...
+The final loop in this solution, does a crafty job of stitching the max sum values of the first slice and the second slice together as follows
+
+ - (0, 2) + (2, 7) = 10
+ - (0, 3) + (3, 7) = 17
+ - (0, 4) + (4, 7) = 12
+ - (0, 5) + (5, 7) = 11
+ - (0, 6) + (6, 7) = 16
+
+ The detected time complexity of this solution is $O(n)$.
