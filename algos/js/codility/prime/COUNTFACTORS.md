@@ -2,7 +2,7 @@
 
 ## Problem
 
-A positive integer $D$ is a _factor_ of a positive integer $N$ if there exists an integer $M$ such that N = D * M.
+A positive integer $D$ is a _factor_ of a positive integer $N$ if there exists an integer $M$ such that $N = D \times M$.
 
 For example, 6 is a factor of 24, because $M = 4$ satisfies the above condition (24 = 6 * 4).
 
