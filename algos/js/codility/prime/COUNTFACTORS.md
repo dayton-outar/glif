@@ -18,7 +18,7 @@ For example, given $N = 24$, the function should return 8, because 24 has 8 fact
 
 Write an **efficient** algorithm for the following assumptions:
 
-- N is an integer within the range [1..2,147,483,647].
+- $N$ is an integer within the range [1..2,147,483,647].
 
 
 ## Solution
