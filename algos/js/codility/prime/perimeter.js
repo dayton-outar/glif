@@ -31,9 +31,7 @@ function solution1(N) { // My first solution ... Score: 80%
     for (let i = 2; (i * i) < N; i++) { // O(sqrt(N))
         if ( ( N % i ) == 0 ) {
             let perimeter = calculate(i, (N / i));
-            if (perimeter < mp) {
-                mp = perimeter;
-            }
+            mp = Math.min(mp, perimeter);
         }
     }
 

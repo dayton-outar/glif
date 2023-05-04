@@ -30,3 +30,20 @@ Write an **efficient** algorithm for the following assumptions:
 - $N$ is an integer within the range [1..1,000,000,000].
 
 ## Solution
+
+Credit to Yaseen Shaik for the solution below.
+
+```js
+calculate = (a, b) => 2 * (a + b)
+
+function solution(N) {
+    for (var i = parseInt(Math.sqrt(N), 10); true ; i--) {
+        if (N % i == 0) return calculate(i, (N / i));
+    }
+}
+
+solution(30); // 22
+solution(49); // 28
+```
+
+This is such a succinct solution that is based on mathematical principles. ...
