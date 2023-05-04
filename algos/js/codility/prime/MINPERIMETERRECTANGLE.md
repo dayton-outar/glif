@@ -2,13 +2,13 @@
 
 ## Problem
 
-An integer N is given, representing the area of some rectangle.
+An integer $N$ is given, representing the area of some rectangle.
 
-The _area_ of a rectangle whose sides are of length A and B is A * B, and the _perimeter_ is 2 * (A + B).
+The _area_ of a rectangle whose sides are of length $A$ and $B$ is $A \times B$, and the _perimeter_ is $2 \times (A + B)$.
 
-The goal is to find the minimal perimeter of any rectangle whose area equals N. The sides of this rectangle should be only integers.
+The goal is to find the minimal perimeter of any rectangle whose area equals $N$. The sides of this rectangle should be only integers.
 
-For example, given integer N = 30, rectangles of area 30 are:
+For example, given integer $N = 30$, rectangles of area $30$ are:
 
 - (1, 30), with a perimeter of 62,
 - (2, 15), with a perimeter of 34,
@@ -21,12 +21,12 @@ Write a function:
     function solution(N);
 ```
 
-that, given an integer N, returns the minimal perimeter of any rectangle whose area is exactly equal to N.
+that, given an integer $N$, returns the minimal perimeter of any rectangle whose area is exactly equal to $N$.
 
-For example, given an integer N = 30, the function should return 22, as explained above.
+For example, given an integer $N = 30$, the function should return $22$, as explained above.
 
 Write an **efficient** algorithm for the following assumptions:
 
-- N is an integer within the range [1..1,000,000,000].
+- $N$ is an integer within the range [1..1,000,000,000].
 
 ## Solution
