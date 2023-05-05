@@ -36,26 +36,28 @@
 // each element of arrays P and Q is an integer within the range [1..N];
 // P[i] ≤ Q[i].
 
+// Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/CountSemiprimes.md
+
 function getArray(N) {
-    var A = [];
+    let A = [];
     
-    for (var i = 0; i < N; i++) {
+    for (let i = 0; i < N; i++) {
         A.push(0)
     }
     
     return A;
 }
     
-function solution(N, P, Q) { // Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/CountSemiprimes.md
-    var m = P.length;
-    var M = P.map(i => 0);
+function solution(N, P, Q) {
+    let m = P.length;
+    let M = P.map(i => 0);
 
-    var f = getArray(N + 1);
-    var i = 2;
+    let f = getArray(N + 1);
+    let i = 2;
     
     while (i * i <= N) {
         if (f[i] == 0) {
-            var k = i * i;
+            let k = i * i;
             while (k <= N) {
                 if (f[k] == 0) {
                     f[k] = i;
@@ -66,12 +68,12 @@ function solution(N, P, Q) { // Credit: https://github.com/yaseenshaik/codility-
         i++;
     }
 
-    var semi =  getArray(N + 1);
+    let semi =  getArray(N + 1);
 
-    var sum = 0;
-    for (var k = 1; k <= N; k++) {
+    let sum = 0;
+    for (let k = 1; k <= N; k++) {
         if (f[k] != 0) {
-            var b = k / f[k];
+            let b = k / f[k];
             if (f[b] == 0) {
                 sum++;
             }
@@ -79,9 +81,9 @@ function solution(N, P, Q) { // Credit: https://github.com/yaseenshaik/codility-
         semi[k] = sum;
     }
 
-    for (var mi = 0; mi < m; mi++) {
-        var p = P[mi];
-        var q = Q[mi];
+    for (let mi = 0; mi < m; mi++) {
+        let p = P[mi];
+        let q = Q[mi];
         M[mi] = semi[q] - semi[p - 1];
     }
 
