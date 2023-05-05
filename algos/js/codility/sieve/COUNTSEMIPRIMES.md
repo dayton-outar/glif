@@ -8,7 +8,7 @@ A _semiprime_ is a natural number that is the product of two (not necessarily di
 
 You are given two non-empty arrays $P$ and $Q$, each consisting of $M$ integers. These arrays represent queries about the number of semiprimes within specified ranges.
 
-Query K requires you to find the number of semiprimes within the range $(P[K], Q[K])$, where $1 ≤ P[K] ≤ Q[K] ≤ N$.
+Query $K$ requires you to find the number of semiprimes within the range $(P[K], Q[K])$, where $1 ≤ P[K] ≤ Q[K] ≤ N$.
 
 For example, consider an integer $N = 26$ and arrays $P, Q$ such that:
 
@@ -44,9 +44,9 @@ the function should return the values [10, 4, 0], as explained above.
 
 Write an **efficient** algorithm for the following assumptions:
 
-- $N$ is an integer within the range [1..50,000];
-- $M$ is an integer within the range [1..30,000];
-- each element of arrays $P$ and $Q$ is an integer within the range [1..N];
+- $N$ is an integer within the range $[1..50,000]$;
+- $M$ is an integer within the range $[1..30,000]$;
+- each element of arrays $P$ and $Q$ is an integer within the range $[1..N]$;
 - $P[i] ≤ Q[i]$.
 
 ## Solution
