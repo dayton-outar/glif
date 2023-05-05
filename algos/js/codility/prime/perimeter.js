@@ -22,15 +22,15 @@
 
 // N is an integer within the range [1..1,000,000,000].
 
-calculate = (a, b) => 2 * (a + b)
+calculatePerimeter = (a, b) => 2 * (a + b)
 
 function solution1(N) { // My first solution ... Score: 80%
     // write your code in JavaScript (Node.js 14)
-    let mp = calculate(1, N);
+    let mp = calculatePerimeter(1, N);
 
     for (let i = 2; (i * i) < N; i++) { // O(sqrt(N))
         if ( ( N % i ) == 0 ) {
-            let perimeter = calculate(i, (N / i));
+            let perimeter = calculatePerimeter(i, (N / i));
             mp = Math.min(mp, perimeter);
         }
     }
@@ -41,7 +41,7 @@ function solution1(N) { // My first solution ... Score: 80%
 // The principle here is that the two numbers that have the smallest difference between them will be the rectangle will the smallest perimeter.
 function solution(N) { // https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/MinPerimeterRectangle.md
     for (var i = parseInt(Math.sqrt(N), 10); true ; i--) {
-        if (N % i == 0) return calculate(i, (N / i));
+        if (N % i == 0) return calculatePerimeter(i, (N / i));
     }
 }
 

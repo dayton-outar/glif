@@ -71,7 +71,7 @@ Significant lessons from Codility,
 10. [Max Slice Sum](./codility/maximum-slice/MAXSLICESUM.md) &#x2713;
 11. [Max Double Slice Sum](./codility/maximum-slice/MAXDOUBLESLICE.md) &#x2713; :thinking:
 12. [Count Factors](./codility/prime/COUNTFACTORS.md) &#x2713;
-13. [Minimum Perimeter Rectangle](./codility/prime/MINPERIMETERRECTANGLE.md) :thinking:
+13. [Minimum Perimeter Rectangle](./codility/prime/MINPERIMETERRECTANGLE.md) &#x2713;
 14. [Flags](./codility/prime/FLAGS.md) :face_in_clouds:
 15. [Peaks](./codility/prime/PEAKS.md) :face_in_clouds:
 16. [Count Semiprimes](./codility/sieve/COUNTSEMIPRIMES.md) :thinking:
