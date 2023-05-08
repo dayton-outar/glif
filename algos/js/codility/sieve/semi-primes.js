@@ -89,3 +89,5 @@ function solution(N, P, Q) {
 
     return M;
 }
+
+console.log( solution( 26, [1, 4, 16], [26, 10, 20] ) );

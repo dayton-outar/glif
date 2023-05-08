@@ -54,5 +54,63 @@ Write an **efficient** algorithm for the following assumptions:
 Credit to Yaseen Shaik for the solution below.
 
 ```js
+function getArray(N) {
+    let A = [];
+    
+    for (let i = 0; i < N; i++) {
+        A.push(0)
+    }
+    
+    return A;
+}
+    
+function solution(N, P, Q) {
+    let m = P.length;
+    let M = P.map(i => 0);    
 
+    let f = getArray(N + 1);
+    let i = 2;
+    
+    while (i * i <= N) {
+        if (f[i] == 0) {
+            let k = i * i;
+            while (k <= N) {
+                if (f[k] == 0) {
+                    f[k] = i;
+                }
+                k += i;
+            }
+        }
+        i++;
+    }
+
+    let semi =  getArray(N + 1);
+
+    let sum = 0;
+    for (let k = 1; k <= N; k++) {
+        if (f[k] != 0) {
+            let b = k / f[k];
+            if (f[b] == 0) {
+                sum++;
+            }
+        }
+        semi[k] = sum;
+    }
+
+    for (let mi = 0; mi < m; mi++) {
+        let p = P[mi];
+        let q = Q[mi];
+        M[mi] = semi[q] - semi[p - 1];
+    }
+
+    return M;
+}
+
+solution( 26, [1, 4, 16], [26, 10, 20] ); // [ 10, 4, 0 ]
 ```
+
+This is a lengthy solution and obviously a very mathematical one. Once again, the principle of finding prime numbers by knowing that **every composite number has a _prime factor_ less than or equal to its square root** is used. The first set of nested `while` loops are used to identify all _prime factors_ between 0 and 26 in a type of array dictionary. This forms the basis for the next phase of the solution, which is to identify the semi-primes between the provided ranges.
+
+The second major loop from lines 23 to 31 is counting the numbers that's divisible by a prime factor yet having a result that is a prime factor (basically, the definition of a _semi-prime_) by using the [prefix sums](../prefix-sums/) technique. The cheeky technique of using the array dictionary can be seen when a look up is done to find out if the result of the division is a prime factor (`f[b] == 0`). This is so cheeky!
+
+...
