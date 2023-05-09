@@ -113,4 +113,17 @@ This is a lengthy solution and obviously a very mathematical one. Once again, th
 
 The second major loop from lines 23 to 31 is counting the numbers that's divisible by a prime factor yet having a result that is a prime factor (basically, the definition of a _semi-prime_) by using the [prefix sums](../prefix-sums/) technique. The cheeky technique of using the array dictionary can be seen when a look up is done to find out if the result of the division is a prime factor (`f[b] == 0`). This is so cheeky!
 
-...
+The final loop is used to draw out the difference (between the indices provided in arrays `P` and `Q`) found in the prefix sums found in the array `semi`. Since, the elements in the provided range needs to be included some math needed to be done to ensure that this happens, hence `semi[p - 1]`. See below completed array of `semi` for case with $N = 26$, $P = [1, 4, 16]$ and $Q = [26, 10, 20]$,
+
+```js
+[
+  0, 0,  0, 0, 1, 1, 2, 2,
+  2, 3,  4, 4, 4, 4, 5, 6,
+  6, 6,  6, 6, 6, 7, 8, 8,
+  8, 9, 10
+]
+```
+
+You can work out how `M` is arrived from the above values in `semi`.
+
+The detected time complexity of this solution is $O(n + log\text{ }log\text{ }n + m)$, where n is the integer provided and m is the size of the array of ranges provided.
