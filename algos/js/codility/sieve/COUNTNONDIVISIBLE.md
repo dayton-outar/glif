@@ -52,3 +52,52 @@ Write an **efficient** algorithm for the following assumptions:
 - each element of array A is an integer within the range [1..2 * N].
 
 ## Solution
+
+Don't know who should get the credit for this solution but this was found on Codility [here](https://app.codility.com/demo/results/trainingDWZVT3-E7U/).
+
+```js
+function solution(A) {
+    const lenOfA = A.length;
+    const counters = Array(lenOfA * 2 + 1).fill(0);
+    
+    for(let j = 0; j < lenOfA; j++) counters[A[j]]++;
+
+    return A.map(number=> {
+        let nonDivisor = lenOfA;
+        for(let i = 1; i * i <= number; i++) {
+            if(number % i !== 0) continue;
+            nonDivisor -= counters[i];
+            if(i * i !== number) nonDivisor -= counters[ number / i];
+        }
+        return nonDivisor;
+    })
+}
+
+solution( [3, 1, 2, 3, 6] ); // [ 2, 4, 3, 2, 0 ]
+```
+
+My initial thought while looking at this solution is why is twice the size of the array required to maintain the array, `counters`? The idea of `counters` is to maintain a hash of the numbers in the provided array. In such a case, I don't think the initialization of `counters` is a best fit for this solution because it can easily be broken with a number that is beyond the result of `A.length * 2 + 1`. Take for example providing the solution with `[3, 1, 2, 3, 12]`, the outcome would be `[2, 4, 3, 2, NaN]`.
+
+I have provided an updated version that I think is better. See below,
+
+```js
+function solution(A) { 
+    const lenOfA = A.length;
+    const max = Math.max(...A);
+    const counters = Array(max + 1).fill(0);
+    
+    for(let j = 0; j < (max - 1); j++) counters[A[j]]++;
+
+    return A.map(number => {
+        let nonDivisor = lenOfA;
+        for(let i = 1; i * i <= number; i++) {
+            if(number % i !== 0) continue;
+            nonDivisor -= counters[i];
+            if(i * i !== number) nonDivisor -= counters[number / i];
+        }
+        return nonDivisor;
+    })
+}
+
+solution( [3, 1, 2, 3, 12] ); // [ 2, 4, 3, 2, 0 ]
+```

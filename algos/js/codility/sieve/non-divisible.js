@@ -56,21 +56,40 @@ function solution1(A) { // My first solution ... O(N^2)) ... 12 mins. ... Score:
 }
 
 // Credit: https://app.codility.com/demo/results/trainingDWZVT3-E7U/
-function solution(A) { // O(N * log N) ... Score: 
+function solution2(A) { // O(N * log N) ... Score: 
     const lenOfA = A.length;
-    const counters = Array(lenOfA * 2 + 1).fill(0); // ?
+    const counters = Array(lenOfA * 2 + 1).fill(0);
     
     for(let j = 0; j < lenOfA; j++) counters[A[j]]++;
 
     return A.map(number=> {
-        let nonDivisor = lenOfA
+        let nonDivisor = lenOfA;
         for(let i = 1; i * i <= number; i++) {
             if(number % i !== 0) continue;
             nonDivisor -= counters[i];
-            if(i * i !== number) nonDivisor -= counters[number/i]
+            if(i * i !== number) nonDivisor -= counters[ number / i];
         }
-        return nonDivisor
+        return nonDivisor;
     })
 }
 
-console.log( solution( [3, 1, 2, 3, 6] ) );
+function solution(A) { 
+    const lenOfA = A.length;
+    const max = Math.max(...A);
+    const counters = Array(max + 1).fill(0);
+    
+    for(let j = 0; j < (max - 1); j++) counters[A[j]]++;
+
+    return A.map(number => {
+        let nonDivisor = lenOfA;
+        for(let i = 1; i * i <= number; i++) {
+            if(number % i !== 0) continue;
+            nonDivisor -= counters[i];
+            console.log(number / i);
+            if(i * i !== number) nonDivisor -= counters[number / i];
+        }
+        return nonDivisor;
+    })
+}
+
+console.log( solution( [3, 1, 2, 3, 12] ) );
