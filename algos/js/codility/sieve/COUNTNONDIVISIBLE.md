@@ -2,11 +2,11 @@
 
 ## Problem
 
-You are given an array A consisting of N integers.
+You are given an array $A$ consisting of N integers.
 
-For each number A[i] such that $0 ≤ i < N$, we want to count the number of elements of the array that are not the divisors of A[i]. We say that these elements are non-divisors.
+For each number $A[i]$ such that $0 ≤ i < N$, we want to count the number of elements of the array that are not the divisors of $A[i]$. We say that these elements are non-divisors.
 
-For example, consider integer N = 5 and array A such that:
+For example, consider integer $N = 5$ and array $A$ such that:
 
 ```js
     A[0] = 3
@@ -30,7 +30,7 @@ Write a function:
     function solution(A);
 ```
 
-that, given an array A consisting of N integers, returns a sequence of integers representing the amount of non-divisors.
+that, given an array $A$ consisting of $N$ integers, returns a sequence of integers representing the amount of non-divisors.
 
 Result array should be returned as an array of integers.
 
@@ -48,8 +48,8 @@ the function should return [2, 4, 3, 2, 0], as explained above.
 
 Write an **efficient** algorithm for the following assumptions:
 
-- N is an integer within the range [1..50,000];
-- each element of array A is an integer within the range [1..2 * N].
+- $N$ is an integer within the range [1..50,000];
+- each element of array $A$ is an integer within the range $[1..2 \times N]$.
 
 ## Solution
 
@@ -76,7 +76,7 @@ function solution(A) {
 solution( [3, 1, 2, 3, 6] ); // [ 2, 4, 3, 2, 0 ]
 ```
 
-My initial thought while looking at this solution is why is twice the size of the array required to maintain the array, `counters`? The idea of `counters` is to maintain a hash of the numbers in the provided array. In such a case, I don't think the initialization of `counters` is a best fit for this solution because it can easily be broken with a number that is beyond the result of `A.length * 2 + 1`. Take for example providing the solution with `[3, 1, 2, 3, 12]`, the outcome would be `[2, 4, 3, 2, NaN]`.
+My initial thought while looking at this solution is why is twice the size of the array required to maintain the array, `counters`? The idea of `counters` is to maintain a hash of the numbers in the provided array. In such a case, I don't think the initialization of `counters` is a best fit for this solution because it can easily be broken with a number that is beyond the result of `A.length * 2 + 1`. Take for example providing the solution with `[3, 1, 2, 3, 12]`, the outcome would be `[2, 4, 3, 2, NaN]` (this is given that the second assumption is not respected).
 
 I have provided an updated version that I think is better. See below,
 
@@ -101,3 +101,9 @@ function solution(A) {
 
 solution( [3, 1, 2, 3, 12] ); // [ 2, 4, 3, 2, 0 ]
 ```
+
+Now, after the technique to [count elements](../counting/) is used, then that array is used to deduct the divisors or prime factors within the array. To identify the prime factors in the array are identified by using the mathematical principle that **every composite number has a _prime factor_ less than or equal to its square root**.
+
+So, the idea is to presume initially that all numbers within the array are non-divisors then deduct numbers that meet the criteria of being a factor.
+
+The detected time complexity of this solution is $O(n \cdot log\text{ }n)$.

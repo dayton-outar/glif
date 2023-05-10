@@ -85,7 +85,6 @@ function solution(A) {
         for(let i = 1; i * i <= number; i++) {
             if(number % i !== 0) continue;
             nonDivisor -= counters[i];
-            console.log(number / i);
             if(i * i !== number) nonDivisor -= counters[number / i];
         }
         return nonDivisor;
