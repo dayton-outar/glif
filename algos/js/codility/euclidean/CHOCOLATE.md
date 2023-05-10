@@ -8,7 +8,7 @@ You start to eat the chocolates. After eating a chocolate you leave only a wrapp
 
 You begin with eating chocolate number $0$. Then you omit the next $M − 1$ chocolates or wrappers on the circle, and eat the following one.
 
-More precisely, if you ate chocolate number $X$, then you will next eat the chocolate with number $(X + M) modulo N$ (remainder of division).
+More precisely, if you ate chocolate number $X$, then you will next eat the chocolate with number $(X + M)$ modulo $N$ (remainder of division).
 
 You stop eating when you encounter an empty wrapper.
 
