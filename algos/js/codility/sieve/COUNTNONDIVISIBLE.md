@@ -104,7 +104,7 @@ solution( [3, 1, 2, 3, 12] ); // [ 2, 4, 3, 2, 0 ]
 
 But testing the above solution resulted in a failure on Codility. So, the recommended solution is the one above that hinges on the second assumption stated in the final notes of the problem.
 
-Now, after the technique to [count elements](../counting/) is used, then that array is used to deduct the divisors or prime factors within the array. To identify the prime factors in the array are identified by using the mathematical principle that **every composite number has a _prime factor_ less than or equal to its square root**.
+Now, after the technique to [count elements](../counting/) is used, then that array is used to deduct the divisors or prime factors within the array. The prime factors in the array are identified by using the mathematical principle that **every composite number has a _prime factor_ less than or equal to its square root**.
 
 So, the idea is to presume initially that all numbers within the array are non-divisors then deduct numbers that meet the criteria of being a factor.
 
