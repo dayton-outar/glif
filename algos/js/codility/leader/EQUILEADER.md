@@ -56,7 +56,7 @@ Write an **efficient** algorithm for the following assumptions:
 
 Counting the number of _equi leaders_
 
-Credit to Yaseen Shaik for the solution provided below.
+Credit should be given to [Yaseen Shaik](https://github.com/yaseenshaik) for the solution below provided from [this repo](https://github.com/yaseenshaik/codility-solutions-javascript).
 
 ```js
 function solution(A) {

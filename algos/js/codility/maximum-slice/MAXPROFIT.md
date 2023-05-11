@@ -45,7 +45,7 @@ each element of array A is an integer within the range [0..200,000].
 
 ## Solution
 
-Credit to Yaseen Shaik for the solution below.
+Credit to [Yaseen Shaik](https://github.com/yaseenshaik) for the solution below provided from [this repo](https://github.com/yaseenshaik/codility-solutions-javascript).
 
 ```js
 function solution(A) {

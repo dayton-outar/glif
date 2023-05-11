@@ -27,9 +27,16 @@
 
 // I could not understand the question
 // Credit: https://app.codility.com/demo/results/trainingSXZ3KT-MV4/
-function solution(N, M) {
-    // write your code in JavaScript (Node.js 4.0.0)
-    
+
+function gcd(a, b) {
+    if(a % b === 0) {
+        return b;
+    } else {
+        return gcd(b, a % b);
+    }
+}
+
+function solution(N, M) {    
     if(N === 1) {
         return 1;
     }
@@ -41,10 +48,4 @@ function solution(N, M) {
     return N / gcd(N, M);
 }
 
-function gcd(a, b) {
-    if(a % b === 0) {
-        return b;
-    } else {
-        return gcd(b, a % b);
-    }
-}
+console.log(gcd(12, 3));

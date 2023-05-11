@@ -32,3 +32,39 @@ Write an efficient algorithm for the following assumptions:
 
 
 ## Solution
+
+I admit that it took me some re-reading before I could grasp this problem. What made it easier to grasp was the example.
+
+Credit to [Jonatas Walker](https://gist.github.com/jonataswalker) for providing his solutions [here](https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23).
+
+This solution can be found on Codility [here](https://app.codility.com/demo/results/trainingSXZ3KT-MV4/).
+
+```js
+function gcd(a, b) {
+    if(a % b === 0) {
+        return b;
+    } else {
+        return gcd(b, a % b);
+    }
+}
+
+function solution(N, M) {    
+    if(N === 1) {
+        return 1;
+    }
+    
+    if(M === 1) {
+        return N;
+    }
+    
+    return N / gcd(N, M);
+}
+```
+
+Look at that solution! So simple. If you had known Number Theory, this would have been a walk in the park. This is just based on mathematical principles.
+
+If we take the case that is provided and use the formula within the solution, which is `N / gcd(N, M)`, then we can see the magic of this solution. Given that `gcd` is the greatest common divisor, we can determine that the _gcd_ of 10 and 4 is 2. When 10 is divided by 2, we get 5.
+
+Let's try a different case. Let's try $N = 12$ and $M = 3$. Starting at 0, the chocolates that can be eaten following the rule of using $(X + 3)$ modulo $12$ are 0, 3, 6, 9. So, only 4 chocolates can be eaten following this rule for this case. Given that the _gcd_ of 12 and 3 is 3. When 12 is divided by 3, we get 4.
+
+Now that we have proven this solution with another case, let's dive into the world of _Number Theory_.

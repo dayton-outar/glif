@@ -53,7 +53,9 @@ Write an **efficient** algorithm for the following assumptions:
 
 ## Solution
 
-Don't know who should get the credit for this solution but this was found on Codility [here](https://app.codility.com/demo/results/trainingDWZVT3-E7U/).
+Credit to [Jonatas Walker](https://gist.github.com/jonataswalker) for providing his solutions [here](https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23).
+
+This solution but this was found on Codility [here](https://app.codility.com/demo/results/trainingDWZVT3-E7U/).
 
 ```js
 function solution(A) {

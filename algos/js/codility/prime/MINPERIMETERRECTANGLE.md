@@ -31,7 +31,7 @@ Write an **efficient** algorithm for the following assumptions:
 
 ## Solution
 
-Credit to Yaseen Shaik for the solution below.
+Credit to [Yaseen Shaik](https://github.com/yaseenshaik) for the solution below provided from [this repo](https://github.com/yaseenshaik/codility-solutions-javascript).
 
 ```js
 calculatePerimeter = (a, b) => 2 * (a + b)

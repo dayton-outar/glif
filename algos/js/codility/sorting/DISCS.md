@@ -40,7 +40,7 @@ Write an **efficient** algorithm for the following assumptions:
 
 ## Solution
 
-Credit should be given to Yaseen Shaik (See [here](https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/Triangle.md)) for providing this solution.
+Credit should be given to [Yaseen Shaik](https://github.com/yaseenshaik) for the solution below provided from [this repo](https://github.com/yaseenshaik/codility-solutions-javascript).
 
 ```js
 function sortAsc(a, b) {
