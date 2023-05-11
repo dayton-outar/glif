@@ -61,7 +61,7 @@ function solution(N, M) {
 }
 ```
 
-Look at that solution! So simple. If you had known Number Theory, this would have been a walk in the park. This is just based on mathematical principles.
+Look at that solution! So simple. If you had known _Number Theory_, this would have been a walk in the park. This is just based on mathematical principles.
 
 If we take the case that is provided and use the formula within the solution, which is `N / gcd(N, M)`, then we can see the magic of this solution. Given that `gcd` is the greatest common divisor, we can determine that the _gcd_ of 10 and 4 is 2. When 10 is divided by 2, we get 5.
 
