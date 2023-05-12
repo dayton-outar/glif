@@ -71,4 +71,4 @@ Now that we have proven this solution with another case, the question we are lef
 
 ![Chocolates in Circle](/.attachments/chocolates-circle.png)
 
-The detected time complexity of this solution is $O(log(n + m))$. Since recursion is used, the detected space complexity is $O(n)$.
+The detected time complexity of this solution is $O(log(n + m))$.
