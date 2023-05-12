@@ -69,4 +69,6 @@ Let's try a different case. Let's try $N = 12$ and $M = 3$. Starting at 0, the c
 
 Now that we have proven this solution with another case, the question we are left with is: Why does _gcd_ work for finding the number of possibilities with the restriction of the arithmetic modulo rule? A topic to consider studying is _Number Theory: Divisibility_. But maybe a better approach in understanding the reason for this mathematical approach is by a practical visualization demonstrated by CodeTrading YouTube Channel in [this video](https://www.youtube.com/watch?v=ryYelurbcMk&t=335s). Basically, his approach was to draw the circle and fill around the circle with the "chocolates" and work some of the cases to observe that the lowest common multiple can help to determine the number of possibilities.
 
+![Chocolates in Circle](/.attachments/chocolates-circle.png)
+
 The detected time complexity of this solution is $O(log(n + m))$. Since recursion is used, the detected space complexity is $O(n)$.
