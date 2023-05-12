@@ -67,4 +67,6 @@ If we take the case that is provided and use the formula within the solution, wh
 
 Let's try a different case. Let's try $N = 12$ and $M = 3$. Starting at 0, the chocolates that can be eaten following the rule of using $(X + 3)$ modulo $12$ are 0, 3, 6, 9. So, only 4 chocolates can be eaten following this rule for this case. Given that the _gcd_ of 12 and 3 is 3. When 12 is divided by 3, we get 4.
 
-Now that we have proven this solution with another case, let's dive into the world of _Number Theory_.
+Now that we have proven this solution with another case, the question we are left with is why does _gcd_ work for finding the number of possibilities with the restriction of the arithmetic modulo rule?
+
+The detected time complexity of this solution is $O(log(n + m))$. Since recursion is used, the detected space complexity is $O(n)$.

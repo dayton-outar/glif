@@ -76,7 +76,7 @@ Significant lessons from Codility,
 15. [Peaks](./codility/prime/PEAKS.md) :face_in_clouds:
 16. [Count Semiprimes](./codility/sieve/COUNTSEMIPRIMES.md) &#x2713; :thinking:
 17. [Count Nondivisible](./codility/sieve/COUNTNONDIVISIBLE.md) &#x2713;
-18. [Chocolates by Numbers](./codility/euclidean/CHOCOLATE.md) 
+18. [Chocolates by Numbers](./codility/euclidean/CHOCOLATE.md) &#x2713; :thinking:
 19. [Common Prime Divisors](./codility/euclidean/COMMONPRIME.md) :thinking:
 20. [Fib Frog](./codility/fibonacci/FIBFROG.md) :thinking:
 21. [Ladder](./codility/fibonacci/LADDER.md) :thinking:
