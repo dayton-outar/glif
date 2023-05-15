@@ -80,8 +80,10 @@ function solution(A, B) {
     
     return res;
 }
+
+solution( [15, 10, 3], [75, 30, 5] ); // 1
 ```
 
-I'm not getting the division by the `gcd` ... Why does it work?
+The first loop iterates through the elements of the pair of the arrays provided. The two inner loops work towards a baseline to find _common prime divisors_ between the pair of numbers in $A$ and $B$. The iteration of these inner loops are ...
 
 The detected time complexity of this solution is $O(Z \cdot log(max(A) + max(B))^2)$.

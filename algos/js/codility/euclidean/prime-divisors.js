@@ -32,13 +32,7 @@
 
 // Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/CommonPrimeDivisors.md
 
-function gcd(a, b) {
-    if ((a % b) == 0) {
-        return b;
-    } else {
-        return gcd(b, a % b);
-    }
-}
+let gcd = (a, b) => (a % b) == 0 ? b : gcd(b, a % b);
 
 function solution(A, B) { 
     let res = 0;
@@ -58,9 +52,13 @@ function solution(A, B) {
 
         c = 0;
         
+        console.log(`---`);
         while (c != 1) {
+            console.log(b, c, d);
             c = gcd(b, d);
+            console.log(`c == ${c}`);
             b /= c;
+            console.log(`b == ${b}`);
         }
 
         console.log(`a == ${a} && b == ${b}`);
