@@ -30,6 +30,8 @@
 // ---
 // Couldn't work out a proper approach
 
+// Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/CommonPrimeDivisors.md
+
 function gcd(a, b) {
     if ((a % b) == 0) {
         return b;
@@ -38,7 +40,7 @@ function gcd(a, b) {
     }
 }
 
-function solution(A, B) { // Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/CommonPrimeDivisors.md
+function solution(A, B) { 
     let res = 0;
 
     for (let i = 0; i < A.length; i++) {
@@ -46,8 +48,7 @@ function solution(A, B) { // Credit: https://github.com/yaseenshaik/codility-sol
         let b = B[i];
 
         let d = gcd(a, b);
-        let c;
-        c = 0;
+        let c = 0;
 
         while (c != 1) {
             c = gcd(a, d);
@@ -69,3 +70,5 @@ function solution(A, B) { // Credit: https://github.com/yaseenshaik/codility-sol
     
     return res;
 }
+
+console.log( solution( [15, 10, 3], [75, 30, 5] ) );
