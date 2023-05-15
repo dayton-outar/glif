@@ -82,4 +82,6 @@ function solution(A, B) {
 }
 ```
 
+I'm not getting the division by the `gcd` ... Why does it work?
+
 The detected time complexity of this solution is $O(Z \cdot log(max(A) + max(B))^2)$.

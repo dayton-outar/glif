@@ -48,6 +48,7 @@ function solution(A, B) {
         let b = B[i];
 
         let d = gcd(a, b);
+        console.log(d, a, b);
         let c = 0;
 
         while (c != 1) {
@@ -61,6 +62,8 @@ function solution(A, B) {
             c = gcd(b, d);
             b /= c;
         }
+
+        console.log(`a == ${a} && b == ${b}`);
 
         if (a == 1 && b == 1) {
             res++;
