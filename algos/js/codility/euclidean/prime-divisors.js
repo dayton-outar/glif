@@ -42,19 +42,24 @@ function solution(A, B) {
         let b = B[i];
 
         let d = gcd(a, b);
-        console.log(d, a, b);
+        console.log(`----------------`);
+        console.log(`d == ${d}`, a, b);
         let c = 0;
 
+        console.log(`~~~`);
         while (c != 1) {
+            console.log(a, c);
             c = gcd(a, d);
+            console.log(`c == ${c}`);
             a /= c;
+            console.log(`a == ${a}`);
         }
 
         c = 0;
         
         console.log(`---`);
         while (c != 1) {
-            console.log(b, c, d);
+            console.log(b, c);
             c = gcd(b, d);
             console.log(`c == ${c}`);
             b /= c;
