@@ -98,7 +98,7 @@ The number $75$ is a result of $5 \times 5 \times 3$.
 
 The number $15$ is a result of $5 \times 3$.
 
-The set of numbers that multiply to give both $75$ and $15$ is ${3, 5}$.
+The set of numbers that multiply to give both $75$ and $15$ is $\{3, 5\}$.
 
 When the `gcd` is worked down to 1, but the resulting numbers of `gcd` cannot bring any one of the pairs down to 1, then we know that the pairs do not share the same set of _prime divisors_. For example, with the pair of 10 and 30 when the second inner loop brings the `gcd` down to 3 and 10, the only number that can divide both is 1. But as we proceed to have 3 divide by 1, the loop is exited with 3 as the lowest quotient of the operation.
 
