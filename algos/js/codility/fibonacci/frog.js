@@ -73,21 +73,19 @@ function solutionX(A) { // My incomplete solution
     return jumps;
 }
 
-function solution(A) {
-    // write your code in JavaScript (Node.js 4.0.0)
-    
+function solution(A) {    
     let fib = [];
-    let N = A.length+1;
+    let N = A.length + 1;
     let i = 1;
     let steps = [];
     let arr = [];
     
-    arr[0] = 1;
-    for(i=1; i<=A.length; i++) {
-        arr[i] = A[i-1];
+    arr[0] = 1; // jumping from start
+    for( i = 1; i <= A.length; i++ ) {
+        arr[i] = A[i - 1];
     }
     
-    //console.log('arr:', arr);
+    console.log('arr:', arr, arr.length); // account for starting position before steps. Hence array length + 2
     
     if(N < 3) {
         return 1;
@@ -98,27 +96,28 @@ function solution(A) {
     
     i = 1;
     
-    while(fib[i++] < N) {
-        fib[i] = fib[i-1] + fib[i-2];
+    while( fib[i++] < N ) {
+        fib[i] = fib[i - 1] + fib[i - 2];
     }
     
     steps[0] = 1;
-    for(i=1; i<=N; i++) {
+    for( i = 1; i <= N; i++ ) {
         steps[i] = 0;
     }
+
+    console.log('steps:', steps);
     
     let base = 0;
-    let nextBase = 1;
     i = 2;
     
     let result = -1;
     
-    //console.log('fib:', fib);
+    console.log('fib:', fib);
     
     while(i < fib.length && base <= N) {
         let nextPos = base + fib[i];
         
-        //console.log('>>> N, base, nextPos, steps:', N, base, nextPos, steps);
+        console.log('> base, nextPos, steps:', base, nextPos, steps);
         
         if(steps[base] === 0) {
             base++;
@@ -151,7 +150,7 @@ function solution(A) {
             i++;
         }
         
-        //console.log('base, nextPos, steps:', base, nextPos, steps);
+        console.log('< base, nextPos, steps:', base, nextPos, steps);
     }
     
     return result;

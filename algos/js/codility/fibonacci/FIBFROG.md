@@ -70,3 +70,9 @@ Write an **efficient** algorithm for the following assumptions:
 ## Solution
 
 This problem takes some re-reading. It's not easily grasped.
+
+Credit should be given to [Yaseen Shaik](https://github.com/yaseenshaik) for the solution below provided from [this repo](https://github.com/yaseenshaik/codility-solutions-javascript).
+
+```js
+
+```
