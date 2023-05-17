@@ -73,7 +73,8 @@ This problem takes some re-reading. It's not easily grasped.
 
 Basically, there are a set of steps from one point to the next that a frog has to make his way across but his jumps are in levels of the fibonacci numbers. The frog can jump steps in the order of the fibonacci sequence. ...
 
-Credit should be given to [Yaseen Shaik](https://github.com/yaseenshaik) for the solution below provided from [this repo](https://github.com/yaseenshaik/codility-solutions-javascript).
+Credit to [Jonatas Walker](https://gist.github.com/jonataswalker) for providing his solutions [here](https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23).
+
 
 ```js
 
