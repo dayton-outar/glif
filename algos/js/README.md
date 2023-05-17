@@ -78,7 +78,7 @@ Significant lessons from Codility,
 17. [Count Nondivisible](./codility/sieve/COUNTNONDIVISIBLE.md) &#x2713;
 18. [Chocolates by Numbers](./codility/euclidean/CHOCOLATE.md) &#x2713; :thinking:
 19. [Common Prime Divisors](./codility/euclidean/COMMONPRIME.md) &#x2713; :thinking:
-20. [Fib Frog](./codility/fibonacci/FIBFROG.md) :thinking:
+20. [Fib Frog](./codility/fibonacci/FIBFROG.md) :face_in_clouds:
 21. [Ladder](./codility/fibonacci/LADDER.md) :thinking:
 22. [Min-Max Division](./codility/binary-search/MINMAXDIVISION.md) :thinking:
 23. [Nailing Planks](./codility/binary-search/NAILINGPLANKS.md) :face_in_clouds:
