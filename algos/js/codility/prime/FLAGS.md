@@ -72,3 +72,7 @@ Write an **efficient** algorithm for the following assumptions:
 - each element of array $A$ is an integer within the range [0..1,000,000,000].
 
 ## Solutions
+
+Let's take a moment to appreciate this problem.
+
+The example with $K = 2$, which is two flags, only allows for the flags to be set on peaks 1 and 5. The reason that no flag can be placed on peak 3 is because the distance between peak 1 and 3 is 1 and that distance (of 1) is less than the number of flags, K. The rule that is set is that $K \geq d$, where $d$ is the distance between peaks. Hmm ... But is the distance between peak 1 and 3 equal to 1 or 2?
