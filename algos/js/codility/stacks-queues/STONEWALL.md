@@ -35,17 +35,17 @@ Write an **efficient** algorithm for the following assumptions:
 
 Solving logical mathematical problems involves visualization. It's important to visualize the problem in order to arrive at a solution. With that said, I find this problem difficult to understand because I have a difficulty reconciling the narrative with the diagram of blocks provided. When I take a look at the array of numbers provided. For example, based on the case presented, $H$ has 4 blocks that are at a height of 8 but I cannot see that represented in the diagram. For this reason, I just opt straight for the solution without even attempting at a solution. (The reference provided below gives a good explanation of how to appreciate the problem).
 
-Here are excerpts from the reference explaining the problem.
+Here are excerpts from the reference[^1] explaining the problem.
 
 > I had to read the exercise description multiple times before understanding it and it was because of the figure when I saw it at the first time I had the wrong idea that those blocks are actually elements from the $H$ array (the heights) which led me to a confusion I got rid of as soon as I understood the origin of those blocks. the exercise is actually quite simple and the best way to explain is to take the same example given in the exercise description.
 >
-> In this example, the wall should be 9 meters long ( H.length ) and each meter of the wall can have a different height, for example the 3<sup>rd</sup> meter ($H[2]$) is a 5 meters height ( $H[2] = 5$ )
+> In this example, the wall should be 9 meters long ( `H.length` ) and each meter of the wall can have a different height, for example the 3<sup>rd</sup> meter ($H[2]$) is a 5 meters height ( $H[2] = 5$ )
 >
-> Don’t forget that the array H only contains the heights of each meter of the wall but what we actually need in order to get this exercise done is a way to calculate the blocks you see in the figure above which are still to be determined so let us first understand what are those blocks and why are they placed the way they are in the figure.
+> Don’t forget that the array $H$ only contains the heights of each meter of the wall but what we actually need in order to get this exercise done is a way to calculate the blocks you see in the figure above which are still to be determined so let us first understand what are those blocks and why are they placed the way they are in the figure.
 >
 > If you take the first block on the left of the figure you may notice that it has a 2 meters width and 8 meters height, that’s because both $H[0]$ & $H[1]$ have the same value (8) and they have no other height that precede them since they’re the two first elements of the array H, now to explain this further, it is not necessary to place two blocks of the same height as it takes 1 single block to build the two first meters of the main wall.
 > 
-> Now if you look at the other blocks of the figure you might get confused because the wall could have contained a different configuration of blocks while keeping the same blocks number( in other words the minimum number of blocks needed to build the wall) and that’s correct and could be done too but if the blocks are placed the way they are in the figure it’s because they simply have been placed in compliance to a specific algorithm.
+> Now if you look at the other blocks of the figure you might get confused because the wall could have contained a different configuration of blocks while keeping the same blocks number (in other words the minimum number of blocks needed to build the wall) and that’s correct and could be done too but if the blocks are placed the way they are in the figure it’s because they simply have been placed in compliance to a specific algorithm.
 >
 > Just think of it like if, each time we add a block to the wall, we try to make it as wide as possible, so if we take the last block and the one before.
 >
@@ -86,6 +86,6 @@ function solution(H) {
 
 The detected time complexity for the algorithm above is $O(n)$.
 
-## Reference
 
-1. [How to get 100% score on the Stone Wall exercise on Codility](http://straightdeveloper.com/how-to-get-100-score-on-the-stonewall-exercise-on-codility/)
+
+[^1]: [How to get 100% score on the Stone Wall exercise on Codility](http://straightdeveloper.com/how-to-get-100-score-on-the-stonewall-exercise-on-codility/)
