@@ -53,6 +53,8 @@ Here are excerpts from the reference[^1] explaining the problem.
 >
 > So by following this rule you will ensure that each new block is going to take as much space as possible before a newer block is going to take place and by doing so each block isn’t only going to contribute to raise the wall’s height in its initial position but may contribute in the height of the following ones as well reducing so the number of block needed to meet the height of each column and in the end you’ll get the minimum number of blocks needed to build the wall.
 
+Here's the solution provided by the author of the preceding explanation.
+
 ```js
 function solution(H) {
     let blocks = 1;
@@ -86,6 +88,6 @@ function solution(H) {
 
 The detected time complexity for the algorithm above is $O(n)$.
 
-
+I must admit that I thought I would have grasped the problem up until paragraph 4 but I had a difficulty matching up the other blocks based on that explanation.
 
 [^1]: [How to get 100% score on the Stone Wall exercise on Codility](http://straightdeveloper.com/how-to-get-100-score-on-the-stonewall-exercise-on-codility/)
