@@ -2,7 +2,7 @@
 
 ## Problem
 
-You are going to build a stone wall. The wall should be straight and N meters long, and its thickness should be constant; however, it should have different heights in different places. The height of the wall is specified by an array H of N positive integers. H[I] is the height of the wall from I to I+1 meters to the right of its left end. In particular, H[0] is the height of the wall's left end and H[N−1] is the height of the wall's right end.
+You are going to build a stone wall. The wall should be straight and $N$ meters long, and its thickness should be constant; however, it should have different heights in different places. The height of the wall is specified by an array $H$ of $N$ positive integers. $H[I]$ is the height of the wall from $I$ to $I + 1$ meters to the right of its left end. In particular, $H[0]$ is the height of the wall's left end and $H[N − 1]$ is the height of the wall's right end.
 
 The wall should be built of cuboid stone blocks (that is, all sides of such blocks are rectangular). Your task is to compute the minimum number of blocks needed to build the wall.
 
@@ -12,9 +12,9 @@ Write a function:
   function solution(H);
 ```
 
-that, given an array H of N positive integers specifying the height of the wall, returns the minimum number of blocks needed to build it.
+that, given an array $H$ of $N$ positive integers specifying the height of the wall, returns the minimum number of blocks needed to build it.
 
-For example, given array H containing N = 9 integers:
+For example, given array $H$ containing $N = 9$ integers:
 
 ```js
   H[0] = 8    H[1] = 8    H[2] = 5
@@ -28,16 +28,16 @@ the function should return 7. The figure shows one possible arrangement of seven
 
 Write an **efficient** algorithm for the following assumptions:
 
-- N is an integer within the range [1..100,000];
-- each element of array H is an integer within the range [1..1,000,000,000].
+- $N$ is an integer within the range [1..100,000];
+- each element of array $H$ is an integer within the range [1..1,000,000,000].
 
 ## Solution
 
-Solving logical mathematical problems involves visualization. It's important to visualize the problem in order to arrive at a solution. With that said, I find this problem difficult to understand because I have a difficulty reconciling the narrative with the diagram of blocks provided. When I take a look at the array of numbers provided. For example, based on the case presented, H has 4 blocks that are at a height of 8 but I cannot see that represented in the diagram. For this reason, I just opt straight for the solution without even attempting at a solution. (The reference provided below gives a good explanation of how to appreciate the problem).
+Solving logical mathematical problems involves visualization. It's important to visualize the problem in order to arrive at a solution. With that said, I find this problem difficult to understand because I have a difficulty reconciling the narrative with the diagram of blocks provided. When I take a look at the array of numbers provided. For example, based on the case presented, $H$ has 4 blocks that are at a height of 8 but I cannot see that represented in the diagram. For this reason, I just opt straight for the solution without even attempting at a solution. (The reference provided below gives a good explanation of how to appreciate the problem).
 
 Here are excerpts from the reference explaining the problem.
 
-> I had to read the exercise description multiple times before understanding it and it was because of the figure when I saw it at the first time I had the wrong idea that those blocks are actually elements from the H array (the heights) which led me to a confusion I got rid of as soon as I understood the origin of those blocks. the exercise is actually quite simple and the best way to explain is to take the same example given in the exercise description.
+> I had to read the exercise description multiple times before understanding it and it was because of the figure when I saw it at the first time I had the wrong idea that those blocks are actually elements from the $H$ array (the heights) which led me to a confusion I got rid of as soon as I understood the origin of those blocks. the exercise is actually quite simple and the best way to explain is to take the same example given in the exercise description.
 >
 > In this example, the wall should be 9 meters long ( H.length ) and each meter of the wall can have a different height, for example the 3rd meter (H[2]) is a 5 meters height ( H[2] = 5 )
 >
