@@ -49,7 +49,7 @@ Here are excerpts from the reference explaining the problem.
 >
 > Just think of it like if, each time we add a block to the wall, we try to make it as wide as possible, so if we take the last block and the one before.
 >
-> They corresponds to $H[7]$ & $H[8)$ (4 & 8 meters), they could have drawn a block of 4 meters height followed by a block of 8 meters height both having a width of 1 meter, but instead, the first block is 2 meters long and it in order to reach a 8 meters height in the last meter of the wall’s length they’ve added a second block of 4 meters placed above the previous one, so by doing so they made sure the first block has taken as much width as possible while respecting its initial height.
+> They corresponds to $H[7]$ & $H[8]$ (4 & 8 meters), they could have drawn a block of 4 meters height followed by a block of 8 meters height both having a width of 1 meter, but instead, the first block is 2 meters long and it in order to reach a 8 meters height in the last meter of the wall’s length they’ve added a second block of 4 meters placed above the previous one, so by doing so they made sure the first block has taken as much width as possible while respecting its initial height.
 >
 > So by following this rule you will ensure that each new block is going to take as much space as possible before a newer block is going to take place and by doing so each block isn’t only going to contribute to raise the wall’s height in its initial position but may contribute in the height of the following ones as well reducing so the number of block needed to meet the height of each column and in the end you’ll get the minimum number of blocks needed to build the wall.
 
