@@ -75,4 +75,8 @@ Write an **efficient** algorithm for the following assumptions:
 
 Let's take a moment to appreciate this problem.
 
-The example with $K = 2$, which is two flags, only allows for the flags to be set on peaks 1 and 5. The reason that no flag can be placed on peak 3 is because the distance between peak 1 and 3 is 1 and that distance (of 1) is less than the number of flags, K. The rule that is set is that $K \geq d$, where $d$ is the distance between peaks. Hmm ... But is the distance between peak 1 and 3 equal to 1 or 2?
+The example with $K = 2$, which is two flags, only allows for the flags to be set on peaks 1 and 5. But how so? YouTube Channel Author of CodeTrading[^1] does not agree with this. If $K = 2$, then the first two flags can be placed on peak 1 and peak 3. So, the first example must be an error
+
+The reason that no flag can be placed on peak 3 is because the distance between peak 1 and 3 is 1 and that distance (of 1) is less than the number of flags, $K$. The rule that is set is that $K \geq d$, where $d$ is the distance between peaks. Hmm ... But is the distance between peak 1 and 3 equal to 1 or 2?
+
+[^1]: [Flags in Python and C++ Codility Solutions Lesson 10](https://youtu.be/6KK2eglhvdQ) - [CodeTrading](https://www.youtube.com/@CodeTradingCafe)
