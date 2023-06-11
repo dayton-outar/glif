@@ -2,15 +2,15 @@
 
 ## Problem
 
-You are given integers K, M and a non-empty array A consisting of N integers. Every element of the array is not greater than M.
+You are given integers $K$, $M$ and a non-empty array $A$ consisting of $N$ integers. Every element of the array is not greater than $M$.
 
-You should divide this array into K blocks of consecutive elements. The size of the block is any integer between 0 and N. Every element of the array should belong to some block.
+You should divide this array into $K$ blocks of consecutive elements. The size of the block is any integer between 0 and $N$. Every element of the array should belong to some block.
 
-The sum of the block from X to Y equals A[X] + A[X + 1] + ... + A[Y]. The sum of empty block equals 0.
+The sum of the block from $X$ to $Y$ equals $A[X] + A[X + 1] + ... + A[Y]$. The sum of empty block equals 0.
 
 The _large sum_ is the maximal sum of any block.
 
-For example, you are given integers K = 3, M = 5 and array A such that:
+For example, you are given integers $K = 3$, $M = 5$ and array $A$ such that:
 
 ```js
   A[0] = 2
@@ -37,9 +37,9 @@ Write a function:
     function solution(K, M, A);
 ```
 
-that, given integers K, M and a non-empty array A consisting of N integers, returns the minimal large sum.
+that, given integers $K$, $M$ and a non-empty array $A$ consisting of $N$ integers, returns the minimal large sum.
 
-For example, given K = 3, M = 5 and array A such that:
+For example, given $K = 3$, $M = 5$ and array $A$ such that:
 
 ```js
   A[0] = 2
@@ -55,8 +55,8 @@ the function should return 6, as explained above.
 
 Write an **efficient** algorithm for the following assumptions:
 
-- N and K are integers within the range [1..100,000];
-- M is an integer within the range [0..10,000];
-- each element of array A is an integer within the range [0..M].
+- $N$ and $K$ are integers within the range $[1 ... 100,000]$;
+- $M$ is an integer within the range $[0 ... 10,000]$;
+- each element of array $A$ is an integer within the range $[0 ... M]$.
 
 ## Solution
