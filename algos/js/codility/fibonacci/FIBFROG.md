@@ -17,7 +17,7 @@ The leaves on the river are represented in an array $A$ consisting of $N$ intege
 - 0 represents a position without a leaf;
 - 1 represents a position containing a leaf.
 
-The goal is to count the minimum number of jumps in which the frog can get to the other side of the river (from position −1 to position N). The frog can jump between positions −1 and N (the banks of the river) and every position containing a leaf.
+The goal is to count the minimum number of jumps in which the frog can get to the other side of the river (from position −1 to position $N$). The frog can jump between positions −1 and $N$ (the banks of the river) and every position containing a leaf.
 
 For example, consider array A such that:
 
