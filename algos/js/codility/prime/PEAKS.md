@@ -25,7 +25,7 @@ For example, the following array $A$:
 
 has exactly three peaks: 3, 5, 10.
 
-We want to divide this array into blocks containing the same number of elements. More precisely, we want to choose a number K that will yield the following blocks:
+We want to divide this array into blocks containing the same number of elements. More precisely, we want to choose a number $K$ that will yield the following blocks:
 
 - $A[0], A[1], ..., A[K − 1]$,
 - $A[K], A[K + 1], ..., A[2K − 1]$,
