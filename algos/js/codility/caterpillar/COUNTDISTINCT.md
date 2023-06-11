@@ -2,11 +2,11 @@
 
 ## Problem
 
-An integer M and a non-empty array A consisting of N non-negative integers are given. All integers in array A are less than or equal to M.
+An integer $M$ and a non-empty array $A$ consisting of $N$ non-negative integers are given. All integers in array $A$ are less than or equal to $M$.
 
-A pair of integers (P, Q), such that $0 ≤ P ≤ Q < N$, is called a _slice_ of array A. The slice consists of the elements A[P], A[P + 1], ..., A[Q]. A distinct slice is a slice consisting of only unique numbers. That is, no individual number occurs more than once in the slice.
+A pair of integers $(P, Q)$, such that $0 ≤ P ≤ Q < N$, is called a _slice_ of array A. The slice consists of the elements $A[P], A[P + 1], ..., A[Q]$. A distinct slice is a slice consisting of only unique numbers. That is, no individual number occurs more than once in the slice.
 
-For example, consider integer M = 6 and array A such that:
+For example, consider integer $M = 6$ and array $A$ such that:
 
 ```js
     A[0] = 3
@@ -26,11 +26,11 @@ Write a function:
     function solution(M, A);
 ```
 
-that, given an integer M and a non-empty array A consisting of N integers, returns the number of distinct slices.
+that, given an integer $M$ and a non-empty array $A$ consisting of $N$ integers, returns the number of distinct slices.
 
 If the number of distinct slices is greater than 1,000,000,000, the function should return 1,000,000,000.
 
-For example, given integer M = 6 and array A such that:
+For example, given integer $M = 6$ and array $A$ such that:
 
 ```js
     A[0] = 3
@@ -44,8 +44,8 @@ the function should return 9, as explained above.
 
 Write an efficient algorithm for the following assumptions:
 
-- N is an integer within the range [1..100,000];
-- M is an integer within the range [0..100,000];
-- each element of array A is an integer within the range [0..M].
+- $N$ is an integer within the range $[1 ... 100,000]$;
+- $M$ is an integer within the range $[0 ... 100,000]$;
+- each element of array $A$ is an integer within the range $[0 ... M]$.
 
 ## Solution
