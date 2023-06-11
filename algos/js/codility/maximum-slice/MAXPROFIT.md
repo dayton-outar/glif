@@ -40,8 +40,8 @@ the function should return $356$, as explained above.
 
 Write an efficient algorithm for the following assumptions:
 
-N is an integer within the range [0..400,000];
-each element of array A is an integer within the range [0..200,000].
+N is an integer within the range $[0 ... 400,000]$;
+each element of array A is an integer within the range $[0 ... 200,000]$.
 
 ## Solution
 

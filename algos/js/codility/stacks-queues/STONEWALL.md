@@ -28,8 +28,8 @@ the function should return 7. The figure shows one possible arrangement of seven
 
 Write an **efficient** algorithm for the following assumptions:
 
-- $N$ is an integer within the range [1..100,000];
-- each element of array $H$ is an integer within the range [1..1,000,000,000].
+- $N$ is an integer within the range $[1 ... 100,000]$;
+- each element of array $H$ is an integer within the range $[1 ... 1,000,000,000]$.
 
 ## Solution
 

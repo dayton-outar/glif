@@ -34,8 +34,8 @@ the function should return 1, because only one pair (15, 75) has the same set of
 
 Write an **efficient** algorithm for the following assumptions:
 
-- $Z$ is an integer within the range [1..6,000];
-- each element of arrays $A$ and $B$ is an integer within the range [1..2,147,483,647].
+- $Z$ is an integer within the range $[1 ... 6,000]$;
+- each element of arrays $A$ and $B$ is an integer within the range $[1 ... 2,147,483,647]$.
 
 ## Solution
 

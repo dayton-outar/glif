@@ -48,8 +48,8 @@ the function should return [2, 4, 3, 2, 0], as explained above.
 
 Write an **efficient** algorithm for the following assumptions:
 
-- $N$ is an integer within the range [1..50,000];
-- each element of array $A$ is an integer within the range $[1..2 \times N]$.
+- $N$ is an integer within the range $[1 ... 50,000]$;
+- each element of array $A$ is an integer within the range $[1..2 \cdot N]$.
 
 ## Solution
 

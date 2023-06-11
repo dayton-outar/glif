@@ -54,8 +54,8 @@ the function should return 17, because no double slice of array A has a sum of g
 
 Write an efficient algorithm for the following assumptions:
 
-- N is an integer within the range [3..100,000];
-- each element of array A is an integer within the range [−10,000..10,000].
+- N is an integer within the range $[3 ... 100,000]$;
+- each element of array A is an integer within the range $[−10,000 ... 10,000]$.
 
 ## Solution
 

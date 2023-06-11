@@ -42,11 +42,11 @@ the function should return the values [2, 4, 1], as explained above.
 
 Write an efficient algorithm for the following assumptions:
 
-- N is an integer within the range [1..100,000];
-- M is an integer within the range [1..50,000];
-- each element of arrays P and Q is an integer within the range [0..N - 1];
+- $N$ is an integer within the range $[1 ... 100,000]$;
+- $M$ is an integer within the range $[1 ... 50,000]$;
+- each element of arrays P and Q is an integer within the range $[0 ... N - 1]$;
 - $P[K] ≤ Q[K]$, where $0 ≤ K < M$;
-- string S consists only of upper-case English letters A, C, G, T.
+- string $S$ consists only of upper-case English letters $A$, $C$, $G$, $T$.
 
 ## Solution
 

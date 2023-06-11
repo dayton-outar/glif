@@ -64,7 +64,7 @@ the function should return 3, as explained above.
 
 Write an **efficient** algorithm for the following assumptions:
 
-- $N$ is an integer within the range [0..100,000];
+- $N$ is an integer within the range $[0 ... 100,000]$;
 - each element of array $A$ is an integer that can have one of the following values: 0, 1.
 
 ## Solution

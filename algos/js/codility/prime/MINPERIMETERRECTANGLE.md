@@ -27,7 +27,7 @@ For example, given an integer $N = 30$, the function should return $22$, as expl
 
 Write an **efficient** algorithm for the following assumptions:
 
-- $N$ is an integer within the range [1..1,000,000,000].
+- $N$ is an integer within the range $[1..1,000,000,000]$.
 
 ## Solution
 
