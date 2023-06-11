@@ -6,7 +6,7 @@ You are given two non-empty arrays $A$ and $B$ consisting of $N$ integers. These
 
 Next, you are given a non-empty array $C$ consisting of $M$ integers. This array represents $M$ nails. More precisely, $C[I]$ is the position where you can hammer in the $I$−th nail.
 
-We say that a plank $(A[K], B[K])$ is nailed if there exists a nail C[I] such that $A[K] ≤ C[I] ≤ B[K]$.
+We say that a plank $(A[K], B[K])$ is nailed if there exists a nail $C[I]$ such that $A[K] ≤ C[I] ≤ B[K]$.
 
 The goal is to find the minimum number of nails that must be used until all the planks are nailed. In other words, you should find a value $J$ such that all planks will be nailed after using only the first $J$ nails. More precisely, for every plank $(A[K], B[K])$ such that $0 ≤ K < N$, there should exist a nail $C[I]$ such that $I < J$ and $A[K] ≤ C[I] ≤ B[K]$.
 
@@ -69,8 +69,8 @@ the function should return 4, as explained above.
 
 Write an **efficient** algorithm for the following assumptions:
 
-- $N$ and $M$ are integers within the range [1..30,000];
-- each element of arrays $A$, $B$ and $C$ is an integer within the range [1..2*M];
+- $N$ and $M$ are integers within the range $[1 ... 30,000]$;
+- each element of arrays $A$, $B$ and $C$ is an integer within the range $[1 ... 2 \cdot M]$;
 - $A[K] ≤ B[K]$.
 
 
