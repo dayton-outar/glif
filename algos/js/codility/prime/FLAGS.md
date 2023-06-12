@@ -75,8 +75,21 @@ Write an **efficient** algorithm for the following assumptions:
 
 Let's take a moment to appreciate this problem.
 
-The example with $K = 2$, which is two flags, only allows for the flags to be set on peaks 1 and 5. But how so? YouTube Channel Author of CodeTrading[^1] does not agree with this. If $K = 2$, then the first two flags can be placed on peak 1 and peak 3. So, the first example must be an error
+The example with $K = 2$, which is two flags, only allows for the flags to be set on peaks 1 and 5. But how so? YouTube Channel Author of CodeTrading[^1] does not agree with this. If $K = 2$, then the first two flags can be placed on peak 1 and peak 3. So, the first example must be an error.
 
-The reason that no flag can be placed on peak 3 is because the distance between peak 1 and 3 is 1 and that distance (of 1) is less than the number of flags, $K$. The rule that is set is that $K \geq d$, where $d$ is the distance between peaks. Hmm ... But is the distance between peak 1 and 3 equal to 1 or 2?
+Now, the first part of the problem should not be difficult to resolve. It involves counting the peaks. All that is required in the solution is to loop through the points in the array and test the condition provided to identify peaks. The mathematical notation for the condition to be met for a peak is $A[P − 1] < A[P] > A[P + 1]$. So, since a part of the condition requires one step back from the current index position, the loop needs to start one step ahead. Here's how we find the peaks,
+
+```js
+let peaks = [];
+for (let i = 1; i < A.length - 1; ++i) {
+    if (A[i] > A[i - 1] && A[i] > A[i + 1]) {
+        peaks.push(i);
+    }
+}
+```
+
+...
+
+The rule that is set is that $K \geq d$, where $d$ is the distance between peaks.
 
 [^1]: [Flags in Python and C++ Codility Solutions Lesson 10](https://youtu.be/6KK2eglhvdQ) - [CodeTrading](https://www.youtube.com/@CodeTradingCafe)
