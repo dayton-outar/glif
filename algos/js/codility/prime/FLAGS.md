@@ -75,7 +75,7 @@ Write an **efficient** algorithm for the following assumptions:
 
 Let's take a moment to appreciate this problem.
 
-The example with $K = 2$, which is two flags, only allows for the flags to be set on peaks 1 and 5. But how so? YouTube Channel Author of CodeTrading[^1] does not agree with this. If $K = 2$, then the first two flags can be placed on peak 1 and peak 3. So, the first example must be an error.
+The example with $K = 2$, which is two flags, can be set on peaks 1 and 5. YouTube Channel Author of CodeTrading[^1] states that the first two flags can _also_ be placed on peak 1 and peak 3. The key thing to note is that *the distance between any two flags **should be greater than or equal to the number of flags***, $K$.
 
 Now, the first part of the problem should not be difficult to resolve. It involves counting the peaks. All that is required in the solution is to loop through the points in the array and test the condition provided to identify peaks. The mathematical notation for the condition to be met for a peak is $A[P − 1] < A[P] > A[P + 1]$. So, since a part of the condition requires one step back from the current index position, the loop needs to start one step ahead. Here's how we find the peaks,
 
