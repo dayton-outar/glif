@@ -88,8 +88,17 @@ for (let i = 1; i < A.length - 1; ++i) {
 }
 ```
 
-...
+The main concept of this problem is to _find the maximum number of flags that can be set on the peaks_ of a provided arrangement (or array). Hinging on that is the rule that $K \geq d$, where $K$ is the number of flags and $d$ is the distance between peaks.
 
-The rule that is set is that $K \geq d$, where $d$ is the distance between peaks.
+Once we can determine the number of peaks in an array, we can also determine a lower bound. Given that the number of elements in the array is greater than 3, it's possible to have at least 1 peak. (It's also possible to have no peaks as well.) Let's say that there are only two peaks in an array consisting 4 elements. An array consisting 4 elements can have at most 4 peaks where the distance between them is at least 2. If you were to sketch out the possibilities for an array of 3 elements, you'd realize that 2 peaks can also be achieved where the distance between them would have to be 2. So, knowing this the following snippet of code is placed in the solution before counting through an array that provides us with more than 2 peaks,
+
+```js
+let size = peaks.length;
+if (size <= 2) return size;
+```
+
+Now, we can proceed to the entrée of this algorithm.
+
+...
 
 [^1]: [Flags in Python and C++ Codility Solutions Lesson 10](https://youtu.be/6KK2eglhvdQ) - [CodeTrading](https://www.youtube.com/@CodeTradingCafe)
