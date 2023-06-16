@@ -73,6 +73,8 @@ function solution(A) { // Credit: https://github.com/yaseenshaik/codility-soluti
     
     const maxFlag = parseInt( Math.sqrt(peaks[size - 1] - peaks[0]) + 1);
 
+    console.log( peaks[size - 1], peaks[0], maxFlag );
+
     for (let i = maxFlag; i >= 2; --i) {
         let count = 1;
         let curPos = peaks[0];
