@@ -152,7 +152,7 @@ The main genius of this algorithm is found on line 13 within the `solution` func
 const maxFlag = parseInt( Math.sqrt(peaks[size - 1] - peaks[0]) + 1);
 ```
 
-The bold statement made here is that the _maximum number of flags possible from the elements (or points) in the provided array is equal to the square root of the distance between the first peak and the last peak plus 1_. So, how did this come about?
+The bold statement made here is that the _maximum number of flags possible from the elements (or points) in the provided array is equal to the square root of the distance between the first peak and the last peak plus 1_. In mathematical notation, $m = \sqrt{d} + 1$, where $m$ is the maximum number of flags possible to be set between $d$, the distance between the first peak and the last peak. So, how did this come about?
 
 From the context of the lesson that this problem was provided is that **every composite number has a _prime factor_ less than or equal to its square root**. But what does composite number and prime factors have to do with this problem? Let's take a step back and deconstruct the problem.
 
