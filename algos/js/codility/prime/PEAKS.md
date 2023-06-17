@@ -29,7 +29,9 @@ We want to divide this array into blocks containing the same number of elements.
 
 - $A[0], A[1], ..., A[K − 1]$,
 - $A[K], A[K + 1], ..., A[2K − 1]$,
+  
   ...
+
 - $A[N − K], A[N − K + 1], ..., A[N − 1]$.
 
 What's more, every block should contain at least one peak. Notice that extreme elements of the blocks (for example $A[K − 1]$ or $A[K]$) can also be peaks, but only if they have both neighbors (including one in an adjacent blocks).
