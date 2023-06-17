@@ -152,10 +152,17 @@ The main genius of this algorithm is found on line 13 within the `solution` func
 const maxFlag = parseInt( Math.sqrt(peaks[size - 1] - peaks[0]) + 1);
 ```
 
-The bold statement made here is that the _maximum number of flags possible from the elements (or points) in the provided array is equal to the square root of the distance between the first peak and the last peak plus 1_. In mathematical notation, $m = \sqrt{d} + 1$, where $m$ is the maximum number of flags possible to be set between $d$, the distance between the first peak and the last peak. So, how did this come about?
+The bold statement made here is that the _maximum number of flags possible from the elements (or points) in the provided array is equal to 1 plus the square root of the distance between the first peak and the last peak_. In mathematical notation, $m = 1 + \sqrt{d}$, where $m$ is the maximum number of flags possible to be set between $d$, the distance between the first peak and the last peak. So, how did this come about?
 
-From the context of the lesson that this problem was provided is that **every composite number has a _prime factor_ less than or equal to its square root**. But what does composite number and prime factors have to do with this problem? Let's take a step back and deconstruct the problem.
+The main theme of the lesson that this problem was provided is that **every composite number has a _prime factor_ less than or equal to its square root**. But what does composite number and prime factors have to do with this problem? Let's take a step back and deconstruct the problem.
 
+If we look at $d$, the distance between peaks, as the **composite number**, then the maximum number of divisions that can be made within $d$ is decided by the ***prime factor***. Based on the rule set where _the distance between flags must be greater than or equal to the number of flags_, $K$, we can conclude that $K$ is a _factor_ (it may not be prime factor as it may not be a prime number but it is a factor). Let's say that the distance, $d$, is 16 where the factors are 1, 2, 4, 8 and 16. If we say that $K$ is 1, then based on the rule only 1 flag can be set within $d$. If we take the other extreme and say that $K$ is 16, then based on the rule only 1 flag can be set. The maximum number of flags can be set happens to be 4, which is the $\sqrt{16}$. For those that have learned calculus, will realize that this is some kind of optimization problem.
+
+From the example previously mentioned, it must be noted that when _dividing_ the _distance_, $d$, the peak at the beginning will not be taken into account. This is the reason for adding 1 in the equation.
+
+So, after figuring the genius stroke that will give us the performance edge in delivering the solution, the anchor leg is left. The anchor leg is to count the peaks within $d$ by assuming the maximum number of divisions possible (or maximum number of flags possible, $m$) and then decrementing the possibilities until all the peaks are found.
+
+Although, a nested loop was used to find all the peaks within $d$, the manner of the iteration of the inner loop was done like a harmonic series. Hence, the inner loop should have time complexity of $O(\text{log }d)$. Since the outer loop was done on square root of $d$, then the time complexity of the outer loop is $O(\sqrt{d})$. We cannot forget that we had to loop through every point to identify peaks, so the time complexity for the first loop is $O(n)$. It comes as no surprise then that the time complexity for this solution is $O(n)$. It could also be $O(n + \sqrt{d})$, but then d is such a small subset of $n$.
 
 
 [^1]: [Flags in Python and C++ Codility Solutions Lesson 10](https://youtu.be/6KK2eglhvdQ) - [CodeTrading](https://www.youtube.com/@CodeTradingCafe)
