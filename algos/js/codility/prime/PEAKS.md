@@ -84,3 +84,9 @@ Write an **efficient** algorithm for the following assumptions:
 
 ## Solution
 
+The key points to note for this problem is:
+
+1. All blocks need to have the same number of elements
+2. Each block must have a peak
+
+Ultimately, the aim is to find the maximum number of blocks possible from the provided array.
