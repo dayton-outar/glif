@@ -90,3 +90,52 @@ The key points to note for this problem is:
 2. Each block must have a peak
 
 Ultimately, the aim is to find the maximum number of blocks possible from the provided array.
+
+Credit to [Jonatas Walker](https://gist.github.com/jonataswalker) for providing his solutions [here](https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23).
+
+See below the snippet of code that worked performantly to deliver the solution.
+
+```js
+function solution(A) {    
+    if(A.length < 3) {
+        return 0;
+    }
+    
+    let peaks = [];
+    let maxSize = 0;
+    
+    for ( let i = 1; i < A.length - 1; i++ ) {
+        if ( A[i] > A[i-1] && A[i] > A[i+1] ) {
+            peaks.push(i);
+        }
+    }
+    
+    if ( peaks.length < 2 ) {
+        return peaks.length;
+    }
+    
+    for( let i = 1; i <= A.length; i++ ) {
+        if ( A.length % i === 0 ) {
+            let blockSize = i;
+            let blockCount = A.length / i;
+            
+            let lastGroup = 0;
+            for( let j = 0; j < peaks.length; j++ ) {
+                if ( parseInt( peaks[j] / blockSize ) === lastGroup ) {
+                    lastGroup++;
+                }
+            }
+            
+            if ( lastGroup === blockCount ) {
+                maxSize = Math.max(maxSize, blockCount);
+            }
+        }
+    }
+    
+    return maxSize;
+}
+
+solution( [1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2] ); // 3
+```
+
+Let's dive in and deconstruct this solution.

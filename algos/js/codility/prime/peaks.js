@@ -66,7 +66,7 @@
 // N is an integer within the range [1..100,000];
 // each element of array A is an integer within the range [0..1,000,000,000].
 
-// Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/Peaks.md ... Score: 90%
+// Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/Peaks.md ... Score: 90% ... O(n * log (log n)) ... but fails large_anti_slow test
 
 function solution2(A) {
     let n = A.length;
@@ -84,7 +84,7 @@ function solution2(A) {
         if ((n % i) == 0) {
             let bi = 0;
             let block = n / i;
-            for (let ind in peaks) {
+            for( let ind in peaks ) {
             	let p = peaks[ind]
                 if (bi * block <= p && p < (bi + 1) * block) {
                     bi++;
@@ -97,23 +97,19 @@ function solution2(A) {
     }
 
     return max;
-
 }
 
 // Credit: Jonatas Walker https://app.codility.com/demo/results/training7GBTZ2-BNT/ ... 100% ... O(n * log (log n))
-function solution(A) {
-    // write your code in JavaScript (Node.js 4.0.0)
-    
+
+function solution(A) {    
     if(A.length < 3) {
         return 0;
     }
     
-    let i = 0;
-    let j = 0;
     let peaks = [];
     let maxSize = 0;
     
-    for ( i = 1; i < A.length - 1; i++ ) {
+    for ( let i = 1; i < A.length - 1; i++ ) {
         if ( A[i] > A[i-1] && A[i] > A[i+1] ) {
             peaks.push(i);
         }
@@ -123,26 +119,20 @@ function solution(A) {
         return peaks.length;
     }
     
-    for( i = 1; i <= A.length; i++ ) {
+    for( let i = 1; i <= A.length; i++ ) {
         if ( A.length % i === 0 ) {
             let blockSize = i;
             let blockCount = A.length / i;
             
-            if ( blockSize < 3 ) {
-                continue;
-            }
-            
-            var lastGroup = -1;
-            for( j = 0; j < peaks.length; j++ ) {
-                if ( parseInt( peaks[j] / blockSize ) === lastGroup + 1 ) {
+            let lastGroup = 0;
+            for( let j = 0; j < peaks.length; j++ ) {
+                if ( parseInt( peaks[j] / blockSize ) === lastGroup ) {
                     lastGroup++;
                 }
             }
             
-            if ( lastGroup + 1 === blockCount ) {
-                if ( blockCount > maxSize ) {
-                    maxSize = blockCount;
-                }
+            if ( lastGroup === blockCount ) {
+                maxSize = Math.max(maxSize, blockCount);
             }
         }
     }
