@@ -85,8 +85,7 @@ function solution2(A) {
             let bi = 0;
             let block = n / i;
             for( let ind in peaks ) {
-            	let p = peaks[ind]
-                if (bi * block <= p && p < (bi + 1) * block) {
+                if (bi * block <= peaks[ind] && peaks[ind] < (bi + 1) * block) {
                     bi++;
                 }
             }
@@ -102,7 +101,7 @@ function solution2(A) {
 // Credit: Jonatas Walker https://app.codility.com/demo/results/training7GBTZ2-BNT/ ... 100% ... O(n * log (log n))
 
 function solution(A) {    
-    if(A.length < 3) {
+    if ( A.length < 3 ) {
         return 0;
     }
     

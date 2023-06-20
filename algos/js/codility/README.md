@@ -66,7 +66,7 @@ Significant lessons from Codility,
 12. [Count Factors](./codility/prime/COUNTFACTORS.md) &#x2713;
 13. [Minimum Perimeter Rectangle](./codility/prime/MINPERIMETERRECTANGLE.md) &#x2713;
 14. [Flags](./codility/prime/FLAGS.md) &#x2713; :face_in_clouds:
-15. [Peaks](./codility/prime/PEAKS.md) :face_in_clouds:
+15. [Peaks](./codility/prime/PEAKS.md) &#x2713; :face_in_clouds:
 16. [Count Semiprimes](./codility/sieve/COUNTSEMIPRIMES.md) &#x2713; :thinking:
 17. [Count Nondivisible](./codility/sieve/COUNTNONDIVISIBLE.md) &#x2713;
 18. [Chocolates by Numbers](./codility/euclidean/CHOCOLATE.md) &#x2713; :thinking:
