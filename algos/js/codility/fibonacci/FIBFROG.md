@@ -69,7 +69,7 @@ Write an **efficient** algorithm for the following assumptions:
 
 ## Solution
 
-Basically, there are a set of steps from one point to the next that a frog has to make his way across but his jumps are in levels of the fibonacci numbers. _The frog can jump between (positions − 1) and $N$ (the banks of the river) and every position containing a leaf_.
+Basically, there are a set of steps from one point to the next that a frog has to make his way across but his jumps are in levels of the fibonacci numbers. _The frog can jump between (positions − 1) and N (the banks of the river) and every position containing a leaf_.
 
 Credit to [Jonatas Walker](https://gist.github.com/jonataswalker) for providing his solutions [here](https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23).
 
