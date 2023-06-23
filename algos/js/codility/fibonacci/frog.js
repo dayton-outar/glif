@@ -85,8 +85,6 @@ function solution(A) {
         arr[i] = A[i - 1];
     }
     
-    console.log('arr:', arr, arr.length); // account for starting position before steps. Hence array length + 2
-    
     if(N < 3) {
         return 1;
     }
@@ -104,10 +102,8 @@ function solution(A) {
     for( i = 1; i <= N; i++ ) {
         steps[i] = 0;
     }
-
-    console.log('steps:', steps);
     
-    let base = 0;
+    let base = 0; // What is base?
     i = 2;
     
     let result = -1;
@@ -120,29 +116,41 @@ function solution(A) {
         console.log('> base, nextPos, steps:', base, nextPos, steps);
         
         if(steps[base] === 0) {
+            console.log('steps[base] === 0');
             base++;
         } else if(nextPos > N) {
+            console.log('nextPos > N');
             base++;
             i = 2;
         } else {
             if(nextPos === N) {
+                console.log('nextPos === N');
                 if(base === 0) {
+                    console.log('base === 0');
                     return 1;
                 } else {
+                    console.log('base !== 0');
                     if(result < 0) {
+                        console.log('result < 0');
                         result = steps[base] + 1;
                     } else {
+                        console.log('result >= 0');
                         result = Math.min(result, steps[base] + 1);
                     }
                 }
             } else if(arr[nextPos] === 1) {
+                console.log('arr[nextPos] === 1');
                 if(steps[nextPos] === 0) {
+                    console.log('steps[nextPos] === 0');
                     if(base === 0) {
+                        console.log('base === 0');
                         steps[nextPos] = 1;
                     } else {
+                        console.log('base !== 0');
                         steps[nextPos] = steps[base] + 1;
                     }
                 } else {
+                    console.log('steps[nextPos] !== 0');
                     steps[nextPos] = Math.min(steps[nextPos], steps[base] + 1);
                 }
             }
