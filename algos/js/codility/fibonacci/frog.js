@@ -84,7 +84,7 @@ function solution(A) {
     for( i = 1; i <= A.length; i++ ) {
         arr[i] = A[i - 1];
     }
-    
+
     if(N < 3) {
         return 1;
     }
@@ -108,13 +108,15 @@ function solution(A) {
     
     let result = -1;
     
-    console.log('fib:', fib);
-    
     while(i < fib.length && base <= N) {
         let nextPos = base + fib[i];
         
-        console.log('> base, nextPos, steps:', base, nextPos, steps);
-        
+        console.log( '=========================');
+        console.log( 'base\t', base );
+        console.log( `fib[${i}]\t`, fib[i] );
+        console.log( 'nextPos\t', nextPos );
+        console.log( '-------------------------');
+
         if(steps[base] === 0) {
             console.log('steps[base] === 0');
             base++;
@@ -123,6 +125,7 @@ function solution(A) {
             base++;
             i = 2;
         } else {
+            console.log('else ...');
             if(nextPos === N) {
                 console.log('nextPos === N');
                 if(base === 0) {
@@ -139,9 +142,11 @@ function solution(A) {
                     }
                 }
             } else if(arr[nextPos] === 1) {
-                console.log('arr[nextPos] === 1');
+                console.log(`arr[${nextPos}] === 1`);
+                console.log(arr);
+                
                 if(steps[nextPos] === 0) {
-                    console.log('steps[nextPos] === 0');
+                    console.log(`steps[${nextPos}] === 0`);
                     if(base === 0) {
                         console.log('base === 0');
                         steps[nextPos] = 1;
@@ -150,7 +155,7 @@ function solution(A) {
                         steps[nextPos] = steps[base] + 1;
                     }
                 } else {
-                    console.log('steps[nextPos] !== 0');
+                    console.log(`steps[${nextPos}] !== 0`);
                     steps[nextPos] = Math.min(steps[nextPos], steps[base] + 1);
                 }
             }
@@ -158,7 +163,8 @@ function solution(A) {
             i++;
         }
         
-        console.log('< base, nextPos, steps:', base, nextPos, steps);
+        console.log( '-------------------------');
+        console.log('steps:', steps);
     }
     
     return result;
