@@ -164,3 +164,5 @@ The `steps` array, is the array that will be updated to keep track of all (reall
 As seen, in the illustration above when the main loop starts to fill out the `steps` array it starts from `base` equal to 0 and it iterates through all the possible fibonacci numbers to find _a step_ that lands on a _leaf_ (basically a position in `arr` where the value is 1). The distance from one bank to the next is 12, so when the iteration reaches the 7<sup>th</sup> number in the fibonacci sequence (13), the fibonacci iteration pointer, `i`, is reset and the `base` is incremented (because of the condition `nextPos > N`).
 
 ![Starting Position of Fibonacci Frog](/.attachments/fibonacci-frog-base-5.png)
+
+![Starting Position of Fibonacci Frog](/.attachments/fibonacci-frog-base-7.png)
