@@ -153,8 +153,10 @@ solution( [0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0] ); // 3
 
 This solution makes use of a number of techniques to deliver accurate results at optimal performance. There is use of [Dynamic Programming](../dynamic/) and the main loop (the fourth one in the `solution` function) uses two pointers to maintain a hashtable that [count occurences](../counting/) of jumps.
 
-Before the `solution` function transitions into the final loop, it prepares 3 arrays (or hashtable depending on how you see it) to better track the possible jumps that can be made into the appropriate positions possible. The first loop simply adds the _(position - 1)_ as a baseline to start from in the `arr` array, where 1 is placed at the beginning index, 0, of this array. The `arr` states the appropriate positions possible for the frog to land. The `fib` array keeps the possible jumps (distance that the frog can jump) limited by the distance between one bank of the river to the other bank, which is the length of the array plus 1. The illustration below justifies the formula from which $N$ is derived.
+Before the `solution` function transitions into the final loop, it prepares 3 arrays (or hashtable depending on how you see it) to better track the possible jumps that can be made into the appropriate positions possible. The first loop simply adds the _(position - 1)_ as a baseline to start from in the `arr` array, where 1 is placed at the beginning index, 0, of this array. The `arr` states the appropriate positions possible for the frog to land. The `fib` array keeps the possible jumps (distance that the frog can jump) limited by the distance between one bank of the river to the other bank, which is the length of the array plus 1. The illustration below justifies the formula from which $N$ is derived by using the case given the provided array, `[0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0]` from the example in the problem statement.
 
 ![Starting Position of Fibonacci Frog](/.attachments/fibonacci-frog-start.png)
 
 The `steps` array, is the array that will be updated to keep track of all (really? all?) possibilities from each position and is critically important in _find the minimum number of jumps it takes to get to the other bank of the river, N_.
+
+![Starting Position of Fibonacci Frog](/.attachments/fibonacci-frog-base-0.png)
