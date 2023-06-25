@@ -161,10 +161,30 @@ The `steps` array, is the array that will be updated to keep track of all _viabl
 
 ![Starting Position of Fibonacci Frog](/.attachments/fibonacci-frog-base-0.png)
 
-As seen, in the illustration above when the main loop starts to fill out the `steps` array it starts from `base` equal to 0 and it iterates through all the possible fibonacci numbers to find _a step_ that lands on a _leaf_ (basically a position in `arr` where the value is 1). The distance from one bank to the next is 12, so when the iteration reaches the 7<sup>th</sup> number in the fibonacci sequence (13), the fibonacci iteration pointer, `i`, is reset and the `base` is incremented (because of the condition `nextPos > N`).
+As seen in the illustration above when the main loop starts to fill out the `steps` array, it starts from `base` equal to 0 and it iterates through all the possible fibonacci numbers to find _a step_ that lands on a _leaf_ (basically a position in `arr` where the value is 1). The distance from one bank to the next is 12, so when the iteration reaches the 7<sup>th</sup> number in the fibonacci sequence (13), the fibonacci iteration pointer, `i`, is reset and the `base` is incremented (because of the condition `nextPos > N`).
 
 ![Starting Position of Fibonacci Frog](/.attachments/fibonacci-frog-base-5.png)
 
-Since, `nextPos` is calculated based on the fibonacci numbers, some positions from the `base` will obviously be skipped out from the condition, `arr[nextPos] === 1` such as 4, 6, 7 and so on not found in the fibonacci sequence. This is the reason that index 4 is skipped in the deduction from `arr` array, even though it's value is 1.
+Since, `nextPos` is calculated based on the fibonacci numbers, some positions from the `base` will obviously be skipped out from the condition, `arr[nextPos] === 1`, such as 4, 6, 7 and so on that are not found in the fibonacci sequence. This is the reason that index 4 is skipped in the deduction from `arr` array, even though it's value is 1.
 
 ![Starting Position of Fibonacci Frog](/.attachments/fibonacci-frog-base-7.png)
+
+Now that the process flow of the final loop has been explained and illustrated with the provided use case. There is a calculation instruction and a logical structure within the main loop that must be highlighted.
+
+The calculation instruction, where `Math.min` is used is to always maintain track of the _minimum number of viable jumps_ between two positions, especially given that the technique of [count occurences](../counting/) is used. So, when the `steps` array is completed, every position must state the _minimum number of viable jumps_ it takes the frog to get to that position.
+
+The logical structure that must be highlighted is the snippet of code shown below, which basically is resposible for delivering the result of all the computation within the `solution`,
+
+```js
+if(result < 0) {
+    result = steps[base] + 1;
+} else {
+    result = Math.min(result, steps[base] + 1);
+}
+```
+
+This logical structure is arrived at whenever `nextPos` is equal to `N`, where $N$ is position of the other bank of the river. Given that all possible jumps of the frog are being considered, it is possible that the loop will hit this condition multiple times (`nextPos === N`). There could be several possibilities to bring the frog to its destination (directly landing at $N$). So, `result` is created to keep track of the _minimum viable jumps_ possible to arrive at $N$. Given that `result` is initiated at `-1`, the condition, `result < 0` was installed to prevent `Math.min` from choosing the negative number. If the `result` is negative, it simply means that it has just arrived at a possibility of reaching $N$ throughout the previous iterations of the main loop (or the fourth loop).
+
+So, to further describe the importance of the logical structure maintaining the `result` variable, we can use the use case provided. When the frog arrives at position 7 (which is index 7 in the `steps`) array, the _minimum viable jumps_ to get to that position is 2. When `nextPos` is calculated to be 12, it enters this logical structure for the first time with `result` equal to -1. The program flows to the instruction where the `result` is calculated by adding 1 to the _minimum viable jumps_ possible to 7 because the frog only needs one more jump from position 7 to reach position 12 (i.e. $N$) to account for the frog making a possible _minimum viable jumps_ from one bank of the river to the other. (I think no explanation is needed to explain the `else` part of this logical structure since hints have been given in a previous paragraph).
+
+The time complexity of this algorithm is $O(n \cdot \text{log }n)$. Understandably so, the first set of loops iterate through each element of the provided array. So, the three loops would give us a formula like $n + n + 1 + n + 2$ (or $3n + 3$). Since, the last loop is iterated based on calculations of the fibonacci sequence, we get a harmonic rythm from it and, hence, the reason for the loop to perform in $\text{log }n$ time.

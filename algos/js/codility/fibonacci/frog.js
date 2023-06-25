@@ -134,12 +134,13 @@ function solution(A) {
                 } else {
                     console.log('base !== 0');
                     if(result < 0) {
-                        console.log('result < 0');
+                        console.log(`result (${result}) < 0`);
                         result = steps[base] + 1;
                     } else {
                         console.log('result >= 0');
                         result = Math.min(result, steps[base] + 1);
                     }
+                    console.log(`result -- ${result}`);
                 }
             } else if(arr[nextPos] === 1) {
                 console.log(`arr[${nextPos}] === 1`);
