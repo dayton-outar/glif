@@ -171,7 +171,7 @@ Since, `nextPos` is calculated based on the fibonacci numbers, some positions fr
 
 Now that the process flow of the final loop has been explained and illustrated with the provided use case. There is a calculation instruction and a logical structure within the main loop that must be highlighted.
 
-The calculation instruction, where `Math.min` is used is to always maintain track of the _minimum number of viable jumps_ between two positions, especially given that the technique of [count occurences](../counting/) is used. So, when the `steps` array is completed, every position must state the _minimum number of viable jumps_ it takes the frog to get to that position.
+The calculation instruction that must be highlighted is the assignments involving the use of `Math.min`. `Math.min` is used to always maintain track of the _minimum number of viable jumps_ between two positions, especially given that the technique of [count occurences](../counting/) is used. So, when the `steps` array is completed, every position must state the _minimum number of viable jumps_ it takes the frog to get to that position.
 
 The logical structure that must be highlighted is the snippet of code shown below, which basically is resposible for delivering the result of all the computation within the `solution`,
 
