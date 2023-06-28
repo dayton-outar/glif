@@ -200,4 +200,19 @@ totalNails[1 - 1] === totalNails[4]; // totalNails[0] <-- 0 is not equal to tota
 
 The condition would fail and iterate to the next plank, [4, 5], which would also fail (stating that the plank is nailed with the nails chosen). Plank, [8, 10] would cause the condition to pass and then make the program exit the loop and return `false` from `allNailed`. So, when nails `C[0]` and `C[1]` are used, they can nail down planks [1, 4], [4, 5] and [5, 9] but not [8, 10].
 
-Now that the algorithm can detect various possibilities where all planks are nailed, the next major logical step is how to exit the binary search loop with the _minimum number of nails needed to nail down all planks_.
+Now that the algorithm can detect when all planks are nailed through various possibilities, the next major logical step is how to exit the binary search loop with the _minimum number of nails needed to nail down all planks_. Let's take a look at the control structure after the call to `allNailed`.
+
+```js
+if(result) {
+    atLeastOne = true;
+    if(max === mid) {
+        break;
+    }
+    
+    max = mid;
+} else {
+    min = mid + 1;
+}
+```
+
+The `mid` pointer basically states the upper bound index of the array of nails, `C`, that had to be used _sequentially_ to _nail down all planks_. If a `mid` value is arrived at that _nails down all planks_
