@@ -129,6 +129,7 @@ function solution(A, B, C) {
         let result = allNailed(A, B, totalNails);
         
         if(result) {
+            console.log( 'all' );
             atLeastOne = true;
             if(max === mid) {
                 break;
@@ -148,6 +149,7 @@ function solution(A, B, C) {
 }
 
 function allNailed(arrA, arrB, totalNails) {
+    console.log( '------' );
     for(let i = 0; i < arrA.length; i++ ) {
 
         // So, after passing in the array of totalNails, 
