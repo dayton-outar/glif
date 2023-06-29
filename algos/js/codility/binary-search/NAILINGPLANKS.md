@@ -215,4 +215,6 @@ if(result) {
 }
 ```
 
-The `mid` pointer basically states the upper bound index of the array of nails, `C`, that had to be used _sequentially_ to _nail down all planks_. If a `mid` value is arrived at that _nails down all planks_
+The `mid` pointer basically states the upper bound index of the array of nails, `C`, that had to be used _sequentially_ to _nail down all planks_. If a `mid` value is arrived at that _nails down all planks_, then that value becomes the `max` since it fulfills a minimum requirement. If all nails are not nailed down, the `min` is incremented and closes in onto the `max` value until _minimum number of nails needed to nail down all planks_ is arrived.
+
+The time complexity of this $O((n + m) \cdot log(m))$, where $n$ is the length of the array, `totalNails`, representing the plank positions and $m$ is the length of `C`, the array containing the position where the nails are allowed.

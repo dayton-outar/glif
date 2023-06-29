@@ -74,7 +74,7 @@ Significant lessons from Codility,
 20. [Fib Frog](./fibonacci/FIBFROG.md) &#x2713; :face_in_clouds:
 21. [Ladder](./fibonacci/LADDER.md) :thinking:
 22. [Min-Max Division](./binary-search/MINMAXDIVISION.md) :thinking:
-23. [Nailing Planks](./binary-search/NAILINGPLANKS.md) :face_in_clouds:
+23. [Nailing Planks](./binary-search/NAILINGPLANKS.md) &#x2713; :face_in_clouds:
 24. [Count Distinct Slices](./caterpillar/COUNTDISTINCT.md) :thinking:
 25. [Count Triangle](./caterpillar/COUNTRIANGLES.md) :thinking:
 26. [Min Absolute Sum of Two](./caterpillar/MINABSSUM.md) :thinking:
