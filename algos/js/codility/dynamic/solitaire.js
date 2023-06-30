@@ -47,6 +47,7 @@
 
 // Credit: https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23
 // Credit: https://app.codility.com/demo/results/trainingXKAYAB-KGV/
+
 function solution(A) { // Score: 100% ... O(N)
     let result = [];
     
@@ -54,14 +55,17 @@ function solution(A) { // Score: 100% ... O(N)
     for(let i = 1; i < A.length; i++) {
         result[i] = -Infinity;
     }
+
+    console.log( A );
+    console.log( result );
     
     for(let i = 1; i < A.length; i++) {
         for(let j = Math.max(0, i - 6); j < i; j++) { // Checking for highest number in batches of 6. Math.max(0, i - 6) ... cheeky move there
-            console.log( i, j, result[i] );
+            console.log( `${j}. `, result[j], A[i], '...', (result[j] + A[i]) );
             result[i] = Math.max(result[i], result[j] + A[i]);
         }
+        console.log( result );
     }
-    console.log( result );
 
     return result[result.length - 1];
 }
