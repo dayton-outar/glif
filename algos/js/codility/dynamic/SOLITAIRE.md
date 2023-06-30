@@ -62,7 +62,7 @@ I think this problem is clearly outlined and expressed. There is very little roo
 
 This problem is based on the use of a dice, which has 6 faces and, hence, _6 possibilities in a throw (or toss of the dice)_.
 
-In the use case provided there are 6 spots but the "pebble" starts from the first spot ("square number 0"). If the dice falls on 6, this cannot be used in moving the pebble forward because there is no spot available for the pebble 6 spots away from the first spot. So, from the first spot only numbers on the dice that are useful are from 5 downward: 5, 4, 3, 2, 1. Each spot has its value and the aim of this problem is to _find the maximum value possible from shifting the pebble from starting spot to ending spot_.
+In the use case provided there are 6 spots but the "pebble" starts from the first spot ("square number 0"). If the dice falls on 6, this cannot be used in moving the pebble forward because there is no spot available for the pebble that is 6 spots away from the first spot. So, from the first spot only numbers on the dice that are useful are from 5 downward: 5, 4, 3, 2, 1. Each spot has its value and the aim of this problem is to _find the maximum value possible from shifting the pebble from starting spot to ending spot_.
 
 When the problem is fully grasped, the impression is that this requires a solution that determines every possible combination (as in some sort of _permutation and combination_ problem). This already sounds performantly expensive.
 
