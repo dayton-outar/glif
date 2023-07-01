@@ -98,4 +98,4 @@ Since we are using [Dynamic Programming](./README.md), the idea is to _trade spa
 
 When visuals are created to demonstrate the solution, it can be more easily understood. See below visuals of the initial state of the "pebble" within the squares (anthe value associated with each square)
 
-![Pebble at starting position within the 6 series of squares](.attachments/number-solitaire.png)
+![Pebble at starting position within the 6 series of squares](/.attachments/number-solitaire.png)
