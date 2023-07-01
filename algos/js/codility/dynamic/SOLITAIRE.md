@@ -99,3 +99,14 @@ Since we are using [Dynamic Programming](./README.md), the idea is to _trade spa
 When visuals are created to demonstrate the solution, it can be more easily understood. See below visuals of the initial state of the "pebble" within the squares (anthe value associated with each square)
 
 ![Pebble at starting position within the 6 series of squares](/.attachments/number-solitaire.png)
+
+So, the idea of this algorithm is to ***find the maximum value for the pebble to arrive at each spot leading up to the end spot by also going through all possibilities that the dice offers to reach that spot***. It sounds expensive at first but the genius is in managing the way how the nested loop performs this action. Let's start with a few iterations of this concept.
+
+The assumption is already made that the pebble must start at position 0, so the value at _square 0_ is added to the running balance. Thus the running balance starts at 1. Remember as stated in the problem definition, the _result of the game is the gameis the sum of the numbers written on all marked squares_. Marked squares meaning the squares that the pebble visited in the aim to arrive at the _maximal possible result that can be achieved on the board_.
+
+![Moving pebble to spot 1](/.attachments/number-solitaire-2.png)
+
+The position next to the starting spot (or square) is maintained in the nested loop through the variable `i`. The pebble is already at starting spot where `i` is 0. When the possibilities on the dice are considered to reach _square 1_, there is only one possibility on the dice and that is 1. If the dice is rolled and any other number is face up when the dice settles, the pebble cannot be moved. The running balance of adding _square 0_ and _square 1_ is -1. Since -1 is the only possible result of moving the pebble from _square 0_ to _square 1_, then -1 is kept as the _maximal possible result_ up to this point.
+
+
+
