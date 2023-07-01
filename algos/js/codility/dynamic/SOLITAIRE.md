@@ -114,4 +114,12 @@ Now, as the program iterates to the next spot, _square 2_, the running balance m
 
 ![Moving pebble to square 2](/.attachments/number-solitaire-3.1.png)
 
+The illustration above helps to visualize the two possibilities of moving the pebble from _square 0_ to _square 2_. The blue dashed arrows indicates the possibility of moving to _square 2_ by rolling the dice two times and getting 1 on each roll. The running balance from this possibility is -1. The other possibility, involves rolling the dice one time and getting 2 on that roll. The running balance from that possibility is 1.
 
+We can add one more illustration to gain confidence in the process that this algorithm is using. Let's consider the pebble moving to _square 3_.
+
+![Moving pebble to square 3](/.attachments/number-solitaire-4.png)
+
+...
+
+The time complexity for this algorithm is $O(n)$. Wow! How can a nested loop have a time complexity of $O(n)$?
