@@ -112,6 +112,6 @@ Before proceeding, there's an important point to note. Since negative numbers ar
 
 Now, as the program iterates to the next spot, _square 2_, the running balance must be calculated for each spot visited in order to reach to _square 2_ and the maximum value of the running balances must be chosen as the _maximal possible result_.
 
-![Moving pebble to square 2](/.attachments/number-solitaire-3.png)
+![Moving pebble to square 2](/.attachments/number-solitaire-3.1.png)
 
 
