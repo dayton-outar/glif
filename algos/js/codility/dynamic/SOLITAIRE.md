@@ -104,9 +104,14 @@ So, the idea of this algorithm is to ***find the maximum value for the pebble to
 
 The assumption is already made that the pebble must start at position 0, so the value at _square 0_ is added to the running balance. Thus the running balance starts at 1. Remember as stated in the problem definition, the _result of the game is the gameis the sum of the numbers written on all marked squares_. Marked squares meaning the squares that the pebble visited in the aim to arrive at the _maximal possible result that can be achieved on the board_.
 
-![Moving pebble to spot 1](/.attachments/number-solitaire-2.png)
+![Moving pebble to square 1](/.attachments/number-solitaire-2.png)
 
 The position next to the starting spot (or square) is maintained in the nested loop through the variable `i`. The pebble is already at starting spot where `i` is 0. When the possibilities on the dice are considered to reach _square 1_, there is only one possibility on the dice and that is 1. If the dice is rolled and any other number is face up when the dice settles, the pebble cannot be moved. The running balance of adding _square 0_ and _square 1_ is -1. Since -1 is the only possible result of moving the pebble from _square 0_ to _square 1_, then -1 is kept as the _maximal possible result_ up to this point.
 
+Before proceeding, there's an important point to note. Since negative numbers are part of the running balance, the program has to use negative infinity, `-Infinity`, because it makes use of the lowest possible number that can be had from the computer and stores this number when initiating the `result` array that keeps track of the _maximal possible result_ for each spot coming from the starting spot.
+
+Now, as the program iterates to the next spot, _square 2_, the running balance must be calculated for each spot visited in order to reach to _square 2_ and the maximum value of the running balances must be chosen as the _maximal possible result_.
+
+![Moving pebble to square 2](/.attachments/number-solitaire-3.png)
 
 
