@@ -91,3 +91,11 @@ function solution(A) {
 
 solution( [1, -2, 0, 9, -1, -2] ); // 8
 ```
+
+Let's deconstruct this solution.
+
+Since we are using [Dynamic Programming](./README.md), the idea is to _trade space for time_. For this reason an array was created with entries for six spots with teh idea to store the _maximum value possible for shifting the pebble from starting spot_ to the spot represented by the index of the array.
+
+When visuals are created to demonstrate the solution, it can be more easily understood. See below visuals of the initial state of the "pebble" within the squares (anthe value associated with each square)
+
+![Pebble at starting position within the 6 series of squares](.attachments/number-solitaire.png)
