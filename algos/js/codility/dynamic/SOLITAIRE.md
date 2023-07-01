@@ -122,4 +122,4 @@ We can add one more illustration to gain confidence in the process that this alg
 
 ...
 
-The time complexity for this algorithm is $O(n)$. Wow! How can a nested loop have a time complexity of $O(n)$?
+The time complexity for this algorithm is $O(n)$. Wow! How can a nested loop have a time complexity of $O(n)$? Since the inner loop is always checking 6 possibilities of the dice from the starting spot, the worst case of the loop will always be equal to 6. So, when the outer loop's worst case is $n$, where $n$ is the number of squares (or spots) on the number solitaire board. An expanded equation of the worst case for the `solution` function (including all three loops) could be $n + 6n = 7n$ and this equation would fall in the performance category of $O(n)$.
