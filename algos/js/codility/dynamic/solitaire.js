@@ -61,7 +61,7 @@ function solution(A) { // Score: 100% ... O(N)
     
     for(let i = 1; i < A.length; i++) {
         for(let j = Math.max(0, i - 6); j < i; j++) { // Checking for highest number in batches of 6. Math.max(0, i - 6) ... cheeky move there
-            console.log( `i: ${i} j: ${j}. `, result[j], A[i], '...', (result[j] + A[i]) );
+            console.log( `i: ${i} j: ${j}. `, result[i], result[j], A[i], '...', (result[j] + A[i]) );
             result[i] = Math.max(result[i], result[j] + A[i]);
         }
         console.log( result );
@@ -70,4 +70,4 @@ function solution(A) { // Score: 100% ... O(N)
     return result[result.length - 1];
 }
 
-console.log( solution( [1, -2, 0, 9, -1, -2] ) );
+console.log( solution( [1, -2, 0, 9, -1, -2, 3, 2, 6, 1, -5, 1] ) );
