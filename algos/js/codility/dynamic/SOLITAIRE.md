@@ -110,11 +110,29 @@ The position next to the starting spot (or square) is maintained in the nested l
 
 Before proceeding, there's an important point to note. Since negative numbers are part of the running balance, the program has to use negative infinity, `-Infinity`, because it makes use of the lowest possible number that can be had from the computer and stores this number when initiating the `result` array that keeps track of the _maximal possible result_ for each spot coming from the starting spot.
 
+See below table showing values initialized within `result` array from the first loop.
+
+| 0    |    1      |         2 |         3 |         4 |         5 |
+| ---: | --------: | --------: | --------: | --------: | --------: |
+| 1    | -Infinity | -Infinity | -Infinity | -Infinity | -Infinity |
+
+The _maximal possible results_ up to _square 1_ is captured in `result` as shown below,
+
+| 0    |  1   |         2 |         3 |         4 |         5 |
+| ---: | ---: | --------: | --------: | --------: | --------: |
+| 1    | -1   | -Infinity | -Infinity | -Infinity | -Infinity |
+
 Now, as the program iterates to the next spot, _square 2_, the running balance must be calculated for each spot visited in order to reach to _square 2_ and the maximum value of the running balances must be chosen as the _maximal possible result_.
 
 ![Moving pebble to square 2](/.attachments/number-solitaire-3.1.png)
 
 The illustration above helps to visualize the two possibilities of moving the pebble from _square 0_ to _square 2_. The blue dashed arrows indicates the possibility of moving to _square 2_ by rolling the dice two times and getting 1 on each roll. The running balance from this possibility is -1. The other possibility, involves rolling the dice one time and getting 2 on that roll. The running balance from that possibility is 1.
+
+See the _maximal possible result_ up to _square 2_,
+
+| 0    |  1   |  2   |         3 |         4 |         5 |
+| ---: | ---: | ---: | --------: | --------: | --------: |
+| 1    | -1   |  1   | -Infinity | -Infinity | -Infinity |
 
 We can add one more illustration to gain confidence in the process that this algorithm is using. Let's consider the pebble moving to _square 3_.
 
