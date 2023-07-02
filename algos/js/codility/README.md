@@ -80,5 +80,5 @@ Significant lessons from Codility,
 26. [Min Absolute Sum of Two](./caterpillar/MINABSSUM.md) :thinking:
 27. [Max Non-overlapping Segments](./greedy/MAXNONOVERLAPPING.md) :thinking:
 28. [Tie Ropes](./greedy/TIEROPES.md)
-29. [Number Solitaire](./dynamic/SOLITAIRE.md) :face_in_clouds:
+29. [Number Solitaire](./dynamic/SOLITAIRE.md) &#x2713; :face_in_clouds:
 30. [Minimum Absolute Sum](./dynamic/MINABSSUM.md) &#x2713; :thinking:
