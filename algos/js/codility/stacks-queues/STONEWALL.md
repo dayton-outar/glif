@@ -39,6 +39,8 @@ Instead of drawing horizontal lines, it would have been better if vertical lines
 
 ![Stone wall with vertical lines](/.attachments/stone-wall-better-diagram-v2.png)
 
+The illustration above provides an easier mental mapping to the provided array. Credit to CodeTrading YouTube channel for providing visualization[^2].
+
 Credit should be given to [Yaseen Shaik](https://github.com/yaseenshaik) for the solution below provided from [this repo](https://github.com/yaseenshaik/codility-solutions-javascript). See his solution to this problem below.
 
 ```js
