@@ -37,7 +37,7 @@ Solving logical mathematical problems involves visualization. It's important to 
 
 Instead of drawing horizontal lines, it would have been better if vertical lines were drawn or the wall be placed within a graph but with no lines drawn within the wall. See below an illustration of what is intended by the authors of this problem definition.
 
-![Stone wall with vertical lines](/.attachments/stone-wall-better-diagram.png)
+![Stone wall with vertical lines](/.attachments/stone-wall-better-diagram-v2.png)
 
 Credit should be given to [Yaseen Shaik](https://github.com/yaseenshaik) for the solution below provided from [this repo](https://github.com/yaseenshaik/codility-solutions-javascript). See his solution to this problem below.
 
