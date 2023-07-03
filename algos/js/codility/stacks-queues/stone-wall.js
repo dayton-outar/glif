@@ -28,7 +28,9 @@
 // This problem was difficult to understand. I could not understand how they arrived at the diagram of blocks based on the information provided.
 // I am not alone in this. See http://straightdeveloper.com/how-to-get-100-score-on-the-stonewall-exercise-on-codility/
 
-function solution(H) { // Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/StoneWall.md Score: 100%
+// Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/StoneWall.md Score: 100%
+
+function solution(H) {
 	var stack = [];
     var head = -1;
     var block = 0;
@@ -53,29 +55,4 @@ function solution(H) { // Credit: https://github.com/yaseenshaik/codility-soluti
     return block + head + 1
 }
 
-function solution2(H) { // Credit: http://straightdeveloper.com/how-to-get-100-score-on-the-stonewall-exercise-on-codility/
-    var blocks=1
-    var previousWall=[H[0]]
-    var previousHeight=H[0];
-    for(var i=1;i<H.length;i++){
-        var currentHeight=H[i];
-        var heightDiff=currentHeight-previousHeight;
-        if(heightDiff>0){ //current wall heighter
-            blocks++
-            previousHeight+=heightDiff
-            previousWall.push(heightDiff)
-        }else{
-            while(previousHeight>currentHeight){
-            var lastBlock=previousWall.pop()
-            previousHeight-=lastBlock;
-            }
-            heightDiff=currentHeight-previousHeight;
-            if(heightDiff>0){ //current wall is highter
-            blocks++
-            previousWall.push(heightDiff)
-            previousHeight+=heightDiff
-            }
-        }
-    }
-    return blocks
-}
+console.log( solution( [8, 8, 5, 7, 9, 8, 7, 4, 8] ) );
