@@ -45,11 +45,11 @@ Let's break down the solution.
 
 ![Stone Wall](/.attachments/stone-wall.png)
 
-- For the first two meters, the height level is the same in the stone wall. The most optimal solution for the first two meters, is to use one block of 8 by 2.
+- For index 0 to 2 (2 meters), the height level is the same in the stone wall. The most optimal solution for the first two meters, is to use one block of 8 by 2.
 
-- From index 2 to 6 (4 meters), the height levels are greater than or equal to 5. For this reason, a block of 5 by 4 (referred to as _block 5-4_) is used.
+- From index 2 to 6 (5 meters), the height levels are greater than or equal to 5. For this reason, a block of 5 by 4 (referred to as _block 5-4_) is used.
 
-- From index 3 to 6 (3 meters), the height levels are greater than or equal to 7. For this reason, a block of 2 by 3 (referred to as _block 2-3_) is placed upon _block 5-4_ at index 3.
+- From index 3 to 6 (4 meters), the height levels are greater than or equal to 7. For this reason, a block of 2 by 3 (referred to as _block 2-3_) is placed upon _block 5-4_ at index 3.
 
 - From index 4 to 5 (1 meter), the height level is 9. A block of 2 by 1 is placed upon _block 2-3_, which lays on top of _block 4-5_.
 
@@ -57,7 +57,7 @@ Let's break down the solution.
 
 - Since the height level goes back down to 7 at index 6, there's no need to add a block since _block 2-3_ is at height level of 7.
 
-- From index 7 to 8, the height levels are greater than or equal to 4. So, a block of 4 by 2 (referred to as _block 4-2_) is needed.
+- From index 7 to 8 (2 meters), the height levels are greater than or equal to 4. So, a block of 4 by 2 (referred to as _block 4-2_) is needed.
 
 - At index 8, the height level is 8. So, a block is needed to sit on top of _block 4-2_ to reach that height level at index 8. Hence, a 4 by 1 is used.
 
