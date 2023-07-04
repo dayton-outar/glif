@@ -55,4 +55,29 @@ function solution(H) {
     return block + head + 1
 }
 
+// Credit: Jonatas Walker
+function solution2(H) {    
+    let counter = 0;
+    let height = 0;
+    let blocks = [];
+    let i = 0;
+    
+    while( i < H.length) {
+        if(H[i] > height) {
+            let newBlock = H[i] - height;
+            blocks.push(newBlock);
+            height += newBlock;
+            counter++;
+            i++;
+        } else if(H[i] < height) {
+            let lastBlock = blocks.pop();
+            height -= lastBlock;
+        } else {
+            i++;
+        }
+    }
+    
+    return counter;
+}
+
 console.log( solution( [8, 8, 5, 7, 9, 8, 7, 4, 8] ) );
