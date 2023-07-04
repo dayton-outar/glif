@@ -65,16 +65,19 @@ Voila! The heigh level from the provided array is achieved using 7 blocks.
 
 Maybe the diagram needed more explanation.
 
+The detailed breakdown of the solution offers some hint into providing the most optimal algorithm to solve this problem.
+
 Credit should be given to [Yaseen Shaik](https://github.com/yaseenshaik) for the solution below provided from [this repo](https://github.com/yaseenshaik/codility-solutions-javascript). See his solution to this problem below.
 
 ```js
 function solution(H) {
-	var stack = [];
-    var head = -1;
-    var block = 0;
-    var i = 0;
+    let stack = [];
+    let head = -1;
+    let block = 0;
+    let i = 0;
+    
     while (i < H.length) {
-        var h = H[i];
+        let h = H[i];
         if (head < 0) {
             ++head;
             stack[head] = h;//stack push
@@ -93,6 +96,7 @@ function solution(H) {
     return block + head + 1
 }
 ```
+
 Let's deconstruct this solution.
 
 ...

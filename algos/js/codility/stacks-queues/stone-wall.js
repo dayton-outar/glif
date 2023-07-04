@@ -31,12 +31,12 @@
 // Credit: https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/StoneWall.md Score: 100%
 
 function solution(H) {
-	var stack = [];
-    var head = -1;
-    var block = 0;
-    var i = 0;
+	let stack = [];
+    let head = -1;
+    let block = 0;
+    let i = 0;
     while (i < H.length) {
-        var h = H[i];
+        let h = H[i];
         if (head < 0) {
             ++head;
             stack[head] = h;//stack push
