@@ -58,7 +58,7 @@ Significant lessons from Codility,
 4. [Triangle](./sorting/TRIANGLE.md) &#x2713;
 5. [Number of Disc Intersections](./sorting/DISCS.md) &#x2713; :thinking:
 6. [Fish](./stacks-queues/FISH.md) &#x2713;
-7. [Stone Wall](./stacks-queues/STONEWALL.md) :face_in_clouds:
+7. [Stone Wall](./stacks-queues/STONEWALL.md) &#x2713; :thinking:
 8. [Equi Leader](./leader/EQUILEADER.md) &#x2713; :thinking:
 9. [Max Profit](./maximum-slice/MAXPROFIT.md) &#x2713; :thinking:
 10. [Max Slice Sum](./maximum-slice/MAXSLICESUM.md) &#x2713;

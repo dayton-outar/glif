@@ -67,7 +67,7 @@ Maybe the diagram needed more explanation.
 
 The detailed breakdown of the solution offers some hint into providing the most optimal algorithm to solve this problem.
 
-Credit should be given to [Yaseen Shaik](https://github.com/yaseenshaik) for the solution below provided from [this repo](https://github.com/yaseenshaik/codility-solutions-javascript). See his solution to this problem below.
+Credit should be given to [Yaseen Shaik](https://github.com/yaseenshaik) for the solution below provided from [this repo](https://github.com/yaseenshaik/codility-solutions-javascript).
 
 ```js
 function solution(H) {
@@ -97,9 +97,55 @@ function solution(H) {
 }
 ```
 
-Let's deconstruct this solution.
+The control structures can be better simplified and narrowed down to 3 control structures within the loop by using the built-in array functions, `push()` and `pop()`. For this reason, attention is also drawn to [Jonatas Walker](https://gist.github.com/jonataswalker) for providing his solutions [here](https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23). See his solution below.
 
-...
+```js
+function solution(H) {
+    let counter = 0;
+    let height = 0;
+    let blocks = [];
+    let i = 0;
+    
+    while( i < H.length) {
+        if(H[i] > height) {
+            let newBlock = H[i] - height;
+            blocks.push(newBlock);
+            height += newBlock;
+            counter++;
+            i++;
+        } else if(H[i] < height) {
+            let lastBlock = blocks.pop();
+            height -= lastBlock;
+        } else {
+            i++;
+        }
+    }
+    
+    return counter;
+}
+
+solution( [8, 8, 5, 7, 9, 8, 7, 4, 8] ); // 7
+```
+
+Let's deconstruct this solution by Jonatas Walker.
+
+Basically, every height level in the array is visited with a few variables to keep track of the progression of the state of the loop, the height level and, importantly, the _minimal number of blocks needed_.
+
+Based on the breakdown provided for the problem definition's use case, a few things are clear,
+
+ - For a certain height level, new height level detected, a block is needed.
+
+ - When adjacent indices are at the same height level, no new block is needed. For example, in the provided use case, indices 0 and 1, have same height level and, hence, use same block to achieve that height level.
+
+Notice how Jonatas' solution,
+
+ - Adds new block whenever the height level is greater than the current height level of new blocks by using the `height` variable
+ - Pops the new block whenever the height level is lesser than the the current height level of new blocks by using the `height` variable
+ - New blocks are only counted whenever height level becomes greater than the current height level of new blocks
+ - Advances the loop if the height level is equal to the current height level of new blocks. If it's not greater than or lesser than, then it must be equal to when the program flows into the `else` clause.
+ - Appropriate arithmetic is done to maintain track of the height of each new block laid, so that when they are popped, the current `height` level returns to the height level achieved by laying the previous "new block". (This is making crafty use of the stack data structure, Last-In-First-Out).
+
+The solution for this problem is pretty simple and straightforward. The problem definition leaves too much room for misinterpretation. Hopefully, the added explanation of the problem and the breakdown of the use case and the diagram brings enlightenment to the reader.
 
 The detected time complexity for the algorithm above is $O(n)$.
 

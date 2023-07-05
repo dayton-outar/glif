@@ -56,7 +56,7 @@ function solution(H) {
 }
 
 // Credit: Jonatas Walker
-function solution2(H) {    
+function solution2(H) {
     let counter = 0;
     let height = 0;
     let blocks = [];
