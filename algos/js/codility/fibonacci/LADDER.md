@@ -29,7 +29,7 @@ Given $N = 5$, you have eight different ways of climbing, ascending by:
 - 2, 1 and 2 rungs, and
 - 2, 2 and 1 rung.
 
-The number of different ways can be very large, so it is sufficient to return the result modulo $2P$, for a given integer $P$.
+The number of different ways can be very large, so it is sufficient to return the result modulo $2^P$, for a given integer $P$.
 
 Write a function:
 
@@ -37,7 +37,7 @@ Write a function:
     function solution(A, B);
 ```
 
-that, given two non-empty arrays $A$ and $B$ of $L$ integers, returns an array consisting of $L$ integers specifying the consecutive answers; position $I$ should contain the number of different ways of climbing the ladder with $A[I]$ rungs modulo $2B[I]$.
+that, given two non-empty arrays $A$ and $B$ of $L$ integers, returns an array consisting of $L$ integers specifying the consecutive answers; position $I$ should contain the number of different ways of climbing the ladder with $A[I]$ rungs modulo $2^{B[I]}$.
 
 For example, given $L = 5$ and:
 
@@ -59,9 +59,23 @@ Write an **efficient** algorithm for the following assumptions:
 
 ## Solution
 
-This problem also takes some re-reading to grasp.
+This problem takes some re-reading to grasp.
 
-The part that is not easily grasp is the part that involves the modulus equation.
+The part that is not easily grasp is the part that involves the modulus equation. So, let's work through the use case provided to understand a few details.
+
+Two arrays are provided: `A` and `B`. `A` contains the values `[ 4, 4, 5, 5, 1 ]` and `B` contains the values `[ 3, 2, 4, 3, 1 ]`. The outcome of the `solution` function for the first index, 0, of the resulting array is 5. How is this number arrived at? First thing that was done was to find the number of ways that a ladder of 4 rungs (`A[0] = 4`) can be climbed given the rule that you can climb the ladder either by $K + 1$ or $K + 2$, where $K$ is position (or rung) on the ladder. A ladder of 4 rungs (with the rule mentioned) can be climbed in 5 ways,
+
+ 1. 1, 1, 1, 1
+ 2. 1, 1, 2
+ 3. 1, 2, 1
+ 4. 2, 1, 1
+ 5. 2, 2
+
+Since _the number of different ways can be large_ [for more rungs], _it is sufficient to return the result modulo 2P, for a given integer P_. That integer, P, for this use case turns out to be the matching value in the array `B`. So, since we are checking for a ladder of 4 rungs based on `A[0]`, we should be using 3 (from `B[0]`) in the place of that integer, P. When this is done, the result is $5 \mod (2^3) = 5 \mod 8 = 5$.
+
+Since the next index of A, `A[1]`, provides a ladder with same number of rungs as the first index of A, `A[0]`, the number of ways climbing it remains the same. However, _that integer, P,_ is different, the value of `B[1]` is 2. When the result of $A[1] \mod (2^{B[1]})$ is calculated, the result is $5 \mod (2^2) = 5 \mod 4 = 1$.
+
+We know that the number of ways to climb a ladder of 5 rungs by the given rules is 8 based on the details provided in the problem definition. So, following the pattern to work out the results preceding index 2 of A, we get $8 \mod (2^4) = 8 \mod 16 = 8$.
 
 ```js
 

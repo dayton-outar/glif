@@ -45,12 +45,12 @@
 // each element of array A is an integer within the range [1..L];
 // each element of array B is an integer within the range [1..30].
 
-function solution(A, B) { // Credit: https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23    
+// Credit: https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23    
+function solution(A, B) {
     let i = 0;
     let result = [];
     let max = 0;
     let steps = [];
-    let stepsSum = [];
     let maxB = 0;
 
     steps[0] = 1;
@@ -75,3 +75,5 @@ function solution(A, B) { // Credit: https://gist.github.com/jonataswalker/08187
 }
 
 console.log([4, 4, 5, 5, 1], [3, 2, 4, 3, 1]);
+
+console.log( solution( [4, 4, 5, 5, 1], [3, 2, 4, 3, 1] ) );
