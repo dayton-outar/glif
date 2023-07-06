@@ -81,6 +81,8 @@ Although, there is an impulse to categorise this problem as a type of permutatio
 
 But given the context of the lesson of this problem, it highly likely that the number of ways that a ladder of a set number of rungs can be discovered by making use of the fibonacci sequence.
 
+Credit to [Jonatas Walker](https://gist.github.com/jonataswalker) for providing his solutions [here](https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23). See his solution below.
+
 ```js
 function solution(A, B) {
     let i = 0;
