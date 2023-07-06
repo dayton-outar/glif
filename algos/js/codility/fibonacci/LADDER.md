@@ -77,6 +77,36 @@ Since the next index of A, `A[1]`, provides a ladder with same number of rungs a
 
 We know that the number of ways to climb a ladder of 5 rungs by the given rules is 8 based on the details provided in the problem definition. So, following the pattern to work out the results preceding index 2 of A, we get $8 \mod (2^4) = 8 \mod 16 = 8$.
 
-```js
+Although, there is an impulse to categorise this problem as a type of permutations and combinations. The use case can already guide us when we find the number of ways possible for ladders with 3, 4 and 5 rungs. A ladder of 3 rungs, has only 3 ways to climb the ladder with the mentioned rule. A ladder of 4 rungs, has only 5 ways to climb and a ladder of 5 rungs, has 8 ways to climb it. When we look at the progression of the number of ways in relation to the number of rungs on a ladder, we notice part of a _fibonacci sequence_. Pure math enthusiasts are welcome to prove the connection between the _fibonacci sequence_ and _permutations and combinations_. Maybe, there is a connection. Maybe.
 
+But given the context of the lesson of this problem, it highly likely that the number of ways that a ladder of a set number of rungs can be discovered by making use of the fibonacci sequence.
+
+```js
+function solution(A, B) {
+    let i = 0;
+    let result = [];
+    let max = 0;
+    let steps = [];
+    let maxB = 0;
+
+    steps[0] = 1;
+    steps[1] = 1;
+
+    for (i = 0; i < A.length; i++) {
+        max = Math.max(max, A[i]);
+        maxB = Math.max(maxB, B[i]);
+    }
+
+    i = 1;
+    while (i++ <= max) {
+        steps[i] = (steps[i - 1] + steps[i - 2]) % Math.pow(2, maxB);
+    }
+
+    for (i = 0; i < A.length; i++) {
+        let div = steps[A[i]] & (Math.pow(2, B[i]) - 1);
+        result.push(div);
+    }
+
+    return result;
+}
 ```

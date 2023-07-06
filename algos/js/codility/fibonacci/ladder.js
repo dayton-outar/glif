@@ -66,6 +66,8 @@ function solution(A, B) {
         steps[i] = (steps[i - 1] + steps[i - 2]) % Math.pow(2, maxB);
     }
 
+    console.log('steps', steps);
+
     for (i = 0; i < A.length; i++) {
         let div = steps[A[i]] & (Math.pow(2, B[i]) - 1);
         result.push(div);
