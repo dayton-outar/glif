@@ -59,9 +59,7 @@ Write an **efficient** algorithm for the following assumptions:
 
 ## Solution
 
-This problem takes some re-reading to grasp.
-
-The part that is not easily grasp is the part that involves the modulus equation. So, let's work through the use case provided to understand a few details.
+This problem takes some re-reading to grasp. So, let's work through the use case provided to understand a few details.
 
 Two arrays are provided: `A` and `B`. `A` contains the values `[ 4, 4, 5, 5, 1 ]` and `B` contains the values `[ 3, 2, 4, 3, 1 ]`. The outcome of the `solution` function for the first index, 0, of the resulting array is 5. How is this number arrived at? First thing that was done was to find the number of ways that a ladder of 4 rungs (`A[0] = 4`) can be climbed given the rule that you can climb the ladder either by $K + 1$ or $K + 2$, where $K$ is position (or rung) on the ladder. A ladder of 4 rungs (with the rule mentioned) can be climbed in 5 ways,
 
@@ -77,11 +75,14 @@ Since the next index of A, `A[1]`, provides a ladder with same number of rungs a
 
 We know that the number of ways to climb a ladder of 5 rungs by the given rules is 8 based on the details provided in the problem definition. So, following the pattern to work out the results preceding index 2 of A, we get $8 \mod (2^4) = 8 \mod 16 = 8$.
 
-Although, there is an impulse to categorise this problem as a type of permutations and combinations. The use case can already guide us when we find the number of ways possible for ladders with 3, 4 and 5 rungs. A ladder of 3 rungs, has only 3 ways to climb the ladder with the mentioned rule. A ladder of 4 rungs, has only 5 ways to climb and a ladder of 5 rungs, has 8 ways to climb it. When we look at the progression of the number of ways in relation to the number of rungs on a ladder, we notice part of a _fibonacci sequence_. Pure math enthusiasts are welcome to prove the connection between the _fibonacci sequence_ and _permutations and combinations_. Maybe, there is a connection. Maybe.
+Although, there is an impulse to categorise this problem as a type of permutations and combinations problem. The use case can already guide us when we find the number of ways possible for ladders with 3, 4 and 5 rungs. A ladder of 3 rungs, has only 3 ways to climb the ladder with the mentioned rule. A ladder of 4 rungs, has only 5 ways to climb and a ladder of 5 rungs, has 8 ways to climb it. When we look at the progression of the number of ways in relation to the number of rungs on a ladder, we notice part of a _fibonacci sequence_. Pure math enthusiasts are welcome to prove the connection between the _fibonacci sequence_ and _permutations and combinations_. Maybe, there is a connection. Maybe. But given the context of the lesson of this problem, it's highly likely that the number of ways that a ladder of a set number of rungs can be discovered is by making use of the fibonacci sequence.
 
-But given the context of the lesson of this problem, it's highly likely that the number of ways that a ladder of a set number of rungs can be discovered by making use of the fibonacci sequence.
+The solution to this problem involves getting the set of fibonacci numbers up to the maximum number possible to be used within the sequence. Even though the range for `A` and `B` is stated in the _assumptions_ of the problem, there exist crafty ways to determine a _safe_ maximum number (or upper bound) expected in the fibonacci sequence.
+
+By outlining the outcome of one iteration of the use case provided, it's clear that the solution has to be in the order of $O(n)$. Basically, after determining the number of ways that each ladder can be climbed based on the number of rungs (which is the values in `A`), that _number of ways_ need to be plugged into the $result \mod 2^P$ formula.
 
 Credit to [Jonatas Walker](https://gist.github.com/jonataswalker) for providing his solutions [here](https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23). See his solution below.
+
 
 ```js
 function solution(A, B) {
@@ -112,3 +113,60 @@ function solution(A, B) {
     return result;
 }
 ```
+
+[Yaseen Shaik](https://github.com/yaseenshaik/) also provides his [solution to the ladder problem](https://github.com/yaseenshaik/codility-solutions-javascript/blob/master/Ladder.md) that is noteworthy. I think his solution is pretty straightforward. It makes use of the assumptions to limit the upper bounds but it simply gets the number of ways by generating an array of the fibonacci numbers and then it applies the formula through a crafty use of the shift binary operator, `<<`. Using the binary shift on the value of 1 is the same as using the power formula that calculates 2 raised to the power of a provided integer. See the code snippet below.
+
+```js
+function solution(A, B) {
+    let f = new Array(A.length+1);
+    f[0] = 1;
+    f[1] = 1;
+    let MAX = 1 << 30;
+
+    for (let i = 2; i < f.length; ++i) {
+        f[i] = f[i - 1] + f[i - 2];
+        f[i] = f[i] % MAX;
+    }
+
+    let res = new Array(A.length);
+
+    for (let i = 0; i < A.length; ++i) {
+        res[i] = f[A[i]] % (1 << B[i]);
+    }
+
+    return res;
+}
+```
+
+Let's get back to Jonatas' solution and destruct it.
+
+The first two loops within this solution has one main objective and that is to get the fibonacci sequence that include values up to $2^P$, where $P$ is the maximum value within the array `B`. This is a crafty way of maintaining.
+
+```js
+    steps[0] = 1;
+    steps[1] = 1;
+    
+    ...
+
+    i = 1;
+    while (i++ <= max) {
+        steps[i] = (steps[i - 1] + steps[i - 2]) % Math.pow(2, maxB);
+    }
+```
+
+From the use case provided in the problem, the loop in the snippet above will generate the `steps` array as such, `[1, 1, 2, 3, 5, 8, 13]`. But let's say that Jonatas' solution function was called as `solution( [4, 4, 5, 5, 1, 6], [3, 2, 4, 3, 1, 3] )`, where `A` and `B` is expanded to include another element. Given that the last element of `A` includes a ladder of 6 rungs and `B` includes the integer 3, which can be used in the modulus equation, the `steps` array would be produced as `[1, 1, 2, 3, 5, 8, 13, 5]`. Notice the ladder of 6 rungs gets a value of 5 in the `steps` array. The modulus equation is used in arriving at the values within `step` but the integer used is the maximum number within the `B` array. What's the genius in this?
+
+To make this interesting the final loop shown below contains a formula that seems boggling at first glance but it completes the genius stroke of the preceding loop.
+
+```js
+    for (i = 0; i < A.length; i++) {
+        let div = steps[A[i]] & (Math.pow(2, B[i]) - 1);
+        result.push(div);
+    }
+```
+
+Jonatas' solution gets the power of 2 needed for each iteration, subtracts it from 1 and then makes use of the bitwise and operator, `&`, to arrive at the result.
+
+This approach definitely puts limits for the generation of fibonacci numbers for huge datasets. Imagine providing the `solution` function with an array of 100,000 elements for both `A` and `B`. Maybe that's conservative. What about a million elements.
+
+Let's expand the list of elements provided in `A` and `B`. Let's invoke `solution` function with the following arrays `A`, `[4, 4, 5, 5, 1, 6, 7, 10, 12]` and `B`, `[3, 2, 4, 3, 1, 3, 2, 4, 3]`.
