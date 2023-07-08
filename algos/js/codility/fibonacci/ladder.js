@@ -68,9 +68,10 @@ function solution(A, B) {
 
     console.log('steps', steps);
 
-    for (i = 0; i < A.length; i++) {
+    for (i = 0; i < A.length; i++) {        
         let div = steps[A[i]] & (Math.pow(2, B[i]) - 1);
         result.push(div);
+        console.log(A[i], B[i], steps[A[i]], steps[A[i]].toString(2), result[i], (Math.pow(2, B[i]) - 1).toString(2), (Math.pow(2, B[i]) - 1));
     }
 
     return result;

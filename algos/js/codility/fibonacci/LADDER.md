@@ -154,7 +154,7 @@ The first two loops within this solution has one main objective and that is to g
     }
 ```
 
-From the use case provided in the problem, the loop in the snippet above will generate the `steps` array as such, `[1, 1, 2, 3, 5, 8, 13]`. But let's say that Jonatas' solution function was called as `solution( [4, 4, 5, 5, 1, 6], [3, 2, 4, 3, 1, 3] )`, where `A` and `B` is expanded to include another element. Given that the last element of `A` includes a ladder of 6 rungs and `B` includes the integer 3, which can be used in the modulus equation, the `steps` array would be produced as `[1, 1, 2, 3, 5, 8, 13, 5]`. Notice the ladder of 6 rungs gets a value of 5 in the `steps` array. The modulus equation is used in arriving at the values within `step` but the integer used is the maximum number within the `B` array. What's the genius in this?
+From the use case provided in the problem, the loop in the snippet above will generate the `steps` array as such, `[1, 1, 2, 3, 5, 8, 13]`. But let's say that Jonatas' solution function was called as `solution( [4, 4, 5, 5, 1, 6], [3, 2, 4, 3, 1, 3] )`, where `A` and `B` is expanded to include another element. Given that the last element of `A` includes a ladder of 6 rungs and `B` includes the integer 3, which can be used in the modulus equation, the `steps` array would be produced as `[1, 1, 2, 3, 5, 8, 13, 5]`. Notice the ladder of 6 rungs gets a value of 5 in the `steps` array. The modulus equation is used in arriving at the values within `steps` but the integer used is the maximum number within the `B` array. What's the genius in this?
 
 To make this interesting the final loop shown below contains a formula that seems boggling at first glance but it completes the genius stroke of the preceding loop.
 
@@ -169,4 +169,22 @@ Jonatas' solution gets the power of 2 needed for each iteration, subtracts it fr
 
 This approach definitely puts limits for the generation of fibonacci numbers for huge datasets. Imagine providing the `solution` function with an array of 100,000 elements for both `A` and `B`. Maybe that's conservative. What about a million elements.
 
-Let's expand the list of elements provided in `A` and `B`. Let's invoke `solution` function with the following arrays `A`, `[4, 4, 5, 5, 1, 6, 7, 10, 12]` and `B`, `[3, 2, 4, 3, 1, 3, 2, 4, 3]`.
+Let's expand the list of elements provided in `A` and `B`. Let's invoke `solution` function with the following arrays `A`, `[4, 4, 5, 5, 1, 6, 7, 10, 12]` and `B`, `[3, 2, 4, 3, 1, 3, 2, 4, 3]`. This expanded use case generates a `steps` array containing the values shown below. 
+
+```js
+[
+   1, 1, 2, 3, 5, 8,
+  13, 5, 2, 7, 9, 0,
+   9, 9
+]
+```
+
+The results coming out of providing this expanded use case is `[5, 1, 8, 0, 1, 5, 1, 9, 1]`. Let's track the process by watching the `steps` and `result` values for each index starting from index 5 for `A` and `B` for this expanded use case.
+
+| `i` | `A[i]` | `B[i]` | `steps[A[i]]` | `(Math.pow(2, B[i]) - 1)` | `result[i]`                     |
+|:---:|:------:|:------:|:-------------:|:-------------------------:|:-------------------------------:|
+| ... |        |        |               |                           |                                 |
+| 5   | 6      | 3      | 13            | $00111_2 = 7$             | $01101 & 00111_2 = 00101 = 5$   |
+| 6   | 7      | 2      | 5             | $00011_2 = 3$             | $00101 & 00011_2 = 00001 = 1$   |
+| 7   | 10     | 4      | 9             | $01111_2 = 15$            | $01001 & 01111_2 = 01001 = 9$   |
+| 8   | 12     | 3      | 9             | $00111_2 = 7$             | $01001 & 00111_2 = 00001 = 1$   |
