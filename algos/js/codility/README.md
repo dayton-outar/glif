@@ -72,7 +72,7 @@ Significant lessons from Codility,
 18. [Chocolates by Numbers](./euclidean/CHOCOLATE.md) &#x2713; :thinking:
 19. [Common Prime Divisors](./euclidean/COMMONPRIME.md) &#x2713; :thinking:
 20. [Fib Frog](./fibonacci/FIBFROG.md) &#x2713; :face_in_clouds:
-21. [Ladder](./fibonacci/LADDER.md) :thinking:
+21. [Ladder](./fibonacci/LADDER.md) &#x2713; :thinking:
 22. [Min-Max Division](./binary-search/MINMAXDIVISION.md) :thinking:
 23. [Nailing Planks](./binary-search/NAILINGPLANKS.md) &#x2713; :face_in_clouds:
 24. [Count Distinct Slices](./caterpillar/COUNTDISTINCT.md) :thinking:

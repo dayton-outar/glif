@@ -61,7 +61,7 @@ Write an **efficient** algorithm for the following assumptions:
 
 This problem takes some re-reading to grasp. So, let's work through the use case provided to understand a few details.
 
-Two arrays are provided: `A` and `B`. `A` contains the values `[ 4, 4, 5, 5, 1 ]` and `B` contains the values `[ 3, 2, 4, 3, 1 ]`. The outcome of the `solution` function for the first index, 0, of the resulting array is 5. How is this number arrived at? First thing that was done was to find the number of ways that a ladder of 4 rungs (`A[0] = 4`) can be climbed given the rule that you can climb the ladder either by $K + 1$ or $K + 2$, where $K$ is position (or rung) on the ladder. A ladder of 4 rungs (with the rule mentioned) can be climbed in 5 ways,
+Two arrays are provided: `A` and `B`. `A` contains the values `[ 4, 4, 5, 5, 1 ]` and `B` contains the values `[ 3, 2, 4, 3, 1 ]`. The outcome of the `solution` function for the first index, 0, of the resulting array is 5. How is this number arrived at? First thing that was done was to find the number of ways that a ladder of 4 rungs (`A[0] = 4`) can be climbed given the rule that the ladder can be climbed either by $K + 1$ or $K + 2$, where $K$ is position (or rung) on the ladder. A ladder of 4 rungs (with the rule mentioned) can be climbed in 5 ways,
 
  1. 1, 1, 1, 1
  2. 1, 1, 2
@@ -106,8 +106,7 @@ function solution(A, B) {
     }
 
     for (i = 0; i < A.length; i++) {
-        let div = steps[A[i]] & (Math.pow(2, B[i]) - 1);
-        result.push(div);
+        result.push( steps[A[i]] & (Math.pow(2, B[i]) - 1) );
     }
 
     return result;
@@ -160,8 +159,7 @@ To make this interesting the final loop shown below contains a formula that seem
 
 ```js
     for (i = 0; i < A.length; i++) {
-        let div = steps[A[i]] & (Math.pow(2, B[i]) - 1);
-        result.push(div);
+        result.push( steps[A[i]] & (Math.pow(2, B[i]) - 1) );
     }
 ```
 
@@ -181,10 +179,42 @@ Let's expand the list of elements provided in `A` and `B`. Let's invoke `solutio
 
 The results coming out of providing this expanded use case is `[5, 1, 8, 0, 1, 5, 1, 9, 1]`. Let's track the process by watching the `steps` and `result` values for each index starting from index 5 for `A` and `B` for this expanded use case.
 
-| `i`   | `A[i]`   | `B[i]`   | `steps[A[i]]`  | `(Math.pow(2, B[i]) - 1)`| `result[i]`                         |
-|:-----:|:--------:|:--------:|:--------------:|:------------------------:|:-----------------------------------:|
-| ...   | ...      | ...      | ...            | ...                      | ...                                 |
-| $5$   | $6$      | $3$      | $1101_2 = 13$  | $0111_2 = 7$             | $1101_2 \wedge 0111_2 = 0101 = 5$   |
-| $6$   | $7$      | $2$      | $0101_2 = 5$   | $0011_2 = 3$             | $0101_2 \wedge 0011_2 = 0001 = 1$   |
-| $7$   | $10$     | $4$      | $1001_2 = 9$   | $1111_2 = 15$            | $1001_2 \wedge 1111_2 = 1001 = 9$   |
-| $8$   | $12$     | $3$      | $1001_2 = 9$   | $0111_2 = 7$             | $1001_2 \wedge 0111_2 = 0001 = 1$   |
+| `i`   | `A[i]`   | `B[i]`   | `steps[A[i]]`  | `(Math.pow(2, B[i]) - 1)`| `result[i]`                           |
+|:-----:|:--------:|:--------:|:--------------:|:------------------------:|:-------------------------------------:|
+| ...   | ...      | ...      | ...            | ...                      | ...                                   |
+| $5$   | $6$      | $3$      | $1101_2 = 13$  | $0111_2 = 7$             | $1101_2 \wedge 0111_2 = 0101_2 = 5$   |
+| $6$   | $7$      | $2$      | $0101_2 = 5$   | $0011_2 = 3$             | $0101_2 \wedge 0011_2 = 0001_2 = 1$   |
+| $7$   | $10$     | $4$      | $1001_2 = 9$   | $1111_2 = 15$            | $1001_2 \wedge 1111_2 = 1001_2 = 9$   |
+| $8$   | $12$     | $3$      | $1001_2 = 9$   | $0111_2 = 7$             | $1001_2 \wedge 0111_2 = 0001_2 = 1$   |
+
+The mathematics of using the values of `steps`, where the modulus is used and the binary and operation is used, to arrive at the results works. But how? Why does this mathematics work?
+
+Let's re-arrange some instructions to get the insight that Jonatas' solution provides. If we remove the upper bound limiter of using the modulus equation to arrive at the value for `steps`, which includes the fibonacci numbers then the values of the `steps` array would have looked as follows,
+
+```js
+[
+    1,   1,  2,  3,  5,   8,
+   13,  21, 34, 55, 89, 144,
+  233, 377
+]
+```
+
+So, basically `steps` would just contain the fibonacci numbers possible for the ladders with the highest number of rungs.
+
+Let's see if the last 4 numbers of this version of `steps` for the expanded use case arrives at the same outcome, `result[i]`, if the number were to be plugged into the modulus equation. Let's reuse the tracking table above but change the caption of the `steps[A[i]]` column to `fib[A[i]]` to prevent any confusion.
+
+| `i`   | `A[i]`   | `B[i]`   | `fib[A[i]]`         | `(Math.pow(2, B[i]))`    | `result[i]`                                        |
+|:-----:|:--------:|:--------:|:-------------------:|:------------------------:|:--------------------------------------------------:|
+| ...   | ...      | ...      | ...                 | ...                      | ...                                                |
+| $5$   | $6$      | $3$      | $0000 1101_2 = 13$  | $0000 1000_2 = 8$        | $0000 1101_2 \mod 0000 1000_2 = 0000 0101_2 = 5$   |
+| $6$   | $7$      | $2$      | $0001 0101_2 = 21$  | $0000 0100_2 = 4$        | $0001 0101_2 \mod 0000 0100_2 = 0000 0001_2 = 1$   |
+| $7$   | $10$     | $4$      | $0101 1001_2 = 89$  | $0001 0000_2 = 16$       | $0101 1001_2 \mod 0001 0000_2 = 0000 1001_2 = 9$   |
+| $8$   | $12$     | $3$      | $1110 1001_2 = 233$ | $0000 1000_2 = 8$        | $1110 1001_2 \mod 0000 1000_2 = 0000 0001_2 = 1$   |
+
+When taking a look at the modulus equation from the perspective of binary operations then a standard pattern should be noticed. Studying the patterns will eventually will manifest the involvement of _Number Theory_ concepts. More specifically, this problem involves the use of [Modular Arithmetic](https://brilliant.org/wiki/modular-arithmetic/).
+
+When using modulus, the interest is in the $remainder$. The formula to calculate the division of two numbers is: $dividend \div divisor = quotient + remainder$[^1]. Since the $divisor$ in the modulus equation is a product of 2 raised to power of a given $exponent$, the binary representation will always have a 1 in the binary position of the $exponent$ (see [binary number system](https://www.mathsisfun.com/binary-number-system.html) to understand binary position). For example, the binary representation of 4 is $0100_2$, the binary representation of 8 is $1000_2$. The remainder will always be less than the divisor and from a binary representation perspective, the only part of the binary number of the dividend that will remain as the outcome of the modulus is the values in the binary positions that are below the binary position of the 1 in the divisor. For example, when 13 is divided by 8, the remainder is 5. The number 8 has a binary number, where the 1 is the fourth spot from the right reading to the left. The only part of the dividend that comes out of the modulus equation is the part of binary representation that comes after that fourth spot. So, when 13 represented as $1101_2$ is divided by 8 represented as $1000_2$, the last 3 positions will be used to arrive at the remainder, which is $0101_2$. Hopefully, this explanation makes the genius stroke of using binary operations easier to understand.
+
+When the numbers and the operations are seen from a binary representation, it can be understood the reason for subtracting the divisor by 1 and using the bitwise and operator. Wow! This just emphasize the usefulness of lessons learnt from _Discrete Mathematics_.
+
+[^1]: [Divide (Meaning, Symbol, Division Formula and Examples)](https://byjus.com/maths/divide/)
