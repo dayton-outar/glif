@@ -67,14 +67,14 @@ function solution(K, M, A) {
     // console.log( min, max );
     
     while(min <= max) {
-        var temp = mid;
+        let temp = mid;
         mid = parseInt((max + min) / 2);
         
         if(mid === temp) {
             break;
         }
         
-        var blocks = neededBlocks(A, mid);
+        let blocks = neededBlocks(A, mid);
         
         console.log(`min: ${min}, max: ${max}, mid: ${mid}, blocks: ${blocks} < K: ${K}`);
         
