@@ -49,3 +49,20 @@ Write an efficient algorithm for the following assumptions:
 - each element of array $A$ is an integer within the range $[0 ... M]$.
 
 ## Solution
+
+This problem is not hard to grasp. The goal is _to calculate the number of distinct slices_. Slices should not contain the same number more than once.
+
+See below the details of the nine distinct slices from the provided use case in this problem.
+
+| slice | numbers in slice |
+| :-----|:-----------------|
+| (0,0) | [ 3 ]            |
+| (0,1) | [ 3, 4 ]         |
+| (0,2) | [ 3, 4, 5 ]      |
+| (1,1) | [ 4 ]            |
+| (1,2) | [ 4, 5 ]         |
+| (2,2) | [ 5 ]            |
+| (3,3) | [ 5 ]            |
+| (3,4) | [ 5, 2 ]         |
+| (4,4) | [ 2 ]            |
+

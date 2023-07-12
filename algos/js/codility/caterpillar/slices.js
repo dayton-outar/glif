@@ -47,6 +47,8 @@ function solution(M, A) { // Credit: https://gist.github.com/jonataswalker/08187
     
     let lastPos = Array((M + 1)).fill(-1);
 
+    console.log( lastPos );
+
     let count = 0;
     let start = 0;
     for(let i = 0; i < A.length; i++ ) {
@@ -59,6 +61,8 @@ function solution(M, A) { // Credit: https://gist.github.com/jonataswalker/08187
         
         lastPos[item] = i;
         count += i - start + 1;
+
+        console.log( lastPos );
         
         if(count > LIMIT) break;
     }
