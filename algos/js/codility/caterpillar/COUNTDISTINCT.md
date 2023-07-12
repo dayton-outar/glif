@@ -50,19 +50,53 @@ Write an efficient algorithm for the following assumptions:
 
 ## Solution
 
-This problem is not hard to grasp. The goal is _to calculate the number of distinct slices_. Slices should not contain the same number more than once.
+This problem is not hard to grasp. The goal is _to calculate the number of distinct slices_ that can be had from the provided array. Slices should not contain the same number more than once.
 
 See below the details of the nine distinct slices from the provided use case in this problem.
 
-| slice | numbers in slice |
-| :-----|:-----------------|
-| (0,0) | [ 3 ]            |
-| (0,1) | [ 3, 4 ]         |
-| (0,2) | [ 3, 4, 5 ]      |
-| (1,1) | [ 4 ]            |
-| (1,2) | [ 4, 5 ]         |
-| (2,2) | [ 5 ]            |
-| (3,3) | [ 5 ]            |
-| (3,4) | [ 5, 2 ]         |
-| (4,4) | [ 2 ]            |
+| #     | slice | numbers in slice |
+|:------| :-----|:-----------------|
+|**1.** | (0,0) | [ 3 ]            |
+|**2.** | (0,1) | [ 3, 4 ]         |
+|**3.** | (0,2) | [ 3, 4, 5 ]      |
+|**4.** | (1,1) | [ 4 ]            |
+|**5.** | (1,2) | [ 4, 5 ]         |
+|**6.** | (2,2) | [ 5 ]            |
+|**7.** | (3,3) | [ 5 ]            |
+|**8.** | (3,4) | [ 5, 2 ]         |
+|**9.** | (4,4) | [ 2 ]            |
+
+Credit to [Jonatas Walker](https://gist.github.com/jonataswalker) for providing his solutions [here](https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23). See his solution below.
+
+```js
+function solution(M, A) {    
+    const LIMIT = 1000000000;    
+    
+    if(A.length === 1) {
+        return 1;
+    }
+    
+    let lastPos = Array((M + 1)).fill(-1);
+
+    let count = 0;
+    let start = 0;
+    for(let i = 0; i < A.length; i++ ) {
+        let item = A[i];
+        
+        // -- Important core logic
+        if(lastPos[item] + 1 > start) {
+            start = lastPos[item] + 1;
+        }
+        
+        lastPos[item] = i;
+        count += i - start + 1;
+        
+        if(count > LIMIT) break;
+    }
+    
+    return count > LIMIT ? LIMIT : count;
+}
+
+solution( 6, [3, 4, 5, 5, 2] ); // 9
+```
 
