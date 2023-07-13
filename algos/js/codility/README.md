@@ -75,7 +75,7 @@ Significant lessons from Codility,
 21. [Ladder](./fibonacci/LADDER.md) &#x2713; :thinking:
 22. [Min-Max Division](./binary-search/MINMAXDIVISION.md) &#x2713; :thinking:
 23. [Nailing Planks](./binary-search/NAILINGPLANKS.md) &#x2713; :face_in_clouds:
-24. [Count Distinct Slices](./caterpillar/COUNTDISTINCT.md) :thinking:
+24. [Count Distinct Slices](./caterpillar/COUNTDISTINCT.md) &#x2713; :thinking:
 25. [Count Triangle](./caterpillar/COUNTRIANGLES.md) :thinking:
 26. [Min Absolute Sum of Two](./caterpillar/MINABSSUM.md) :thinking:
 27. [Max Non-overlapping Segments](./greedy/MAXNONOVERLAPPING.md) :thinking:

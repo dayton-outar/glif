@@ -56,12 +56,15 @@ function solution(M, A) { // Credit: https://gist.github.com/jonataswalker/08187
         
         // -- Important core logic
         if(lastPos[item] + 1 > start) {
+            console.log('---%');
             start = lastPos[item] + 1;
         }
-        
+
         lastPos[item] = i;
+        // Count possible combination of slices
         count += i - start + 1;
 
+        console.log(start, i, count);
         console.log( lastPos );
         
         if(count > LIMIT) break;
