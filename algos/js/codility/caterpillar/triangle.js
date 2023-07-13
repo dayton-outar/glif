@@ -26,9 +26,14 @@
 // N is an integer within the range [0..1,000];
 // each element of array A is an integer within the range [1..1,000,000,000].
 
-function solution(A) { // Credit: https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23 ... O(N^2) ... Score: 100%
-    // write your code in JavaScript (Node.js 4.0.0)
+function check(arr, base, mid, end) {
+    if(arr[base] + arr[mid] > arr[end]) return true;
     
+    return false;
+}
+
+// Credit: https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23 ... O(N^2) ... Score: 100%
+function solution(A) {
     let start = 0;
     let mid = 1;
     let end = 2;
@@ -39,14 +44,14 @@ function solution(A) { // Credit: https://gist.github.com/jonataswalker/08187f54
     }
     
     A.sort(function(a, b) {
-        return a-b;
+        return a - b;
     });
     
-    for(start=0; start<A.length-2; start++) {
-        for(mid = start+1; mid<A.length-1; mid++) {
-            end = mid+1;
+    for( start = 0; start < A.length - 2; start++) {
+        for( mid = start + 1; mid < A.length - 1; mid++ ) {
+            end = mid + 1;
             
-            while(end < A.length && check(A, start, mid, end)) {
+            while( end < A.length && check(A, start, mid, end) ) {
                 end++;
             }
             
@@ -57,8 +62,4 @@ function solution(A) { // Credit: https://gist.github.com/jonataswalker/08187f54
     return count;
 }
 
-function check(arr, base, mid, end) {
-    if(arr[base] + arr[mid] > arr[end]) return true;
-    
-    return false;
-}
+console.log( solution( [10, 2, 5, 1, 8, 12] ) );
