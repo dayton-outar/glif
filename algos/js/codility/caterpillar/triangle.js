@@ -27,7 +27,8 @@
 // each element of array A is an integer within the range [1..1,000,000,000].
 
 function check(arr, base, mid, end) {
-    if(arr[base] + arr[mid] > arr[end]) return true;
+    console.log( arr[base], arr[mid], arr[end], ( arr[base] + arr[mid] > arr[end] ) );
+    if ( arr[base] + arr[mid] > arr[end] ) return true;
     
     return false;
 }
@@ -51,11 +52,11 @@ function solution(A) {
         for( mid = start + 1; mid < A.length - 1; mid++ ) {
             end = mid + 1;
             
-            while( end < A.length && check(A, start, mid, end) ) {
+            while( end < A.length && check(A, start, mid, end) ) {                
                 end++;
             }
             
-            count += end - mid - 1;
+            count += end - (mid + 1);
         }
     }
     

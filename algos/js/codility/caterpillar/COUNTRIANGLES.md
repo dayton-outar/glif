@@ -41,9 +41,19 @@ Write an **efficient** algorithm for the following assumptions:
 
 ## Solution
 
+The aim of this problem is _to find the number of triplets that are triangular_ based on the mathematical rules provided.
+
+Let's take out one of the 4 triangular triplets mentioned in the use case and break it down. Let's take the triplet (0, 2, 4), which is basically $(A[0], A[2], A[4])$ that meets the following conditions,
+
+ - 10 + 5 > 8
+ - 5 + 8 > 10
+ - 8 + 10 > 5
+
+Credit to [Jonatas Walker](https://gist.github.com/jonataswalker) for providing his solutions [here](https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23). See his solution below.
+
 ```js
 function check(arr, base, mid, end) {
-    if(arr[base] + arr[mid] > arr[end]) return true;
+    if ( arr[base] + arr[mid] > arr[end] ) return true;
     
     return false;
 }
@@ -79,3 +89,32 @@ function solution(A) {
 
 solution( [10, 2, 5, 1, 8, 12] );
 ```
+
+Let's deconstruct this solution.
+
+It appears that the `solution` function has a nested loop with two inner loops. It's obvious that three pointers are used, which would classify this approach as a caterpillar method. The loop and the logics within it are pretty straightforward: perform checks using the `check` function to determine the combination of _triplet_ values that meet the mathematical conditions stated. The `count` variable basically keeps track of a running total of the number of these checks that pass the condition for being _triangular_. Take note that `count += end - mid - 1` is the same as `count += end - (mid + 1)`.
+
+There are 2 things that may not be easily grasped from this solution. The first thing is the involvement of a sort to arrive at an accurate result and the second thing is the time complexity detected. So, the questions are based on the rules outlined about indices, how is it that a sort is required to arrive at the correct answer? And, how is it that a nested loop with two inner loop has a time complexity of $O(n^2)$ and not $O($n^3)$?
+
+Even though the rules in the problem definition stated that a _triplet is triangular_ when $0 ≤ P < Q < R < N$ and,
+
+- $A[P] + A[Q] > A[R]$,
+- $A[Q] + A[R] > A[P]$,
+- $A[R] + A[P] > A[Q]$.
+
+The important takeaway is that _the sum of any two numbers of the triplet must be greater than any one of the numbers in the triplet_. This is basically what is being expressed in the condition for a triplet being _triangular_.
+
+The provided use case outlines the _triangular triplets_ found from the unordered array, `A`. What if the array was ordered? It would look like this `[1, 2, 5, 8, 10, 12]`. Upon the first iteration of the nested loop, the first 3 elements would fail to meet the condition of being a _triangular triplet_ because $1 + 2$ is not greater than $5$. The _triangular triplets_ found from the ordered array are: (2, 3, 4), (2, 3, 5), (2, 4, 5) and (3, 4, 5). These _triangular triplets_ still match up to the values stated from the _triangular triplets_ in the problem definition. See the table below mapping them.
+
+| | `A` |  triangular triplets | values of triangular triplets |
+|:--|:----|:---------------------|:------------------------------|
+| unordered | `[10, 2, 5, 1, 8, 12]` | (`A[0]`, `A[2]`, `A[4]`) | (10, 5, 8) |
+| | | (`A[0]`, `A[2]`, `A[5]`) | (10, 5, 12) |
+| | | (`A[0]`, `A[4]`, `A[5]`) | (10, 8, 12) |
+| | | (`A[2]`, `A[4]`, `A[5]`) | (5, 8, 12) |
+| ordered | `[1, 2, 5, 8, 10, 12]` | (`A[2]`, `A[3]`, `A[4]`)| (5, 8, 10) |
+| | | (`A[2]`, `A[3]`, `A[5]`) | (5, 8, 12) |
+| | | (`A[2]`, `A[4]`, `A[5]`) | (5, 10, 12) |
+| | | (`A[3]`, `A[4]`, `A[5]`) | (8, 10, 12) |
+
+Some mathematical proof maybe needed to understand the reason that the sort works for bringing the solution to the correct answer.
