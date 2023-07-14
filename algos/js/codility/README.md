@@ -52,12 +52,12 @@ Significant lessons from Codility,
 
 ## Most Challenging Problems
 
-1. [Min Avg Two Slice](./prefix-sums#minimum-average-of-two-slices) &#x2713;
-2. [Genomic Range Query](./prefix-sums/GENOMIC.md) &#x2713;
+1. [Min Avg Two Slice](./prefix-sums#minimum-average-of-two-slices)
+2. [Genomic Range Query](./prefix-sums/GENOMIC.md)
 3. [Mushroom Picker](./prefix-sums#51-exercise) &#x2713; :thinking:
-4. [Triangle](./sorting/TRIANGLE.md) &#x2713;
+4. [Triangle](./sorting/TRIANGLE.md)
 5. [Number of Disc Intersections](./sorting/DISCS.md) &#x2713; :thinking:
-6. [Fish](./stacks-queues/FISH.md) &#x2713;
+6. [Fish](./stacks-queues/FISH.md)
 7. [Stone Wall](./stacks-queues/STONEWALL.md) &#x2713; :thinking:
 8. [Equi Leader](./leader/EQUILEADER.md) &#x2713; :thinking:
 9. [Max Profit](./maximum-slice/MAXPROFIT.md) &#x2713; :thinking:
