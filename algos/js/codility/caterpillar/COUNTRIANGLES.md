@@ -94,7 +94,7 @@ Let's deconstruct this solution.
 
 It appears that the `solution` function has a nested loop with two inner loops. It's obvious that three pointers are used, which would classify this approach as a caterpillar method. The loop and the logics within it are pretty straightforward: perform checks using the `check` function to determine the combination of _triplet_ values that meet the mathematical conditions stated. The `count` variable basically keeps track of a running total of the number of these checks that pass the condition for being _triangular_. Take note that `count += end - mid - 1` is the same as `count += end - (mid + 1)`.
 
-There are 2 things that may not be easily grasped from this solution. The first thing is the involvement of a sort to arrive at an accurate result and the second thing is the time complexity detected. So, the questions are based on the rules outlined about indices, how is it that a sort is required to arrive at the correct answer? And, how is it that a nested loop with two inner loop has a time complexity of $O(n^2)$ and not $O($n^3)$?
+There are 2 things that may not be easily grasped from this solution. The first thing is the involvement of a sort to arrive at an accurate result and the second thing is the time complexity detected. So, the questions are based on the rules outlined about indices, how is it that a sort is required to arrive at the correct answer? And, how is it that a nested loop with two inner loop has a time complexity of $O(n^2)$ and not $O(n^3)$?
 
 Even though the rules in the problem definition stated that a _triplet is triangular_ when $0 ≤ P < Q < R < N$ and,
 
