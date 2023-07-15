@@ -102,7 +102,7 @@ Even though the rules in the problem definition stated that a _triplet is triang
 - $A[Q] + A[R] > A[P]$,
 - $A[R] + A[P] > A[Q]$.
 
-The important takeaway is that _the sum of any two numbers of the triplet must be greater than any one of the numbers in the triplet_. This is basically what is being expressed in the condition for a triplet being _triangular_.
+The important takeaway is that _the sum of any two numbers of the triplet must be greater than any one of the numbers in the triplet_. This is basically what is being expressed in the condition for a triplet being _triangular_. (Take note of this observation from CodeTrading YouTube Channel[^1])
 
 The provided use case outlines the _triangular triplets_ found from the unordered array, `A`. What if the array was ordered? It would look like this `[1, 2, 5, 8, 10, 12]`. Upon the first iteration of the nested loop, the first 3 elements would fail to meet the condition of being a _triangular triplet_ because $1 + 2$ is not greater than $5$. The _triangular triplets_ found from the ordered array are: (2, 3, 4), (2, 3, 5), (2, 4, 5) and (3, 4, 5). These _triangular triplets_ still match up to the values stated from the _triangular triplets_ in the problem definition. See the table below mapping them.
 
@@ -118,3 +118,5 @@ The provided use case outlines the _triangular triplets_ found from the unordere
 | | (`A[3]`, `A[4]`, `A[5]`) | (8, 10, 12) |
 
 Some mathematical proof maybe needed to understand the reason that the sort works for bringing the solution to the correct answer.
+
+[^1]: [Triangle Triplet in Python and C++ Codility Solutions Lesson 6](https://youtu.be/YCA1D--El-Q)
