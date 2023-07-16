@@ -79,6 +79,8 @@ function solution(A) {
     A.sort(function(a, b) {
         return a - b;
     });
+
+    console.log( A );
     
     for (i = 0; i < A.length; i++) {
         if(A[i] < 0) {
@@ -108,7 +110,7 @@ function solution(A) {
     
     for( i = 0; i < negatives.length; i++ ) {
         start = 0;
-        end = positives.length-1;
+        end = positives.length - 1;
         let neg = A[i];
         
         while ( start <= end ) {
@@ -116,8 +118,8 @@ function solution(A) {
             let pos = positives[mid];
             let sum = Math.abs(neg + pos);
             
-            if ( min > sum ) min = sum;
-            
+            min = Math.min(sum, min);
+
             if ( pos > Math.abs(neg) ) {
                 end = mid - 1;
             } else {
@@ -128,3 +130,7 @@ function solution(A) {
     
     return min;
 }
+
+console.log( solution( [-8, 4, 5, -10, 3] ) );
+
+console.log( solution( [1, 4, -3] ) );

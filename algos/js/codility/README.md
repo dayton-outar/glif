@@ -83,7 +83,7 @@ An addendum based on a problem done on Codility as part of interview,
 23. [Nailing Planks](./binary-search/NAILINGPLANKS.md) &#x2713; :face_in_clouds:
 24. [Count Distinct Slices](./caterpillar/COUNTDISTINCT.md) &#x2713; :thinking:
 25. [Count Triangle](./caterpillar/COUNTRIANGLES.md) :thinking:
-26. [Min Absolute Sum of Two](./caterpillar/MINABSSUM.md) :thinking:
+26. [Min Absolute Sum of Two](./caterpillar/MINABSSUM.md) &#x2713; :thinking:
 27. [Max Non-overlapping Segments](./greedy/MAXNONOVERLAPPING.md) :thinking:
 28. [Tie Ropes](./greedy/TIEROPES.md)
 29. [Number Solitaire](./dynamic/SOLITAIRE.md) &#x2713; :face_in_clouds:
