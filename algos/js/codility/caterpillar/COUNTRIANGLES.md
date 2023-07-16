@@ -96,6 +96,8 @@ It appears that the `solution` function has a nested loop with two inner loops. 
 
 There are 2 things that may not be easily grasped from this solution. The first thing is the involvement of a sort to arrive at an accurate result and the second thing is the time complexity detected. So, the questions are based on the rules outlined about indices, how is it that a sort is required to arrive at the correct answer? And, how is it that a nested loop with two inner loop has a time complexity of $O(n^2)$ and not $O(n^3)$?
 
+### Sorting for Triangular Triplets
+
 Even though the rules in the problem definition stated that a _triplet is triangular_ when $0 ≤ P < Q < R < N$ and,
 
 - $A[P] + A[Q] > A[R]$,
