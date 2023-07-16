@@ -72,15 +72,15 @@ function solution(A) {
     let start = 0;
     let end = 0;
     
-    if(A.length === 1) {
+    if ( A.length === 1 ) {
         return Math.abs(A[0] + A[0]);
     }
     
     A.sort(function(a, b) {
-        return a-b;
+        return a - b;
     });
     
-    for(i=0; i<A.length; i++) {
+    for (i = 0; i < A.length; i++) {
         if(A[i] < 0) {
             negatives.push(A[i]);
         } else {
@@ -89,36 +89,36 @@ function solution(A) {
     }
     
     negatives.sort(function(a, b) {
-        return b-a;
+        return b - a;
     });
     
-    if(positives.length === 0) {
+    if ( positives.length === 0 ) {
         return Math.abs(2 * negatives[0]);
     }
     
-    if(negatives.length === 0) {
+    if ( negatives.length === 0 ) {
         return 2 * positives[0];
     }
     
-    if(positives[0] === 0) {
+    if ( positives[0] === 0 ) {
         return 0;
     }
     
-    min = positives[0]*2;
+    min = positives[0] * 2;
     
-    for(i=0; i<negatives.length; i++) {
+    for( i = 0; i < negatives.length; i++ ) {
         start = 0;
         end = positives.length-1;
         let neg = A[i];
         
-        while(start <= end) {
+        while ( start <= end ) {
             let mid = parseInt((start + end) / 2);
             let pos = positives[mid];
             let sum = Math.abs(neg + pos);
             
-            if(min > sum) min = sum;
+            if ( min > sum ) min = sum;
             
-            if(pos > Math.abs(neg)) {
+            if ( pos > Math.abs(neg) ) {
                 end = mid - 1;
             } else {
                 start = mid + 1;
