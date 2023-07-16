@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/orderly-queue/
 // 899. Orderly Queue
 //
 // You are given a string s and an integer k. You can choose one of the first k letters of s and append it at the end of the string..
