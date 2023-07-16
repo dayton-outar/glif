@@ -6,9 +6,9 @@ Time is a fundamental concept that helps us measure and quantify the duration an
 
 There are various units of time used to measure different durations. The most commonly used units of time include:
 
- - Second (s): The second is the base unit of time in the International System of Units (SI). It is defined as the duration of 9,192,631,770 periods of the radiation corresponding to the transition between two hyperfine levels of the ground state of the cesium-133 atom.
- - Minute (min): A minute is equal to 60 seconds.
- - Hour (hr): An hour is equal to 60 minutes or 3,600 seconds.
+ - Second: The second is the base unit of time in the International System of Units (SI). It is defined as the duration of 9,192,631,770 periods of the radiation corresponding to the transition between two hyperfine levels of the ground state of the cesium-133 atom.
+ - Minute: A minute is equal to 60 seconds.
+ - Hour: An hour is equal to 60 minutes or 3,600 seconds.
  - Day: A day consists of 24 hours or 1,440 minutes or 86,400 seconds.
  - Week: A week consists of 7 days or 168 hours or 10,080 minutes or 604,800 seconds.
  - Month: A month is a unit of time used in calendars, and its length varies depending on the specific calendar system. Commonly, months have around 28 to 31 days.
