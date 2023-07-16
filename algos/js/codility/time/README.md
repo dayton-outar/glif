@@ -1,8 +1,8 @@
-## 0 Time
+# 0. Time
 
 Time is a fundamental concept that helps us measure and quantify the duration and sequence of events. It provides a way to understand the order in which events occur and allows us to organize and plan our activities.
 
-### 0.1 Units of Time
+## 0.1 Units of Time
 
 There are various units of time used to measure different durations. The most commonly used units of time include:
 
@@ -14,7 +14,7 @@ There are various units of time used to measure different durations. The most co
  - Month: A month is a unit of time used in calendars, and its length varies depending on the specific calendar system. Commonly, months have around 28 to 31 days.
  - Year: A year is the time it takes for the Earth to complete one orbit around the sun. It is approximately 365.25 days or 12 months.
 
-### 0.2 Breaking down time from seconds
+## 0.2 Breaking down time from seconds
 
 When provided time in seconds it can be broken down and categorized into weeks, days, hours, and minutes.
 
@@ -55,13 +55,13 @@ In summary, the relationship between these units of time using seconds as a base
  - 1 day = 24 hours = 1,440 minutes = 86,400 seconds
  - 1 week = 7 days = 168 hours = 10,080 minutes = 604,800 seconds
 
-<small>Credit to Chat GPT for this Lesson. <image src="/.attachments/chatgpt-logo.png" alt="Chat GPT Logo" width="24" height="24" /></small>
+<small>Credit to Chat GPT for this Lesson. <image src="/.attachments/chatgpt-logo.png" alt="Chat GPT Logo" width="16" height="16" /></small>
 
-### 0.3 Exercise
+## 0.3 Exercise
 
-#### Problem
+### Problem
 
-From an integer X representing a time duration in seconds produce a simplified string representation. For example, given X=100, you should output: "1m40s"
+From an integer $X$ representing a time duration in seconds produce a simplified string representation. For example, given $X = 100$, you should output: "1m40s"
 
 Use the following abbreviations w,d,h,m,s to represent: 
 
@@ -71,19 +71,27 @@ Use the following abbreviations w,d,h,m,s to represent:
  - 1m is 1 minute
  - 1s is 1 second
 
-Only the two largest non-zero units should be used. Round up the second unit if necessary so that the output only has two units even though this might mean the output represents slightly more time than X seconds. Write a function: function solution (X); that, given an integer X, returns a string representing the duration.
+Only the two largest non-zero units should be used. Round up the second unit if necessary so that the output only has two units even though this might mean the output represents slightly more time than $X$ seconds.
+
+Write a function:
+
+```js
+    function solution(X);
+```
+
+that, given an integer $X$, returns a string representing the duration.
 
 Examples:
- - Given X=100, return "1m40s"
- - Given X=7263, return "2h2m". (7263s=2h1m3s, but this uses too many units, so we round the second largest unit up to 2h2m)
- - Given X=3605, return "1h5s"
+ - Given $X = 100$, return "1m40s"
+ - Given $X = 7263$, return "2h2m". (7263s = 2h1m3s, but this uses too many units, so we round the second largest unit up to 2h2m)
+ - Given $X = 3605$, return "1h5s"
 
 Notes:
- - If a single unit is sufficient, then the output should only include one unit. ex. X=3600 outputs "1h", not "1h0s".
- - The output should be as close as possible to the real time without being less than X. Ex.: X=86461 is "1d1m1s" so the output would be "1d2m". Not "1d1h".
- - There should always be some output. The empty string() is not the outcome of any X.
+ - If a single unit is sufficient, then the output should only include one unit. ex. $X = 3600$ outputs "1h", not "1h0s".
+ - The output should be as close as possible to the real time without being less than $X$. ex.: $X = 86461$ is "1d1m1s" so the output would be "1d2m". Not "1d1h".
+ - There should always be some output. The empty string() is not the outcome of any $X$.
 
-#### Solution
+### Solution
 
 The lesson provided above already gives the pseudocode of how to breakdown and categorize time from seconds.
 
