@@ -50,6 +50,12 @@ Significant lessons from Codility,
 
   A trade-off for time rather than space using arrays and matrices rather than recursion to find optimal solution
 
+An addendum based on a problem done on Codility as part of interview,
+
+- [Time](./time/)
+
+  A lesson about the units of time
+
 ## Most Challenging Problems
 
 1. [Min Avg Two Slice](./prefix-sums#minimum-average-of-two-slices)

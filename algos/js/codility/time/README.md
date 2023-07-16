@@ -1,8 +1,8 @@
-## Time
+## 0 Time
 
 Time is a fundamental concept that helps us measure and quantify the duration and sequence of events. It provides a way to understand the order in which events occur and allows us to organize and plan our activities.
 
-### Units of Time
+### 0.1 Units of Time
 
 There are various units of time used to measure different durations. The most commonly used units of time include:
 
@@ -14,7 +14,7 @@ There are various units of time used to measure different durations. The most co
  - Month: A month is a unit of time used in calendars, and its length varies depending on the specific calendar system. Commonly, months have around 28 to 31 days.
  - Year: A year is the time it takes for the Earth to complete one orbit around the sun. It is approximately 365.25 days or 12 months.
 
-### Breaking down time from seconds
+### 0.2 Breaking down time from seconds
 
 When provided time in seconds it can be broken down and categorized into weeks, days, hours, and minutes.
 
@@ -57,7 +57,7 @@ In summary, the relationship between these units of time using seconds as a base
 
 <small>Credit to Chat GPT for this Lesson. <image src="/.attachments/chatgpt-logo.png" alt="Chat GPT Logo" width="24" height="24" /></small>
 
-### Exercise
+### 0.3 Exercise
 
 #### Problem
 
@@ -84,3 +84,59 @@ Notes:
  - There should always be some output. The empty string() is not the outcome of any X.
 
 #### Solution
+
+The lesson provided above already gives the pseudocode of how to breakdown and categorize time from seconds.
+
+The snippet of code shown below only realizes the instructions in JavaScript.
+
+```js
+function solution(X) {
+    const minute = 60;
+    const hour = 60 * minute;
+    const day = 24 * hour;
+    const week = 7 * day;
+
+    let timeLeft = X
+    const numberOfWeeks = Math.floor( timeLeft / week );
+    timeLeft = timeLeft - ( numberOfWeeks * week );
+    const numberOfDays = Math.floor( timeLeft / day );
+    timeLeft = timeLeft - ( numberOfDays * day );
+    const numberOfHours = Math.floor( timeLeft / hour );
+    timeLeft = timeLeft - ( numberOfHours * hour );
+    const numberOfMinutes = Math.floor( timeLeft / minute );
+    timeLeft = timeLeft - ( numberOfMinutes * minute );
+    const numberOfSeconds = timeLeft;
+
+    let abv = [];
+
+    if (numberOfWeeks > 0) {
+        abv.push(`${numberOfWeeks}w`);
+    }
+
+    if (numberOfDays > 0 && abv.length < 2) {
+        abv.push(`${numberOfDays}d`);
+    }
+
+    if (numberOfHours > 0 && abv.length < 2) {
+        abv.push(`${numberOfHours}h`);
+    }
+
+    if (numberOfMinutes > 0 && abv.length < 2) {
+        abv.push(`${numberOfMinutes}m`);
+    }
+
+    if (numberOfSeconds > 0 && abv.length < 2) {
+        abv.push(`${numberOfSeconds}s`);
+    }
+
+    return abv.join('');
+}
+
+solution(612060); // 1 week 2 hours
+
+solution(604800); // 1 week
+
+solution(604862); // 1 week 1 minute
+
+solution(604840); // 1 week 40 seconds
+```
