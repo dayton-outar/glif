@@ -61,7 +61,7 @@ An addendum based on a problem done on Codility as part of interview,
 1. [Min Avg Two Slice](./prefix-sums#minimum-average-of-two-slices)
 2. [Genomic Range Query](./prefix-sums/GENOMIC.md)
 3. [Mushroom Picker](./prefix-sums#51-exercise) &#x2713; :thinking:
-4. [Triangle](./sorting/TRIANGLE.md)
+4. [Triangle](./sorting/TRIANGLE.md) &#x2713;
 5. [Number of Disc Intersections](./sorting/DISCS.md) &#x2713; :thinking:
 6. [Fish](./stacks-queues/FISH.md)
 7. [Stone Wall](./stacks-queues/STONEWALL.md) &#x2713; :thinking:
@@ -82,7 +82,7 @@ An addendum based on a problem done on Codility as part of interview,
 22. [Min-Max Division](./binary-search/MINMAXDIVISION.md) &#x2713; :thinking:
 23. [Nailing Planks](./binary-search/NAILINGPLANKS.md) &#x2713; :face_in_clouds:
 24. [Count Distinct Slices](./caterpillar/COUNTDISTINCT.md) &#x2713; :thinking:
-25. [Count Triangle](./caterpillar/COUNTRIANGLES.md) :thinking:
+25. [Count Triangle](./caterpillar/COUNTRIANGLES.md) &#x2713; :thinking:
 26. [Min Absolute Sum of Two](./caterpillar/MINABSSUM.md) &#x2713; :thinking:
 27. [Max Non-overlapping Segments](./greedy/MAXNONOVERLAPPING.md) :thinking:
 28. [Tie Ropes](./greedy/TIEROPES.md)

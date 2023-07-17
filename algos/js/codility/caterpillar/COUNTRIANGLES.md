@@ -119,6 +119,18 @@ The provided use case outlines the _triangular triplets_ found from the unordere
 | | (`A[2]`, `A[4]`, `A[5]`) | (5, 10, 12) |
 | | (`A[3]`, `A[4]`, `A[5]`) | (8, 10, 12) |
 
-Some mathematical proof maybe needed to understand the reason that the sort works for bringing the solution to the correct answer.
+From the definition of a _triangular triplet_, let's say that $R$ is some index in the sorted array as `i + 2`, $Q$ is the index at `i + 1` and $P$ is the index at `i`. Because the array is sorted in ascending order, $A[i + 2]$ is greater than $A[i + 1]$ and $A[i + 1]$ is greater than $A[i]$. Since $A[i + 2]$ is greater than both $A[i + 1]$ and $A[i]$, two of the conditions of being a _triangular triplet_ are met. The conditions are,
+
+ - $A[i + 2] + A[i + 1] > A[i]$ (or $A[R] + A[P] > A[Q]$)
+ - $A[i + 2] + A[i] > A[i + 1]$ (or $A[R] + A[Q] > A[P]$)
+
+This can be demonstrated using the sorted array, `[1, 2, 5, 8, 10, 12]`. If the first 3 elements are used for the first 2 rules, they would be evaluated as shown below,
+
+ - $5 + 2 > 1$
+ - $5 + 1 > 2$
+
+As mentioned above, the third condition where $A[i] + A[i + 1] > A[i + 2]$ may not be met as in this case $1 + 2$ is not greater than $5$. However, as progress is made further up to the last three, for example, the third condition is met as $8 + 10$ is greater than $12$.
+
+The worst case for counting _triangular triplets_ involves iterating through every element of the sorted array, doing a binary search on every iteration and, doing another iteration through $n - 3$ elements within the binary search loop. The expanded equation for the performance of the nested loop could be $O(n \cdot \text{log n} \cdot n)$ (or $(O(n^2 \text{log n}))$).
 
 [^1]: [Triangle Triplet in Python and C++ Codility Solutions Lesson 6](https://youtu.be/YCA1D--El-Q)
