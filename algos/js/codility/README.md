@@ -18,7 +18,7 @@ Significant lessons from Codility,
 
   Maintaining track of the maximum running total
 
-- [Prime and composite numbers](./prime/)
+- [Prime and Composite Numbers](./prime/)
 
   Using prime and composite numbers to solve problems
 
