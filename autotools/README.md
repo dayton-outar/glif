@@ -1,8 +1,4 @@
-# Jupiter
-
-The Jupiter project source code repository for the No Starch Press book, Autotools, 2nd Edition.
-
-## Autotools
+# Autotools
 
 Autotools is a comprehensive guide to the GNU Autotools, a collection of tools used in Unix-based systems for building, configuring, and distributing software projects. The book would delve into various components of the Autotools suite, which includes Autoconf, Automake, Libtool, and related utilities.
 
@@ -23,3 +19,7 @@ The book covers the following key areas:
  7. Debugging and Troubleshooting: Strategies for debugging configuration and build issues that may arise while using Autotools.
 
  8. Case Studies: Real-world case studies demonstrating how to apply Autotools in various types of projects.
+
+## Jupiter
+
+This folder contains material from the Jupiter project source code repository for the No Starch Press book, Autotools, 2nd Edition.
