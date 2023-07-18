@@ -157,9 +157,7 @@ The goal is to find the starting position of a slice whose average is minimal.
 Write a function:
 
 ```js
-const solution = A => {
-
-}
+    function solution(A) {}
 ```
 
 that, given a non-empty array $A$ consisting of $N$ integers, returns the starting position of the slice with the minimal average. If there is more than one slice with a minimal average, you should return the smallest starting position of such a slice.
