@@ -33,7 +33,9 @@
 // A[I] ≤ B[I], for each I (0 ≤ I < N);
 // B[K] ≤ B[K + 1], for each K (0 ≤ K < N − 1).
 
-function solution(A, B) { // Credit: https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23 ... O(N) ... Score: 100%
+// Credit: https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23 ... O(N) ... Score: 100%
+
+function solution(A, B) {
     let count = 1;
     let last = 0;
     
@@ -43,14 +45,20 @@ function solution(A, B) { // Credit: https://gist.github.com/jonataswalker/08187
     
     last = B[0];
     
+    let list = [];
+    list.push(0);
+
     for( let i = 1; i < A.length; i++) {
         if(A[i] > last) {
             count++;
             last = B[i];
+            list.push(i);
         }
     }
     
+    console.log(list);
+
     return count;
 }
 
-console.log( solution( [1, 3, 7, 9, 9], [5, 6, 8, 9, 10]) );
+console.log( solution( [1, 3, 7, 9, 9], [5, 6, 8, 9, 10] ) ); // 3

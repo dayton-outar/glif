@@ -84,7 +84,7 @@ An addendum based on a problem done on Codility as part of interview,
 24. [Count Distinct Slices](./caterpillar/COUNTDISTINCT.md) &#x2713; :thinking:
 25. [Count Triangle](./caterpillar/COUNTRIANGLES.md) &#x2713; :thinking:
 26. [Min Absolute Sum of Two](./caterpillar/MINABSSUM.md) &#x2713; :thinking:
-27. [Max Non-overlapping Segments](./greedy/MAXNONOVERLAPPING.md) :thinking:
+27. [Max Non-overlapping Segments](./greedy/MAXNONOVERLAPPING.md) &#x2713; :thinking:
 28. [Tie Ropes](./greedy/TIEROPES.md)
 29. [Number Solitaire](./dynamic/SOLITAIRE.md) &#x2713; :face_in_clouds:
 30. [Minimum Absolute Sum](./dynamic/MINABSSUM.md) &#x2713; :thinking:
