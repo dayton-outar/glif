@@ -56,11 +56,12 @@ function solution(K, A) {
         size += A[i];
         
         if(size >= K) {
+            console.log( size );
             count++;
             size = 0;
         }
     }
-    
+    console.log( `----` );    
     return count;
 }
 

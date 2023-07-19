@@ -60,3 +60,25 @@ Write an efficient algorithm for the following assumptions:
 - each element of array $A$ is an integer within the range $[1 ... 1,000,000,000]$.
 
 ## Solution
+
+
+
+```js
+function solution(K, A) {
+    let count = 0;
+    let size = 0;
+    
+    for(let i = 0; i < A.length; i++) {
+        size += A[i];
+        
+        if(size >= K) {
+            count++;
+            size = 0;
+        }
+    }
+
+    return count;
+}
+
+solution(4, [1, 2, 3, 4, 1, 1, 3]); // 3
+```
