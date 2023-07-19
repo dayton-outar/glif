@@ -86,7 +86,7 @@ Let's deconstruct this solution.
 
 Although the temptation to iterate through every combination exists in this problem, this solution chooses to find the answer by _selecting the best option available at the moment_. This is [Greedy Algorithms](./README.md) approach. By keeping track of the endpoint of the first segment and every other segment thereafter that does not overlap, this approach does not consider the other possibilities.
 
-The indices of `A` that was visited in this solution (given the provided use case within the problem definition) were 0, 2 and 3. So, out of all the possible sets mentioned in the table above, only the first set was considered. See below a chat snippet from ChatGPT on this subject matter. <image src="/.attachments/chatgpt-logo.png" alt="Chat GPT Logo" width="16" height="16" />
+The indices of `A` that was visited in this solution (given the provided use case within the problem definition) were 0, 2 and 3. So, out of all the possible sets mentioned in the table above, only the first set was considered. See below a chat snippet from ChatGPT on this subject matter.
 
 > A greedy algorithm is best to use when solving optimization problems that exhibit the "greedy choice property" and the "optimal substructure property."
 >
@@ -97,7 +97,7 @@ The indices of `A` that was visited in this solution (given the provided use cas
 >
 > Greedy algorithms are particularly useful in situations where finding the globally optimal solution through exhaustive search or dynamic programming would be computationally expensive or impractical. They are often straightforward to implement and can offer efficient solutions for many real-world problems.
 >
-
+<image src="/.attachments/chatgpt-logo.png" alt="Chat GPT Logo" width="16" height="16" />
 
 While this approach may not fit every problem, it fits this one. A few articles exist on the internet that explains [when to use greedy algorithms](https://www.freecodecamp.org/news/when-to-use-greedy-algorithms/).
 
