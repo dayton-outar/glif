@@ -61,7 +61,11 @@ Write an efficient algorithm for the following assumptions:
 
 ## Solution
 
+The problem seems pretty straightforward to understand.
 
+There is an array that provides the length of _adjacent_ ropes as the values. The aim is to find the maximum number of ropes that can be chained together in a away that the sum of the values of the chained ropes does not exceed a certain value $K$.
+
+Credit to [Jonatas Walker](https://gist.github.com/jonataswalker) for providing his solutions [here](https://gist.github.com/jonataswalker/08187f5457fac4af1e86cf8c86647e23). See his solution below.
 
 ```js
 function solution(K, A) {
@@ -82,3 +86,11 @@ function solution(K, A) {
 
 solution(4, [1, 2, 3, 4, 1, 1, 3]); // 3
 ```
+
+Let's deconstruct this solution.
+
+Since the sum of the values of the chained ropes must not exceed $K$, the idea here in this solution is to iterate through the array sum the values of the array until that sum is greater than or equal to $K$. When the sum arrives at a value greater than or equal to $K$, the variable tracking the sum (or `size`) of the chained ropes is reset because the aim is to find the maximum number of possibilities exists where ropes can be chained until the sum meets this condition.
+
+The fact that the ropes must be chained to an _adjacent_ rope simplifies the problem and, thus, makes the solution simple.
+
+The detected time complexity of this algorithm is $O(n)$.
