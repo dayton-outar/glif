@@ -9,7 +9,7 @@ The eight queens problem attempts to _place eight queens on a chessboard in such
 
 The rules of chess say that a queen can take another piece if it lies on the same row, on the same column, or on the same diagonal as the queen (see Figure 5.11).
 
-![Figure 5.11. Eight Queens Problem](./.attchments/eight-queens-problem.png)
+![Figure 5.11. Eight Queens Problem](./.attachments/eight-queens-problem.png)
 
 To solve this problem, we try to put the first queen on the board, then the second so that it cannot take the first, then the third so that it is not in conflict with the two already placed, and so on, until all of the queens are placed. What happens if, for instance, the sixth queen cannot be placed in a non-conflicting position? We choose another position for the fifth queen and try again with the sixth. If this does not work, the fifth queen is moved again. If all the possible positions for the fifth queen have been tried, the fourth queen is moved and then the process restarts. This process requires a great deal of effort, most of which is spent ***backtracking*** to the first crossroads offering some untried avenues. In terms of code, however, the process is rather simple due to the power of recursion, which is a natural implementation of backtracking. Pseudocode for this backtracking algorithm is as follows (the last line pertains to backtracking):
 
@@ -34,20 +34,20 @@ row, column, and diagonal, treating them as its own temporary property. A differ
 
 To simplify the problem for the first solution, we use a 4 × 4 chessboard instead of the regular 8 × 8 board. Later, we can make the rather obvious changes in the program to accommodate a regular board.
 
-![Figure 5.12](./.attchments/fig-5.12.png)
+![Figure 5.12](./.attachments/fig-5.12.png)
 
 Figure 5.12 contains the 4 × 4 chessboard. Notice that indexes in all fields in the indicated left diagonal all add up to two, *r + c = 2*; this number is associated with this ­diagonal. There are seven left diagonals, 0 through 6. Indexes in the fields of the indicated right diagonal all have the same difference, *r – c = –1*, and this number is unique among all right diagonals. Therefore, right diagonals are assigned numbers –3 through 3. The data structure used for all left diagonals is simply an array indexed by numbers 0 through 6. For right diagonals, it is also an array, but it cannot be indexed by negative numbers. Therefore, it is an array of seven cells, but to account for negative values obtained from the formula *r – c*, the same number is always added to it so as not to cross the bounds of this array.
 
-![Figure 5.15](./fig-5.14.png)
+![Figure 5.15](./attachments/fig-5.14.png)
 
 Figures 5.14 through 5.17 document the steps taken by `putQueen()` to place four queens on the chessboard. Figure 5.14 contains the move number, queen number, and row and column number for each attempt to place a queen. Figure 5.15 contains the changes to the arrays `positionInRow`, `column`, `leftDiagonal`, and `rightDiagonal`. Figure 5.16 shows the changes to the run-time stack during the eight steps. All changes to the run-time stack are depicted by an activation record for each iteration of the `for` loop, which mostly lead to a new invocation of `putQueen()`. Each
 activation record stores a return address and the values of `row` and `col`. Figure 5.17 illustrates the changes to the chessboard. A detailed description of each step follows.
 
-![Figure 5.15](./.attchments/fig-5.15.png)
+![Figure 5.15](./.attachments/fig-5.15.png)
 
-![Figure 5.16](./.attchments/fig-5.16.png)
+![Figure 5.16](./.attachments/fig-5.16.png)
 
-![Figure 5.17](./.attchments/fig-5.17.png)
+![Figure 5.17](./.attachments/fig-5.17.png)
 
 **{1}** We start by trying to put the first queen in the upper left corner (0, 0). Because it is the very first move, the condition in the `if` statement is met, and the queen is placed in this square. After the queen is placed, the column 0, the main right diagonal, and the leftmost diagonal are marked as unavailable. In Figure 5.15, {1} is put underneath cells reset to `!available` in this step.
 
