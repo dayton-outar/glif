@@ -38,7 +38,7 @@ To simplify the problem for the first solution, we use a 4 × 4 chessboard inste
 
 Figure 5.12 contains the 4 × 4 chessboard. Notice that indexes in all fields in the indicated left diagonal all add up to two, *r + c = 2*; this number is associated with this ­diagonal. There are seven left diagonals, 0 through 6. Indexes in the fields of the indicated right diagonal all have the same difference, *r – c = –1*, and this number is unique among all right diagonals. Therefore, right diagonals are assigned numbers –3 through 3. The data structure used for all left diagonals is simply an array indexed by numbers 0 through 6. For right diagonals, it is also an array, but it cannot be indexed by negative numbers. Therefore, it is an array of seven cells, but to account for negative values obtained from the formula *r – c*, the same number is always added to it so as not to cross the bounds of this array.
 
-![Figure 5.15](/attachments/fig-5.14.png)
+![Figure 5.14](/.attachments/fig-5.14.png)
 
 Figures 5.14 through 5.17 document the steps taken by `putQueen()` to place four queens on the chessboard. Figure 5.14 contains the move number, queen number, and row and column number for each attempt to place a queen. Figure 5.15 contains the changes to the arrays `positionInRow`, `column`, `leftDiagonal`, and `rightDiagonal`. Figure 5.16 shows the changes to the run-time stack during the eight steps. All changes to the run-time stack are depicted by an activation record for each iteration of the `for` loop, which mostly lead to a new invocation of `putQueen()`. Each
 activation record stores a return address and the values of `row` and `col`. Figure 5.17 illustrates the changes to the chessboard. A detailed description of each step follows.
