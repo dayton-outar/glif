@@ -40,9 +40,9 @@ Let's visualize this in a table, where the columns and rows are the vertices of 
 
 A visual representation of this graph with the weights mentioned in the table can be shown below,
 
-![Graph representing the 6 by 6 adjacency matrix](/.attachments/dijkstra-graph-1.png)
+![Graph representing the 6 by 6 adjacency matrix](/.attachments/dijkstra.graph-1.png)
 
-![2 shortest path from A to D](/.attachments/dijkstra-graph-a-d.png)
+![2 shortest path from A to D](/.attachments/dijkstra.graph-a-d.png)
 
 ## Further Reading
 
