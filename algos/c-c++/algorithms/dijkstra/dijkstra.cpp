@@ -1,4 +1,5 @@
 // https://favtutor.com/blogs/dijkstras-algorithm-cpp
+// g++ -std=c++11 dijkstra.cpp -o dijkstra.o
 #include <iostream>
 #include <climits>
 using namespace std;
