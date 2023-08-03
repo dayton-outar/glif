@@ -42,6 +42,8 @@ A visual representation of this graph with the weights mentioned in the table ca
 
 ![Graph representing the 6 by 6 adjacency matrix](/.attachments/dijkstra.graph-1.png)
 
+... there are two paths from source, A, to destination, D, that offer the shortest path.
+
 ![2 shortest path from A to D](/.attachments/dijkstra.graph-a-d.png)
 
 ## Further Reading

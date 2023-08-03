@@ -1,7 +1,6 @@
 # 5.9 Backtracking
 
-Situations arise where there are different ways leading from a given position, none of them known to lead to a solution. After trying one path unsuccessfully, we return to this crossroads and try to find a solution using another path. However, we must ensure that such a return is possible and that all paths can be tried. This technique is called *backtracking*, and it allows us to systematically try
-all available avenues from a certain point after some of them lead to nowhere. Using backtracking, we can always return to a position that offers other possibilities for successfully solving the problem. This technique is used in artificial intelligence, and one of the problems in which backtracking is very useful is the eight queens problem
+Situations arise where there are different ways leading from a given position, none of them known to lead to a solution. After trying one path unsuccessfully, we return to this crossroads and try to find a solution using another path. However, we must ensure that such a return is possible and that all paths can be tried. This technique is called *backtracking*, and it allows us to systematically try all available avenues from a certain point after some of them lead to nowhere. Using backtracking, we can always return to a position that offers other possibilities for successfully solving the problem. This technique is used in artificial intelligence, and one of the problems in which backtracking is very useful is the eight queens problem.[^1]
 
 ## The Problem
 
@@ -10,6 +9,8 @@ The eight queens problem attempts to _place eight queens on a chessboard in such
 The rules of chess say that a queen can take another piece if it lies on the same row, on the same column, or on the same diagonal as the queen (see Figure 5.11).
 
 ![Figure 5.11. Eight Queens Problem](/.attachments/eight-queens-problem.png)
+
+## The Solution
 
 To solve this problem, we try to put the first queen on the board, then the second so that it cannot take the first, then the third so that it is not in conflict with the two already placed, and so on, until all of the queens are placed. What happens if, for instance, the sixth queen cannot be placed in a non-conflicting position? We choose another position for the fifth queen and try again with the sixth. If this does not work, the fifth queen is moved again. If all the possible positions for the fifth queen have been tried, the fourth queen is moved and then the process restarts. This process requires a great deal of effort, most of which is spent ***backtracking*** to the first crossroads offering some untried avenues. In terms of code, however, the process is rather simple due to the power of recursion, which is a natural implementation of backtracking. Pseudocode for this backtracking algorithm is as follows (the last line pertains to backtracking):
 
@@ -61,3 +62,5 @@ activation record stores a return address and the values of `row` and `col`. Fig
 **{5}** As a result, the first call of putQueen() resumes execution by placing the first queen in position (0, 1).
 
 **{6-8}** This time execution continues smoothly and we obtain a complete solution.
+
+[^1]: Chapter 5, Recursion, Data Structures and Algorithms in C++, 4<sup>th</sup> Edition by Adam Drozdek
