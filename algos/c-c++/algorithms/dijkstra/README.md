@@ -9,7 +9,9 @@ Finding the shortest path is a classical problem in graph theory, and a large nu
 
 and so on.
 
-When determining the shortest path from vertex $v$ to vertex $u$, information about distances between intermediate vertices $w$ has to be recorded. This information can be recorded as a label associated with these vertices, where the label is only the distance from $v$ to $w$ or the distance along with the predecessor of $w$ in this path. The methods of finding the shortest path rely on these labels. Depending on how many times these labels are updated, the methods solving the shortest path problem are divided in two classes: _label-setting methods_ and _label-correcting methods_.
+When determining the shortest path from vertex $v$ to vertex $u$, information about distances between intermediate vertices $w$ has to be recorded.
+
+In Dijkstra’s algorithm, a number of paths $p_1, \dots, p_n$ from a vertex $v$ are tried, and each time, the shortest path is chosen among them, which may mean that the same path $p_i$ can be continued by adding one more edge to it. But if $p_i$ turns out to be longer than any other path that can be tried, $p_i$ is abandoned and this other path is tried by resuming from where it was left off and by adding one more edge to it. ­Because paths can lead to vertices with more than one outgoing edge, new paths for possible exploration are added for each outgoing edge. Each vertex is tried once, all paths leading from it are opened, and the vertex itself is put away and not used anymore. After all vertices are visited, the algorithm is finished. This is a [greedy approach](../../../js/codility/greedy/).
 
 ## Observations
 
