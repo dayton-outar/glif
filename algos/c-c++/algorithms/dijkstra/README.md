@@ -48,6 +48,11 @@ A visual representation of this graph with the weights mentioned in the table ca
 
 ![2 shortest path from A to D](/.attachments/dijkstra.graph-a-d.png)
 
+The complexity of Dijkstra’s algorithm is $O(|v|^2)$. The first `for` loop and the `while` loop are executed $|v|$ times. For each iteration of the `while` loop,
+ 1. a vertex $v$ in `Tset` with minimal current distance has to be found, which requires $O(|v|)$ steps
+ 2. the `for` loop iterates deg(v) times, which is also $O(|v|)$.
+
+
 ## Further Reading
 
  1. [Dijkstra's Algorithm in C++ | Shortest Path Algorithm](https://favtutor.com/blogs/dijkstras-algorithm-cpp)
