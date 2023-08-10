@@ -49,7 +49,11 @@ void DijkstraAlgo(int graph[6][6],int src) // adjacency matrix
         for(int k = 0; k < 6; k++)                  
         {
             // updating the distance of neighbouring vertex
-            if( !Tset[k] && graph[m][k] && distance[m] != INT_MAX && distance[m] + graph[m][k] < distance[k] )
+            if ( !Tset[k] && // if not visited
+                graph[m][k] && // if there is an edge ... graph[m][k] is the weight of the edge that is greater than 0
+                distance[m] != INT_MAX && // if source vertex is not infinity
+                distance[m] + graph[m][k] < distance[k] // if the distance is less than the current distance
+               )
             {
                 distance[k] = distance[m] + graph[m][k];
                 //
