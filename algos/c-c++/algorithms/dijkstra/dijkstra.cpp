@@ -27,6 +27,22 @@ int miniDist(int distance[], bool Tset[]) // finding minimum distance
     return index;
 }
 
+template <size_t N>
+void printArray(int (&array)[N])
+{    
+    cout << "[";
+    for(int k = 0; k < N; k++)
+    {
+        cout << array[k];
+        
+        if (k < N - 1)
+        {
+            cout << ", ";
+        }
+    }
+    cout << "]";
+}
+
 void DijkstraAlgo(int graph[6][6],int src) // adjacency matrix 
 {
     int distance[6]; // array to calculate the minimum distance for each node                             
@@ -39,12 +55,16 @@ void DijkstraAlgo(int graph[6][6],int src) // adjacency matrix
         Tset[k] = false;    
     }
     
-    distance[src] = 0;   // Source vertex distance is set 0               
-    
+    distance[src] = 0;   // Source vertex distance is set 0
+
     for(int k = 0; k < 6; k++)                           
     {
         int m = miniDist(distance, Tset);
         Tset[m] = true;
+
+        cout << "distance (k =" << k << "): ";
+        printArray(distance);
+        cout << endl;
 
         for(int k = 0; k < 6; k++)                  
         {
@@ -59,7 +79,7 @@ void DijkstraAlgo(int graph[6][6],int src) // adjacency matrix
                 //
                 char strK = 65 + k;
                 char strM = 65 + m;
-                cout << "k: " << strK << "; m: " << strM << "; " << distance[m] << " + " << graph[m][k] << " = " << distance[k] << endl;
+                cout << strM << " --> " << strK << ": " << distance[m] << " + " << graph[m][k] << " = " << distance[k] << endl;
             }
         }
     }
