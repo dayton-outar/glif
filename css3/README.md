@@ -2,6 +2,8 @@
 
 This part of the repo contains a variety of uses of Cascading Style Sheet (CSS).
 
+Also a lesson in [UX Design](./DESIGN.md) is found in this folder.
+
 ## Further Reading
 
 1. [Animated CSS loaders](https://dev.to/j3nnning/animated-css-loaders-2km4)
