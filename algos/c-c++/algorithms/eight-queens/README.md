@@ -1,6 +1,6 @@
 # 5.9 Backtracking
 
-Situations arise where there are different ways leading from a given position, none of them known to lead to a solution. After trying one path unsuccessfully, we return to this crossroads and try to find a solution using another path. However, we must ensure that such a return is possible and that all paths can be tried. This technique is called *backtracking*, and it allows us to systematically try all available avenues from a certain point after some of them lead to nowhere. Using backtracking, we can always return to a position that offers other possibilities for successfully solving the problem. This technique is used in artificial intelligence, and one of the problems in which backtracking is very useful is the eight queens problem.[^1]
+Situations arise where there are different ways leading from a given position, none of them known to lead to a solution. After trying one path unsuccessfully, we return to this crossroads and try to find a solution using another path. However, we must ensure that such a return is possible and that all paths can be tried. This technique is called *backtracking*, and it allows us to systematically try all available avenues from a certain point after some of them lead to nowhere. Using backtracking, we can always return to a position that offers other possibilities for successfully solving the problem. While this technique is used by chess players, it is also used in artificial intelligence, and one of the problems in which backtracking is very useful is the eight queens problem.[^1]
 
 ## The Problem
 
@@ -62,5 +62,9 @@ activation record stores a return address and the values of `row` and `col`. Fig
 **{5}** As a result, the first call of putQueen() resumes execution by placing the first queen in position (0, 1).
 
 **{6-8}** This time execution continues smoothly and we obtain a complete solution.
+
+## Videos
+
+1. [Solve Coding Interview Backtracking Problems - Crash Course](https://youtu.be/A80YzvNwqXA)
 
 [^1]: Chapter 5, Recursion, Data Structures and Algorithms in C++, 4<sup>th</sup> Edition by Adam Drozdek
