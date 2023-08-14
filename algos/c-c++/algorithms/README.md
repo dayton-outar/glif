@@ -15,10 +15,10 @@ Observations were added to supplement the lessons and source code of the algorit
 
 Lessons within this folder are,
 
- - [Shortest Path: Dijkstra's Algorithm](./dijkstra/)
- - [Recursion: Tower of Hanoi](./tower-of-hanoi/)
+ - [Shortest Path: Dijkstra's Algorithm](./dijkstra/) *
+ - [Recursion: Tower of Hanoi](./tower-of-hanoi/) *
  - [Backtracking: Eight Queen's](./eight-queens/)
  - [Stacks and Queues: Exiting a Maze](./exiting-maze/)
- - [Spanning Trees: Kruskal](./kruskal/)
- - [Data Compression: Huffman](./huffman/)
- - [Neural Networks: Perceptron](./perceptron/)
+ - [Spanning Trees: Kruskal](./kruskal/) *
+ - [Data Compression: Huffman](./huffman/) *
+ - [Neural Networks: Perceptron](./perceptron/) *
