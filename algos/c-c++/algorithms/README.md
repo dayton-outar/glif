@@ -12,3 +12,13 @@ There is mention of [compiler design](./compiler-design/) in this folder. Most o
  2. Compiler Design in C by Allen I. Holub (1990)
 
 Observations were added to supplement the lessons and source code of the algorithms except compiler design. More in-depth explanation is offered in the books mentioned for compiler design.
+
+Lessons within this folder are,
+
+ - [Shortest Path: Dijkstra's Algorithm](./dijkstra/)
+ - [Recursion: Tower of Hanoi](./tower-of-hanoi/)
+ - [Backtracking: Eight Queen's](./eight-queens/)
+ - [Stacks and Queues: Exiting a Maze](./exiting-maze/)
+ - [Spanning Trees: Kruskal](./kruskal/)
+ - [Data Compression: Huffman](./huffman/)
+ - [Neural Networks: Perceptron](./perceptron/)

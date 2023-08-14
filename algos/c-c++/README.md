@@ -12,7 +12,7 @@ I noticed that C++ files had two (2) different type of extensions: `.cc` and `.c
 
 <sup><strong>NOTE</strong></sup> C++ files are also saved with the following extensions: `.cp`, `.c++`, `.cxx`.
 
-I found [this](https://stackoverflow.com/questions/18590135/what-is-the-difference-between-cc-and-cpp-file-suffix)<sup><a href="#fn-1">1</a></sup> entry on StackOverflow.
+I found [this](https://stackoverflow.com/questions/18590135/what-is-the-difference-between-cc-and-cpp-file-suffix)[^1]
 
 <blockquote>
 <p>Conventions.</p>
@@ -32,7 +32,7 @@ In the case of headers it makes absolutely no difference to the compiler.
 In the case of source files different endings will cause the compiler to assume a different language. But this can normally be overridden, and I used `.cc` with VC++ long before VC++ recognized it as C++.
 </blockquote>
 
-Another good explanation was from an entry<sup><a href="#fn-2">2</a></sup> on Quora.
+Another good explanation was from an entry on Quora.[^2]
 
 <blockquote>
 Programming languages, like human languages, grow out of specific communities of people. The same goes for the various tools that work with programming languages.
@@ -57,8 +57,8 @@ But at Microsoft I have almost never seen any C++ source files with a `.cc` exte
 
 1. [Debugging a C++ project in VS Code](https://youtu.be/G9gnSGKYIg4)
 2. [Heap Explained - Algorithms & Data Structures](https://youtu.be/rbXO3B5Ib1U)
-3. [Understanding Sorting Algorithms](https://youtu.be/l7-f9gS8VOs)
-___
- <sup id="fn-1">1</sup> [What is the difference between .cc and .cpp file suffix?](https://stackoverflow.com/questions/18590135/what-is-the-difference-between-cc-and-cpp-file-suffix)
 
- <sup id="fn-2">2</sup> [Why do both .cc and .cpp file extensions exist for C++? What's the history behind this?](https://www.quora.com/Why-do-both-cc-and-cpp-file-extensions-exist-for-C-Whats-the-history-behind-this)
+
+ [^1]: [What is the difference between .cc and .cpp file suffix?](https://stackoverflow.com/questions/18590135/what-is-the-difference-between-cc-and-cpp-file-suffix)
+
+[^2]: [Why do both .cc and .cpp file extensions exist for C++? What's the history behind this?](https://www.quora.com/Why-do-both-cc-and-cpp-file-extensions-exist-for-C-Whats-the-history-behind-this)
