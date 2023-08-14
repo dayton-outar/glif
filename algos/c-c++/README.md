@@ -1,10 +1,13 @@
 # Algorithms with C and C++
 
-Most of the code for algorithms can be found [here](./algorithms/). Data structures can be found [here](./data-structures/).
+Subject matter found in this folder are,
+ - [Algorithms](./algorithms/)
+ - [Data Structures](./data-structures/).
+ - [Concurrency](./concurrency/)
+ - [Functional Programming](./functional-programming/)
+ - [Graphics](./graphics/)
 
-Some additional material on [Concurrency](./concurrency/), [Functional Programming](./functional-programming/) and [Graphics](./graphics/) can be found in this folder.
-
-Also, documentation on building and using C (or C++) software libraries on UNIX system can be found [here](./SOFTWARE.LIBRARIES.md).
+Also, documentation on building and using C (or C++) [software libraries](./SOFTWARE.LIBRARIES.md) on UNIX system can be found in this folder.
 
 ## Notes on C++
 
