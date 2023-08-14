@@ -6,7 +6,7 @@ Most of the lessons and source code found in this folder were sourced from,
  2. [Geeks for Geeks](https://www.geeksforgeeks.org/)
  3. [FavTutor](https://favtutor.com/)
 
-There is mention of [compiler design](./compiler-design/) in this folder. Most of the theory was inspired by,
+There is mention of [Compiler Design](./compiler-design/) in this folder. Most of the theory was inspired by,
 
  1. Compilers: Principles, Techniques, and Tools by Alfred Aho (1986)
  2. Compiler Design in C by Allen I. Holub (1990)
