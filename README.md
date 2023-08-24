@@ -9,10 +9,19 @@ The main compartments of this repo are,
 - [Canvas API](./canvas/)
 - [CSS](./css3/)
 
+## Lessons in User Experience
+
+1. [Laws of UX](https://lawsofux.com/)
+2. [9 Principles of Good Website Design](https://www.feelingpeaky.com/9-principles-of-good-web-design/)
+3. [10 Principles of Good Web Design](https://www.smashingmagazine.com/2008/01/10-principles-of-effective-web-design/)
+
 ## Further Reading
 
 1. [What is a Fractal](https://iternal.us/what-is-a-fractal/)
 2. [Using the Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+3. [UI/UX Cheat Sheet](https://designmaterials.io/ui-ux-cheat-sheet/)
+4. [UX audit checklist templates](https://fulcrumrocks.notion.site/UX-audit-checklist-templates-4bdad2f26cef4320b15367e7eadb9aab)
+5. [Google UX Design Certificate](https://grow.google/certificates/ux-design/)
 
 ## Tutorial Videos
 
