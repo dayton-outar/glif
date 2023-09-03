@@ -190,8 +190,8 @@ As mentioned at [this](https://stackoverflow.com/questions/16555978/example-of-a
     <thead>
         <tr>
             <th>Data Structure</th>
-            <th colspan="8"></th>
-            <th></th>
+            <th colspan="8">Time Complexity</th>
+            <th>Space Complexity</th>
         </tr>
         <tr>
             <th></th>
@@ -283,7 +283,222 @@ As mentioned at [this](https://stackoverflow.com/questions/16555978/example-of-a
             <td>$O(n)$</td>
             <td>$O(n)$</td>
             <td>$O(n)$</td>
-            <td>$O(n \text{log n })$</td>
+            <td>$O(n\text{ log n })$</td>
+        </tr>
+        <tr>
+            <td>Hash Table</td>
+            <td>N/A</td>
+            <td>$O(1)$</td>
+            <td>$O(1)$</td>
+            <td>$O(1)$</td>
+            <td>N/A</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>Binary Search Tree</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>Cartesian Tree</td>
+            <td>N/A</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>N/A</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>B-Tree</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>Red-Black Tree</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>Splay Tree</td>
+            <td>N/A</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>N/A</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>AVL Tree</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>KD Tree</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+        </tr>
+    </tbody>
+</table>
+
+## Big O for Sorting Algorithms
+
+<table>
+    <thead>
+        <tr>
+            <th>Algorithm</th>
+            <th colspan="3">Time Complexity</th>
+            <th>Space Complexity</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>Best</th>
+            <th>Average</th>
+            <th>Worst</th>
+            <th>Worst</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Quicksort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Mergesort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Timsort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Heapsort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Bubble Sort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Insertion Sort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Slection Sort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Tree Sort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Shell Sort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Bucket Sort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Radix Sort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Counting Sort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Quicksort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Cubesort</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
     </tbody>
 </table>
