@@ -184,6 +184,110 @@ This is the least performant time complexity that any program can arrive at.
 
 As mentioned at [this](https://stackoverflow.com/questions/16555978/example-of-a-factorial-time-algorithm-o-n) Stack Overflow entry, an example of an $O(n!)$ is to generate all the permutations of a list.
 
+## Big O for Common Data Structure Operations
+
+<table>
+    <thead>
+        <tr>
+            <th>Data Structure</th>
+            <th colspan="8"></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th colspan="4">Average</th>
+            <th colspan="4">Worst</th>
+            <th>Worst</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>Access</th>
+            <th>Search</th>
+            <th>Insertion</th>
+            <th>Deletion</th>
+            <th>Access</th>
+            <th>Search</th>
+            <th>Insertion</th>
+            <th>Deletion</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Array</td>
+            <td>$O(1)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(1)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>Stack</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(1)$</td>
+            <td>$O(1)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(1)$</td>
+            <td>$O(1)$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>Queue</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(1)$</td>
+            <td>$O(1)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(1)$</td>
+            <td>$O(1)$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>Singly-linked List</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(1)$</td>
+            <td>$O(1)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(1)$</td>
+            <td>$O(1)$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>Doubly-linked List</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(1)$</td>
+            <td>$O(1)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(1)$</td>
+            <td>$O(1)$</td>
+            <td>$O(n)$</td>
+        </tr>
+        <tr>
+            <td>Skip List</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(log \text{ n})$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n)$</td>
+            <td>$O(n \text{log n })$</td>
+        </tr>
+    </tbody>
+</table>
+
 ## Basic Problem Solving Steps
 
 1. Understand the problem
