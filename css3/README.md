@@ -9,6 +9,7 @@ Also a lesson in [UX Design](./DESIGN.md) is found in this folder.
 1. [Animated CSS loaders](https://dev.to/j3nnning/animated-css-loaders-2km4)
 2. [Animate.css](https://animate.style/)
 3. [fullPage.js](https://alvarotrigo.com/fullPage/)
+4. [How to fix the unknown at rule @tailwind warning](https://byby.dev/at-rule-tailwind)
 
 ## Tutorial Videos
 
