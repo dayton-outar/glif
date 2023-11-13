@@ -10,6 +10,7 @@ Also a lesson in [UX Design](./DESIGN.md) is found in this folder.
 2. [Animate.css](https://animate.style/)
 3. [fullPage.js](https://alvarotrigo.com/fullPage/)
 4. [How to fix the unknown at rule @tailwind warning](https://byby.dev/at-rule-tailwind)
+5. [Building Website Headers with CSS Flexbox](https://ishadeed.com/article/website-headers-flexbox/)
 
 ## Tutorial Videos
 
