@@ -27,3 +27,4 @@ Also a lesson in [UX Design](./DESIGN.md) is found in this folder.
 11. [10 modern layouts in 1 line of CSS](https://youtu.be/qm0IfG1GyZU) - [Google Chrome Developers](https://www.youtube.com/channel/UCnUYZLuoy1rq1aVMwx4aTzw)
 12. [Full Page Scrolling Effects | Pure CSS Scroll Effects](https://youtu.be/vHr3Li0-SP0)
 13. [Create a fancy animate on Scroll animation using IntersectionObserver](https://youtu.be/kJyuyNgtiOc)
+14. [CSS Masks](https://youtube.com/playlist?list=PL4-IK0AVhVjPwzAHB5ekhsKXxIlbbRVYY&si=7dc2DgLzjWMG2TWW) - [Kevin Powell](https://www.youtube.com/@KevinPowell)
